@@ -49,12 +49,12 @@ import LinkButton from "@/components/ui/LinkButton.vue";
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
       Außerhalb meines Arbeitslebens spiele ich gerne Computerspiele, höre alle
-      Arten von Musik alle Arten von Musik, hänge mit meinen Freunden auf
-      Discord ab oder gehe mit ihnen aus. mit ihnen. Du kannst mein Leben auf
-      meinem Blog verfolgen
-      <link-button link="https://www.instagram.com/paifgx/"
-        >Instagram</link-button
-      >
+      Arten von Musik, hänge mit meinen Freunden auf Discord ab oder gehe mit
+      ihnen an die frische Luft, zum Beispiel zum wandern. Du kannst mein Leben
+      auf meinem Blog verfolgen
+      <link-button link="https://www.instagram.com/paifgx/">
+        Instagram
+      </link-button>
       oder
       <link-button link="https://twitter.com/paifgx">Twitter</link-button>.
     </p>
