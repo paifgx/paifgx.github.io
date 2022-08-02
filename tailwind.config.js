@@ -34,14 +34,6 @@ module.exports = {
       theme: ["MonoLisa", "Monaco", "Source Code Pro"],
       theme_bold: ["MonoLisaBold", "Monaco", "Source Code Pro"],
     },
-    screens: {
-      sm: "640px",
-      md: "768px",
-      slg: "978px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
-    },
   },
   plugins: [],
 };

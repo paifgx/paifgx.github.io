@@ -4,8 +4,8 @@ import ActionButton from "@/components/ui/ActionButton.vue";
 </script>
 
 <template>
-  <div class="flex justify-between items-center">
-    <div class="flex gap-1">
+  <div class="flex flex-col gap-2 sm:flex-row justify-between items-center">
+    <div class="flex flex-wrap gap-1">
       <social-icon
         title="Github"
         link="https://github.com/paifgx"
