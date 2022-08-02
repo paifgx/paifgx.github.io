@@ -11,10 +11,10 @@
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
       Ich bin Patrik Garten, ein in Deutschland ansässiger Entwickler und
-      Student an der Universität für Universität für angewandte Wissenschaften
-      und Künste Dortmund, mit einer ungebrochenen Liebe zum Lernen neue
-      Technik. Ich bin spezialisiert auf Web- und App-Entwicklung mit
-      TypeScript, JavaScript, Kotlin und PHP
+      Student an der Universität für angewandte Wissenschaften und Künste
+      Dortmund, mit einer Leidenschaft zum erlernen neuer Technik. Ich bin
+      spezialisiert auf Web- und App-Entwicklung mit TypeScript, JavaScript,
+      Kotlin und PHP.
     </p>
   </div>
 </template>
