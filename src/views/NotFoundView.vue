@@ -7,10 +7,10 @@ import ActionButton from "@/components/ui/ActionButton.vue";
     <h1 class="font-theme_bold text-8xl">404</h1>
 
     <span class="leading-loose text-lg">
-      The page you're looking for doesn't exist. Click below to head back to the
-      safe and cozy home.
+      Die Seite, die Sie suchen, existiert nicht. Klicken Sie unten, um zurück
+      zum sicheren und gemütlichen Zuhause zu gelangen.
     </span>
 
-    <action-button link="/">Go Home</action-button>
+    <action-button link="/">Zur Startseite</action-button>
   </div>
 </template>
