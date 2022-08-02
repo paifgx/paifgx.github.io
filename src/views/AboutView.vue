@@ -12,7 +12,7 @@ import LinkButton from "@/components/ui/LinkButton.vue";
     >
       Ich bin Patrik Garten, ein in Deutschland ansässiger Entwickler und
       Student an der Universität für angewandte Wissenschaften und Künste
-      Dortmund, mit einer leidenschaft zum erlernen neuer Technik. Ich bin
+      Dortmund, mit einer Leidenschaft zum erlernen neuer Technik. Ich bin
       spezialisiert auf Web- und App-Entwicklung mit TypeScript, JavaScript,
       Kotlin und PHP.
     </p>
@@ -30,7 +30,7 @@ import LinkButton from "@/components/ui/LinkButton.vue";
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
       Ich helfe Unternehmen, Zeit und Geld zu sparen und gleichzeitig mehr
-      Einnahmen zu erzielen. I Dies erreiche ich, indem ich bestehende
+      Einnahmen zu erzielen. Dies erreiche ich, indem ich bestehende
       Arbeitsabläufe digitalisiere und optimiere, bestehende Prozesse verbessere
       und neue automatisierte Abläufe einführe. Meine Aufgaben reichen dabei von
       Beratung bis hin zur Umsetzung und individuellen Entwicklung von Web- und
@@ -40,7 +40,7 @@ import LinkButton from "@/components/ui/LinkButton.vue";
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Einige meiner Projekte finden Sie auf
+      Einige meiner Projekte findest du auf
       <link-button link="https://github.com/paifgx">Github</link-button>
       oder meinem <link-button link="/">Portfolio</link-button>.
     </p>
