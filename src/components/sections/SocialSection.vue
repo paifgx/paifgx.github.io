@@ -33,8 +33,13 @@ import ActionButton from "@/components/ui/ActionButton.vue";
       />
       <social-icon
         title="Xing"
-        link="https://www.xing.com/profile/Patrik_Garten/"
+        link="https://www.xing.com/profile/Patrik_Garten"
         icon="dashicons:xing"
+      />
+      <social-icon
+        title="Ko-Fi"
+        link="https://ko-fi.com/paifgx"
+        icon="simple-icons:kofi"
       />
     </div>
 
