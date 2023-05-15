@@ -12,19 +12,14 @@ import ActionButton from "@/components/ui/ActionButton.vue";
         icon="akar-icons:github-fill"
       />
       <social-icon
-        title="Twitter"
-        link="https://twitter.com/paifgx"
-        icon="akar-icons:twitter-fill"
+        title="Gitlab"
+        link="https://gitlab.com/paifgx"
+        icon="mdi:gitlab"
       />
       <social-icon
         title="Instagram"
-        link="https://www.instagram.com/paifgx"
+        link="https://www.instagram.com/garten.dev"
         icon="akar-icons:instagram-fill"
-      />
-      <social-icon
-        title="Twitch"
-        link="https://www.twitch.tv/paifgx"
-        icon="akar-icons:twitch-fill"
       />
       <social-icon
         title="LinkedIn"
@@ -36,15 +31,8 @@ import ActionButton from "@/components/ui/ActionButton.vue";
         link="https://www.xing.com/profile/Patrik_Garten"
         icon="dashicons:xing"
       />
-      <social-icon
-        title="Ko-Fi"
-        link="https://ko-fi.com/paifgx"
-        icon="simple-icons:kofi"
-      />
     </div>
 
-    <action-button link="mailto:info@patrikgarten.de">
-      Schreib mir
-    </action-button>
+    <action-button link="mailto:info@garten.dev">Schreib mir</action-button>
   </div>
 </template>

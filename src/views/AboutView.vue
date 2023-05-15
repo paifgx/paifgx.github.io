@@ -10,53 +10,79 @@ import LinkButton from "@/components/ui/LinkButton.vue";
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Ich bin Patrik Garten, ein in Deutschland ansässiger Entwickler und
-      Student an der Universität für angewandte Wissenschaften und Künste
-      Dortmund, mit einer Leidenschaft zum erlernen neuer Technik. Ich bin
-      spezialisiert auf Web- und App-Entwicklung mit TypeScript, JavaScript,
-      Kotlin und PHP.
+      Mein Name ist Patrik Garten, und ich bin ein erfahrener, in Deutschland
+      ansässiger Softwareentwickler. Ich habe mich auf Web- und App-Entwicklung
+      spezialisiert und habe umfangreiche Kenntnisse und Erfahrung in einer
+      Vielzahl von Programmiersprachen und Frameworks, wobei meine
+      Spezialisierung auf TypeScript/JavaScript, Kotlin/Java und PHP liegt.
     </p>
 
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Als selbständiger Anwendungsentwickler mit Erfahrung in der Web- und
-      Software-Entwicklung, zeige ich ein kontinuierliches Interesse an der
-      Entwicklung besserer Methoden zur Lösung anspruchsvoller Herausforderungen
-      und am Erlernen neuer Technologien und Werkzeuge.
+      Als selbstständiger Anwendungsentwickler mit umfangreicher Erfahrung in
+      der Web- und Software-Entwicklung strebe ich kontinuierlich danach,
+      bessere Lösungen für anspruchsvolle Herausforderungen zu finden. Ich bin
+      stets bestrebt, neue Technologien und Werkzeuge mir anzueignen.
     </p>
 
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Ich helfe Unternehmen, Zeit und Geld zu sparen und gleichzeitig mehr
-      Einnahmen zu erzielen. Dies erreiche ich, indem ich bestehende
-      Arbeitsabläufe digitalisiere und optimiere, bestehende Prozesse verbessere
-      und neue automatisierte Abläufe einführe. Meine Aufgaben reichen dabei von
-      Beratung bis hin zur Umsetzung und individuellen Entwicklung von Web- und
-      Software-Projekten.
+      Mein Ziel ist es, Unternehmen dabei zu unterstützen, Zeit und Geld zu
+      sparen und gleichzeitig ihre Einnahmen zu steigern. Durch die
+      Digitalisierung und Optimierung bestehender Arbeitsabläufe, die
+      Verbesserung von Prozessen und die Einführung automatisierter Workflows
+      trage ich dazu bei, Effizienzsteigerungen zu erzielen. Von der Beratung
+      bis hin zur individuellen Entwicklung von Web- und Software-Projekten
+      stehe ich zur Verfügung.
     </p>
 
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Einige meiner Projekte findest du auf
+      Einige meiner abgeschlossenen Projekte kannst du
       <link-button link="https://github.com/paifgx">Github</link-button>
-      oder meinem <link-button link="/">Portfolio</link-button>.
+      oder meinem
+      <link-button
+        link="https://drive.google.com/drive/folders/1qu9Jt64JdiDWy5RSHzPzi-Rvjh-z1Edm?usp=sharing"
+      >
+        Portfolio
+      </link-button>
+      entnehmen.
     </p>
 
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Außerhalb meines Arbeitslebens spiele ich gerne Computerspiele, höre alle
-      Arten von Musik, hänge mit meinen Freunden auf Discord ab oder gehe mit
-      ihnen an die frische Luft, zum Beispiel zum wandern. Du kannst mein Leben
-      auf meinem Blog verfolgen
+      Abseits meiner beruflichen Tätigkeit beschäftige ich mich gerne mit dem
+      Thema Künstliche Intelligenz. In meiner Freizeit spiele ich
+      Computerspiele, höre Musik verschiedenster Genres und verbringe Zeit mit
+      meinen Freunden auf Discord. Außerdem genieße ich es, an der frischen Luft
+      zu sein, beispielsweise beim Wandern. Du kannst mein Leben auf.
       <link-button link="https://www.instagram.com/paifgx/">
         Instagram
       </link-button>
       oder
-      <link-button link="https://twitter.com/paifgx">Twitter</link-button>.
+      <link-button link="https://twitter.com/paifgx">Twitter</link-button>
+      verfolgen.
+    </p>
+
+    <p
+      class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
+    >
+      Ich freue mich darauf, mit dir zusammenzuarbeiten und deine Projekte
+      erfolgreich umzusetzen. Bitte zögere nicht
+      <link-button link="mailto:info@garten.dev"
+        >mich zu kontaktieren</link-button
+      >, um weitere Informationen zu erhalten. Ich stehe dir gerne zur
+      Verfügung, um deine Anforderungen zu besprechen und mögliche
+      Lösungsansätze zu erörtern. Um einen passenden Zeitpunkt für ein Gespräch
+      zu finden, kannst du auch direkt einen Termin in meinem Kalender
+      vereinbaren:
+      <link-button link="https://calendly.com/gartendev/30min"
+        >Link zu Calendly</link-button
+      >.
     </p>
 
     <!--
