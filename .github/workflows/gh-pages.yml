@@ -14,3 +14,4 @@ jobs:
                     username: 'paifgx'
                     reponame: 'garten.dev'
                     token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+                    cname: 'garten.dev'
