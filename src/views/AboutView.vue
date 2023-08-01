@@ -10,32 +10,41 @@ import LinkButton from "@/components/ui/LinkButton.vue";
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Mein Name ist Patrik Garten, und ich bin ein erfahrener, in Deutschland
-      ansässiger Softwareentwickler. Ich habe mich auf Web- und App-Entwicklung
-      spezialisiert und habe umfangreiche Kenntnisse und Erfahrung in einer
-      Vielzahl von Programmiersprachen und Frameworks, wobei meine
-      Spezialisierung auf TypeScript/JavaScript, Kotlin/Java und PHP liegt.
+      Als engagierter Softwareentwickler und versierter Informatiker nutze ich
+      mein technisches Know-how und meine Leidenschaft für das Programmieren, um
+      komplexe Softwarelösungen zu erstellen. Ich verfüge über Kenntnisse in
+      PHP, Kotlin und TypeScript, unterstützt durch ein tiefgreifendes
+      Verständnis effizienter Softwarearchitekturen.
     </p>
 
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Als selbstständiger Anwendungsentwickler mit umfangreicher Erfahrung in
-      der Web- und Software-Entwicklung strebe ich kontinuierlich danach,
-      bessere Lösungen für anspruchsvolle Herausforderungen zu finden. Ich bin
-      stets bestrebt, neue Technologien und Werkzeuge mir anzueignen.
+      Ich strebe stets nach Perfektion, betrachte das Gesamtbild und
+      gewährleiste so robuste, skalierbare und optimierte Lösungen. Ich liebe
+      es, komplexe Probleme in einfache und effektive Lösungen zu verwandeln,
+      die echten Mehrwert bieten.
     </p>
 
     <p
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
-      Mein Ziel ist es, Unternehmen dabei zu unterstützen, Zeit und Geld zu
-      sparen und gleichzeitig ihre Einnahmen zu steigern. Durch die
-      Digitalisierung und Optimierung bestehender Arbeitsabläufe, die
-      Verbesserung von Prozessen und die Einführung automatisierter Workflows
-      trage ich dazu bei, Effizienzsteigerungen zu erzielen. Von der Beratung
-      bis hin zur individuellen Entwicklung von Web- und Software-Projekten
-      stehe ich zur Verfügung.
+      Mein Ziel ist es daher: Unternehmen zu unterstützen effizienter zu
+      arbeiten und dabei Geld zu sparen. Dazu nutze ich modernste Technologien,
+      um Prozesse einfacher und erfolgreich zu gestalten, von der Verbesserung
+      bestehender Arbeitsweisen bis zur Entwicklung neuer digitaler Hilfsmittel.
+      In der sich rasch verändernden Technologiebranche gedeihe ich in einer
+      kreativen Umgebung und bin immer bereit, innovative Wege zu gehen. Dieser
+      Mix aus bewährten Methoden und frischem Denken ermöglicht es mir,
+      praktische und aufregende Lösungen für jedes Business-Niveau zu bieten.
+    </p>
+
+    <p
+      class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
+    >
+      Über alles hinaus ist meine Liebe für meine Arbeit echt. Ich bin stolz auf
+      meine Arbeit und es erfüllt mich mit großer Freude, Unternehmen im
+      digitalen Zeitalter zum Erfolg zu verhelfen.
     </p>
 
     <p
@@ -58,14 +67,8 @@ import LinkButton from "@/components/ui/LinkButton.vue";
       Abseits meiner beruflichen Tätigkeit beschäftige ich mich gerne mit dem
       Thema Künstliche Intelligenz. In meiner Freizeit spiele ich
       Computerspiele, höre Musik verschiedenster Genres und verbringe Zeit mit
-      meinen Freunden auf Discord. Außerdem genieße ich es, an der frischen Luft
-      zu sein, beispielsweise beim Wandern. Du kannst mein Leben auf.
-      <link-button link="https://www.instagram.com/paifgx/">
-        Instagram
-      </link-button>
-      oder
-      <link-button link="https://twitter.com/paifgx">Twitter</link-button>
-      verfolgen.
+      meinen Freunden. Außerdem genieße ich es, an der frischen Luft zu sein,
+      beispielsweise beim Wandern oder auf Musik-Festivals.
     </p>
 
     <p
@@ -80,8 +83,8 @@ import LinkButton from "@/components/ui/LinkButton.vue";
       Lösungsansätze zu erörtern. Um einen passenden Zeitpunkt für ein Gespräch
       zu finden, kannst du auch direkt einen Termin in meinem Kalender
       vereinbaren:
-      <link-button link="https://calendly.com/gartendev/30min"
-        >Link zu Calendly</link-button
+      <link-button link="https://app.reclaim.ai/m/gartendev/meeting"
+        >Link zu Reclaim</link-button
       >.
     </p>
 
