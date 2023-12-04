@@ -28,7 +28,7 @@
       class="text-sm md:text-base leading-relaxed slg:text-lg lg:leading-loose"
     >
       Telefon: +49 1516 4587494<br />
-      E-Mail: info@patrikgarten.de
+      E-Mail: info@garten.dev
     </p>
 
     <h3

@@ -5,42 +5,35 @@ import FooterNavigation from "@/components/layout/FooterNavigation.vue";
 
 <template>
   <header class="relative">
-    <main-navigation />
+    <main-navigation/>
   </header>
 
   <main class="max-w-screen-lg px-8 mx-auto sm:px-16 slg:px-24 mt-36 mb-8">
     <router-view v-slot="{ Component }">
       <transition name="fade">
-        <component :is="Component" />
+        <component :is="Component"/>
       </transition>
     </router-view>
   </main>
 
   <footer>
-    <!-- TrustBox widget - Micro Review Count -->
-    <div
-      class="trustpilot-widget w-full pt-4 pb-8"
-      data-locale="de-DE"
-      data-template-id="5419b6a8b0d04a076446a9ad"
-      data-businessunit-id="648877e11a4097c3f10c7354"
-      data-style-height="24px"
-      data-style-width="100%"
-      data-theme="dark"
-      data-min-review-count="10"
-      data-style-alignment="center"
-    >
-      <a
-        class="text-center"
-        href="https://de.trustpilot.com/review/garten.dev"
-        target="_blank"
-        rel="noopener"
-        >Trustpilot</a
-      >
-    </div>
-    <!-- End TrustBox widget -->
-
-    <footer-navigation />
+    <footer-navigation/>
   </footer>
+
+  <!-- ProvenExpert Bewertungssiegel -->
+  <a class="hidden lg:block z-50 fixed right-0 bottom-20"
+     href="https://www.provenexpert.com/patrik-garten-development/?utm_source=Widget&amp;utm_medium=Widget&amp;utm_campaign=Widget"
+     title="Kundenbewertungen &amp; Erfahrungen zu Patrik Garten Development. Mehr Infos anzeigen."
+     target="_blank"
+     rel="noopener noreferrer"
+  >
+    <img src="https://images.provenexpert.com/76/a5/cebef886f7a565df0ebe6b8e9868/widget_landscape_180_de_0.png"
+         class="border-0"
+         alt="Erfahrungen &amp; Bewertungen zu Patrik Garten Development"
+         width="180"
+         height="150"
+    />
+  </a>
 </template>
 
 <style>

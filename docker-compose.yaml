@@ -1,0 +1,13 @@
+version: "3.4"
+services:
+  gartendev_site:
+    container_name: gartendev_site
+    image: node:lts-alpine
+    working_dir: /var/www/html/app/
+    entrypoint: /bin/sh
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./:/var/www/html/app
+    tty: true
+    user: "node"
