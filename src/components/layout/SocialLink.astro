@@ -5,10 +5,9 @@ interface Props {
   text: string;
   raw: string;
   link: string;
-  id: string;
 }
 
-const { text, raw, link, id } = Astro.props;
+const { text, raw, link } = Astro.props;
 ---
 
 <a
@@ -21,7 +20,7 @@ const { text, raw, link, id } = Astro.props;
   <p class="sr-only">{text}</p>
 
   <Svg
-    class="text-woodsmoke hover:text-tiber dark:hover:text-granny-apple dark:text-alice-blue"
+    class="text-woodsmoke hover:text-tiber dark:text-alice-blue dark:hover:text-granny-apple"
     raw={raw}
     height={30}
     width={30}
