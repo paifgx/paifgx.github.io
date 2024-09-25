@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<script>
+  const serviceCards = document.querySelectorAll("[data-service-card]");
+
+  serviceCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("active");
+    });
+  });
+</script>
+
+<div
+  class="dark:bg-woodsmoke group relative flex flex-wrap items-center justify-center rounded bg-alice-blue p-6 shadow hover:shadow-lg"
+  data-service-card
+>
+  <h3
+    class="text-tiber dark:text-granny-apple absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform cursor-default text-2xl font-semibold transition-all duration-300 group-hover:opacity-0"
+  >
+    {title}
+  </h3>
+  <p
+    class="cursor-default text-justify opacity-0 transition transition-all duration-150 ease-in group-hover:opacity-100"
+  >
+    {description}
+  </p>
+</div>
+
+<style>
+  .active h3 {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+
+  .active p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
