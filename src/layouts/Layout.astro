@@ -1,12 +1,6 @@
 ---
 import MainNavigation from "../components/layout/MainNavigation.astro";
 import Footer from "../components/layout/Footer.astro";
-
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,11 +11,11 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
 
     <title>Patrik Garten · Zukunft sichern, heute!</title>
   </head>
-  <body class="dark:bg-woodsmoke bg-alice-blue">
+  <body class="bg-alice-blue dark:bg-woodsmoke">
     <MainNavigation />
 
     <main>
@@ -51,31 +45,31 @@ const { title } = Astro.props;
   }
 
   h1 {
-    @apply text-tiber dark:text-granny-apple text-5xl font-bold;
+    @apply text-5xl font-bold text-tiber dark:text-granny-apple;
   }
 
   h2 {
-    @apply text-tiber dark:text-granny-apple text-4xl font-bold;
+    @apply text-4xl font-bold text-tiber dark:text-granny-apple;
   }
 
   h3 {
-    @apply text-tiber dark:text-granny-apple text-3xl font-bold;
+    @apply text-3xl font-bold text-tiber dark:text-granny-apple;
   }
 
   h4 {
-    @apply text-tiber dark:text-granny-apple text-2xl font-bold;
+    @apply text-2xl font-bold text-tiber dark:text-granny-apple;
   }
 
   h5 {
-    @apply text-tiber dark:text-granny-apple text-xl font-bold;
+    @apply text-xl font-bold text-tiber dark:text-granny-apple;
   }
 
   h6 {
-    @apply text-tiber dark:text-granny-apple text-lg font-bold;
+    @apply text-lg font-bold text-tiber dark:text-granny-apple;
   }
 
   section {
-    @apply text-woodsmoke dark:bg-woodsmoke flex flex-col justify-center bg-alice-blue px-8 py-16 dark:text-alice-blue;
+    @apply flex flex-col justify-center bg-alice-blue px-8 py-16 text-woodsmoke dark:bg-woodsmoke dark:text-alice-blue;
   }
 
   .btn,
@@ -84,7 +78,7 @@ const { title } = Astro.props;
   }
 
   .btn-primary {
-    @apply bg-tiber hover:bg-tiber-900 text-alice-blue;
+    @apply bg-tiber text-alice-blue hover:bg-tiber-900;
   }
 
   .btn-secondary {
@@ -92,10 +86,10 @@ const { title } = Astro.props;
   }
 
   .btn-outline {
-    @apply border-tiber text-tiber hover:bg-tiber-900 border hover:text-alice-blue dark:border-alice-blue dark:text-alice-blue;
+    @apply border border-tiber text-tiber hover:bg-tiber-900 hover:text-alice-blue dark:border-alice-blue dark:text-alice-blue;
   }
 
   .btn-info {
-    @apply bg-amaranth hover:bg-amaranth-900 text-alice-blue hover:text-alice-blue;
+    @apply bg-amaranth text-alice-blue hover:bg-amaranth-900 hover:text-alice-blue;
   }
 </style>
