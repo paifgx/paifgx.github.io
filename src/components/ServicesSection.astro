@@ -1,0 +1,25 @@
+---
+import ServiceCard from "./layout/ServiceCard.astro";
+---
+
+<section class="dark:bg-tiber bg-granny-apple h-auto">
+  <div class="container mx-auto text-center">
+    <h2 class="mb-10 text-4xl font-bold">Leistungen</h2>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <ServiceCard
+        title="KI-Lösungsarchitektur & Entwicklung"
+        description="Maßgeschneiderte KI-Lösungen, die Ihre Anforderungen erfüllen, Prozesse optimieren und Kosten nachhaltig senken."
+      />
+
+      <ServiceCard
+        title="Softwareentwicklung"
+        description="Innovative Softwarelösungen, die Ihre Geschäftsprozesse effizient optimieren und Ihnen einen entscheidenden Wettbewerbsvorteil sichern."
+      />
+      <ServiceCard
+        title="IT-Dozent"
+        description="Praxisnahe Schulungen für Teams und Auszubildende, um die neuesten IT-Themen und Digitalisierungsstrategien erfolgreich umzusetzen."
+      />
+    </div>
+  </div>
+</section>
