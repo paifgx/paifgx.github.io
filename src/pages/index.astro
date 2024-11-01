@@ -1,13 +1,94 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-import Hero from "../components/HeroSection.astro";
-import Service from "../components/ServicesSection.astro";
-import Contact from "../components/ContactSection.astro";
+import SectionHero from "../components/index/SectionHero.astro";
+import SectionPartners from "../components/index/SectionPartners.astro";
+import SectionWelcome from "../components/index/SectionWelcome.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout title="Startseite">
-  <Hero />
-  <Service />
-  <Contact />
-</Layout>
+<BaseLayout>
+  <SectionHero />
+  <SectionPartners />
+  <SectionWelcome />
+
+  <!-- Dienstleistungen -->
+  <section id="services" aria-label="Dienstleistungen">
+    <article>
+      <h3>Digitale Transformation und KI-Lösungen für Ihr Unternehmen</h3>
+      <p>
+        Nutzen Sie die vielfältigen Möglichkeiten der digitalen Transformation
+        und künstlichen Intelligenz, um Prozesse zu optimieren...
+      </p>
+      <ul>
+        <li>Effizienzsteigerung durch Automatisierung</li>
+        <li>Skalierbare Lösungen für Wachstum</li>
+        <li>Wettbewerbsvorteile durch Innovation</li>
+      </ul>
+      <a href="#more-info" class="learn-more-button">Mehr erfahren</a>
+    </article>
+
+    <article>
+      <h3>Maßgeschneiderte Softwarelösungen, Engineering und IT-Beratung</h3>
+      <p>
+        Unsere spezialisierten Dienstleistungen im Bereich der digitalen
+        Transformation bieten Ihnen genau die Lösungen...
+      </p>
+      <ul>
+        <li>Angepasste Softwarelösungen</li>
+        <li>Software Engineering</li>
+        <li>IT Consulting</li>
+      </ul>
+      <a href="#more-info" class="learn-more-button">Mehr erfahren</a>
+    </article>
+
+    <article>
+      <h3>Entwickeln Sie Ihre IT-Kompetenz mit uns</h3>
+      <p>
+        Als erfahrener IT-Dozent biete ich praxisnahe Schulungen und
+        individuelles Coaching...
+      </p>
+      <ul>
+        <li>Praxisorientierte Schulungen</li>
+        <li>Maßgeschneidertes Coaching</li>
+        <li>Aktuelle Technologietrends</li>
+      </ul>
+      <a href="#more-info" class="learn-more-button">Mehr erfahren</a>
+    </article>
+  </section>
+
+  <!-- Kundenbewertungen -->
+  <section id="reviews" aria-label="Kundenbewertungen">
+    <h2>Kundenbewertungen</h2>
+    <div class="reviews">
+      <blockquote>
+        <p>
+          „Die Zusammenarbeit mit Patrik war eine echte Bereicherung für unser
+          Unternehmen.“
+        </p>
+        <footer>– Anna Müller, Leiterin Tech Solutions</footer>
+      </blockquote>
+      <blockquote>
+        <p>
+          „Dank Patriks Lösungen konnten wir unsere Effizienz erheblich
+          steigern.“
+        </p>
+        <footer>– Markus Schmidt, Geschäftsführer, Innovate GmbH</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Call-to-Action -->
+  <section id="contact" aria-label="Kontakt">
+    <h2>Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten</h2>
+    <p>
+      Vereinbaren Sie jetzt ein unverbindliches Beratungsgespräch, um Ihre
+      digitalen Ziele effizient und nachhaltig zu erreichen. Lassen Sie uns
+      gemeinsam den nächsten Schritt in Ihrer digitalen Transformation gehen.
+    </p>
+    <div class="cta-buttons">
+      <a href="mailto:contact@patrik-example.com" class="cta-button"
+        >Kostenloses Erstgespräch</a
+      >
+      <a href="#more-info" class="cta-button secondary">Mehr erfahren</a>
+    </div>
+  </section>
+</BaseLayout>

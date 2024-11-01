@@ -1,25 +1,24 @@
 {
   "name": "garten.dev",
-  "dockerFile": "Dockerfile",
-  "context": "..",
-  "appPort": [4321],
-  "postCreateCommand": "pnpm install",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "extensions": [
-        "ms-azuretools.vscode-docker",
-        "esbenp.prettier-vscode",
         "astro-build.astro-vscode",
+        "bradlc.vscode-tailwindcss",
         "dbaeumer.vscode-eslint",
-        "GitHub.vscode-github-actions"
+        "esbenp.prettier-vscode",
+        "Vue.volar"
       ]
     }
   },
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-  ],
+  "forwardPorts": [4321],
   "remoteUser": "node"
 }

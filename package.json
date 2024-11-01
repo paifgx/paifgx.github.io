@@ -1,26 +1,23 @@
 {
-  "name": "gullible-galaxy",
+  "name": "squalid-singularity",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --host",
-    "start": "astro dev",
+    "start": "astro dev --host",
     "build": "astro check && astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/tailwind": "^5.1.1",
-    "@cxa/astro-inline-svg": "^0.5.1",
-    "astro": "^4.15.9",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.8"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/vue": "^4.5.2",
+    "@headlessui/vue": "^1.7.23",
+    "@heroicons/vue": "^2.1.5",
+    "astro": "^4.16.8",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vue": "^3.5.12"
   }
 }

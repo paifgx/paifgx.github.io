@@ -1,0 +1,25 @@
+---
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patriks Webseite</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <Header currentPath={currentPath} client:load />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
