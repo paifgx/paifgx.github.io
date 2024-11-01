@@ -1,0 +1,30 @@
+---
+const { title, subtitle, paragraphs, imagePosition = 'right', image } = Astro.props;
+---
+
+<article class={`container mx-auto px-6 lg:px-0 py-16 flex flex-col ${imagePosition === 'left' ? 'lg:flex-row-reverse' : 'lg:flex-row'} bg-white rounded-lg`} role="region" aria-labelledby="section-title">
+  <div class="lg:w-1/2 text-left">
+    <h3 class="text-primary-600 text-2xl font-semibold tracking-wide">{subtitle}</h3>
+    <h2 id="section-title" class="text-gray-900 text-4xl font-extrabold mt-2 mb-6">{title}</h2>
+    <p class="text-gray-700 leading-relaxed mb-8">{paragraphs.intro}</p>
+
+    <div class="space-y-8">
+      {paragraphs.details.map((detail) => (
+        <div class="border-b border-gray-200 pb-8">
+          <h4 class="text-xl font-bold text-gray-800">{detail.heading}</h4>
+          <p class="text-gray-600 leading-relaxed">{detail.text}</p>
+        </div>
+      ))}
+    </div>
+    
+    <button type="button" class="mt-8 bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" aria-label="Mehr erfahren">
+      <a href="#more-info" class="text-sm font-semibold text-gray-900">
+        Mehr erfahren
+      </a>
+    </button>
+  </div>
+
+  <div class={`lg:w-1/2 mt-12 lg:mt-0 flex justify-center items-center ${imagePosition === 'left' ? 'lg:pr-8' : 'lg:pl-8'}`}>
+    <Fragment set:html={image} />
+  </div>
+</article>
