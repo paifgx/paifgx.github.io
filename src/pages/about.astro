@@ -1,7 +1,124 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import TimeEntry from "@components/about/TimeEntry.astro";
+
+const timeEntries = [
+  {
+    id: 1,
+    date: "1998",
+    title: "Die Anfänge der Informatik-Leidenschaft",
+    content:
+      "Bereits im Alter von ca. 8 Jahren begann meine Reise in die Welt der Informatik, inspiriert durch meinen Onkel, der mir zeigte, wie faszinierend Technik und Computer sein können. Seine Begeisterung für das Programmieren und das Experimentieren mit Hardware weckte meine Neugier und führte dazu, dass ich selbst anfangen wollte, Programme zu schreiben und die Funktionsweise von Computern zu verstehen. Diese frühe Begeisterung legte den Grundstein für meinen späteren beruflichen Weg und meinen Wunsch, Informatik zu studieren.",
+  },
+  {
+    id: 2,
+    date: "2013",
+    title: "Abschluss der Ausbildung zum Fachinformatiker",
+    content:
+      "Im diesem Jahr schloss ich erfolgreich meine Ausbildung zum Fachinformatiker für Anwendungsentwicklung ab. Diese Zeit prägte meine praktischen Kenntnisse in der Softwareentwicklung und legte den Grundstein für meine berufliche Laufbahn. Hier sammelte ich erste Erfahrungen in der Entwicklung von Softwareprojekten und dem Lösen komplexer technischer Herausforderungen.",
+  },
+  {
+    id: 3,
+    date: "2017",
+    title: "Schritt in die Selbstständigkeit und erste Projekte",
+    content:
+      "Während meines Studiums wagte ich den Schritt in die Selbstständigkeit. Zu Beginn arbeitete ich an Projekten zur Entwicklung von Webanwendungen und maßgeschneiderten Softwarelösungen für kleine Unternehmen und Start-ups. Diese Erfahrungen schulten mein Verständnis für Kundenbedürfnisse, Flexibilität und projektbasierte Arbeit. Erste erfolgreiche Implementierungen und zufriedene Kunden bestärkten mich in meiner Entscheidung.",
+  },
+  {
+    id: 4,
+    date: "2019",
+    title: "Herausforderungen und berufliche Vertiefung",
+    content:
+      "Um meine Expertise zu erweitern, konzentrierte ich mich intensiv auf den Ausbau meiner Kenntnisse in verschiedenen Programmiersprachen und Technologien. Diese Phase war geprägt von anspruchsvollen Projekten, bei denen ich Lernkurven überwand und meine Fähigkeit zur Problemlösung weiter ausbaute. Ich entwicklete mich zum Software Engineer.",
+  },
+  {
+    id: 5,
+    date: "2023",
+    title: "Voller Fokus auf die Selbstständigkeit als AI Solution Architect",
+    content:
+      "Ich verlagerte meine gesamte Aufmerksamkeit auf meine Selbstständigkeit. Als AI Solution Architect & Developer spezialisierte ich mich auf Softwareentwicklung und Künstliche Intelligenz, um innovative Lösungen zu entwickeln und Unternehmen bei der digitalen Transformation zu unterstützen.",
+  },
+  {
+    id: 6,
+    date: "2024",
+    title:
+      "Vertiefung der Expertise in Künstlicher Intelligenz und IT-Dozentur",
+    content:
+      "Ich begann meine Rolle als KI-Experte im DACH-Raum zu festigen, indem ich neue Serviceangebote im Bereich der digitalen Transformation für KMUs entwickelte und meine TÜV Zertifizierung als AI Consultant ablegte. Parallel dazu startete ich meine Tätigkeit als IT-Dozent und gab mein Wissen rund um Informatik weiter. Zu den Themen, die ich lehrte, gehörten unter anderem Webentwicklung, Netzwerksicherheit sowie die Grundlagen von Datenbanken und objektorientierter Programmierung. Diese Lehrtätigkeit ermöglichte mir, mein Wissen weiterzugeben und gleichzeitig neue Perspektiven aus der Lehre in meine Projekte zu integrieren.",
+  },
+  {
+    id: 7,
+    title: "Visionärer Unternehmer und KI-Experte",
+    content:
+      "Aktuell arbeite ich daran, meine Vision einer nachhaltigen digitalen Transformation für KMUs zu verwirklichen und als Marktführer im DACH-Raum etabliert zu sein. Dazu setze ich auf strategische Partnerschaften, die Entwicklung skalierbarer KI-Lösungen und innovative Projekte wie die Einführung maßgeschneiderter Automatisierungslösungen, die den gesamten Geschäftsprozess optimieren. Als AI Solution Architect & Develper, Software Engineer und IT-Dozent setze ich neue Maßstäbe in der Anwendung von KI und digitalen Lösungen, indem ich einzigartige Methoden wie adaptive Algorithmen und optimierte Datenpipelines einsetze, um den Erfolg meiner Kunden nachhaltig zu steigern. Mein Fokus liegt darauf, Herausforderungen proaktiv anzugehen und neue Standards in der KI-Branche zu setzen.",
+  },
+];
 ---
 
-<BaseLayout>
-  <h2>Über mich</h2>
+<BaseLayout
+  classDefintion="relative flex min-h-full flex-col xl:flex-row items-center relative min-h-screen"
+>
+  <div
+    class="xl:sticky xl:top-0 bg-gray-900 flex-1 self-stretch flex justify-center items-center xl:max-h-screen xl:-mt-16 text-gray-700 dark:text-gray-300"
+  >
+    <div class="w-3/4 mx-auto flex flex-col gap-y-8 py-16">
+      <h2 class="text-4xl font-bold text-gray-900 dark:text-gray-100">
+        Patrik's Werdegang
+      </h2>
+
+      <p class="text-lg">
+        Patrik bringt umfangreiche Erfahrung in der Entwicklung innovativer
+        KI-Lösungen mit. Seine Fähigkeiten in der Softwareentwicklung und im
+        IT-Training machen ihn zu einem wertvollen Partner für Unternehmen.
+      </p>
+
+      <div class="flex flex-wrap xl:flex-row gap-8">
+        <div class="xl:w-[calc(50%-1rem)]">
+          <p class="font-bold">KI-Entwicklung</p>
+          <p>
+            Maßgeschneiderte KI-Lösungen, die Effizienz und Innovation fördern.
+          </p>
+        </div>
+        <div class="xl:w-[calc(50%-1rem)]">
+          <p class="font-bold">Softwareentwicklung</p>
+          <p>
+            Entwicklung skalierbarer Softwarelösungen für nachhaltiges Wachstum.
+          </p>
+        </div>
+        <div class="xl:w-[calc(50%-1rem)]">
+          <p class="font-bold">IT Coaching</p>
+          <p>Individuelle Schulungen zur Stärkung von IT-Kompetenzen.</p>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20"
+      >
+        Download CV
+      </button>
+    </div>
+  </div>
+
+  <div class="flex-1 flex flex-row">
+    <div class="hidden xl:inline-flex w-3 bg-gray-900">
+      <svg class="w-1.5 h-full" aria-hidden="true">
+        <defs>
+          <pattern id=":S4:" width="6" height="8" patternUnits="userSpaceOnUse">
+            <path
+              d="M0 0H6M0 8H6"
+              class="stroke-gray-900/10 xl:stroke-white/10 dark:stroke-white/10"
+              fill="none"></path>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#:S4:)"></rect>
+      </svg>
+    </div>
+
+    <div class="flex-1">
+      <div class="w-3/4 mx-auto py-8 flex flex-col gap-y-8">
+        {timeEntries.map((entry) => <TimeEntry {...entry} />)}
+      </div>
+    </div>
+  </div>
 </BaseLayout>

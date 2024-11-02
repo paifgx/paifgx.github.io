@@ -3,6 +3,8 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.astro";
 
 const currentPath = Astro.url.pathname;
+
+const { classDefintion } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +18,7 @@ const currentPath = Astro.url.pathname;
   <body>
     <Header currentPath={currentPath} client:load />
 
-    <main>
+    <main class={classDefintion}>
       <slot />
     </main>
 

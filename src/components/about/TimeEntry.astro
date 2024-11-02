@@ -1,0 +1,43 @@
+---
+import moment from "moment";
+import "moment/locale/de";
+
+const { id, date, title, content } = Astro.props;
+
+moment.locale("de");
+
+let formattedDate;
+if (date) {
+  if (moment(date, "YYYY", true).isValid()) {
+    formattedDate = moment(date, "YYYY").format("YYYY");
+  } else if (moment(date, "YYYY-MM", true).isValid()) {
+    formattedDate = moment(date, "YYYY-MM").format("MM.YYYY");
+  } else if (moment(date, "YYYY-MM-DD", true).isValid()) {
+    formattedDate = moment(date, "YYYY-MM-DD").format("DD.MM.YYYY");
+  } else {
+    formattedDate = moment(date).format("DD.MM.YYYY");
+  }
+} else {
+  formattedDate = "Heute";
+}
+---
+
+<article id=`entry-${id}`>
+  <header>
+    <div>
+      <time datetime={date}>
+        {formattedDate}
+      </time>
+
+      <div class="h-[0.0625rem] w-3.5 bg-gray-400"></div>
+    </div>
+  </header>
+
+  <div class="py-4">
+    <h3 class="text-xl pb-2">{title}</h3>
+
+    <p class="text-base/7">
+      {content}
+    </p>
+  </div>
+</article>
