@@ -148,7 +148,7 @@ onBeforeUnmount(() => {
       id="case-studies-heading"
       class="mt-2 text-3xl font-bold text-gray-900 dark:text-white"
     >
-      Case Highlights aus aktuellen Mandaten
+      Ausschnitt aus vergangenen Mandaten
     </h2>
     <p class="mt-3 text-base text-gray-600 dark:text-gray-300">
       Drei Blickwinkel pro Projekt: Ausgangslage, Ansatz und was davon im Alltag
