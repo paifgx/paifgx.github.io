@@ -6,59 +6,83 @@ const caseStudies = ref([
     company: "FlowCraftDB",
     timeframe: "12/2024 – heute",
     role: "AI Solution Architect & Consultant (Freelancer)",
-    focus: "Event-getriebene Datenanreicherung im E-Commerce",
-    impact: [
-      "E2E-Architektur für RAG-Assistenten, Tool-Use und orchestrierte LLM-Flows (GPT-4, Gemini, LangChain).",
-      "Security-by-Design nach BSI IT-Grundschutz, Observability mit Prometheus/Grafana und ELK.",
-    ],
+    mission: "Event-getriebene Datenanreicherung im E-Commerce",
+    situation:
+      "Heterogene Shop- & ERP-Daten, viel manuelle Recherche und langsame Entscheidungswege für Kampagnen.",
+    approach:
+      "RAG-Assistants, orchestrierte LLM-Flows (GPT-4, Gemini, LangChain) sowie Event-Pipelines auf FastAPI/Docker/Kubernetes.",
+    result:
+      "Produktteams erhalten konsolidierte Insights in Echtzeit, Freigaben erfolgen auf Basis dokumentierter Guardrails & Observability.",
     stack:
-      "GPT-4, Gemini, LangChain, FastAPI, Docker, Kubernetes, AWS (S3/SQS/ECR), Azure, MongoDB, Redis, Terraform, GitHub Actions, Prometheus, Grafana, ELK, Pytest, OAuth2, Keycloak.",
+      "GPT-4, Gemini, LangChain, FastAPI, Docker, Kubernetes, AWS (S3/SQS/ECR), Azure, MongoDB, Redis, Terraform, GitHub Actions, Prometheus, Grafana, ELK, OAuth2, Keycloak.",
   },
   {
     company: "CANCOM",
     timeframe: "02/2025 – 08/2025",
-    role: "Technical Lead Conversational AI (Freelancer)",
-    focus: "Agentenbasierte Multi-LLM-Systeme & Flutter-App Delivery",
-    impact: [
-      "Architektur & Strategie für sichere, skalierbare Conversational AI mit React, TypeScript & FastAPI.",
-      "CI/CD, QA und Security-Workstreams gemäß ISO 27001 & BSI 200-x.",
-    ],
+    role: "AI Consultant & Software Engineer (Freelancer)",
+    mission: "CANCOM Assistant Framework absichern & produktisieren",
+    situation:
+      "Mehrere Geschäftsbereiche wollten ChatGPT-ähnliche Bots mit Unternehmenswissen nutzen, benötigten aber Governance, Datenkontrolle und flexible LLM-Auswahl.",
+    approach:
+      "LLM-Orchestrierung mit GPT-4/4o, GPT-3.5 und Mistral, Aufbau von Knowledge Bases, SSO-/Berechtigungskonzepten und ERP-/CRM-Connectoren plus Admin-Governance.",
+    result:
+      "Unternehmen erhalten individuell konfigurierbare Bots mit überprüfbaren Quellen, DSGVO-konformer Datenhaltung und skalierbarer Betriebsführung.",
     stack:
-      "React, TypeScript, Python, FastAPI, Docker, Kubernetes, AWS, Azure, IAM, Flutter, Dart, REST, Microservices.",
+      "GPT-4/4o, GPT-3.5 Turbo, Mistral, LangChain, Azure/AWS, SSO/SCIM, ERP-/CRM-APIs, Monitoring & Guardrails.",
+  },
+  {
+    company: "CANCOM",
+    timeframe: "12/2024 – 06/2025",
+    role: "Teamlead & Flutter Engineer (Freelancer)",
+    mission: "Interne Service-App für Operations & Vertrieb liefern",
+    situation:
+      "Backend-, Mobile- und Security-Teams benötigten gemeinsame Steuerung, um eine interne Flutter-App zuverlässig zu liefern.",
+    approach:
+      "Teamlead-Funktion für Backlog, QA, CI/CD und Flutter-Delivery übernommen; Stakeholder-Alignment mit Product/Security, Runbooks und Releaserhythmen etabliert.",
+    result:
+      "Stabile Releases, nachvollziehbare Verantwortlichkeiten und Flutter-Features, die interne Abläufe beschleunigen.",
+    stack:
+      "Flutter, Dart, REST/gRPC-APIs, Firebase/AWS, GitHub Actions, QA-Automatisierung, Observability.",
   },
   {
     company: "Universitätsklinikum Bonn AöR",
     timeframe: "11/2025 – heute",
     role: "AI Solution Architect & Consultant (Freelancer)",
-    focus: "GenAI-Integrationen für Forschung & Versorgung",
-    impact: [
-      "Micronaut/Kotlin-Services, MSSQL-Backends und Integrationen in bestehende Klinikprozesse.",
-      "Governance & Security in hochregulierten Umfeldern, inklusive DSGVO & Datenschutz-Folgenabschätzungen.",
-    ],
+    mission: "Middleware für personalisierte Medizin & Forschungsnetzwerke",
+    situation:
+      "Klinische Datensätze mussten zwischen lokalen Krankenhaus-Systemen und nationalen Forschungsverbünden interoperabel ausgetauscht werden – unter strengen Datenschutz- und Aufsichtsanforderungen.",
+    approach:
+      "Kotlin/Micronaut-Backend mit strikter Schema-Validierung, Prozess-Tracking und automatisierter Transformation heterogener Datenströme in standardisierte Formate; Governance mit Datenschutz, Medizin-IT und Forschungsgremien abgestimmt.",
+    result:
+      "Qualitätsgesicherte Datenintegration, revisionssichere Nachvollziehbarkeit und automatisierte Übergaben an Forschungsdatenbanken – ohne sensible Interna zu veröffentlichen.",
     stack:
-      "Kotlin, Micronaut, MSSQL, OAuth2, Keycloak, Docker, Azure, Observability.",
+      "Kotlin, Micronaut, Azure, MSSQL, Keycloak/IAM, Observability-Playbooks, DSGVO/DPIA-Governance.",
   },
   {
     company: "AICT Group",
     timeframe: "06/2024 – heute",
     role: "Co-Founder & CIO",
-    focus: "KI-Plattform zur Konfliktprävention (LLMs & Knowledge Graphs)",
-    impact: [
-      "Realtime-Analytics, Microservices und Governance-Strukturen für sensible Daten.",
-      "Team-Enablement & Security/Privacy-by-Design in hybriden Cloud-Setups.",
-    ],
+    mission: "KI-Plattform zur Konfliktprävention (LLMs & Knowledge Graphs)",
+    situation:
+      "Sensible Fallanalysen sollten in Echtzeit ausgewertet werden, während Datenschutz und Zugriffskontrollen streng geregelt bleiben.",
+    approach:
+      "Knowledge Graphs, LLM-Orchestrierung und Microservices mit Security/Privacy-by-Design. Governance-Modelle, um Partnerorganisationen einzubinden.",
+    result:
+      "Operative Teams erhalten belastbare Lagebilder, Zugriffe sind revisionssicher dokumentiert und Onboarding neuer Partner dauert Stunden statt Wochen.",
     stack:
-      "LLMs, Knowledge Graphs, Microservices, Realtime Analytics, Docker, Kubernetes, AWS, Azure, Security/Privacy by Design, IT-Grundschutz, ISO 27001, IAM.",
+      "LLMs, Knowledge Graphs, Microservices, Realtime Analytics, Docker, Kubernetes, AWS, Azure, IT-Grundschutz, ISO 27001, IAM.",
   },
   {
-    company: "MeinPaul GmbH & Bringmeister GmbH",
+    company: "Bringmeister GmbH",
     timeframe: "08/2023 – 09/2024",
     role: "Backend & Fullstack Engineering (Freelancer)",
-    focus: "Skalierbare Steuer- & E-Commerce-Plattformen",
-    impact: [
-      "Laravel-, Kotlin- und TypeScript-Services inklusive AuthN/AuthZ und Performance-Tuning.",
-      "Migrationen, CI/CD-Automatisierung und DevOps-Enablement in Azure & AWS.",
-    ],
+    mission: "Skalierbare Steuer- & E-Commerce-Plattformen",
+    situation:
+      "Wachstum führte zu Engpässen in Backend-Teams, Authentifizierung und Reporting waren fehleranfällig.",
+    approach:
+      "Laravel-, Kotlin- und TypeScript-Services inklusive AuthN/AuthZ, Performance-Tuning sowie CI/CD- und Observability-Automatisierung in Azure & AWS.",
+    result:
+      "Stabile Releases, dokumentierte Verantwortlichkeiten und weniger Nacharbeit in Support-Teams dank klarer Monitoring- und Alerting-Strukturen.",
     stack:
       "PHP 8, Laravel 10, MySQL, Azure (IaaS/Blob), Cloudflare, GitHub, CI/CD, Dart, Flutter, Kotlin, TypeScript, Svelte, React Native, GraphQL, Docker, SQL, AWS.",
   },
@@ -127,8 +151,8 @@ onBeforeUnmount(() => {
       Case Highlights aus aktuellen Mandaten
     </h2>
     <p class="mt-3 text-base text-gray-600 dark:text-gray-300">
-      Auszug aus Projekten in regulierten Branchen, E-Commerce und Wissensarbeit
-      – inklusive Rollen, Wirkung und verantwortungsvollem Tech-Stack.
+      Drei Blickwinkel pro Projekt: Ausgangslage, Ansatz und was davon im Alltag
+      spürbar bleibt – plus der Tech-Stack für Ihr Audit.
     </p>
   </div>
 
@@ -153,20 +177,31 @@ onBeforeUnmount(() => {
         <p
           class="mt-4 text-sm font-semibold text-indigo-600 dark:text-indigo-400"
         >
-          {{ caseStudy.focus }}
+          {{ caseStudy.mission }}
         </p>
 
-        <ul
-          class="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-600 marker:text-indigo-600 dark:text-gray-300 dark:marker:text-indigo-400"
-        >
-          <li
-            v-for="(highlight, idx) in caseStudy.impact"
-            :key="idx"
-            class="leading-6"
-          >
-            {{ highlight }}
-          </li>
-        </ul>
+        <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-white">
+              Ausgangssituation
+            </p>
+            <p class="mt-1 leading-6">
+              {{ caseStudy.situation }}
+            </p>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-white">Ansatz</p>
+            <p class="mt-1 leading-6">
+              {{ caseStudy.approach }}
+            </p>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-white">Ergebnis</p>
+            <p class="mt-1 leading-6">
+              {{ caseStudy.result }}
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="mt-6">
