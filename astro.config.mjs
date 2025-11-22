@@ -12,7 +12,7 @@ export default defineConfig({
     process.env.NODE_ENV === "production"
       ? "https://paifgx.github.io/"
       : undefined,
-  base: process.env.NODE_ENV === "production" ? "paifgx.github.io" : undefined,
+  base: undefined,
   integrations: [vue(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
