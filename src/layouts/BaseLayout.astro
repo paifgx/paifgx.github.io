@@ -37,6 +37,7 @@ const mainClass = classDefintion ?? "";
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={new URL(image, canonicalURL).href} />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script is:inline>
@@ -70,11 +71,7 @@ const mainClass = classDefintion ?? "";
           applyTheme(event.matches ? "dark" : "light");
         };
 
-        if (typeof mediaQuery.addEventListener === "function") {
-          mediaQuery.addEventListener("change", handleSystemChange);
-        } else if (typeof mediaQuery.addListener === "function") {
-          mediaQuery.addListener(handleSystemChange);
-        }
+        mediaQuery.addEventListener("change", handleSystemChange);
 
         window.addEventListener("storage", (event) => {
           if (event.key !== storageKey) return;
