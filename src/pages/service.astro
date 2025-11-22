@@ -185,12 +185,12 @@ const painPoints = [
       </div>
 
       <div
-        class="grid gap-4 rounded-[2rem] border border-slate-900/5 bg-white/70 p-6 text-sm text-gray-700 shadow-lg shadow-indigo-200/40 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 sm:grid-cols-3"
+        class="grid gap-6 rounded-[2rem] border border-slate-900/5 bg-white/80 p-8 text-sm text-gray-700 shadow-lg shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 sm:grid-cols-3"
       >
         {
           painPoints.map((pain) => (
-            <article class="rounded-2xl border border-slate-900/5 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5">
-              <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-200">
+            <article class="space-y-2 border-l-2 border-indigo-100 pl-5 dark:border-indigo-400/40">
+              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-indigo-600 dark:text-indigo-200">
                 {pain.title}
               </p>
               <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
@@ -225,19 +225,26 @@ const painPoints = [
           </p>
         </div>
         <dl
-          class="grid gap-6 rounded-[2.5rem] border border-slate-900/5 bg-white p-8 shadow-lg shadow-indigo-200/30 sm:grid-cols-2 lg:grid-cols-3 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10"
+          class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/80 p-8 shadow-xl shadow-indigo-200/30 sm:grid-cols-3 dark:border-white/10 dark:bg-white/5 dark:shadow-indigo-500/20"
         >
           {
-            serviceStats.map((stat) => (
-              <div class="space-y-1">
-                <dt class="text-sm text-gray-500 dark:text-gray-300">
-                  {stat.label}
-                </dt>
-                <dd class="text-3xl font-semibold text-gray-900 dark:text-white">
-                  {stat.value}
-                </dd>
-              </div>
-            ))
+            serviceStats.map((stat, index) => {
+              const dividerClass =
+                index === 0
+                  ? ""
+                  : "sm:border-l sm:pl-8 border-slate-900/10 dark:border-white/15";
+
+              return (
+                <div class={`space-y-2 text-left ${dividerClass}`}>
+                  <dt class="text-sm leading-6 text-gray-600 dark:text-gray-300">
+                    {stat.label}
+                  </dt>
+                  <dd class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    {stat.value}
+                  </dd>
+                </div>
+              );
+            })
           }
         </dl>
       </div>
@@ -263,40 +270,51 @@ const painPoints = [
       <div class="grid auto-rows-fr gap-8 md:grid-cols-2 xl:grid-cols-3">
         {
           servicePillars.map((pillar) => (
-            <article class="flex h-full flex-col rounded-[2.25rem] border border-slate-900/5 bg-white p-6 text-sm text-gray-700 shadow-lg shadow-indigo-200/25 dark:border-white/5 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10">
-              <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-200">
-                {pillar.subtitle}
-              </p>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">
-                {pillar.title}
-              </h3>
-              <p class="mt-3">{pillar.description}</p>
-              <ul class="mt-4 space-y-2 text-sm">
-                {pillar.deliverables.map((item) => (
-                  <li class="flex gap-3">
-                    <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-600 dark:bg-indigo-400" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div class="mt-5 rounded-2xl border border-indigo-100/80 bg-indigo-50/70 p-4 text-sm text-gray-700 dark:border-indigo-400/20 dark:bg-indigo-400/10 dark:text-gray-200">
+            <article class="flex h-full flex-col gap-6 rounded-[2.25rem] border border-slate-900/5 bg-white/90 p-7 text-sm text-gray-700 shadow-lg shadow-indigo-200/20 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10">
+              <div class="space-y-3">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200">
+                  {pillar.subtitle}
+                </p>
+                <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {pillar.title}
+                </h3>
+                <p class="text-base leading-6 text-gray-600 dark:text-gray-300">
+                  {pillar.description}
+                </p>
+              </div>
+              <div class="space-y-5 text-sm text-gray-700 dark:text-gray-200">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-400">
+                  Was wir liefern
+                </p>
+                <ul class="mt-3 space-y-2">
+                  {pillar.deliverables.map((item) => (
+                    <li class="flex gap-3 rounded-2xl border border-indigo-100/70 bg-indigo-50/60 px-4 py-3 text-xs font-medium text-indigo-900 dark:border-indigo-400/30 dark:bg-indigo-400/10 dark:text-indigo-100">
+                      <span class="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-indigo-500 dark:bg-indigo-300" />
+                      <span class="leading-5">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-indigo-100/80 bg-white/90 p-4 shadow-sm shadow-indigo-100/60 dark:border-indigo-400/30 dark:bg-white/5 dark:shadow-none lg:min-h-[13rem]">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-700 dark:text-indigo-200">
                   Was sich verändert
                 </p>
                 <ul class="mt-3 space-y-2">
                   {pillar.results.map((item) => (
                     <li class="flex gap-2">
-                      <span class="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-indigo-700 dark:bg-indigo-300" />
-                      <span>{item}</span>
+                      <span class="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-emerald-500 dark:bg-emerald-300" />
+                      <span class="leading-5">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div class="mt-auto pt-5 space-y-2">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-400 dark:text-gray-400">
+              <div class="mt-auto rounded-2xl border border-dashed border-slate-200/80 px-4 py-3 dark:border-white/15">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-400">
                   Stack &amp; Werkzeuge
                 </p>
-                <p class="text-sm leading-6 min-h-[4.5rem]">{pillar.stack}</p>
+                <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                  {pillar.stack}
+                </p>
               </div>
             </article>
           ))
