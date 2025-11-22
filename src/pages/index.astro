@@ -1,13 +1,110 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import Hero from "../components/HeroSection.astro";
-import Service from "../components/ServicesSection.astro";
-import Contact from "../components/ContactSection.astro";
+import SectionHero from "../components/index/SectionHero.astro";
+import SectionPartners from "../components/index/SectionPartners.astro";
+
+import ServiceArticle from "src/components/ServiceArticle.astro";
+
+import SectionReviews from "src/components/index/SectionReviews.vue";
+import SectionCTA from "src/components/index/SectionCTA.astro";
 ---
 
-<Layout title="Startseite">
-  <Hero />
-  <Service />
-  <Contact />
-</Layout>
+<BaseLayout>
+  <SectionHero />
+  <SectionPartners />
+
+  <section
+    id="services"
+    class="space-y-16 bg-white px-6 py-16 transition-colors duration-200 dark:bg-gray-950 lg:px-0"
+  >
+    <ServiceArticle
+      subtitle="Prozesse entlasten"
+      title="Prozesse automatisieren & Medienbrüche abbauen"
+      imagePosition="right"
+      image="https://images.unsplash.com/photo-1716637644831-e046c73be197"
+      imageAlt="Smartphone fotografiert einen Laptop, auf dessen Bildschirm ein leuchtendes, KI-inspiriertes Gehirn im Profil zu sehen ist – Symbol für moderne AI-Lösungen und digitale Innovation."
+      paragraphs={{
+        intro:
+          "Viele KMU kämpfen mit Copy-Paste, Mehrfacherfassung und fehlender Transparenz. Ich baue Automationen und KI-Assistants, die direkt in bestehende Systeme greifen, Medienbrüche schließen und Mitarbeitende spürbar entlasten – ohne die Kontrolle zu verlieren.",
+        details: [
+          {
+            heading: "Auslöser im Alltag",
+            text: "Angebote, Reklamationen, Service-Cases und interne Freigaben laufen über Excel, Word und E-Mail. Wissen steckt in Köpfen, die oft nicht verfügbar sind.",
+          },
+          {
+            heading: "Ansatz",
+            text: "RAG-Assistenten, Tool-Use-Agenten und orchestrierte LLM-Flows ersetzen manuelle Schritte. Ich verbinde ERP, CRM oder Branchensoftware mit LangChain, LlamaIndex oder Custom-Stacks.",
+          },
+          {
+            heading: "Was bleibt",
+            text: "Durchgängige Prozesse, klare KPIs und wenig Nacharbeit – abgesichert durch Guardrails, Prompt-Evaluierung (DeepEval) sowie Security-by-Design nach BSI IT-Grundschutz und ISO/IEC 27001.",
+          },
+        ],
+      }}
+    />
+
+    <ServiceArticle
+      subtitle="Stabile Abläufe"
+      title="Wissen sichern & Abhängigkeiten reduzieren"
+      imagePosition="left"
+      image="https://images.unsplash.com/photo-1650295751050-b184e54e177c"
+      imageAlt="Laptopbildschirm mit farblich hervorgehobenem Programmcode – steht für saubere Software- und KI-Entwicklung."
+      paragraphs={{
+        intro:
+          "Ich moderiere zwischen Operations, IT und Fachbereichen, damit Systeme zuverlässig liefern – selbst wenn Schlüsselpersonen ausfallen. Polyglotte Stacks ermöglichen pragmatische Integrationen statt Großprojekte.",
+        details: [
+          {
+            heading: "Systeme verbinden",
+            text: "APIs, Datenpipelines und Integrationen sorgen dafür, dass Daten nur einmal erfasst werden. Backend-Services (FastAPI, NestJS, Micronaut, Laravel) liefern Streaming, WebSockets und Event-Driven Flows.",
+          },
+          {
+            heading: "Lieferfähig bleiben",
+            text: "Cloud- und On-Prem-Setups (AWS, Azure, GCP) werden mit Terraform, Docker/Kubernetes sowie GitHub Actions/GitLab CI betrieben – inklusive Observability mit Prometheus/Grafana oder ELK.",
+          },
+          {
+            heading: "Governance & Compliance",
+            text: "OAuth2, Keycloak, RBAC/IAM, Threat Modeling und Audits nach ISO 27001 oder BSI 200-x reduzieren Abhängigkeiten von Einzelpersonen und sorgen für dokumentierte Verantwortlichkeiten.",
+          },
+        ],
+      }}
+    />
+
+    <ServiceArticle
+      title="Team befähigen & Skepsis abbauen"
+      subtitle="Enablement"
+      imagePosition="right"
+      image="https://images.unsplash.com/photo-1703680968885-22659eb00165"
+      imageAlt="Leerer Hörsaal mit Reihen aus Holzstühlen im Sonnenlicht – symbolisiert Wissenstransfer, Schulungen und Vorträge."
+      paragraphs={{
+        intro:
+          "Über 100 Teilnehmende pro Jahr in maßgeschneiderten Trainings – ergänzt durch interne Upskilling-Programme. Ich begleite Teams so, dass neue Systeme nicht an Widerstand oder fehlender Dokumentation scheitern.",
+        details: [
+          {
+            heading: "Curriculum & Upskilling",
+            text: "Workshops zu moderner Softwarearchitektur, GenAI, DevOps und Security-by-Design – zugeschnitten auf Rollen von Product bis Operations.",
+          },
+          {
+            heading: "Coaching im Betrieb",
+            text: "Pair-Architecture, Reviews, Code- & Prompt-Clinics sowie Shadowing für Product & Engineering Leads sichern, dass Entscheidungen verstanden und getragen werden.",
+          },
+          {
+            heading: "Change & Wissen",
+            text: "Assessments, Lernpfade, Runbooks und Wissensdatenbanken (Notion, Confluence, Git) sorgen dafür, dass Know-how nicht wieder in Silos verschwindet.",
+          },
+        ],
+      }}
+    />
+  </section>
+
+  <section
+    class="container mx-auto py-24 px-6 text-gray-900 dark:text-gray-100"
+    aria-labelledby="case-studies-heading"
+  >
+    <SectionReviews client:load />
+  </section>
+
+  <section class="bg-white dark:bg-gray-950">
+    <SectionCTA />
+  </section>
+</BaseLayout>

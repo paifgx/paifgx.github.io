@@ -1,0 +1,500 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import programmingImage from "../assets/programming.jpg";
+
+const servicePillars = [
+  {
+    title: "KI-Roadmap & Verantwortlichkeiten klären",
+    subtitle: "FlowCraftDB · CANCOM · Universitätsklinikum Bonn",
+    description:
+      "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken – von der ersten Rechtsprüfung bis zur Governance im Betrieb.",
+    deliverables: [
+      "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen inkl. Stakeholder-Interviews.",
+      "RAG- & Agentensysteme mit LangChain, LlamaIndex, Haystack, OpenSearch/Qdrant/Weaviate – abgestimmt auf bestehende IT.",
+      "Security, IAM & Compliance nach BSI IT-Grundschutz, ISO/IEC 27001, DSGVO/DPIA mit OAuth2/Keycloak und dokumentierten Guardrails.",
+    ],
+    results: [
+      "Priorisierte Roadmap mit Verantwortlichkeiten, KPIs und Budgetrahmen – freigabefähig für Geschäftsführung & Aufsicht.",
+      "Enablement-Artefakte (Decision Logs, Runbooks, DPIA) verhindern Tool-Wildwuchs und schaffen klare Zuständigkeiten.",
+    ],
+    stack:
+      "LLMs: GPT, Claude, Gemini, Mistral, LLaMA/Mixtral · Orchestrierung: LangChain, LlamaIndex, Haystack, Custom Agents.",
+  },
+  {
+    title: "Operative Abläufe mit KI entlasten",
+    subtitle: "Bringmeister · MeinPaul · CANCOM",
+    description:
+      "Ich begleite End-to-end Delivery – von der Architektur über APIs bis zum Betrieb. Ziel: weniger manuelle Nacharbeit, stabile Releases und Systeme, die mitwachsen.",
+    deliverables: [
+      "Backend- & API-Engineering (FastAPI, NestJS, Micronaut, Django, Laravel, GraphQL, WebSockets) inklusive Datenpipelines.",
+      "Cloud & Infrastruktur: AWS, Azure, GCP, Terraform, Docker/Kubernetes, GitHub Actions/GitLab CI/CD mit Observability (Prometheus/Grafana, ELK).",
+      "Automation von Tests, Monitoring & Incident-Response – damit Teams liefern können, ohne ständig Feuer zu löschen.",
+    ],
+    results: [
+      "Durchgängige Prozesse ohne Mehrfacherfassung, sinkende Fehlerquote und klar messbare Durchlaufzeiten.",
+      "Stabile Plattformen mit dokumentierten Übergaben – unabhängig von einzelnen Personen oder externen Dienstleistern.",
+    ],
+    stack:
+      "Python, TypeScript/Node, Kotlin, PHP, Dart/Flutter, SQL/NoSQL, Kafka, RabbitMQ, Docker/Kubernetes, Terraform.",
+  },
+  {
+    title: "Team befähigen & Skepsis abbauen",
+    subtitle:
+      "Nextise · ptm-Akademie · GFU Cyrus AG · interne Upskilling-Programme",
+    description:
+      "Neue Systeme scheitern selten an Technik, sondern an Kommunikation. Ich kombiniere Trainings, Shadowing und Change-Arbeit, damit Ihr Team Verantwortung übernehmen kann.",
+    deliverables: [
+      "Modulare Trainings (Web, DevOps, KI, Security) für Fach- und Führungskräfte mit über 100 Teilnehmenden pro Jahr.",
+      "Shadowing & Coaching für Architekt:innen, Product Owner, Operations- und Security-Rollen – direkt an Ihren Fällen.",
+      "Wissenssysteme, Playbooks und Enablement-Artefakte (Notion, Confluence, Git) als Single Source of Truth.",
+    ],
+    results: [
+      "Teams verstehen Architekturentscheidungen, treffen souveräne Freigaben und holen skeptische Mitarbeitende ins Boot.",
+      "Neue Kolleg:innen werden schneller produktiv, weil Runbooks, Lernpfade und Ansprechpartner klar sind.",
+    ],
+    stack:
+      "Workshops, Pair-Architecture, Code-/Prompt-Clinics, Assessments, OKRs & KPI-Frameworks.",
+  },
+];
+
+const engagementModes = [
+  {
+    title: "Fractional AI/CIO",
+    description:
+      "Sie brauchen jemanden, der Verantwortung übernimmt: Steering Committees leiten, Roadmaps priorisieren, Budgets argumentieren und Security/Compliance vertreten.",
+  },
+  {
+    title: "Projekt-Delivery",
+    description:
+      "End-to-end Umsetzung mit Verantwortung für Architektur, Engineering, Security und Übergabe – inklusive Runbooks, Tests und Onboarding.",
+  },
+  {
+    title: "Advisory & Enablement",
+    description:
+      "Sparring, Reviews, Architecture Boards, Trainings und On-the-job-Coaching – ideal, wenn interne Teams liefern, aber Guidance brauchen.",
+  },
+];
+
+const technologyHighlights = {
+  llm: [
+    "LangChain, LlamaIndex, Haystack, RAG-Tooling",
+    "Embeddings: OpenAI, Hugging Face, Cohere, BGE, MiniLM",
+    "Agenten-Patterns: ReAct, CoT, Tool-Use, AutoGPT-ähnlich",
+  ],
+  cloud: [
+    "AWS (EC2, S3, Lambda, DynamoDB, RDS, ElastiCache, API Gateway, CloudFront, ECR, SQS, Fargate)",
+    "Azure (OpenAI, Cognitive Services, CosmosDB, Blob, IaaS), GCP (Vertex AI, BigQuery, Firebase)",
+    "Infrastructure-as-Code mit Terraform, Docker, Kubernetes, Helm, GitHub Actions/GitLab CI",
+  ],
+  security: [
+    "Security/Privacy-by-Design, IAM/RBAC, OAuth2, Keycloak, Supabase Auth",
+    "BSI IT-Grundschutz (200-1/-2/-3), ISO/IEC 27001, DSGVO, DPIA",
+    "Observability: Prometheus, Grafana, ELK/OpenSearch, DeepEval für Prompt-Qualität",
+  ],
+};
+
+const serviceStats = [
+  {
+    id: 1,
+    value: "25+",
+    label: "aktive KI- & Plattforminitiativen (ML & GenAI)",
+  },
+  { id: 2, value: "<90d", label: "Time-to-Value für MVP/POC" },
+  { id: 3, value: "3", label: "Engagement-Modi kombinierbar" },
+];
+
+const painPoints = [
+  {
+    title: "Tool-Wildwuchs",
+    description:
+      "Jede Abteilung nutzt eigene Lösungen, Daten liegen in Excel, Outlook, Branchensoftware – nichts greift ineinander.",
+  },
+  {
+    title: "Abhängigkeit von Einzelpersonen",
+    description:
+      "Wenn Schlüsselpersonen fehlen, steht das Tagesgeschäft. Prozesse existieren nur im Kopf – nicht im System.",
+  },
+  {
+    title: "Skepsis & Risikoangst",
+    description:
+      "Teams sind KI-müde oder fürchten Datenschutzprobleme. Es fehlt ein Setup, das Verantwortung und Nutzen verbindet.",
+  },
+];
+---
+
+<BaseLayout
+  classDefintion="bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-gray-100"
+  title="Dienstleistungen & Serviceportfolio"
+  description="Outcome-basierte AI Delivery: RAG & Agentensysteme, Platform Engineering und Enablement für Teams. Security-by-Design nach BSI IT-Grundschutz & ISO 27001."
+>
+  <section class="relative overflow-hidden px-6 py-20 sm:px-12">
+    <div
+      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.2),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.35),transparent_55%)]"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute -bottom-32 right-0 -z-10 h-72 w-72 rounded-full bg-indigo-500/15 blur-[140px] dark:bg-indigo-500/30"
+    >
+    </div>
+    <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
+      <div class="space-y-5">
+        <span
+          class="inline-flex w-fit items-center gap-2 rounded-full border border-slate-900/10 bg-white/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-indigo-200"
+        >
+          Serviceportfolio
+        </span>
+        <div class="space-y-5">
+          <h1 class="text-4xl font-semibold sm:text-5xl">
+            KI-Architektur &amp; Delivery, die Ihren Betrieb entlastet – nicht
+            nur neue Tools einführt.
+          </h1>
+          <p class="text-lg leading-8 text-gray-600 dark:text-gray-300">
+            Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit,
+            Skalierbarkeit und Ownership in Ihrem Team. Leistungsbausteine
+            lassen sich kombinieren – remote im DACH-Raum oder vor Ort.
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-wrap gap-3 text-sm text-gray-500 dark:text-gray-300"
+      >
+        <a
+          class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/90 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+          href="https://www.garten.ai"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="font-semibold">Website</span>
+          <span class="text-gray-500 dark:text-white/70">garten.ai</span>
+        </a>
+        <a
+          class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+          href="mailto:info@garten.ai"
+        >
+          <span class="font-semibold">Mail</span>
+          <span class="text-gray-500 dark:text-white/70">info@garten.ai</span>
+        </a>
+        <a
+          class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+          href="https://www.linkedin.com/in/paifgx"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="font-semibold">LinkedIn</span>
+          <span class="text-gray-500 dark:text-white/70">/in/paifgx</span>
+        </a>
+      </div>
+
+      <div
+        class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/90 p-8 text-sm text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch"
+      >
+        <div class="space-y-8">
+          <div
+            class="grid gap-6 text-sm text-gray-700 dark:text-gray-200 sm:grid-cols-3"
+          >
+            {
+              painPoints.map((pain) => (
+                <article class="flex flex-col">
+                  <p class="mb-3 sm:min-h-12 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-700 dark:text-indigo-200">
+                    {pain.title}
+                  </p>
+                  <p class="leading-6 text-gray-600 dark:text-gray-300">
+                    {pain.description}
+                  </p>
+                </article>
+              ))
+            }
+          </div>
+          <div class="space-y-3">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+            >
+              Hands-on Engineering
+            </p>
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
+              Architektur-Reviews, die direkt im Editor landen.
+            </h3>
+            <p class="leading-6 text-gray-700 dark:text-gray-200">
+              Strategie endet bei mir nicht im Deck. Zwischen Architecture
+              Boards, Security-Reviews und Delivery sitze ich selbst im Code,
+              begleite Deployments und dokumentiere Entscheidungen für Product,
+              Security und Betrieb.
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Ergebnis: Systeme, die audited werden können – und Artefakte, die
+              Ihr Team ohne externe Feuerwehr weiterpflegt.
+            </p>
+          </div>
+          <div
+            class="space-y-3 border-t border-slate-200/60 pt-6 dark:border-white/10"
+          >
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+            >
+              Arbeitsweise
+            </p>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              Strategy-to-Execution mit Verantwortung.
+            </h3>
+            <p class="text-gray-700 dark:text-gray-200">
+              Wir starten mit Ihrem Engpass (z. B. Medienbrüche, Personalmangel,
+              Aufsichtsanforderungen) und bauen von dort aus Architektur-Slices,
+              Operating Models und Delivery-Workstreams auf. Security,
+              Datenschutz und Enablement laufen nicht nebenher, sondern sind
+              Bestandteil jedes Meilensteins.
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-300">
+              Reviews · Architecture Boards · Shadowing · Enablement
+            </p>
+          </div>
+        </div>
+        <figure
+          class="flex min-h-[340px] flex-col overflow-hidden rounded-[2.5rem] bg-slate-900/90 shadow-lg shadow-indigo-200/30 dark:bg-white/5 dark:shadow-indigo-500/10"
+        >
+          <img
+            src={programmingImage.src}
+            alt="Patrik arbeitet an zwei Monitoren mit Code und Infrastruktur-Dashboards."
+            class="h-full w-full flex-1 object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption
+            class="bg-white/95 p-4 text-sm text-gray-600 dark:bg-white/5 dark:text-gray-300"
+          >
+            „Deep Engineering“ heißt: Architekturentscheidungen entstehen dort,
+            wo sie implementiert und observiert werden.
+          </figcaption>
+        </figure>
+      </div>
+
+      <dl
+        class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/80 p-8 text-sm shadow-xl shadow-indigo-200/30 sm:grid-cols-3 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/20"
+      >
+        {
+          serviceStats.map((stat, index) => {
+            const dividerClass =
+              index === 0
+                ? ""
+                : "sm:border-l sm:pl-8 border-slate-900/10 dark:border-white/15";
+
+            return (
+              <div class={`space-y-2 text-left ${dividerClass}`}>
+                <dt class="text-sm leading-6 text-gray-600 dark:text-gray-300">
+                  {stat.label}
+                </dt>
+                <dd class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  {stat.value}
+                </dd>
+              </div>
+            );
+          })
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 px-6 py-16 dark:bg-slate-950/60 sm:px-12">
+    <div class="mx-auto max-w-6xl space-y-6">
+      <div class="space-y-3">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+        >
+          Leistungsbausteine
+        </p>
+        <h2 class="text-3xl font-semibold">
+          Architektur, Delivery &amp; Enablement.
+        </h2>
+        <p class="text-base text-gray-600 dark:text-gray-300">
+          Jeder Baustein kann als Solo-Mandat oder kombiniert mit anderen
+          Engagement Modes beauftragt werden.
+        </p>
+      </div>
+      <div class="grid auto-rows-fr gap-8 md:grid-cols-2 xl:grid-cols-3">
+        {
+          servicePillars.map((pillar) => (
+            <article class="flex h-full flex-col gap-6 rounded-[2.25rem] border border-slate-900/5 bg-white/90 p-7 text-sm text-gray-700 shadow-lg shadow-indigo-200/20 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10">
+              <div class="space-y-3">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200">
+                  {pillar.subtitle}
+                </p>
+                <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {pillar.title}
+                </h3>
+                <p class="text-base leading-6 text-gray-600 dark:text-gray-300">
+                  {pillar.description}
+                </p>
+              </div>
+              <div class="space-y-5 text-sm text-gray-700 dark:text-gray-200">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-400">
+                  Was wir liefern
+                </p>
+                <ul class="mt-3 space-y-2">
+                  {pillar.deliverables.map((item) => (
+                    <li class="flex gap-3 rounded-2xl border border-indigo-100/70 bg-indigo-50/60 px-4 py-3 text-xs font-medium text-indigo-900 dark:border-indigo-400/30 dark:bg-indigo-400/10 dark:text-indigo-100">
+                      <span class="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-indigo-500 dark:bg-indigo-300" />
+                      <span class="leading-5">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-indigo-100/80 bg-white/90 p-4 shadow-xs shadow-indigo-100/60 dark:border-indigo-400/30 dark:bg-white/5 dark:shadow-none lg:min-h-52">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-700 dark:text-indigo-200">
+                  Was sich verändert
+                </p>
+                <ul class="mt-3 space-y-2">
+                  {pillar.results.map((item) => (
+                    <li class="flex gap-2">
+                      <span class="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-emerald-500 dark:bg-emerald-300" />
+                      <span class="leading-5">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div class="mt-auto rounded-2xl border border-dashed border-slate-200/80 px-4 py-3 dark:border-white/15">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-400">
+                  Stack &amp; Werkzeuge
+                </p>
+                <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                  {pillar.stack}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white px-6 py-16 dark:bg-slate-950 sm:px-12">
+    <div class="mx-auto max-w-6xl">
+      <div class="space-y-3">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+        >
+          Engagement
+        </p>
+        <h2 class="text-3xl font-semibold">
+          Modelle für Strategie, Delivery und Sparring.
+        </h2>
+        <p class="text-base text-gray-600 dark:text-gray-300">
+          Wählen Sie, wie viel Verantwortung Sie abgeben: vom Fractional AI/CIO
+          als verlängertem Arm der Geschäftsführung bis zum projektbasierten
+          Delivery- oder Sparringsmodell für Ihre Teams.
+        </p>
+      </div>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          engagementModes.map((mode) => (
+            <article class="rounded-4xl border border-slate-900/5 bg-white p-6 shadow-md shadow-indigo-200/25 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                {mode.title}
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                {mode.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-linear-to-br from-slate-900 via-slate-950 to-black px-6 py-16 text-gray-100 sm:px-12"
+  >
+    <div class="mx-auto max-w-6xl space-y-10">
+      <div class="space-y-3">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-300"
+        >
+          Tooling &amp; Observability
+        </p>
+        <h2 class="text-3xl font-semibold text-white">
+          Kuratierte Stacks für LLM, Cloud &amp; Security.
+        </h2>
+      </div>
+      <div class="grid gap-10 lg:grid-cols-3">
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+          >
+            LLM &amp; RAG
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-100">
+            {technologyHighlights.llm.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+          >
+            Cloud &amp; Delivery
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-100">
+            {technologyHighlights.cloud.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+          >
+            Security &amp; Observability
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-100">
+            {technologyHighlights.security.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white px-6 py-16 text-center dark:bg-slate-950 sm:px-12">
+    <div class="mx-auto max-w-3xl space-y-6">
+      <div class="space-y-3">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+        >
+          Nächste Schritte
+        </p>
+        <h2 class="text-3xl font-semibold text-gray-900 dark:text-white">
+          Bereit für Ihr nächstes Kapitel?
+        </h2>
+        <p class="text-base text-gray-600 dark:text-gray-300">
+          Schreiben Sie an
+          <a
+            href="mailto:info@garten.ai"
+            class="font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
+            >info@garten.ai</a
+          >
+          oder buchen Sie ein Gespräch über
+          <a
+            href="https://www.linkedin.com/in/paifgx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
+            >LinkedIn</a
+          >.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="https://app.reclaim.ai/m/gartenai/meet"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:bg-indigo-400"
+        >
+          Kontakt aufnehmen
+        </a>
+        <a
+          href="mailto:info@garten.ai?subject=Serviceanfrage"
+          class="inline-flex items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/20 dark:text-white/90 dark:hover:border-white/40 dark:hover:text-white"
+        >
+          PDF-Portfolio anfordern
+        </a>
+      </div>
+      <p class="text-xs uppercase tracking-[0.3em] text-gray-400">
+        Antwort innerhalb von 24 Stunden.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

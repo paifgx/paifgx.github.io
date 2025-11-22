@@ -1,0 +1,54 @@
+---
+const clients = [
+  "Universitätsklinikum Bonn",
+  "FlowCraftDB",
+  "CANCOM",
+  "AICT Group",
+  "DB Fernverkehr AG",
+  "MeinPaul GmbH",
+  "Nextise GmbH",
+  "GFU Cyrus AG",
+  "Bringmeister GmbH",
+];
+---
+
+<section
+  id="partners"
+  aria-label="Ausgewählte Mandate & Auftraggeber"
+  class="py-24 bg-gray-50 transition-colors duration-200 dark:bg-gray-900 sm:py-32"
+>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2
+        class="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400"
+      >
+        Vertrauen von Mittelstand & Enterprise
+      </h2>
+      <p
+        class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+      >
+        Mandate, die Verantwortung verlangen
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+        Auswahl der letzten Jahre – regulierte Branchen, E-Commerce, Bildung und
+        Public Sector. <span class="font-medium text-gray-900 dark:text-white"
+          >Weniger Logos, mehr Substanz.</span
+        >
+      </p>
+    </div>
+
+    <div class="mx-auto mt-16 max-w-2xl lg:max-w-none">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          clients.map((client) => (
+            <div class="flex items-center justify-center rounded-xl bg-white px-8 py-6 text-center shadow-xs ring-1 ring-gray-900/5 transition-all duration-300 hover:shadow-md hover:ring-gray-900/10 dark:bg-gray-950/60 dark:ring-white/10 dark:hover:ring-white/20">
+              <span class="text-lg font-semibold text-gray-900 dark:text-white">
+                {client}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,145 @@
+---
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const siteOrigin = "https://www.garten.ai";
+const currentPath = Astro.url.pathname;
+const canonicalURL = new URL(Astro.url.pathname, siteOrigin);
+
+const {
+  classDefintion,
+  title,
+  description,
+  type = "website",
+  image = "/logo-cloud/tuple.svg", // Placeholder or default image
+} = Astro.props;
+
+const defaultTitle =
+  "Patrik Garten · AI Solution Architect & Software Engineer";
+const defaultDescription =
+  "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end KI-Architekturen – von klassischen ML-Systemen bis zu LLM-/GenAI-Plattformen – sowie Security-by-Design für regulierte DACH-Unternehmen.";
+
+const pageTitle = title ? `${title} · Patrik Garten` : defaultTitle;
+const pageDescription = description || defaultDescription;
+const mainClass = classDefintion ?? "";
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Patrik Garten",
+    jobTitle: "AI Solution Architect & Software Engineer",
+    url: canonicalURL.href,
+    sameAs: [
+      "https://www.linkedin.com/in/paifgx",
+      "https://www.garten.ai",
+      "mailto:info@garten.ai",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Patrik Garten AI Development",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Patrik Garten AI Development",
+    url: siteOrigin,
+    image: new URL(image, siteOrigin).href,
+    areaServed: ["Deutschland", "Österreich", "Schweiz"],
+    availableLanguage: ["de", "en"],
+    serviceType: [
+      "AI Solution Architecture",
+      "Generative AI Enablement",
+      "Software Engineering",
+    ],
+    priceRange: "€€€",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Phönixstraße 30",
+      postalCode: "44263",
+      addressLocality: "Dortmund",
+      addressCountry: "DE",
+    },
+    telephone: "+49 1516 4587494",
+    email: "info@garten.ai",
+  },
+];
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={new URL(image, canonicalURL).href} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify(structuredData)}
+    </script>
+    <script is:inline>
+      (() => {
+        const storageKey = "theme-preference";
+        const query = "(prefers-color-scheme: dark)";
+        const mediaQuery = window.matchMedia(query);
+
+        const getStoredTheme = () => {
+          try {
+            const stored = window.localStorage.getItem(storageKey);
+            return stored === "dark" || stored === "light" ? stored : null;
+          } catch {
+            return null;
+          }
+        };
+
+        const applyTheme = (theme) => {
+          const isDark = theme === "dark";
+          document.documentElement.classList.toggle("dark", isDark);
+          document.documentElement.style.colorScheme = theme;
+        };
+
+        const resolveTheme = () =>
+          getStoredTheme() ?? (mediaQuery.matches ? "dark" : "light");
+
+        applyTheme(resolveTheme());
+
+        const handleSystemChange = (event) => {
+          if (getStoredTheme()) return;
+          applyTheme(event.matches ? "dark" : "light");
+        };
+
+        mediaQuery.addEventListener("change", handleSystemChange);
+
+        window.addEventListener("storage", (event) => {
+          if (event.key !== storageKey) return;
+          if (!event.newValue) {
+            applyTheme(mediaQuery.matches ? "dark" : "light");
+            return;
+          }
+          applyTheme(event.newValue === "dark" ? "dark" : "light");
+        });
+      })();
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100"
+  >
+    <Header currentPath={currentPath} client:load />
+
+    <main class={mainClass}>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
