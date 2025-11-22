@@ -1,66 +1,81 @@
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 
-const testimonials = ref([
+const caseStudies = ref([
   {
-    text: 'Die Zusammenarbeit mit Patrik war eine echte Bereicherung für unser Unternehmen.',
-    name: 'Anna Müller',
-    position: 'Leiterin, Tech Solutions',
-    avatar:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-    companyLogo: 'https://tailwindui.com/plus/img/logos/tuple-logo-gray-900.svg',
-    company: 'Tech Solutions',
+    company: "FlowCraftDB",
+    timeframe: "12/2024 – heute",
+    role: "AI Solution Architect & Consultant (Freelancer)",
+    focus: "Event-getriebene Datenanreicherung im E-Commerce",
+    impact: [
+      "E2E-Architektur für RAG-Assistenten, Tool-Use und orchestrierte LLM-Flows (GPT-4, Gemini, LangChain).",
+      "Security-by-Design nach BSI IT-Grundschutz, Observability mit Prometheus/Grafana und ELK.",
+    ],
+    stack:
+      "GPT-4, Gemini, LangChain, FastAPI, Docker, Kubernetes, AWS (S3/SQS/ECR), Azure, MongoDB, Redis, Terraform, GitHub Actions, Prometheus, Grafana, ELK, Pytest, OAuth2, Keycloak.",
   },
   {
-    text: 'Dank Patriks Lösungen konnten wir unsere Effizienz erheblich steigern.',
-    name: 'Markus Schmidt',
-    position: 'Geschäftsführer, Innovate GmbH',
-    avatar:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-    companyLogo: 'https://tailwindui.com/plus/img/logos/reform-logo-gray-900.svg',
-    company: 'Innovate GmbH',
+    company: "CANCOM",
+    timeframe: "02/2025 – 08/2025",
+    role: "Technical Lead Conversational AI (Freelancer)",
+    focus: "Agentenbasierte Multi-LLM-Systeme & Flutter-App Delivery",
+    impact: [
+      "Architektur & Strategie für sichere, skalierbare Conversational AI mit React, TypeScript & FastAPI.",
+      "CI/CD, QA und Security-Workstreams gemäß ISO 27001 & BSI 200-x.",
+    ],
+    stack:
+      "React, TypeScript, Python, FastAPI, Docker, Kubernetes, AWS, Azure, IAM, Flutter, Dart, REST, Microservices.",
   },
   {
-    text: 'Patriks Expertise hat uns geholfen, die neuesten Technologien effektiv zu integrieren.',
-    name: 'Sophie Wagner',
-    position: 'Projektmanagerin, FutureWorks',
-    avatar:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-    companyLogo: 'https://tailwindui.com/plus/img/logos/tuple-logo-gray-900.svg',
-    company: 'FutureWorks',
+    company: "Universitätsklinikum Bonn AöR",
+    timeframe: "11/2025 – heute",
+    role: "AI Solution Architect & Consultant (Freelancer)",
+    focus: "GenAI-Integrationen für Forschung & Versorgung",
+    impact: [
+      "Micronaut/Kotlin-Services, MSSQL-Backends und Integrationen in bestehende Klinikprozesse.",
+      "Governance & Security in hochregulierten Umfeldern, inklusive DSGVO & Datenschutz-Folgenabschätzungen.",
+    ],
+    stack:
+      "Kotlin, Micronaut, MSSQL, OAuth2, Keycloak, Docker, Azure, Observability.",
   },
   {
-    text: 'Unsere Produktivität hat sich durch Patriks Beratung und Implementierung verbessert.',
-    name: 'David Klein',
-    position: 'COO, DigitalizeNow',
-    avatar:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-    companyLogo: 'https://tailwindui.com/plus/img/logos/reform-logo-gray-900.svg',
-    company: 'DigitalizeNow',
+    company: "AICT Group",
+    timeframe: "06/2024 – heute",
+    role: "Co-Founder & CIO",
+    focus: "KI-Plattform zur Konfliktprävention (LLMs & Knowledge Graphs)",
+    impact: [
+      "Realtime-Analytics, Microservices und Governance-Strukturen für sensible Daten.",
+      "Team-Enablement & Security/Privacy-by-Design in hybriden Cloud-Setups.",
+    ],
+    stack:
+      "LLMs, Knowledge Graphs, Microservices, Realtime Analytics, Docker, Kubernetes, AWS, Azure, Security/Privacy by Design, IT-Grundschutz, ISO 27001, IAM.",
   },
   {
-    text: 'Patrik hat uns gezeigt, wie wir mit KI-Lösungen schneller skalieren können.',
-    name: 'Laura Fischer',
-    position: 'CEO, ScaleUpTech',
-    avatar:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-    companyLogo: 'https://tailwindui.com/plus/img/logos/tuple-logo-gray-900.svg',
-    company: 'ScaleUpTech',
+    company: "MeinPaul GmbH & Bringmeister GmbH",
+    timeframe: "08/2023 – 09/2024",
+    role: "Backend & Fullstack Engineering (Freelancer)",
+    focus: "Skalierbare Steuer- & E-Commerce-Plattformen",
+    impact: [
+      "Laravel-, Kotlin- und TypeScript-Services inklusive AuthN/AuthZ und Performance-Tuning.",
+      "Migrationen, CI/CD-Automatisierung und DevOps-Enablement in Azure & AWS.",
+    ],
+    stack:
+      "PHP 8, Laravel 10, MySQL, Azure (IaaS/Blob), Cloudflare, GitHub, CI/CD, Dart, Flutter, Kotlin, TypeScript, Svelte, React Native, GraphQL, Docker, SQL, AWS.",
   },
 ]);
 
 // Anzahl der Slides berechnen (jede Slide zeigt 2 Testimonials)
-const totalSlides = Math.ceil(testimonials.value.length / 2);
+const totalSlides = Math.ceil(caseStudies.value.length / 2);
 
 // Aktuellen Slide-Index initialisieren
 const currentSlideIndex = ref(0);
 
 // Sichtbare Testimonials basierend auf dem aktuellen Slide-Index berechnen
-const visibleTestimonials = computed(() => {
-  const startIndex = (currentSlideIndex.value * 2) % testimonials.value.length;
+const visibleCaseStudies = computed(() => {
+  const startIndex = (currentSlideIndex.value * 2) % caseStudies.value.length;
   const indices = [
-    testimonials.value[startIndex % testimonials.value.length],
-    testimonials.value[(startIndex + 1) % testimonials.value.length],
+    caseStudies.value[startIndex % caseStudies.value.length],
+    caseStudies.value[(startIndex + 1) % caseStudies.value.length],
   ];
   return indices;
 });
@@ -74,12 +89,23 @@ const showNext = () => {
   currentSlideIndex.value = (currentSlideIndex.value + 1) % totalSlides;
 };
 
+const isPaused = ref(false);
 let rotationInterval = null;
 
-onMounted(() => {
+const startRotation = () => {
   rotationInterval = setInterval(() => {
-    showNext();
+    if (!isPaused.value) {
+      showNext();
+    }
   }, 5000);
+};
+
+const togglePause = () => {
+  isPaused.value = !isPaused.value;
+};
+
+onMounted(() => {
+  startRotation();
 });
 
 onBeforeUnmount(() => {
@@ -88,78 +114,89 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="container mx-auto bg-white py-24 px-6" aria-labelledby="testimonials-heading">
-    <h2 id="testimonials-heading" class="text-3xl font-bold text-gray-900 mb-12">Kundenbewertungen</h2>
+  <div class="mb-12 max-w-4xl">
+    <p class="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+      Referenzen
+    </p>
+    <h2 id="case-studies-heading" class="mt-2 text-3xl font-bold text-gray-900">
+      Case Highlights aus aktuellen Mandaten
+    </h2>
+    <p class="mt-3 text-base text-gray-600">
+      Auszug aus Projekten in regulierten Branchen, E-Commerce und Wissensarbeit
+      – inklusive Rollen, Wirkung und verantwortungsvollem Tech-Stack.
+    </p>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <figure
-        v-for="(testimonial, index) in visibleTestimonials"
-        :key="testimonial.name + index"
-        class="flex flex-col justify-between bg-white border border-gray-200 rounded-lg p-6 shadow-sm"
-      >
-        <div class="flex gap-x-1 text-indigo-600" aria-hidden="true">
-          <svg
-            v-for="starIndex in 5"
-            :key="starIndex"
-            class="h-5 w-5 flex-none"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+    <article
+      v-for="(caseStudy, index) in visibleCaseStudies"
+      :key="caseStudy.company + index"
+      class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+    >
+      <div>
+        <p class="text-xs uppercase tracking-wide text-gray-500">
+          {{ caseStudy.timeframe }}
+        </p>
+        <p class="mt-1 text-xl font-semibold text-gray-900">
+          {{ caseStudy.company }}
+        </p>
+        <p class="text-sm text-gray-600">{{ caseStudy.role }}</p>
+        <p class="mt-4 text-sm font-semibold text-indigo-600">
+          {{ caseStudy.focus }}
+        </p>
+
+        <ul
+          class="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-600 marker:text-indigo-600"
+        >
+          <li
+            v-for="(highlight, idx) in caseStudy.impact"
+            :key="idx"
+            class="leading-6"
           >
-            <path
-              fill-rule="evenodd"
-              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536
-              1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405
-              1.02L10 15.591l4.069 2.485c.713.436
-              1.598-.207 1.404-1.02l-1.106-4.637
-              3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </div>
+            {{ highlight }}
+          </li>
+        </ul>
+      </div>
 
-        <blockquote class="mt-4 text-lg font-semibold text-gray-900">
-          <p>“{{ testimonial.text }}”</p>
-        </blockquote>
-        
-        <figcaption class="mt-6 flex items-center gap-x-4">
-          <img
-            class="h-12 w-12 rounded-full bg-gray-50"
-            :src="testimonial.avatar"
-            alt=""
-          />
-          <div>
-            <div class="text-base font-semibold text-gray-900">
-              {{ testimonial.name }}
-            </div>
-            <div class="text-sm text-gray-600">{{ testimonial.position }}</div>
-          </div>
-          <img
-            class="h-6 w-auto ml-auto"
-            :src="testimonial.companyLogo"
-            :alt="testimonial.company"
-          />
-        </figcaption>
-      </figure>
+      <div class="mt-6">
+        <p class="text-xs uppercase tracking-wide text-gray-500">Stack</p>
+        <p class="mt-1 text-sm text-gray-600">
+          {{ caseStudy.stack }}
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <div
+    class="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+  >
+    <div class="space-x-2">
+      <button
+        v-for="(step, index) in totalSlides"
+        :key="index"
+        @click="currentSlideIndex = index"
+        class="h-2 w-2 rounded-full focus:outline-none"
+        :class="index === currentSlideIndex ? 'bg-gray-800' : 'bg-gray-200'"
+        :aria-label="'Slide ' + (index + 1)"
+        :aria-current="index === currentSlideIndex ? 'true' : 'false'"
+      ></button>
     </div>
 
-    <div class="mt-8 flex justify-between items-center">
-      <div class="space-x-2">
-        <button
-          v-for="(step, index) in totalSlides"
-          :key="index"
-          @click="currentSlideIndex = index"
-          class="w-2 h-2 rounded-full focus:outline-none"
-          :class="index === currentSlideIndex ? 'bg-gray-800' : 'bg-gray-200'"
-          :aria-label="'Slide ' + (index + 1)"
-          :aria-current="index === currentSlideIndex ? 'true' : 'false'"
-        ></button>
-      </div>
+    <div class="flex flex-wrap gap-4 md:items-center">
+      <button
+        @click="togglePause"
+        :aria-pressed="isPaused"
+        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      >
+        <span v-if="isPaused">Auto-Play fortsetzen</span>
+        <span v-else>Auto-Play pausieren</span>
+      </button>
 
       <div class="flex gap-x-4">
         <button
           @click="showPrevious"
-          aria-label="Vorherige Bewertungen"
-          class="rounded-full p-2 border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          aria-label="Vorherige Cases"
+          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
           <span class="sr-only">Vorherige</span>
           <svg
@@ -179,8 +216,8 @@ onBeforeUnmount(() => {
 
         <button
           @click="showNext"
-          aria-label="Nächste Bewertungen"
-          class="rounded-full p-2 border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          aria-label="Nächste Cases"
+          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
           <span class="sr-only">Nächste</span>
           <svg
@@ -200,5 +237,5 @@ onBeforeUnmount(() => {
         </button>
       </div>
     </div>
-  </section>
+  </div>
 </template>

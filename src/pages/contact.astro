@@ -1,7 +1,119 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const contactChannels = [
+  {
+    label: "E-Mail",
+    value: "info@garten.ai",
+    href: "mailto:info@garten.ai",
+    description: "Direkte Anfrage, CV oder Portfolio erhalten.",
+  },
+  {
+    label: "LinkedIn",
+    value: "/in/paifgx",
+    href: "https://www.linkedin.com/in/paifgx",
+    description: "Updates, Referenzen und Austausch.",
+  },
+  {
+    label: "Website",
+    value: "www.garten.ai",
+    href: "https://www.garten.ai",
+    description: "Weitere Projekte, Blog & Ressourcen.",
+  },
+];
+
+const availability = [
+  {
+    title: "Verfügbarkeit",
+    detail: "Teil- oder Vollzeitmandate, Start kurzfristig möglich. Remote im DACH-Raum, Vor-Ort nach Absprache.",
+  },
+  {
+    title: "Fokus 2024/2025",
+    detail:
+      "GenAI im Gesundheitswesen, E-Commerce, Wissensmanagement und Public Sector. Beratungs- & Delivery-Kombinationen bevorzugt.",
+  },
+  {
+    title: "Aktuelle Mandate",
+    detail:
+      "Universitätsklinikum Bonn, FlowCraftDB, CANCOM, AICT Group, Trainings bei Nextise/ptm-Akademie/GFU Cyrus AG.",
+  },
+];
 ---
 
 <BaseLayout>
-  <h2>Kontakt</h2>
+  <section class="bg-white px-6 py-16 lg:px-12">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+        Kontakt &amp; Verfügbarkeit
+      </p>
+      <h1 class="mt-2 text-4xl font-bold text-gray-900">Lassen Sie uns sprechen.</h1>
+      <p class="mt-4 text-base text-gray-600">
+        Ob Sparring, Delivery oder Enablement – ich antworte in der Regel binnen
+        eines Werktags. Bitte nennen Sie kurz Zielbild, Rahmen (Budget, Timeline,
+        Team) und gewünschtes Engagementmodell.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 px-6 py-16 lg:px-12">
+    <div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+      {contactChannels.map((channel) => (
+        <article class="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+            {channel.label}
+          </p>
+          <a
+            href={channel.href}
+            class="mt-2 inline-flex text-xl font-semibold text-gray-900 underline-offset-4 hover:underline"
+            rel="noopener noreferrer"
+            target={channel.href.startsWith("http") ? "_blank" : undefined}
+          >
+            {channel.value}
+          </a>
+          <p class="mt-3 text-sm text-gray-600">{channel.description}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-3">
+      {availability.map((item) => (
+        <article class="rounded-2xl border border-gray-200 bg-white p-5">
+          <p class="text-sm font-semibold text-gray-900">{item.title}</p>
+          <p class="mt-2 text-sm text-gray-600">{item.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-white px-6 py-16 lg:px-12">
+    <div class="mx-auto max-w-4xl rounded-3xl border border-gray-200 p-8 shadow-sm">
+      <h2 class="text-2xl font-bold text-gray-900">Was hilft für ein Erstgespräch?</h2>
+      <ul class="mt-4 space-y-2 text-sm text-gray-600">
+        <li>• Zielsetzung &amp; gewünschter Impact (z. B. RAG-Assistent, Governance, Training)</li>
+        <li>• Aktueller Status (PoC, MVP, Rollout, Betrieb)</li>
+        <li>• Team-Setup &amp; vorhandene Skills/Stakeholder</li>
+        <li>• Tech-/Compliance-Rahmen (Cloud, Security, Branchenanforderungen)</li>
+      </ul>
+      <p class="mt-4 text-sm text-gray-600">
+        Gerne stelle ich NDA-Vorlagen bereit oder arbeite mit bestehenden
+        Vertragsmustern (MSA, Werk-/Dienstvertrag, ANÜ).
+      </p>
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a
+          href="mailto:info@garten.ai?subject=Erstgespraech%20anfragen"
+          class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+        >
+          Erstgespräch anfragen
+        </a>
+        <a
+          href="https://www.linkedin.com/in/paifgx"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-400"
+        >
+          LinkedIn-Nachricht senden
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

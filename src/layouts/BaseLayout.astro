@@ -5,6 +5,11 @@ import Footer from "../components/Footer.astro";
 const currentPath = Astro.url.pathname;
 
 const { classDefintion } = Astro.props;
+const pageTitle =
+  "Patrik Garten · AI Solution Architect & Software Engineer";
+const pageDescription =
+  "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end GenAI-Architekturen, Multi-LLM-Orchestrierung und Security-by-Design für regulierte DACH-Unternehmen.";
+const mainClass = classDefintion ?? "";
 ---
 
 <!doctype html>
@@ -12,13 +17,18 @@ const { classDefintion } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patriks Webseite</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.garten.ai" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body>
+  <body class="min-h-screen bg-gray-50 text-gray-900 antialiased">
     <Header currentPath={currentPath} client:load />
 
-    <main class={classDefintion}>
+    <main class={mainClass}>
       <slot />
     </main>
 

@@ -43,12 +43,18 @@ const isActive = (href) => {
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
         <div class="flex flex-shrink-0 items-center">
-          <h1 class="text-lg font-semibold">
-            <a href="/" class="flex items-center">
-              <img class="h-8 w-auto" src="logo.png" alt="Logo Ihrer Website" />
-              <span class="sr-only">Startseite</span>
-            </a>
-          </h1>
+          <a
+            href="/"
+            class="flex flex-col leading-tight"
+            aria-label="Startseite"
+          >
+            <span class="text-lg font-semibold tracking-tight text-gray-900">
+              GARTEN.ai
+            </span>
+            <span class="text-xs uppercase text-gray-500">
+              AI Solution Architect
+            </span>
+          </a>
         </div>
 
         <!-- Navigation Links (Desktop) -->

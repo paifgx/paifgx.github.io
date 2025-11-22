@@ -1,7 +1,215 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const servicePillars = [
+  {
+    title: "AI Solution Architecture & Governance",
+    subtitle: "FlowCraftDB · CANCOM · Universitätsklinikum Bonn",
+    description:
+      "Konzeption und Steuerung von GenAI-Programmen – von der Strategie über das Referenzdesign bis zur produktiven Skalierung. Fokus auf Multi-LLM-Orchestrierung, RAG/Knowledge-Graph-Workloads und Security-by-Design.",
+    deliverables: [
+      "RAG- & Agentensysteme mit LangChain, LlamaIndex, Haystack, OpenSearch/Qdrant/Weaviate.",
+      "Tool-Use, Workflow-Orchestrierung und Evaluation (DeepEval, PromptLayer, custom KPIs).",
+      "Security, IAM & Compliance nach BSI IT-Grundschutz, ISO/IEC 27001, DSGVO/DPIA mit OAuth2/Keycloak.",
+    ],
+    stack:
+      "LLMs: GPT-4/3.5, Claude, Gemini, Mistral, LLaMA/Mixtral · Orchestrierung: LangChain, LlamaIndex, Haystack, custom Agents.",
+  },
+  {
+    title: "Software Engineering & Platform Delivery",
+    subtitle: "Bringmeister · MeinPaul · CANCOM · Universitätsklinikum Bonn",
+    description:
+      "End-to-end Delivery für APIs, Data Products, Mobile & Web. Polyglotte Stacks (Python, TypeScript, Kotlin, PHP, Flutter) plus Infrastructure-as-Code und Observability.",
+    deliverables: [
+      "Backend- & API-Engineering (FastAPI, NestJS, Micronaut, Django, Laravel, GraphQL, WebSockets).",
+      "Cloud & Infrastruktur: AWS, Azure, GCP, Terraform, Docker/Kubernetes, GitHub Actions/GitLab CI/CD.",
+      "Observability & Ops: Prometheus/Grafana, ELK/OpenSearch, Tracing, Cost/Performance-Optimierung.",
+    ],
+    stack:
+      "Python, TypeScript/Node, Kotlin, PHP, Dart/Flutter, SQL/NoSQL, Kafka, RabbitMQ, Docker/Kubernetes, Terraform.",
+  },
+  {
+    title: "Academy, Coaching & Change",
+    subtitle: "Nextise · ptm-Akademie · GFU Cyrus AG · interne Upskilling-Programme",
+    description:
+      "Trainings, Curriculum-Design und Coaching für Engineering-, Product- und Leadership-Teams. Fokus auf KI-Architektur, moderne Softwareentwicklung und Security-by-Design.",
+    deliverables: [
+      "Modulare Trainings (Web, DevOps, KI, Security) mit über 100 Teilnehmenden pro Jahr.",
+      "Shadowing & Coaching für Architekt:innen, Product Owner und Tech Leads.",
+      "Wissenssysteme, Playbooks und Enablement-Artefakte in Notion, Confluence oder Git-Repos.",
+    ],
+    stack:
+      "Workshops, Pair-Architecture, Code-/Prompt-Clinics, Assessments, OKRs & KPI-Frameworks.",
+  },
+];
+
+const engagementModes = [
+  {
+    title: "Fractional AI/CIO",
+    description:
+      "Strategische Verantwortung für GenAI & Plattformen, Steering Committees, Roadmaps, Budgetierung.",
+  },
+  {
+    title: "Projekt-Delivery",
+    description:
+      "End-to-end Umsetzung mit Verantwortung für Architektur, Engineering, Security und Übergabe.",
+  },
+  {
+    title: "Advisory & Enablement",
+    description:
+      "Sparring, Reviews, Architecture Boards, Trainings und On-the-job-Coaching Ihrer Teams.",
+  },
+];
+
+const technologyHighlights = {
+  llm: [
+    "LangChain, LlamaIndex, Haystack, RAG-Tooling",
+    "Embeddings: OpenAI, Hugging Face, Cohere, BGE, MiniLM",
+    "Agenten-Patterns: ReAct, CoT, Tool-Use, AutoGPT-ähnlich",
+  ],
+  cloud: [
+    "AWS (EC2, S3, Lambda, DynamoDB, RDS, ElastiCache, API Gateway, CloudFront, ECR, SQS, Fargate)",
+    "Azure (OpenAI, Cognitive Services, CosmosDB, Blob, IaaS), GCP (Vertex AI, BigQuery, Firebase)",
+    "Infrastructure-as-Code mit Terraform, Docker, Kubernetes, Helm, GitHub Actions/GitLab CI",
+  ],
+  security: [
+    "Security/Privacy-by-Design, IAM/RBAC, OAuth2, Keycloak, Supabase Auth",
+    "BSI IT-Grundschutz (200-1/-2/-3), ISO/IEC 27001, DSGVO, DPIA",
+    "Observability: Prometheus, Grafana, ELK/OpenSearch, DeepEval für Prompt-Qualität",
+  ],
+};
 ---
 
 <BaseLayout>
-  <h2>Dienstleistungen</h2>
+  <section class="bg-white px-6 py-16 lg:px-12">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+        Serviceportfolio
+      </p>
+      <h1 class="mt-3 text-4xl font-bold text-gray-900 sm:text-5xl">
+        KI-Architektur, Engineering &amp; Enablement aus einer Hand.
+      </h1>
+      <p class="mt-6 text-lg text-gray-600">
+        Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit, Skalierbarkeit
+        und Ownership in Ihrem Team. Die folgenden Leistungsbausteine lassen sich
+        einzeln oder kombiniert beauftragen – remote im DACH-Raum oder vor Ort.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 px-6 py-16 lg:px-12">
+    <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 xl:grid-cols-3">
+      {servicePillars.map((pillar) => (
+        <article
+          class="flex flex-col rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
+        >
+          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+            {pillar.subtitle}
+          </p>
+          <h2 class="mt-2 text-2xl font-bold text-gray-900">{pillar.title}</h2>
+          <p class="mt-3 text-sm text-gray-600">{pillar.description}</p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            {pillar.deliverables.map((item) => (
+              <li class="flex gap-2">
+                <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-600"></span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 text-xs uppercase tracking-widest text-gray-500">
+            Stack &amp; Werkzeuge
+          </p>
+          <p class="text-sm text-gray-600">{pillar.stack}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-white px-6 py-16 lg:px-12">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="text-3xl font-bold text-gray-900">Engagement-Modelle</h2>
+      <p class="mt-3 text-base text-gray-600">
+        Flexibel kombinierbar – abhängig von Teamgröße, Reifegrad und Budget.
+      </p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {engagementModes.map((mode) => (
+          <article class="rounded-2xl border border-gray-200 p-6">
+            <h3 class="text-lg font-semibold text-gray-900">{mode.title}</h3>
+            <p class="mt-2 text-sm text-gray-600">{mode.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-900 px-6 py-16 text-gray-100 lg:px-12">
+    <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-3">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-300">
+          LLM &amp; RAG
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-200">
+          {technologyHighlights.llm.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-300">
+          Cloud &amp; Delivery
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-200">
+          {technologyHighlights.cloud.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-300">
+          Security &amp; Observability
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-200">
+          {technologyHighlights.security.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white px-6 py-16 text-center lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold text-gray-900">
+        Bereit für Ihr nächstes Kapitel?
+      </h2>
+      <p class="mt-4 text-base text-gray-600">
+        Schreiben Sie an <a
+          href="mailto:info@garten.ai"
+          class="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+          >info@garten.ai</a
+        >
+        oder vereinbaren Sie ein Gespräch über <a
+          href="https://www.linkedin.com/in/paifgx"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+          >LinkedIn</a
+        >.
+      </p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a
+          href="/contact"
+          class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+        >
+          Kontakt aufnehmen
+        </a>
+        <a
+          href="mailto:info@garten.ai?subject=Serviceanfrage"
+          class="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-400"
+        >
+          PDF-Portfolio anfordern
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

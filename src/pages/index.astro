@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import SectionHero from "../components/index/SectionHero.astro";
 import SectionPartners from "../components/index/SectionPartners.astro";
-import SectionWelcome from "../components/index/SectionWelcome.astro";
 
 import ServiceArticle from "src/components/ServiceArticle.astro";
 
@@ -14,86 +13,92 @@ import SectionCTA from "src/components/index/SectionCTA.astro";
 <BaseLayout>
   <SectionHero />
   <SectionPartners />
-  <SectionWelcome />
 
-  <section id="services">
+  <section id="services" class="bg-white px-6 py-16 lg:px-0 space-y-16">
     <ServiceArticle
-      subtitle="Transformation"
-      title="Digitale Transformation und KI-Lösungen für Ihr Unternehmen"
+      subtitle="AI Strategy & Governance"
+      title="AI Solution Architecture & Multi-LLM-Plattformen"
       imagePosition="right"
       image="https://images.unsplash.com/photo-1716637644831-e046c73be197"
       paragraphs={{
         intro:
-          "Nutzen Sie die vielfältigen Möglichkeiten der digitalen Transformation und Künstlichen Intelligenz, um Prozesse zu optimieren, Fehler zu minimieren und Innovationen gezielt voranzutreiben. Ich biete maßgeschneiderte, KI-gestützte Lösungen, die Ihre Effizienz steigern und Ihrem Unternehmen entscheidende Wettbewerbsvorteile verschaffen.",
+          "Ich entwerfe tragfähige KI-Architekturen – von RAG-Assistants über Multi-LLM-Orchestrierung bis zu agentenbasierten Automationsplattformen. Mandate wie FlowCraftDB, CANCOM oder Universitätsklinikum Bonn zeigen, wie strukturierte GenAI-Programme echte Entlastung schaffen.",
         details: [
           {
-            heading: "Effizienzsteigerung durch Automatisierung",
-            text: "Reduzieren Sie Fehler und sparen Sie Zeit durch automatisierte, präzise Prozesse, die Ihre Produktivität nachhaltig steigern.",
+            heading: "RAG & Agentensysteme",
+            text: "Design und Implementierung von Retrieval-Pipelines, Tool-Use-Agents und orchestrierten LLM-Flows mit LangChain, LlamaIndex oder Custom-Stacks.",
           },
           {
-            heading: "Skalierbare Lösungen für Wachstum",
-            text: "Unsere digitalen und KI-gestützten Lösungen wachsen flexibel mit Ihrem Unternehmen und passen sich jederzeit neuen Anforderungen und Märkten an.",
+            heading: "Security-by-Design",
+            text: "BSI IT-Grundschutz, ISO/IEC 27001, DSGVO, IAM und Privacy-by-Design als feste Bestandteile Ihrer KI-Roadmap.",
           },
           {
-            heading: "Wettbewerbsvorteile durch Innovation",
-            text: "Mit modernsten KI-Technologien sichern Sie sich entscheidende Vorteile und bleiben Ihren Mitbewerbern durch Innovation einen Schritt voraus.",
+            heading: "Operate & Govern",
+            text: "Observability, Guardrails, Prompt-Evaluierung (DeepEval) und KPI-Frameworks für nachhaltige Betriebsmodelle.",
           },
         ],
       }}
     />
 
     <ServiceArticle
-      subtitle="Effizienz"
-      title="Maßgeschneiderte Softwarelösungen, Engineering und IT-Beratung"
+      subtitle="Delivery"
+      title="Software Engineering & Platform Delivery"
       imagePosition="left"
       image="https://images.unsplash.com/photo-1650295751050-b184e54e177c"
       paragraphs={{
         intro:
-          "Unsere spezialisierten Dienstleistungen im Bereich der digitalen Transformation bieten Ihnen maßgeschneiderte Lösungen...",
+          "Ich begleite komplette Software-Lebenszyklen – von der Architektur über die Entwicklung bis zum produktiven Betrieb. Polyglotte Stacks (Python, TypeScript, Kotlin, Flutter, PHP) erlauben einen pragmatischen Fit für Ihre Organisation.",
         details: [
           {
-            heading: "Angepasste Softwarelösungen",
-            text: "Individuell entwickelte Software für Ihre Geschäftsprozesse...",
+            heading: "Backend & APIs",
+            text: "FastAPI, NestJS, Micronaut, Django, Laravel oder Spring – samt OpenAPI/GraphQL, Streaming, WebSockets und Event-Driven Patterns.",
           },
           {
-            heading: "Software Engineering",
-            text: "Zuverlässige und skalierbare Systeme, die auf bewährten Methoden...",
+            heading: "Cloud & Infrastruktur",
+            text: "AWS, Azure, GCP, Terraform, Docker/Kubernetes, GitHub Actions/GitLab CI – inklusive Observability mit Prometheus/Grafana oder ELK.",
           },
           {
-            heading: "IT Consulting",
-            text: "Beratung für optimale IT-Entscheidungen, von der Analyse bis zur Umsetzung.",
+            heading: "Security & Compliance",
+            text: "OAuth2, Keycloak, RBAC/IAM, Threat Modeling und Audits nach ISO 27001 oder BSI 200-x.",
           },
         ],
       }}
     />
 
     <ServiceArticle
-      title="Entwickeln Sie Ihre IT-Kompetenz mit uns"
-      subtitle="Lernen"
+      title="Enablement, Coaching & Curricula"
+      subtitle="Enable"
       imagePosition="right"
       image="https://images.unsplash.com/photo-1703680968885-22659eb00165"
       paragraphs={{
         intro:
-          "Als erfahrener IT-Dozent biete ich praxisnahe Schulungen und individuelles Coaching, die speziell auf die Bedürfnisse von Fachleuten und Unternehmen zugeschnitten sind. Erweitern Sie Ihr Wissen und bleiben Sie mit den neuesten Technologien auf dem Laufenden.",
+          "Über 100 Teilnehmende pro Jahr in maßgeschneiderten Trainings bei Nextise, ptm-Akademie und GFU Cyrus AG – ergänzt durch interne Upskilling-Programme für Mandanten.",
         details: [
           {
-            heading: "Praxisorientierte Schulungen",
-            text: "Erwerben Sie direkt anwendbares Wissen, das Sie sofort in Ihrem beruflichen Alltag effektiv einsetzen können.",
+            heading: "Curriculum Design",
+            text: "Moderne Softwarearchitektur, GenAI, DevOps, Security-by-Design und Cloud-native Delivery – abgestimmt auf Teams & Organisationen.",
           },
           {
-            heading: "Maßgeschneidertes Coaching",
-            text: "Persönliche Betreuung, um gezielt Ihre beruflichen Herausforderungen anzugehen und Ihre individuellen Ziele zu erreichen.",
+            heading: "Coaching & Shadowing",
+            text: "Pair-Architecture, Reviews, Code- und Prompt-Clinics sowie Mentoring für Product & Engineering Leads.",
           },
           {
-            heading: "Aktuelle Technologietrends",
-            text: "Bleiben Sie am Puls der IT-Branche mit Schulungen zu den neuesten Entwicklungen und Best Practices.",
+            heading: "Academy Ops",
+            text: "Assessments, Lernpfade, KPI-Definition und Wissensdatenbanken mit Notion, Confluence oder DVC.",
           },
         ],
       }}
     />
   </section>
 
-  <SectionReviews client:load />
+  <section
+    class="container mx-auto py-24 px-6"
+    aria-labelledby="case-studies-heading"
+  >
+    <SectionReviews client:load />
+  </section>
 
-  <SectionCTA />
+  <section class="bg-white">
+    <SectionCTA />
+  </section>
 </BaseLayout>
