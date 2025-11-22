@@ -6,76 +6,116 @@ const {
   imagePosition = "right",
   image,
 } = Astro.props;
+
+const slugify = (value: string) =>
+  value
+    .toString()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "");
+
+const headingId = slugify(title);
 ---
 
 <article
-  class={`container mx-auto flex flex-col rounded-lg bg-white px-6 py-16 lg:px-0 ${imagePosition === "left" ? "lg:flex-row-reverse" : "lg:flex-row"} dark:bg-gray-900 dark:text-gray-100`}
+  class="container mx-auto px-6 py-16 lg:px-0"
   role="region"
-  aria-labelledby="section-title"
+  aria-labelledby={headingId}
 >
-  <div class="lg:w-1/2 flex flex-col justify-center items-start">
-    <h3
-      class="text-primary-600 text-2xl font-semibold tracking-wide dark:text-indigo-300"
-    >
-      {subtitle}
-    </h3>
-    <h2
-      id="section-title"
-      class="mt-2 mb-6 text-4xl font-extrabold text-gray-900 dark:text-white"
-    >
-      {title}
-    </h2>
-    <p class="mb-8 leading-relaxed text-gray-700 dark:text-gray-300">
-      {paragraphs.intro}
-    </p>
-
-    <div class="space-y-8">
-      {
-        paragraphs.details.map((detail: { heading: string; text: string }) => (
-          <div class="border-b border-gray-200 pb-8 dark:border-gray-700">
-            <h4 class="text-xl font-bold text-gray-800 dark:text-white">
-              {detail.heading}
-            </h4>
-            <p class="leading-relaxed text-gray-600 dark:text-gray-300">
-              {detail.text}
-            </p>
-          </div>
-        ))
-      }
-    </div>
-  </div>
-
   <div
-    class={`lg:w-1/2 mt-12 lg:mt-0 flex justify-center items-center grayscale hover:grayscale-0 ease-in duration-300 ${imagePosition === "left" ? "lg:pr-8" : "lg:pl-8"}`}
+    class={`relative isolate flex flex-col gap-12 overflow-hidden rounded-3xl border border-gray-200/60 bg-white/90 px-6 py-10 shadow-xl ring-1 ring-black/5 dark:border-white/10 dark:bg-gray-900/80 dark:ring-white/5 ${imagePosition === "left" ? "lg:flex-row-reverse" : "lg:flex-row"}`}
   >
-    <svg viewBox="0 0 655 680" fill="none" class="h-full">
-      <g clip-path="url(#:S1:-clip)" class="group">
-        <g
-          class="origin-center scale-100 transition duration-500 motion-safe:group-hover:scale-105"
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 opacity-80"
+    >
+      <div
+        class="absolute -left-16 top-0 h-48 w-48 rounded-full bg-indigo-200/40 blur-3xl dark:bg-indigo-500/10"
+      >
+      </div>
+      <div
+        class="absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-emerald-200/50 blur-3xl dark:bg-emerald-400/10"
+      >
+      </div>
+    </div>
+
+    <div
+      class="relative z-10 flex-1 space-y-8 text-gray-900 dark:text-gray-100"
+    >
+      <p
+        class="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-300"
+      >
+        <span class="h-px w-10 bg-indigo-400/40"></span>
+        {subtitle}
+      </p>
+      <h2
+        id={headingId}
+        class="text-4xl font-extrabold leading-tight text-gray-900 dark:text-white"
+      >
+        {title}
+      </h2>
+      <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        {paragraphs.intro}
+      </p>
+
+      <div class="grid gap-6 sm:grid-cols-2">
+        {
+          paragraphs.details.map(
+            (detail: { heading: string; text: string }) => (
+              <div class="rounded-2xl border border-gray-200/70 bg-white/85 p-5 shadow-sm backdrop-blur dark:border-white/10 dark:bg-gray-950/40">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  {detail.heading}
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                  {detail.text}
+                </p>
+              </div>
+            )
+          )
+        }
+      </div>
+    </div>
+
+    <div
+      class={`relative z-10 flex flex-1 items-center justify-center ${imagePosition === "left" ? "lg:pr-8" : "lg:pl-8"}`}
+    >
+      <div class="relative w-full max-w-xl">
+        <div
+          class="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-indigo-200/30 to-transparent blur-2xl dark:from-indigo-500/10"
         >
-          <foreignObject class="w-full h-full">
-            <img
-              src={image}
-              loading="lazy"
-              decoding="async"
-              class="w-full bg-neutral-100 object-cover dark:bg-gray-800"
-            />
-          </foreignObject>
-        </g>
-        <use
-          href="#:S1:-shape"
-          stroke-width="2"
-          class="stroke-neutral-950/10 dark:stroke-white/10"></use>
-      </g>
-      <defs>
-        <clipPath id=":S1:-clip">
-          <path
-            id=":S1:-shape"
-            d="M537.827 9.245A11.5 11.5 0 0 1 549.104 0h63.366c7.257 0 12.7 6.64 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 586.87 151h-28.275a15.999 15.999 0 0 0-15.689 12.862l-59.4 297c-1.98 9.901 5.592 19.138 15.689 19.138h17.275l.127.001c.85.009 1.701.074 2.549.009 11.329-.874 21.411-7.529 24.88-25.981.002-.012.016-.016.023-.007.008.009.022.005.024-.006l24.754-123.771A11.5 11.5 0 0 1 580.104 321h63.366c7.257 0 12.7 6.639 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 617.87 472H559c-22.866 0-28.984 7.98-31.989 25.931-.004.026-.037.035-.052.014-.015-.02-.048-.013-.053.012l-24.759 123.798A11.5 11.5 0 0 1 490.87 631h-29.132a14.953 14.953 0 0 0-14.664 12.021c-4.3 21.502-23.18 36.979-45.107 36.979H83.502c-29.028 0-50.8-26.557-45.107-55.021l102.4-512C145.096 91.477 163.975 76 185.902 76h318.465c10.136 0 21.179-5.35 23.167-15.288l10.293-51.467Zm-512 160A11.5 11.5 0 0 1 37.104 160h63.366c7.257 0 12.7 6.639 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 74.87 311H11.504c-7.257 0-12.7-6.639-11.277-13.755l25.6-128Z"
-            fill-rule="evenodd"
-            clip-rule="evenodd"></path>
-        </clipPath>
-      </defs>
-    </svg>
+        </div>
+        <svg viewBox="0 0 655 680" fill="none" class="relative z-10 w-full">
+          <g clip-path="url(#:S1:-clip)" class="group">
+            <g
+              class="origin-center scale-100 transition duration-700 ease-out motion-safe:group-hover:scale-105"
+            >
+              <foreignObject class="h-full w-full">
+                <img
+                  src={image}
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full rounded-[3rem] bg-neutral-100 object-cover dark:bg-gray-800"
+                />
+              </foreignObject>
+            </g>
+            <use
+              href="#:S1:-shape"
+              stroke-width="2"
+              class="stroke-black/10 dark:stroke-white/15"></use>
+          </g>
+          <defs>
+            <clipPath id=":S1:-clip">
+              <path
+                id=":S1:-shape"
+                d="M537.827 9.245A11.5 11.5 0 0 1 549.104 0h63.366c7.257 0 12.7 6.64 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 586.87 151h-28.275a15.999 15.999 0 0 0-15.689 12.862l-59.4 297c-1.98 9.901 5.592 19.138 15.689 19.138h17.275l.127.001c.85.009 1.701.074 2.549.009 11.329-.874 21.411-7.529 24.88-25.981.002-.012.016-.016.023-.007.008.009.022.005.024-.006l24.754-123.771A11.5 11.5 0 0 1 580.104 321h63.366c7.257 0 12.7 6.639 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 617.87 472H559c-22.866 0-28.984 7.98-31.989 25.931-.004.026-.037.035-.052.014-.015-.02-.048-.013-.053.012l-24.759 123.798A11.5 11.5 0 0 1 490.87 631h-29.132a14.953 14.953 0 0 0-14.664 12.021c-4.3 21.502-23.18 36.979-45.107 36.979H83.502c-29.028 0-50.8-26.557-45.107-55.021l102.4-512C145.096 91.477 163.975 76 185.902 76h318.465c10.136 0 21.179-5.35 23.167-15.288l10.293-51.467Zm-512 160A11.5 11.5 0 0 1 37.104 160h63.366c7.257 0 12.7 6.639 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 74.87 311H11.504c-7.257 0-12.7-6.639-11.277-13.755l25.6-128Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"></path>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </div>
   </div>
 </article>
