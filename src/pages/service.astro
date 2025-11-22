@@ -129,7 +129,7 @@ const painPoints = [
 >
   <section class="relative overflow-hidden px-6 py-20 sm:px-12">
     <div
-      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.2),_transparent_55%)] dark:bg-[radial-gradient(circle_at_top,_rgba(120,119,198,0.35),_transparent_55%)]"
+      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.2),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.35),transparent_55%)]"
     >
     </div>
     <div
@@ -186,7 +186,7 @@ const painPoints = [
       </div>
 
       <div
-        class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/90 p-8 text-sm text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 lg:grid-cols-[1.1fr,0.9fr] lg:items-stretch"
+        class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/90 p-8 text-sm text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch"
       >
         <div class="space-y-8">
           <div
@@ -195,7 +195,7 @@ const painPoints = [
             {
               painPoints.map((pain) => (
                 <article class="flex flex-col">
-                  <p class="mb-3 sm:min-h-[3rem] text-xs font-semibold uppercase tracking-[0.25em] text-indigo-700 dark:text-indigo-200">
+                  <p class="mb-3 sm:min-h-12 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-700 dark:text-indigo-200">
                     {pain.title}
                   </p>
                   <p class="leading-6 text-gray-600 dark:text-gray-300">
@@ -337,7 +337,7 @@ const painPoints = [
                   ))}
                 </ul>
               </div>
-              <div class="rounded-2xl border border-indigo-100/80 bg-white/90 p-4 shadow-sm shadow-indigo-100/60 dark:border-indigo-400/30 dark:bg-white/5 dark:shadow-none lg:min-h-[13rem]">
+              <div class="rounded-2xl border border-indigo-100/80 bg-white/90 p-4 shadow-xs shadow-indigo-100/60 dark:border-indigo-400/30 dark:bg-white/5 dark:shadow-none lg:min-h-52">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-700 dark:text-indigo-200">
                   Was sich verändert
                 </p>
@@ -385,7 +385,7 @@ const painPoints = [
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           engagementModes.map((mode) => (
-            <article class="rounded-[2rem] border border-slate-900/5 bg-white p-6 shadow-md shadow-indigo-200/25 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10">
+            <article class="rounded-4xl border border-slate-900/5 bg-white p-6 shadow-md shadow-indigo-200/25 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                 {mode.title}
               </h3>
@@ -400,7 +400,7 @@ const painPoints = [
   </section>
 
   <section
-    class="bg-gradient-to-br from-slate-900 via-slate-950 to-black px-6 py-16 text-gray-100 sm:px-12"
+    class="bg-linear-to-br from-slate-900 via-slate-950 to-black px-6 py-16 text-gray-100 sm:px-12"
   >
     <div class="mx-auto max-w-6xl space-y-10">
       <div class="space-y-3">

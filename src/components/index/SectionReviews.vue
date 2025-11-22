@@ -160,7 +160,7 @@ onBeforeUnmount(() => {
     <article
       v-for="(caseStudy, index) in visibleCaseStudies"
       :key="caseStudy.company + index"
-      class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
+      class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-xs dark:border-gray-700 dark:bg-gray-900"
     >
       <div>
         <p
@@ -225,7 +225,7 @@ onBeforeUnmount(() => {
         v-for="(step, index) in totalSlides"
         :key="index"
         @click="currentSlideIndex = index"
-        class="h-2 w-2 rounded-full focus:outline-none"
+        class="h-2 w-2 rounded-full focus:outline-hidden"
         :class="
           index === currentSlideIndex
             ? 'bg-gray-800 dark:bg-white'
@@ -240,7 +240,7 @@ onBeforeUnmount(() => {
       <button
         @click="togglePause"
         :aria-pressed="isPaused"
-        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
       >
         <span v-if="isPaused">Auto-Play fortsetzen</span>
         <span v-else>Auto-Play pausieren</span>
@@ -250,7 +250,7 @@ onBeforeUnmount(() => {
         <button
           @click="showPrevious"
           aria-label="Vorherige Cases"
-          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
         >
           <span class="sr-only">Vorherige</span>
           <svg
@@ -271,7 +271,7 @@ onBeforeUnmount(() => {
         <button
           @click="showNext"
           aria-label="Nächste Cases"
-          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
         >
           <span class="sr-only">Nächste</span>
           <svg

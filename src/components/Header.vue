@@ -114,15 +114,15 @@ const isActive = (href) => {
 <template>
   <Disclosure
     as="header"
-    class="sticky top-0 z-50 bg-white shadow transition-colors duration-200 dark:bg-gray-950 dark:shadow-gray-900/40"
+    class="sticky top-0 z-50 bg-white shadow-sm transition-colors duration-200 dark:bg-gray-950 dark:shadow-gray-900/40"
     v-slot="{ open }"
   >
     <div
-      class="h-1 bg-gradient-to-r from-[var(--color-tiber-900)] via-[var(--color-tiber-500)] to-[var(--color-granny-apple)]"
+      class="h-1 bg-linear-to-r from-(--color-tiber-900) via-(--color-tiber-500) to-(--color-granny-apple)"
     ></div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
-        <div class="flex flex-shrink-0 items-center">
+        <div class="flex shrink-0 items-center">
           <a
             href="/"
             class="flex flex-col leading-tight"
@@ -163,7 +163,7 @@ const isActive = (href) => {
         <div class="hidden sm:ml-6 sm:flex sm:items-center sm:gap-3">
           <button
             type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/70 text-gray-600 shadow-sm transition hover:bg-gray-100 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/70 text-gray-600 shadow-xs transition hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
             :aria-pressed="isDarkMode"
             :aria-label="themeToggleLabel"
             :title="themeToggleLabel"
@@ -175,7 +175,7 @@ const isActive = (href) => {
           </button>
           <a
             :href="contact.href"
-            class="contact-button rounded-md bg-indigo-600 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-950"
+            class="contact-button rounded-md bg-indigo-600 px-4 py-2 text-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-950"
           >
             {{ contact.name }}
           </a>
@@ -184,7 +184,7 @@ const isActive = (href) => {
         <!-- Mobile Menü Button -->
         <div class="-mr-2 flex items-center sm:hidden">
           <DisclosureButton
-            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
             aria-label="Menü öffnen"
           >
             <span class="sr-only">Menü öffnen</span>
@@ -221,7 +221,7 @@ const isActive = (href) => {
         </p>
         <button
           type="button"
-          class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-100 dark:hover:bg-gray-800"
+          class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-100 dark:hover:bg-gray-800"
           :aria-pressed="isDarkMode"
           :aria-label="themeToggleLabel"
           :title="themeToggleLabel"
@@ -238,7 +238,7 @@ const isActive = (href) => {
         <div class="flex items-center px-4">
           <a
             :href="contact.href"
-            class="w-full rounded-md bg-indigo-600 py-2 text-center text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-900"
+            class="w-full rounded-md bg-indigo-600 py-2 text-center text-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-900"
           >
             {{ contact.name }}
           </a>

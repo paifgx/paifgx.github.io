@@ -222,7 +222,7 @@ const capabilities = [
         aria-hidden="true"
       >
         <div
-          class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.18),_transparent_55%)] dark:bg-[radial-gradient(circle_at_top,_rgba(120,119,198,0.35),_transparent_55%)]"
+          class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.18),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.35),transparent_55%)]"
         >
         </div>
         <div
@@ -287,7 +287,7 @@ const capabilities = [
         </div>
 
         <div
-          class="rounded-3xl border border-slate-900/10 bg-gradient-to-br from-white via-indigo-50/70 to-slate-100 px-6 py-6 text-sm text-gray-700 shadow-xl shadow-indigo-200/40 dark:border-white/10 dark:from-white/5 dark:via-slate-900/60 dark:to-slate-900/30 dark:text-gray-300 dark:shadow-indigo-500/10"
+          class="rounded-3xl border border-slate-900/10 bg-linear-to-br from-white via-indigo-50/70 to-slate-100 px-6 py-6 text-sm text-gray-700 shadow-xl shadow-indigo-200/40 dark:border-white/10 dark:from-white/5 dark:via-slate-900/60 dark:to-slate-900/30 dark:text-gray-300 dark:shadow-indigo-500/10"
         >
           <p
             class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
@@ -354,7 +354,7 @@ const capabilities = [
         <div class="grid gap-4 sm:grid-cols-2">
           {
             pillars.map((pillar) => (
-              <article class="rounded-2xl border border-slate-900/10 bg-white/95 px-5 py-4 text-sm text-gray-700 shadow-sm dark:border-white/5 dark:bg-white/5 dark:text-gray-200">
+              <article class="rounded-2xl border border-slate-900/10 bg-white/95 px-5 py-4 text-sm text-gray-700 shadow-xs dark:border-white/5 dark:bg-white/5 dark:text-gray-200">
                 <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-200">
                   {pillar.label}
                 </p>
@@ -367,7 +367,7 @@ const capabilities = [
         </div>
 
         <div
-          class="rounded-2xl border border-slate-900/10 bg-gradient-to-br from-white via-indigo-50/60 to-transparent px-6 py-6 shadow-lg shadow-indigo-200/30 dark:border-white/10 dark:from-white/5 dark:via-indigo-500/5 dark:to-transparent dark:shadow-indigo-500/10"
+          class="rounded-2xl border border-slate-900/10 bg-linear-to-br from-white via-indigo-50/60 to-transparent px-6 py-6 shadow-lg shadow-indigo-200/30 dark:border-white/10 dark:from-white/5 dark:via-indigo-500/5 dark:to-transparent dark:shadow-indigo-500/10"
         >
           <div class="flex flex-col gap-2">
             <p
@@ -435,7 +435,7 @@ const capabilities = [
           <div class="mt-6 grid gap-4 sm:grid-cols-2">
             {
               capabilities.map((capability) => (
-                <article class="rounded-2xl border border-slate-900/10 bg-white/90 px-5 py-4 text-sm text-gray-700 shadow-sm dark:border-white/5 dark:bg-white/5 dark:text-gray-200">
+                <article class="rounded-2xl border border-slate-900/10 bg-white/90 px-5 py-4 text-sm text-gray-700 shadow-xs dark:border-white/5 dark:bg-white/5 dark:text-gray-200">
                   <p class="text-base font-semibold text-gray-900 dark:text-white">
                     {capability.title}
                   </p>
@@ -473,7 +473,7 @@ const capabilities = [
     </div>
 
     <div
-      class="flex flex-1 flex-col bg-gradient-to-br from-slate-900 via-slate-950 to-black px-6 py-12 sm:px-12"
+      class="flex flex-1 flex-col bg-linear-to-br from-slate-900 via-slate-950 to-black px-6 py-12 sm:px-12"
     >
       <div class="mx-auto flex w-full max-w-3xl flex-col">
         <div class="border-b border-white/10 pb-8">

@@ -65,7 +65,7 @@ const headingId = slugify(title);
         {
           paragraphs.details.map(
             (detail: { heading: string; text: string }) => (
-              <div class="rounded-2xl border border-gray-200/70 bg-white/85 p-5 shadow-sm backdrop-blur dark:border-white/10 dark:bg-gray-950/40">
+              <div class="rounded-2xl border border-gray-200/70 bg-white/85 p-5 shadow-xs backdrop-blur-sm dark:border-white/10 dark:bg-gray-950/40">
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                   {detail.heading}
                 </h3>
@@ -84,7 +84,7 @@ const headingId = slugify(title);
     >
       <div class="relative w-full max-w-xl">
         <div
-          class="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-indigo-200/30 to-transparent blur-2xl dark:from-indigo-500/10"
+          class="absolute inset-0 rounded-[3rem] bg-linear-to-br from-indigo-200/30 to-transparent blur-2xl dark:from-indigo-500/10"
         >
         </div>
         <svg viewBox="0 0 655 680" fill="none" class="relative z-10 w-full">
