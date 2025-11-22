@@ -5,6 +5,7 @@ const {
   paragraphs,
   imagePosition = "right",
   image,
+  imageAlt = "",
 } = Astro.props;
 
 const slugify = (value: string) =>
@@ -94,6 +95,7 @@ const headingId = slugify(title);
               <foreignObject class="h-full w-full">
                 <img
                   src={image}
+                  alt={imageAlt}
                   loading="lazy"
                   decoding="async"
                   class="h-full w-full rounded-[3rem] bg-neutral-100 object-cover dark:bg-gray-800"

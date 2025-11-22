@@ -3,11 +3,23 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.astro";
 
 const currentPath = Astro.url.pathname;
+const canonicalURL = new URL(Astro.url.pathname, "https://www.garten.ai");
 
-const { classDefintion } = Astro.props;
-const pageTitle = "Patrik Garten · AI Solution Architect & Software Engineer";
-const pageDescription =
+const {
+  classDefintion,
+  title,
+  description,
+  type = "website",
+  image = "/logo-cloud/tuple.svg", // Placeholder or default image
+} = Astro.props;
+
+const defaultTitle =
+  "Patrik Garten · AI Solution Architect & Software Engineer";
+const defaultDescription =
   "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end GenAI-Architekturen, Multi-LLM-Orchestrierung und Security-by-Design für regulierte DACH-Unternehmen.";
+
+const pageTitle = title ? `${title} · Patrik Garten` : defaultTitle;
+const pageDescription = description || defaultDescription;
 const mainClass = classDefintion ?? "";
 ---
 
@@ -18,10 +30,12 @@ const mainClass = classDefintion ?? "";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalURL} />
+
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.garten.ai" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script is:inline>
