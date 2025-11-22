@@ -117,6 +117,9 @@ const isActive = (href) => {
     class="sticky top-0 z-50 bg-white shadow transition-colors duration-200 dark:bg-gray-950 dark:shadow-gray-900/40"
     v-slot="{ open }"
   >
+    <div
+      class="h-1 bg-gradient-to-r from-[var(--color-tiber-900)] via-[var(--color-tiber-500)] to-[var(--color-granny-apple)]"
+    ></div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
         <div class="flex flex-shrink-0 items-center">

@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, "https://www.garten.ai");

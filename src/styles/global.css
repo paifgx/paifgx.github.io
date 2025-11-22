@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-tiber-900: #0e4e53;
+    --color-tiber-500: #05c2c7;
+    --color-granny-apple: #cbf3e2;
+  }
+}
