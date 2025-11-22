@@ -1,6 +1,13 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+import {
+  Bars3Icon,
+  MoonIcon,
+  SunIcon,
+  XMarkIcon,
+} from "@heroicons/vue/24/outline";
+
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 const props = defineProps({
   currentPath: {
@@ -15,6 +22,77 @@ const navigationItems = [
 ];
 
 const contact = { name: "Kontakt", href: "/contact" };
+
+const THEME_STORAGE_KEY = "theme-preference";
+const THEME_MEDIA_QUERY = "(prefers-color-scheme: dark)";
+
+const isDarkMode = ref(false);
+const themeToggleLabel = computed(() =>
+  isDarkMode.value ? "Zum hellen Modus wechseln" : "Zum dunklen Modus wechseln"
+);
+let mediaQueryListener;
+
+const applyThemeClass = (theme) => {
+  const isDark = theme === "dark";
+  document.documentElement.classList.toggle("dark", isDark);
+  document.documentElement.style.colorScheme = theme;
+  isDarkMode.value = isDark;
+};
+
+const getStoredTheme = () => {
+  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  return storedTheme === "dark" || storedTheme === "light" ? storedTheme : null;
+};
+
+const resolvePreferredTheme = () => {
+  const storedTheme = getStoredTheme();
+  if (storedTheme) {
+    return storedTheme;
+  }
+
+  return window.matchMedia(THEME_MEDIA_QUERY).matches ? "dark" : "light";
+};
+
+const persistTheme = (theme) => {
+  localStorage.setItem(THEME_STORAGE_KEY, theme);
+  applyThemeClass(theme);
+};
+
+const toggleTheme = () => {
+  const nextTheme = isDarkMode.value ? "light" : "dark";
+  persistTheme(nextTheme);
+};
+
+const handleSystemThemeChange = (event) => {
+  if (getStoredTheme()) {
+    return;
+  }
+
+  applyThemeClass(event.matches ? "dark" : "light");
+};
+
+const handleStorageUpdate = (event) => {
+  if (event.key !== THEME_STORAGE_KEY || !event.newValue) {
+    return;
+  }
+
+  const nextTheme = event.newValue === "dark" ? "dark" : "light";
+  applyThemeClass(nextTheme);
+};
+
+onMounted(() => {
+  applyThemeClass(resolvePreferredTheme());
+
+  mediaQueryListener = window.matchMedia(THEME_MEDIA_QUERY);
+  mediaQueryListener.addEventListener("change", handleSystemThemeChange);
+
+  window.addEventListener("storage", handleStorageUpdate);
+});
+
+onBeforeUnmount(() => {
+  mediaQueryListener?.removeEventListener("change", handleSystemThemeChange);
+  window.removeEventListener("storage", handleStorageUpdate);
+});
 
 const isActive = (href) => {
   const normalize = (path) => path.replace(/\/$/, "");
@@ -78,8 +156,20 @@ const isActive = (href) => {
           </a>
         </nav>
 
-        <!-- Kontaktbutton (Desktop) -->
-        <div class="hidden sm:ml-6 sm:flex sm:items-center">
+        <!-- Kontaktbutton & Theme Toggle (Desktop) -->
+        <div class="hidden sm:ml-6 sm:flex sm:items-center sm:gap-3">
+          <button
+            type="button"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/70 text-gray-600 shadow-sm transition hover:bg-gray-100 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
+            :aria-pressed="isDarkMode"
+            :aria-label="themeToggleLabel"
+            :title="themeToggleLabel"
+            @click="toggleTheme"
+          >
+            <MoonIcon v-if="isDarkMode" class="h-5 w-5" aria-hidden="true" />
+            <SunIcon v-else class="h-5 w-5" aria-hidden="true" />
+            <span class="sr-only">{{ themeToggleLabel }}</span>
+          </button>
           <a
             :href="contact.href"
             class="contact-button rounded-md bg-indigo-600 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-950"
@@ -120,6 +210,25 @@ const isActive = (href) => {
           {{ navItem.name }}
         </DisclosureButton>
       </nav>
+
+      <!-- Theme Toggle (Mobile) -->
+      <div class="border-t border-gray-200 px-4 py-4 dark:border-gray-800">
+        <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">
+          Darstellungsmodus
+        </p>
+        <button
+          type="button"
+          class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-100 dark:hover:bg-gray-800"
+          :aria-pressed="isDarkMode"
+          :aria-label="themeToggleLabel"
+          :title="themeToggleLabel"
+          @click="toggleTheme"
+        >
+          <span>{{ isDarkMode ? "Dunkler Modus" : "Heller Modus" }}</span>
+          <MoonIcon v-if="isDarkMode" class="h-5 w-5" aria-hidden="true" />
+          <SunIcon v-else class="h-5 w-5" aria-hidden="true" />
+        </button>
+      </div>
 
       <!-- Kontaktbutton (Mobile) -->
       <div class="border-t border-gray-200 pb-3 pt-4 dark:border-gray-800">

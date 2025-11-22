@@ -24,6 +24,53 @@ const mainClass = classDefintion ?? "";
     <meta property="og:url" content="https://www.garten.ai" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>
+      (() => {
+        const storageKey = "theme-preference";
+        const query = "(prefers-color-scheme: dark)";
+        const mediaQuery = window.matchMedia(query);
+
+        const getStoredTheme = () => {
+          try {
+            const stored = window.localStorage.getItem(storageKey);
+            return stored === "dark" || stored === "light" ? stored : null;
+          } catch {
+            return null;
+          }
+        };
+
+        const applyTheme = (theme) => {
+          const isDark = theme === "dark";
+          document.documentElement.classList.toggle("dark", isDark);
+          document.documentElement.style.colorScheme = theme;
+        };
+
+        const resolveTheme = () =>
+          getStoredTheme() ?? (mediaQuery.matches ? "dark" : "light");
+
+        applyTheme(resolveTheme());
+
+        const handleSystemChange = (event) => {
+          if (getStoredTheme()) return;
+          applyTheme(event.matches ? "dark" : "light");
+        };
+
+        if (typeof mediaQuery.addEventListener === "function") {
+          mediaQuery.addEventListener("change", handleSystemChange);
+        } else if (typeof mediaQuery.addListener === "function") {
+          mediaQuery.addListener(handleSystemChange);
+        }
+
+        window.addEventListener("storage", (event) => {
+          if (event.key !== storageKey) return;
+          if (!event.newValue) {
+            applyTheme(mediaQuery.matches ? "dark" : "light");
+            return;
+          }
+          applyTheme(event.newValue === "dark" ? "dark" : "light");
+        });
+      })();
+    </script>
   </head>
   <body
     class="min-h-screen bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100"
