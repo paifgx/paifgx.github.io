@@ -6,7 +6,7 @@ const { id, date, title, content } = Astro.props;
 
 moment.locale("de");
 
-let formattedDate;
+let formattedDate: string;
 if (date) {
   if (moment(date, "YYYY", true).isValid()) {
     formattedDate = moment(date, "YYYY").format("YYYY");

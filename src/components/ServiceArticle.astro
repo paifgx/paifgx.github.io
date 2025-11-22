@@ -27,7 +27,7 @@ const {
 
     <div class="space-y-8">
       {
-        paragraphs.details.map((detail) => (
+        paragraphs.details.map((detail: { heading: string; text: string }) => (
           <div class="border-b border-gray-200 pb-8">
             <h4 class="text-xl font-bold text-gray-800">{detail.heading}</h4>
             <p class="text-gray-600 leading-relaxed">{detail.text}</p>
