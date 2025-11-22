@@ -5,8 +5,7 @@ import Footer from "../components/Footer.astro";
 const currentPath = Astro.url.pathname;
 
 const { classDefintion } = Astro.props;
-const pageTitle =
-  "Patrik Garten · AI Solution Architect & Software Engineer";
+const pageTitle = "Patrik Garten · AI Solution Architect & Software Engineer";
 const pageDescription =
   "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end GenAI-Architekturen, Multi-LLM-Orchestrierung und Security-by-Design für regulierte DACH-Unternehmen.";
 const mainClass = classDefintion ?? "";
@@ -23,9 +22,12 @@ const mainClass = classDefintion ?? "";
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.garten.ai" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body class="min-h-screen bg-gray-50 text-gray-900 antialiased">
+  <body
+    class="min-h-screen bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100"
+  >
     <Header currentPath={currentPath} client:load />
 
     <main class={mainClass}>

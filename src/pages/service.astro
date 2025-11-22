@@ -30,7 +30,8 @@ const servicePillars = [
   },
   {
     title: "Academy, Coaching & Change",
-    subtitle: "Nextise · ptm-Akademie · GFU Cyrus AG · interne Upskilling-Programme",
+    subtitle:
+      "Nextise · ptm-Akademie · GFU Cyrus AG · interne Upskilling-Programme",
     description:
       "Trainings, Curriculum-Design und Coaching für Engineering-, Product- und Leadership-Teams. Fokus auf KI-Architektur, moderne Softwareentwicklung und Security-by-Design.",
     deliverables: [
@@ -81,63 +82,82 @@ const technologyHighlights = {
 ---
 
 <BaseLayout>
-  <section class="bg-white px-6 py-16 lg:px-12">
+  <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
     <div class="mx-auto max-w-4xl text-center">
-      <p class="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+      <p
+        class="text-sm font-semibold uppercase tracking-widest text-indigo-600"
+      >
         Serviceportfolio
       </p>
-      <h1 class="mt-3 text-4xl font-bold text-gray-900 sm:text-5xl">
+      <h1
+        class="mt-3 text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl"
+      >
         KI-Architektur, Engineering &amp; Enablement aus einer Hand.
       </h1>
-      <p class="mt-6 text-lg text-gray-600">
-        Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit, Skalierbarkeit
-        und Ownership in Ihrem Team. Die folgenden Leistungsbausteine lassen sich
-        einzeln oder kombiniert beauftragen – remote im DACH-Raum oder vor Ort.
+      <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
+        Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit,
+        Skalierbarkeit und Ownership in Ihrem Team. Die folgenden
+        Leistungsbausteine lassen sich einzeln oder kombiniert beauftragen –
+        remote im DACH-Raum oder vor Ort.
       </p>
     </div>
   </section>
 
-  <section class="bg-gray-50 px-6 py-16 lg:px-12">
+  <section class="bg-gray-50 px-6 py-16 dark:bg-gray-900 lg:px-12">
     <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 xl:grid-cols-3">
-      {servicePillars.map((pillar) => (
-        <article
-          class="flex flex-col rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
-        >
-          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
-            {pillar.subtitle}
-          </p>
-          <h2 class="mt-2 text-2xl font-bold text-gray-900">{pillar.title}</h2>
-          <p class="mt-3 text-sm text-gray-600">{pillar.description}</p>
-          <ul class="mt-4 space-y-2 text-sm text-gray-700">
-            {pillar.deliverables.map((item) => (
-              <li class="flex gap-2">
-                <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-600"></span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p class="mt-4 text-xs uppercase tracking-widest text-gray-500">
-            Stack &amp; Werkzeuge
-          </p>
-          <p class="text-sm text-gray-600">{pillar.stack}</p>
-        </article>
-      ))}
+      {
+        servicePillars.map((pillar) => (
+          <article class="flex flex-col rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-950/60 dark:text-gray-100">
+            <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+              {pillar.subtitle}
+            </p>
+            <h2 class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
+              {pillar.title}
+            </h2>
+            <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+              {pillar.description}
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              {pillar.deliverables.map((item) => (
+                <li class="flex gap-2">
+                  <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-600" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+              Stack &amp; Werkzeuge
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              {pillar.stack}
+            </p>
+          </article>
+        ))
+      }
     </div>
   </section>
 
-  <section class="bg-white px-6 py-16 lg:px-12">
+  <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
     <div class="mx-auto max-w-6xl">
-      <h2 class="text-3xl font-bold text-gray-900">Engagement-Modelle</h2>
-      <p class="mt-3 text-base text-gray-600">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+        Engagement-Modelle
+      </h2>
+      <p class="mt-3 text-base text-gray-600 dark:text-gray-300">
         Flexibel kombinierbar – abhängig von Teamgröße, Reifegrad und Budget.
       </p>
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {engagementModes.map((mode) => (
-          <article class="rounded-2xl border border-gray-200 p-6">
-            <h3 class="text-lg font-semibold text-gray-900">{mode.title}</h3>
-            <p class="mt-2 text-sm text-gray-600">{mode.description}</p>
-          </article>
-        ))}
+        {
+          engagementModes.map((mode) => (
+            <article class="rounded-2xl border border-gray-200 p-6 dark:border-gray-700 dark:bg-gray-900">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                {mode.title}
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                {mode.description}
+              </p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -145,44 +165,44 @@ const technologyHighlights = {
   <section class="bg-gray-900 px-6 py-16 text-gray-100 lg:px-12">
     <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-3">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-300">
+        <p
+          class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+        >
           LLM &amp; RAG
         </p>
         <ul class="mt-4 space-y-2 text-sm text-gray-200">
-          {technologyHighlights.llm.map((item) => (
-            <li>{item}</li>
-          ))}
+          {technologyHighlights.llm.map((item) => <li>{item}</li>)}
         </ul>
       </div>
       <div>
-        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-300">
+        <p
+          class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+        >
           Cloud &amp; Delivery
         </p>
         <ul class="mt-4 space-y-2 text-sm text-gray-200">
-          {technologyHighlights.cloud.map((item) => (
-            <li>{item}</li>
-          ))}
+          {technologyHighlights.cloud.map((item) => <li>{item}</li>)}
         </ul>
       </div>
       <div>
-        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-300">
+        <p
+          class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+        >
           Security &amp; Observability
         </p>
         <ul class="mt-4 space-y-2 text-sm text-gray-200">
-          {technologyHighlights.security.map((item) => (
-            <li>{item}</li>
-          ))}
+          {technologyHighlights.security.map((item) => <li>{item}</li>)}
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="bg-white px-6 py-16 text-center lg:px-8">
+  <section class="bg-white px-6 py-16 text-center dark:bg-gray-950 lg:px-8">
     <div class="mx-auto max-w-3xl">
-      <h2 class="text-3xl font-bold text-gray-900">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
         Bereit für Ihr nächstes Kapitel?
       </h2>
-      <p class="mt-4 text-base text-gray-600">
+      <p class="mt-4 text-base text-gray-600 dark:text-gray-300">
         Schreiben Sie an <a
           href="mailto:info@garten.ai"
           class="font-semibold text-indigo-600 underline-offset-4 hover:underline"
@@ -199,13 +219,13 @@ const technologyHighlights = {
       <div class="mt-6 flex justify-center gap-4">
         <a
           href="/contact"
-          class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+          class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
         >
           Kontakt aufnehmen
         </a>
         <a
           href="mailto:info@garten.ai?subject=Serviceanfrage"
-          class="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-400"
+          class="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-400 dark:border-gray-600 dark:text-gray-100 dark:hover:border-gray-500"
         >
           PDF-Portfolio anfordern
         </a>

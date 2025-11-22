@@ -115,13 +115,18 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="mb-12 max-w-4xl">
-    <p class="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+    <p
+      class="text-sm font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400"
+    >
       Referenzen
     </p>
-    <h2 id="case-studies-heading" class="mt-2 text-3xl font-bold text-gray-900">
+    <h2
+      id="case-studies-heading"
+      class="mt-2 text-3xl font-bold text-gray-900 dark:text-white"
+    >
       Case Highlights aus aktuellen Mandaten
     </h2>
-    <p class="mt-3 text-base text-gray-600">
+    <p class="mt-3 text-base text-gray-600 dark:text-gray-300">
       Auszug aus Projekten in regulierten Branchen, E-Commerce und Wissensarbeit
       – inklusive Rollen, Wirkung und verantwortungsvollem Tech-Stack.
     </p>
@@ -131,22 +136,28 @@ onBeforeUnmount(() => {
     <article
       v-for="(caseStudy, index) in visibleCaseStudies"
       :key="caseStudy.company + index"
-      class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+      class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
     >
       <div>
-        <p class="text-xs uppercase tracking-wide text-gray-500">
+        <p
+          class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400"
+        >
           {{ caseStudy.timeframe }}
         </p>
-        <p class="mt-1 text-xl font-semibold text-gray-900">
+        <p class="mt-1 text-xl font-semibold text-gray-900 dark:text-white">
           {{ caseStudy.company }}
         </p>
-        <p class="text-sm text-gray-600">{{ caseStudy.role }}</p>
-        <p class="mt-4 text-sm font-semibold text-indigo-600">
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          {{ caseStudy.role }}
+        </p>
+        <p
+          class="mt-4 text-sm font-semibold text-indigo-600 dark:text-indigo-400"
+        >
           {{ caseStudy.focus }}
         </p>
 
         <ul
-          class="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-600 marker:text-indigo-600"
+          class="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-600 marker:text-indigo-600 dark:text-gray-300 dark:marker:text-indigo-400"
         >
           <li
             v-for="(highlight, idx) in caseStudy.impact"
@@ -159,8 +170,12 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="mt-6">
-        <p class="text-xs uppercase tracking-wide text-gray-500">Stack</p>
-        <p class="mt-1 text-sm text-gray-600">
+        <p
+          class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400"
+        >
+          Stack
+        </p>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
           {{ caseStudy.stack }}
         </p>
       </div>
@@ -176,7 +191,11 @@ onBeforeUnmount(() => {
         :key="index"
         @click="currentSlideIndex = index"
         class="h-2 w-2 rounded-full focus:outline-none"
-        :class="index === currentSlideIndex ? 'bg-gray-800' : 'bg-gray-200'"
+        :class="
+          index === currentSlideIndex
+            ? 'bg-gray-800 dark:bg-white'
+            : 'bg-gray-200 dark:bg-gray-700'
+        "
         :aria-label="'Slide ' + (index + 1)"
         :aria-current="index === currentSlideIndex ? 'true' : 'false'"
       ></button>
@@ -186,7 +205,7 @@ onBeforeUnmount(() => {
       <button
         @click="togglePause"
         :aria-pressed="isPaused"
-        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
       >
         <span v-if="isPaused">Auto-Play fortsetzen</span>
         <span v-else>Auto-Play pausieren</span>
@@ -196,7 +215,7 @@ onBeforeUnmount(() => {
         <button
           @click="showPrevious"
           aria-label="Vorherige Cases"
-          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
         >
           <span class="sr-only">Vorherige</span>
           <svg
@@ -217,7 +236,7 @@ onBeforeUnmount(() => {
         <button
           @click="showNext"
           aria-label="Nächste Cases"
-          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
         >
           <span class="sr-only">Nächste</span>
           <svg

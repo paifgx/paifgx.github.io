@@ -36,7 +36,7 @@ const isActive = (href) => {
 <template>
   <Disclosure
     as="header"
-    class="bg-white shadow sticky top-0 z-50"
+    class="sticky top-0 z-50 bg-white shadow transition-colors duration-200 dark:bg-gray-950 dark:shadow-gray-900/40"
     v-slot="{ open }"
   >
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -47,10 +47,12 @@ const isActive = (href) => {
             class="flex flex-col leading-tight"
             aria-label="Startseite"
           >
-            <span class="text-lg font-semibold tracking-tight text-gray-900">
+            <span
+              class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white"
+            >
               GARTEN.ai
             </span>
-            <span class="text-xs uppercase text-gray-500">
+            <span class="text-xs uppercase text-gray-500 dark:text-gray-400">
               AI Solution Architect
             </span>
           </a>
@@ -68,8 +70,8 @@ const isActive = (href) => {
             :class="[
               'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium',
               isActive(navItem.href)
-                ? 'border-indigo-500 text-gray-900'
-                : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                ? 'border-indigo-500 text-gray-900 dark:text-white'
+                : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 dark:hover:border-gray-600',
             ]"
           >
             {{ navItem.name }}
@@ -80,7 +82,7 @@ const isActive = (href) => {
         <div class="hidden sm:ml-6 sm:flex sm:items-center">
           <a
             :href="contact.href"
-            class="contact-button bg-indigo-600 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            class="contact-button rounded-md bg-indigo-600 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-950"
           >
             {{ contact.name }}
           </a>
@@ -89,7 +91,7 @@ const isActive = (href) => {
         <!-- Mobile Menü Button -->
         <div class="-mr-2 flex items-center sm:hidden">
           <DisclosureButton
-            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
             aria-label="Menü öffnen"
           >
             <span class="sr-only">Menü öffnen</span>
@@ -101,7 +103,7 @@ const isActive = (href) => {
     </div>
 
     <!-- Mobile Menü -->
-    <DisclosurePanel class="sm:hidden">
+    <DisclosurePanel class="sm:hidden dark:bg-gray-950 dark:text-gray-100">
       <nav aria-label="Mobile Hauptnavigation" class="space-y-1 pb-3 pt-2">
         <DisclosureButton
           v-for="navItem in navigationItems"
@@ -111,8 +113,8 @@ const isActive = (href) => {
           :class="[
             'block border-l-4 py-2 pl-3 pr-4 text-base font-medium',
             isActive(navItem.href)
-              ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-              : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700',
+              ? 'border-indigo-500 bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300'
+              : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-900 dark:hover:text-gray-100',
           ]"
         >
           {{ navItem.name }}
@@ -120,11 +122,11 @@ const isActive = (href) => {
       </nav>
 
       <!-- Kontaktbutton (Mobile) -->
-      <div class="border-t border-gray-200 pb-3 pt-4">
+      <div class="border-t border-gray-200 pb-3 pt-4 dark:border-gray-800">
         <div class="flex items-center px-4">
           <a
             :href="contact.href"
-            class="bg-indigo-600 text-white w-full text-center py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            class="w-full rounded-md bg-indigo-600 py-2 text-center text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-900"
           >
             {{ contact.name }}
           </a>

@@ -9,28 +9,36 @@ const {
 ---
 
 <article
-  class={`container mx-auto px-6 lg:px-0 py-16 flex flex-col ${imagePosition === "left" ? "lg:flex-row-reverse" : "lg:flex-row"} bg-white rounded-lg`}
+  class={`container mx-auto flex flex-col rounded-lg bg-white px-6 py-16 lg:px-0 ${imagePosition === "left" ? "lg:flex-row-reverse" : "lg:flex-row"} dark:bg-gray-900 dark:text-gray-100`}
   role="region"
   aria-labelledby="section-title"
 >
   <div class="lg:w-1/2 flex flex-col justify-center items-start">
-    <h3 class="text-primary-600 text-2xl font-semibold tracking-wide">
+    <h3
+      class="text-primary-600 text-2xl font-semibold tracking-wide dark:text-indigo-300"
+    >
       {subtitle}
     </h3>
     <h2
       id="section-title"
-      class="text-gray-900 text-4xl font-extrabold mt-2 mb-6"
+      class="mt-2 mb-6 text-4xl font-extrabold text-gray-900 dark:text-white"
     >
       {title}
     </h2>
-    <p class="text-gray-700 leading-relaxed mb-8">{paragraphs.intro}</p>
+    <p class="mb-8 leading-relaxed text-gray-700 dark:text-gray-300">
+      {paragraphs.intro}
+    </p>
 
     <div class="space-y-8">
       {
         paragraphs.details.map((detail: { heading: string; text: string }) => (
-          <div class="border-b border-gray-200 pb-8">
-            <h4 class="text-xl font-bold text-gray-800">{detail.heading}</h4>
-            <p class="text-gray-600 leading-relaxed">{detail.text}</p>
+          <div class="border-b border-gray-200 pb-8 dark:border-gray-700">
+            <h4 class="text-xl font-bold text-gray-800 dark:text-white">
+              {detail.heading}
+            </h4>
+            <p class="leading-relaxed text-gray-600 dark:text-gray-300">
+              {detail.text}
+            </p>
           </div>
         ))
       }
@@ -50,12 +58,14 @@ const {
               src={image}
               loading="lazy"
               decoding="async"
-              class="w-full bg-neutral-100 object-cover"
+              class="w-full bg-neutral-100 object-cover dark:bg-gray-800"
             />
           </foreignObject>
         </g>
-        <use href="#:S1:-shape" stroke-width="2" class="stroke-neutral-950/10"
-        ></use>
+        <use
+          href="#:S1:-shape"
+          stroke-width="2"
+          class="stroke-neutral-950/10 dark:stroke-white/10"></use>
       </g>
       <defs>
         <clipPath id=":S1:-clip">
