@@ -3,8 +3,9 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
+const siteOrigin = "https://www.garten.ai";
 const currentPath = Astro.url.pathname;
-const canonicalURL = new URL(Astro.url.pathname, "https://www.garten.ai");
+const canonicalURL = new URL(Astro.url.pathname, siteOrigin);
 
 const {
   classDefintion,
@@ -22,6 +23,49 @@ const defaultDescription =
 const pageTitle = title ? `${title} · Patrik Garten` : defaultTitle;
 const pageDescription = description || defaultDescription;
 const mainClass = classDefintion ?? "";
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Patrik Garten",
+    jobTitle: "AI Solution Architect & Software Engineer",
+    url: canonicalURL.href,
+    sameAs: [
+      "https://www.linkedin.com/in/paifgx",
+      "https://www.garten.ai",
+      "mailto:info@garten.ai",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Patrik Garten AI Development",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Patrik Garten AI Development",
+    url: siteOrigin,
+    image: new URL(image, siteOrigin).href,
+    areaServed: ["Deutschland", "Österreich", "Schweiz"],
+    availableLanguage: ["de", "en"],
+    serviceType: [
+      "AI Solution Architecture",
+      "Generative AI Enablement",
+      "Software Engineering",
+    ],
+    priceRange: "€€€",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Phönixstraße 30",
+      postalCode: "44263",
+      addressLocality: "Dortmund",
+      addressCountry: "DE",
+    },
+    telephone: "+49 1516 4587494",
+    email: "info@garten.ai",
+  },
+];
 ---
 
 <!doctype html>
@@ -40,6 +84,9 @@ const mainClass = classDefintion ?? "";
     <meta property="og:image" content={new URL(image, canonicalURL).href} />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify(structuredData)}
+    </script>
     <script is:inline>
       (() => {
         const storageKey = "theme-preference";
