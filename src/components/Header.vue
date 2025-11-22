@@ -12,7 +12,6 @@ const props = defineProps({
 const navigationItems = [
   { name: "Werdegang", href: "/about" },
   { name: "Dienstleistungen", href: "/service" },
-  { name: "Artikel", href: "/blog" },
 ];
 
 const contact = { name: "Kontakt", href: "/contact" };
