@@ -60,7 +60,7 @@ const headingId = slugify(title);
         {paragraphs.intro}
       </p>
 
-      <div class="grid gap-6 sm:grid-cols-2">
+      <div class={`grid gap-6 xl:grid-cols-3`}>
         {
           paragraphs.details.map(
             (detail: { heading: string; text: string }) => (
