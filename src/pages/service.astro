@@ -13,7 +13,7 @@ const servicePillars = [
       "Security, IAM & Compliance nach BSI IT-Grundschutz, ISO/IEC 27001, DSGVO/DPIA mit OAuth2/Keycloak.",
     ],
     stack:
-      "LLMs: GPT-4/3.5, Claude, Gemini, Mistral, LLaMA/Mixtral · Orchestrierung: LangChain, LlamaIndex, Haystack, custom Agents.",
+      "LLMs: GPT, Claude, Gemini, Mistral, LLaMA/Mixtral · Orchestrierung: LangChain, LlamaIndex, Haystack, custom Agents.",
   },
   {
     title: "Software Engineering & Platform Delivery",
@@ -79,76 +79,183 @@ const technologyHighlights = {
     "Observability: Prometheus, Grafana, ELK/OpenSearch, DeepEval für Prompt-Qualität",
   ],
 };
+
+const serviceStats = [
+  { id: 1, value: "25+", label: "aktive GenAI- & Plattforminitiativen" },
+  { id: 2, value: "<90d", label: "Time-to-Value für MVP/POC" },
+  { id: 3, value: "3", label: "Engagement-Modi kombinierbar" },
+];
 ---
 
-<BaseLayout>
-  <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
-    <div class="mx-auto max-w-4xl text-center">
-      <p
-        class="text-sm font-semibold uppercase tracking-widest text-indigo-600"
+<BaseLayout
+  classDefintion="bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-gray-100"
+>
+  <section class="relative overflow-hidden px-6 py-20 sm:px-12">
+    <div
+      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.2),_transparent_55%)] dark:bg-[radial-gradient(circle_at_top,_rgba(120,119,198,0.35),_transparent_55%)]"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute -bottom-32 right-0 -z-10 h-72 w-72 rounded-full bg-indigo-500/15 blur-[140px] dark:bg-indigo-500/30"
+    >
+    </div>
+    <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
+      <div class="space-y-5">
+        <span
+          class="inline-flex w-fit items-center gap-2 rounded-full border border-slate-900/10 bg-white/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-indigo-200"
+        >
+          Serviceportfolio
+        </span>
+        <div class="space-y-5">
+          <h1 class="text-4xl font-semibold sm:text-5xl">
+            KI-Architektur, Engineering &amp; <br /> Enablement aus einer Hand.
+          </h1>
+          <p class="text-lg leading-8 text-gray-600 dark:text-gray-300">
+            Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit,
+            Skalierbarkeit und Ownership in Ihrem Team. Leistungsbausteine
+            lassen sich kombinieren – remote im DACH-Raum oder vor Ort.
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-wrap gap-3 text-sm text-gray-500 dark:text-gray-300"
       >
-        Serviceportfolio
-      </p>
-      <h1
-        class="mt-3 text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl"
-      >
-        KI-Architektur, Engineering &amp; Enablement aus einer Hand.
-      </h1>
-      <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
-        Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit,
-        Skalierbarkeit und Ownership in Ihrem Team. Die folgenden
-        Leistungsbausteine lassen sich einzeln oder kombiniert beauftragen –
-        remote im DACH-Raum oder vor Ort.
-      </p>
+        <a
+          class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/90 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+          href="https://www.garten.ai"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="font-semibold">Website</span>
+          <span class="text-gray-500 dark:text-white/70">garten.ai</span>
+        </a>
+        <a
+          class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+          href="mailto:info@garten.ai"
+        >
+          <span class="font-semibold">Mail</span>
+          <span class="text-gray-500 dark:text-white/70">info@garten.ai</span>
+        </a>
+        <a
+          class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+          href="https://www.linkedin.com/in/paifgx"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="font-semibold">LinkedIn</span>
+          <span class="text-gray-500 dark:text-white/70">/in/paifgx</span>
+        </a>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-[1.2fr,0.8fr]">
+        <div
+          class="rounded-[2.5rem] border border-slate-900/5 bg-white p-8 text-sm text-gray-700 shadow-xl shadow-indigo-200/40 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10"
+        >
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+          >
+            Arbeitsweise
+          </p>
+          <h3 class="mt-3 text-2xl font-semibold text-gray-900 dark:text-white">
+            Outcome-basierte AI Delivery.
+          </h3>
+          <p class="mt-3">
+            Strategy-to-Execution: Referenzarchitekturen, Operating Models und
+            Hands-on Delivery. Ich orchestriere GenAI-Programme so, dass
+            Security &amp; Compliance von Anfang an integriert sind und Teams
+            Verantwortung übernehmen können.
+          </p>
+          <p class="mt-3 text-gray-500 dark:text-gray-300">
+            Reviews · Architecture Boards · Shadowing · Enablement
+          </p>
+        </div>
+        <dl
+          class="grid gap-6 rounded-[2.5rem] border border-slate-900/5 bg-white p-8 shadow-lg shadow-indigo-200/30 sm:grid-cols-2 lg:grid-cols-3 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10"
+        >
+          {
+            serviceStats.map((stat) => (
+              <div class="space-y-1">
+                <dt class="text-sm text-gray-500 dark:text-gray-300">
+                  {stat.label}
+                </dt>
+                <dd class="text-3xl font-semibold text-gray-900 dark:text-white">
+                  {stat.value}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
     </div>
   </section>
 
-  <section class="bg-gray-50 px-6 py-16 dark:bg-gray-900 lg:px-12">
-    <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 xl:grid-cols-3">
-      {
-        servicePillars.map((pillar) => (
-          <article class="flex flex-col rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-950/60 dark:text-gray-100">
-            <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
-              {pillar.subtitle}
-            </p>
-            <h2 class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
-              {pillar.title}
-            </h2>
-            <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
-              {pillar.description}
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-              {pillar.deliverables.map((item) => (
-                <li class="flex gap-2">
-                  <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-600" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p class="mt-4 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
-              Stack &amp; Werkzeuge
-            </p>
-            <p class="text-sm text-gray-600 dark:text-gray-300">
-              {pillar.stack}
-            </p>
-          </article>
-        ))
-      }
+  <section class="bg-gray-50 px-6 py-16 dark:bg-slate-950/60 sm:px-12">
+    <div class="mx-auto max-w-6xl space-y-6">
+      <div class="space-y-3">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+        >
+          Leistungsbausteine
+        </p>
+        <h2 class="text-3xl font-semibold">
+          Architektur, Delivery &amp; Enablement.
+        </h2>
+        <p class="text-base text-gray-600 dark:text-gray-300">
+          Jeder Baustein kann als Solo-Mandat oder kombiniert mit anderen
+          Engagement Modes beauftragt werden.
+        </p>
+      </div>
+      <div class="grid auto-rows-fr gap-8 md:grid-cols-2 xl:grid-cols-3">
+        {
+          servicePillars.map((pillar) => (
+            <article class="flex h-full flex-col rounded-[2.25rem] border border-slate-900/5 bg-white p-6 text-sm text-gray-700 shadow-lg shadow-indigo-200/25 dark:border-white/5 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10">
+              <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-200">
+                {pillar.subtitle}
+              </p>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">
+                {pillar.title}
+              </h3>
+              <p class="mt-3">{pillar.description}</p>
+              <ul class="mt-4 space-y-2 text-sm">
+                {pillar.deliverables.map((item) => (
+                  <li class="flex gap-3">
+                    <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-600 dark:bg-indigo-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-auto pt-5 space-y-2">
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-400 dark:text-gray-400">
+                  Stack &amp; Werkzeuge
+                </p>
+                <p class="text-sm leading-6 min-h-[4.5rem]">{pillar.stack}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 
-  <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
+  <section class="bg-white px-6 py-16 dark:bg-slate-950 sm:px-12">
     <div class="mx-auto max-w-6xl">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-        Engagement-Modelle
-      </h2>
-      <p class="mt-3 text-base text-gray-600 dark:text-gray-300">
-        Flexibel kombinierbar – abhängig von Teamgröße, Reifegrad und Budget.
-      </p>
+      <div class="space-y-3">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+        >
+          Engagement
+        </p>
+        <h2 class="text-3xl font-semibold">
+          Modelle für Strategie, Delivery und Sparring.
+        </h2>
+        <p class="text-base text-gray-600 dark:text-gray-300">
+          Flexibel kombinierbar – abhängig von Teamgröße, Reifegrad und Budget.
+        </p>
+      </div>
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           engagementModes.map((mode) => (
-            <article class="rounded-2xl border border-gray-200 p-6 dark:border-gray-700 dark:bg-gray-900">
+            <article class="rounded-[2rem] border border-slate-900/5 bg-white p-6 shadow-md shadow-indigo-200/25 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                 {mode.title}
               </h3>
@@ -162,74 +269,100 @@ const technologyHighlights = {
     </div>
   </section>
 
-  <section class="bg-gray-900 px-6 py-16 text-gray-100 lg:px-12">
-    <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-3">
-      <div>
+  <section
+    class="bg-gradient-to-br from-slate-900 via-slate-950 to-black px-6 py-16 text-gray-100 sm:px-12"
+  >
+    <div class="mx-auto max-w-6xl space-y-10">
+      <div class="space-y-3">
         <p
-          class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-300"
         >
-          LLM &amp; RAG
+          Tooling &amp; Observability
         </p>
-        <ul class="mt-4 space-y-2 text-sm text-gray-200">
-          {technologyHighlights.llm.map((item) => <li>{item}</li>)}
-        </ul>
+        <h2 class="text-3xl font-semibold text-white">
+          Kuratierte Stacks für LLM, Cloud &amp; Security.
+        </h2>
       </div>
-      <div>
-        <p
-          class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
-        >
-          Cloud &amp; Delivery
-        </p>
-        <ul class="mt-4 space-y-2 text-sm text-gray-200">
-          {technologyHighlights.cloud.map((item) => <li>{item}</li>)}
-        </ul>
-      </div>
-      <div>
-        <p
-          class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
-        >
-          Security &amp; Observability
-        </p>
-        <ul class="mt-4 space-y-2 text-sm text-gray-200">
-          {technologyHighlights.security.map((item) => <li>{item}</li>)}
-        </ul>
+      <div class="grid gap-10 lg:grid-cols-3">
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+          >
+            LLM &amp; RAG
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-100">
+            {technologyHighlights.llm.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+          >
+            Cloud &amp; Delivery
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-100">
+            {technologyHighlights.cloud.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-widest text-indigo-300"
+          >
+            Security &amp; Observability
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-100">
+            {technologyHighlights.security.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-white px-6 py-16 text-center dark:bg-gray-950 lg:px-8">
-    <div class="mx-auto max-w-3xl">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-        Bereit für Ihr nächstes Kapitel?
-      </h2>
-      <p class="mt-4 text-base text-gray-600 dark:text-gray-300">
-        Schreiben Sie an <a
-          href="mailto:info@garten.ai"
-          class="font-semibold text-indigo-600 underline-offset-4 hover:underline"
-          >info@garten.ai</a
+  <section class="bg-white px-6 py-16 text-center dark:bg-slate-950 sm:px-12">
+    <div class="mx-auto max-w-3xl space-y-6">
+      <div class="space-y-3">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
         >
-        oder vereinbaren Sie ein Gespräch über <a
-          href="https://www.linkedin.com/in/paifgx"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-semibold text-indigo-600 underline-offset-4 hover:underline"
-          >LinkedIn</a
-        >.
-      </p>
-      <div class="mt-6 flex justify-center gap-4">
+          Nächste Schritte
+        </p>
+        <h2 class="text-3xl font-semibold text-gray-900 dark:text-white">
+          Bereit für Ihr nächstes Kapitel?
+        </h2>
+        <p class="text-base text-gray-600 dark:text-gray-300">
+          Schreiben Sie an
+          <a
+            href="mailto:info@garten.ai"
+            class="font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
+            >info@garten.ai</a
+          >
+          oder buchen Sie ein Gespräch über
+          <a
+            href="https://www.linkedin.com/in/paifgx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
+            >LinkedIn</a
+          >.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
         <a
           href="/contact"
-          class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
+          class="inline-flex items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:bg-indigo-400"
         >
           Kontakt aufnehmen
         </a>
         <a
           href="mailto:info@garten.ai?subject=Serviceanfrage"
-          class="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-400 dark:border-gray-600 dark:text-gray-100 dark:hover:border-gray-500"
+          class="inline-flex items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/20 dark:text-white/90 dark:hover:border-white/40 dark:hover:text-white"
         >
           PDF-Portfolio anfordern
         </a>
       </div>
+      <p class="text-xs uppercase tracking-[0.3em] text-gray-400">
+        Antwort innerhalb von 24 Stunden.
+      </p>
     </div>
   </section>
 </BaseLayout>
