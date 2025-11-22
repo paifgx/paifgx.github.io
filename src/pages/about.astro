@@ -5,156 +5,486 @@ import TimeEntry from "@components/about/TimeEntry.astro";
 const timeEntries = [
   {
     id: 1,
-    date: "2017-10",
-    title: "GARTEN gegründet – Freelance Marke",
+    date: "2025-11",
+    title: "AI Solution Architect – Universitätsklinikum Bonn",
     content:
-      "Start als freiberuflicher AI Solution Architect & Software Engineer. Aufbau belastbarer Systeme für Auftraggeber wie DB Fernverkehr, Databay oder Bergfort – Fokus auf TYPO3, PHP und individuelle Plattformen.",
+      "Micronaut/Kotlin-Services, MSSQL-Integrationen und verantwortungsvolle GenAI-Anwendungen im Gesundheitswesen inklusive DSGVO-/DPIA-Begleitung.",
   },
   {
     id: 2,
-    date: "2020-01",
-    title: "Enterprise-Portale & TYPO3-Modernisierung",
+    date: "2025-10",
+    title: "Software Engineer – Web Computing GmbH",
     content:
-      "Freelance-Mandate bei DMK E-BUSINESS und BOLD: Upgrades auf TYPO3 9 LTS, Microservices mit NestJS/Vue und Einführung moderner Delivery-Workflows.",
+      "Performance-Optimierung der GenAI-Applikation, Tooling-Härtung mit TypeScript/JavaScript, Lerna-Monorepo, Docker und ChatGPT-gestützten Flows.",
   },
   {
     id: 3,
-    date: "2022-06",
-    title: "Skalierbare Steuer- & E-Commerce-Plattformen",
+    date: "2025-02",
+    title: "Technical Lead Conversational AI – CANCOM",
     content:
-      "Bringmeister & MeinPaul: PHP/Laravel-Backends, Kotlin-Migrationen, Flutter-Apps, AuthN/AuthZ, Performance-Tuning und DevOps-Automatisierung in AWS & Azure.",
+      "Agentenbasierte Multi-LLM-Systeme, Flutter-App-Delivery, Security nach IT-Grundschutz/ISO 27001, CI/CD & QA-Governance rund um React, TypeScript, Python, FastAPI, AWS und Azure.",
   },
   {
     id: 4,
-    date: "2023-12",
-    title: "TÜV Rheinland zertifizierter AI Consultant",
+    date: "2024-12",
+    title: "AI Solution Architect – FlowCraftDB",
     content:
-      "Vertiefung meiner KI-Roadmaps (LLMs, Business Automation, ethische/ rechtliche Aspekte). Parallel: BSc Informatik (IU Internationale Hochschule, seit 09/2023, KI-Spezialisierung).",
+      "Event-getriebene Datenanreicherung im E-Commerce: LangChain-Workflows, FastAPI-Services, Docker/Kubernetes, AWS/Azure, Terraform und Observability via Prometheus/Grafana/ELK.",
   },
   {
     id: 5,
     date: "2024-06",
     title: "Co-Founder & CIO – AICT Group",
     content:
-      "Architektur & Governance einer KI-Plattform zur Konfliktprävention mit LLMs und Knowledge Graphs. Verantwortung für Security/Privacy-by-Design, Microservices & Team-Enablement.",
+      "Architektur & Governance einer KI-Plattform zur Konfliktprävention (LLMs, Knowledge Graphs, Realtime) mit Security/Privacy-by-Design, Microservices und Team-Enablement.",
   },
   {
     id: 6,
-    date: "2024-12",
-    title: "FlowCraftDB – Event-getriebene GenAI-Architektur",
+    date: "2024-04",
+    title: "IT-Trainer & Coach – Nextise / ptm / GFU",
     content:
-      "E2E-Architektur für RAG- und Tool-Use-Workloads im E-Commerce. Stack: GPT-4, Gemini, LangChain, FastAPI, Docker, Kubernetes, AWS, Azure, MongoDB/Redis, Terraform, GitHub Actions.",
+      "Trainings zu Webentwicklung, DevOps, moderner Softwarearchitektur und KI; maßgeschneiderte Curricula, IT-Grundschutz/ISO 27001 Inhalte und >100 Teilnehmende.",
   },
   {
     id: 7,
-    date: "2025-02",
-    title: "Technical Lead Conversational AI – CANCOM",
+    date: "2024-03",
+    title: "AI Engineer – mib Management Institut Bochum",
     content:
-      "Agentenbasierte Multi-LLM-Systeme, Flutter-App-Delivery, Security nach IT-Grundschutz/ISO 27001, CI/CD & QA-Governance. Technologien: React, TypeScript, Python, FastAPI, AWS, Azure, IAM.",
+      "RAG-Assistenz für „copiki“ mit semantischer Suche, Prompt-Flows, API-Design, Security-Maßnahmen sowie Betrieb mit Python, FastAPI, OpenSearch und Docker/Kubernetes.",
   },
   {
     id: 8,
-    date: "2025-11",
-    title: "AI Solution Architect – Universitätsklinikum Bonn",
+    date: "2024-01",
+    title: "Softwareentwickler – DB Fernverkehr AG",
     content:
-      "Micronaut/Kotlin-Services, MSSQL-Integrationen und verantwortungsvolle GenAI-Anwendungen im Gesundheitswesen inklusive DSGVO-/DPIA-Begleitung.",
+      "Weiterentwicklung von Sprachassistenzsystemen (Alexa Skills) mit TypeScript/Node.js & Python, Feature-Delivery, technische Doku und CI/CD auf AWS.",
+  },
+  {
+    id: 9,
+    date: "2023-09",
+    title: "Backend Developer – MeinPaul GmbH",
+    content:
+      "Skalierbares Laravel-Backend für digitale Steuerprozesse, AuthN/AuthZ, Azure-Integrationen, Cloudflare-Härtung sowie Flutter/Dart-Anbindungen.",
+  },
+  {
+    id: 10,
+    date: "2022-06",
+    title: "Full Stack Developer – Bringmeister GmbH",
+    content:
+      "PHP/Laravel-Backends, Kotlin-Migrationen, Flutter-Apps, AuthN/AuthZ, Performance-Tuning und DevOps-Automatisierung in AWS & Azure.",
+  },
+  {
+    id: 11,
+    date: "2021-12",
+    title: "Full Stack Developer – IU Internationale Hochschule",
+    content:
+      "Microservices mit NestJS & Kafka, Single-SPA (Vue), Betrieb auf AWS (Fargate, CloudFront, ELB, Lambda) und DevOps-Schnittstelle.",
+  },
+  {
+    id: 12,
+    date: "2017-10",
+    title: "GARTEN gegründet – Freelance Marke",
+    content:
+      "Freelance-Marke für Engineering/Bildung & KI-Lösungen: Architektur, Entwicklung, Betrieb und Trainingsprogramme für Auftraggeber wie DB Fernverkehr, CANCOM, MeinPaul und Bringmeister.",
+  },
+];
+
+const stats = [
+  { id: 1, value: ">150", label: "Projekte in regulierten Branchen" },
+  { id: 2, value: "60%", label: "Kooperationen mit Product & Security" },
+  { id: 3, value: "24h", label: "Reaktionszeit auf Projektanfragen" },
+];
+
+const pillars = [
+  {
+    id: 1,
+    label: "Rollen",
+    description:
+      "AI Solution Architect & Consultant · Software Engineer · Fractional CIO · IT-Trainer & Coach",
+  },
+  {
+    id: 2,
+    label: "Methodik",
+    description:
+      "RAG & Agentensysteme · Security-by-Design · Observability · Continuous Delivery · Governance & Enablement",
+  },
+  {
+    id: 3,
+    label: "Aktuelle Schwerpunkte",
+    description:
+      "GenAI im Gesundheitswesen & E-Commerce · Realtime Knowledge Graphs · Trainingsprogramme für moderne Softwarearchitektur",
+  },
+  {
+    id: 4,
+    label: "Ausbildung & Zertifikate",
+    description:
+      "BSc Informatik (IU Internationale Hochschule, seit 09/2023) · TÜV Rheinland zertifizierter AI Consultant (03/2024)",
+  },
+];
+
+const principles = [
+  {
+    id: 1,
+    title: "Enablement statt Handoff",
+    description:
+      "Teams erhalten Toolkits, Playbooks und Trainings, damit Architekturentscheidungen nachhaltig bleiben.",
+  },
+  {
+    id: 2,
+    title: "Security-first Delivery",
+    description:
+      "Privacy-by-Design, Threat-Modelling und Compliance-Reviews werden direkt in Delivery-Workflows eingebettet.",
+  },
+  {
+    id: 3,
+    title: "Transparente Governance",
+    description:
+      "Metriken, Runbooks und Decision Logs schaffen Klarheit für Stakeholder aus Produkt, Security und Management.",
+  },
+];
+
+const capabilities = [
+  {
+    id: 1,
+    title: "Programmiersprachen",
+    description:
+      "Python, TypeScript, JavaScript, Kotlin, PHP, Java, Dart, SQL, Bash, C/C++",
+  },
+  {
+    id: 2,
+    title: "KI & LLM-Ökosystem",
+    description:
+      "GPT-4/3.5, Claude, Gemini, Mistral, LLaMA/Mixtral, LangChain, LlamaIndex, Haystack, RAG & Agentensysteme, Embeddings, Reranker, DeepEval, PromptLayer",
+  },
+  {
+    id: 3,
+    title: "Machine Learning & Statistik",
+    description:
+      "scikit-learn, XGBoost, LightGBM, TensorFlow, Keras, PyTorch, Pandas, NumPy, Feature Engineering, Drift/Bias Monitoring",
+  },
+  {
+    id: 4,
+    title: "Retrieval & Vektordatenbanken",
+    description:
+      "OpenSearch, Elasticsearch, Qdrant, Weaviate, Pinecone, FAISS, Hybrid Retrieval, Chunking & Reranking Pipelines",
+  },
+  {
+    id: 5,
+    title: "Backend & API-Entwicklung",
+    description:
+      "FastAPI, Django, Node.js, NestJS, GraphQL, WebSockets/Streaming, Event-Driven Architecture, Microservices",
+  },
+  {
+    id: 6,
+    title: "Cloud, Infrastruktur & DevOps",
+    description:
+      "Docker, Kubernetes, Terraform, Cloudflare, AWS (EC2/S3/Lambda/RDS/ECR/SQS), Azure (OpenAI, Blob, CosmosDB), GCP (Vertex AI, BigQuery)",
+  },
+  {
+    id: 7,
+    title: "Security, Identity & Compliance",
+    description:
+      "OAuth2, Keycloak, IAM, Security/Privacy-by-Design, BSI IT-Grundschutz, ISO/IEC 27001, DSGVO, DPIA",
+  },
+  {
+    id: 8,
+    title: "Observability & Automation",
+    description:
+      "Prometheus, Grafana, ELK-Stack, GitHub Actions, GitLab CI/CD, Jenkins, Kafka, RabbitMQ, n8n, Make, Zapier",
+  },
+  {
+    id: 9,
+    title: "Frontend & Mobile",
+    description:
+      "Vue/Nuxt, React, Svelte, Tailwind CSS, Storybook, Figma, Flutter, React Native, Android (Kotlin)",
   },
 ];
 ---
 
 <BaseLayout
-  classDefintion="relative flex min-h-full flex-col xl:flex-row items-center relative min-h-screen"
+  classDefintion="relative flex min-h-screen flex-col bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-gray-100 xl:flex-row"
 >
-  <div
-    class="xl:sticky xl:top-0 bg-gray-900 flex-1 self-stretch flex justify-center items-center xl:max-h-screen xl:-mt-16 text-gray-300"
-  >
-    <div class="w-3/4 mx-auto flex flex-col gap-y-8 py-16">
-      <h2 class="text-4xl font-bold text-white">Patriks Werdegang</h2>
-
+  <section class="relative flex flex-1 flex-col xl:flex-row">
+    <div
+      class="relative flex flex-1 items-center justify-center overflow-hidden bg-white px-6 py-16 text-slate-900 sm:px-12 dark:bg-slate-950 dark:text-gray-100"
+    >
       <div
-        class="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 text-sm leading-relaxed text-gray-200"
+        class="pointer-events-none absolute inset-0 -z-10"
+        aria-hidden="true"
       >
-        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-200">
-          Arbeitsweise
-        </p>
-        <h3 class="mt-2 text-2xl font-semibold text-white">
-          Strukturen statt Tool-Hopping.
-        </h3>
-        <p class="mt-3">
-          Seit 2017 begleite ich regulierte Unternehmen, Mittelstand und
-          Akademien bei GenAI-, Data- und Software-Projekten. Ich arbeite eng mit
-          Produkt-, Security- und Operations-Teams, damit Architekturen steuerbar
-          bleiben – von der ersten Rechtsprüfung bis zum laufenden Betrieb.
-        </p>
-        <p class="mt-3 text-gray-300">
-          &gt;150 Projekte · Remote-first · Einsätze vor Ort nach Absprache
-        </p>
-      </div>
-
-      <div class="grid gap-4 text-sm xl:grid-cols-2">
-        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-200">
-            Rollen
-          </p>
-          <p class="mt-2 text-white">
-            AI Solution Architect &amp; Consultant · Software Engineer ·
-            Fractional CIO · IT-Trainer &amp; Coach
-          </p>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.18),_transparent_55%)] dark:bg-[radial-gradient(circle_at_top,_rgba(120,119,198,0.35),_transparent_55%)]"
+        >
         </div>
-        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-200">
-            Methodik
-          </p>
-          <p class="mt-2">
-            RAG &amp; Agentensysteme · Security-by-Design · Observability ·
-            Continuous Delivery · Governance &amp; Enablement
-          </p>
-        </div>
-        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-200">
-            Aktuelle Schwerpunkte
-          </p>
-          <p class="mt-2">
-            GenAI im Gesundheitswesen &amp; E-Commerce · Realtime Knowledge
-            Graphs · Trainingsprogramme für moderne Softwarearchitektur
-          </p>
+        <div
+          class="absolute -bottom-32 right-0 h-64 w-64 rounded-full bg-indigo-500/15 blur-[120px] dark:bg-indigo-500/30"
+        >
         </div>
       </div>
 
-      <div class="mt-6 text-sm text-gray-300">
-        <p class="font-semibold text-white">Ausbildung &amp; Zertifikate</p>
-        <p>BSc Informatik (IU Internationale Hochschule, seit 09/2023)</p>
-        <p>TÜV Rheinland zertifizierter AI Consultant (03/2024)</p>
+      <div class="relative mx-auto flex w-full max-w-2xl flex-col gap-8">
+        <div class="space-y-4">
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-indigo-200"
+          >
+            AI Solution Architect
+          </span>
+          <div class="space-y-4">
+            <h1
+              class="text-4xl font-semibold text-gray-900 sm:text-5xl dark:text-white"
+            >
+              Patriks Werdegang
+            </h1>
+            <p class="text-lg leading-8 text-gray-600 dark:text-gray-300">
+              Seit 2017 begleite ich regulierte Unternehmen, Mittelstand und
+              Akademien bei GenAI-, Data- und Software-Projekten. Meine Arbeit
+              verbindet Produkt-, Security- und Operations-Teams, damit
+              Architekturen steuerbar bleiben – von der ersten Rechtsprüfung bis
+              zum laufenden Betrieb.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-3 text-sm text-gray-500 dark:text-gray-300"
+          >
+            <a
+              class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+              href="https://www.garten.ai"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="font-semibold">Website</span>
+              <span class="text-gray-500 dark:text-white/70">garten.ai</span>
+            </a>
+            <a
+              class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+              href="mailto:info@garten.ai"
+            >
+              <span class="font-semibold">Mail</span>
+              <span class="text-gray-500 dark:text-white/70"
+                >info@garten.ai</span
+              >
+            </a>
+            <a
+              class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+              href="https://www.linkedin.com/in/paifgx"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="font-semibold">LinkedIn</span>
+              <span class="text-gray-500 dark:text-white/70">/in/paifgx</span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="rounded-3xl border border-slate-900/10 bg-gradient-to-br from-white via-indigo-50/70 to-slate-100 px-6 py-6 text-sm text-gray-700 shadow-xl shadow-indigo-200/40 dark:border-white/10 dark:from-white/5 dark:via-slate-900/60 dark:to-slate-900/30 dark:text-gray-300 dark:shadow-indigo-500/10"
+        >
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+          >
+            Positionierung
+          </p>
+          <p class="mt-3 text-lg leading-8 text-gray-900 dark:text-white">
+            Ich entwickle Systeme, wo andere Tools verkaufen. KI ist kein
+            Buzzword, sondern ein Hebel für echte Entlastung.
+          </p>
+          <p class="mt-3 text-gray-700 dark:text-gray-200">
+            Als AI Solution Architect verbinde ich technisches Tiefenwissen mit
+            unternehmerischem Denken. Ich denke in Strukturen, nicht in
+            Interfaces – keine Demo-Projekte, sondern tragfähige Architekturen:
+            robust, wartbar, wirksam.
+          </p>
+          <p class="mt-3 text-gray-700 dark:text-gray-200">
+            Mein Ziel: Unternehmen befähigen, KI nicht nur zu nutzen, sondern zu
+            führen. Nicht experimentieren, sondern Verantwortung übernehmen.
+          </p>
+        </div>
+
+        <dl
+          class="grid gap-4 rounded-2xl border border-slate-900/10 bg-white/90 p-5 shadow-lg shadow-indigo-200/20 sm:grid-cols-3 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10"
+        >
+          {
+            stats.map((stat) => (
+              <div class="space-y-1">
+                <dt class="text-sm text-gray-600 dark:text-gray-300">
+                  {stat.label}
+                </dt>
+                <dd class="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {stat.value}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+
+        <div
+          class="rounded-2xl border border-slate-900/10 bg-white/95 px-6 py-7 text-sm leading-relaxed text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10"
+        >
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+          >
+            Arbeitsweise
+          </p>
+          <h3 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">
+            Strukturen statt Tool-Hopping.
+          </h3>
+          <p class="mt-3 text-gray-700 dark:text-gray-200">
+            Review-Workshops, Architektur-Slices und verbindliche Operating
+            Models machen komplexe GenAI-Landschaften steuerbar. Ich begleite
+            Teams hands-on, bis die Delivery in sicheren Bahnen läuft.
+          </p>
+          <p class="mt-3 text-gray-500 dark:text-gray-300">
+            &gt;150 Projekte · Remote-first · Einsätze vor Ort nach Absprache
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {
+            pillars.map((pillar) => (
+              <article class="rounded-2xl border border-slate-900/10 bg-white/95 px-5 py-4 text-sm text-gray-700 shadow-sm dark:border-white/5 dark:bg-white/5 dark:text-gray-200">
+                <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-200">
+                  {pillar.label}
+                </p>
+                <p class="mt-2 text-sm leading-6 text-gray-700 dark:text-white/90">
+                  {pillar.description}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+
+        <div
+          class="rounded-2xl border border-slate-900/10 bg-gradient-to-br from-white via-indigo-50/60 to-transparent px-6 py-6 shadow-lg shadow-indigo-200/30 dark:border-white/10 dark:from-white/5 dark:via-indigo-500/5 dark:to-transparent dark:shadow-indigo-500/10"
+        >
+          <div class="flex flex-col gap-2">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+            >
+              Arbeitsprinzipien
+            </p>
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
+              Enablement & Governance als Leitplanken.
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Jede Zusammenarbeit endet mit dokumentierten
+              Entscheidungsgrundlagen, Runbooks und Trainingspfaden.
+            </p>
+          </div>
+          <ul class="mt-6 space-y-4">
+            {
+              principles.map((principle) => (
+                <li class="flex gap-4">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-200">
+                    <svg
+                      class="h-3.5 w-3.5"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 8.5L6.5 11L12 5"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <div class="space-y-1">
+                    <p class="text-base font-semibold text-gray-900 dark:text-white">
+                      {principle.title}
+                    </p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                      {principle.description}
+                    </p>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div
+          class="rounded-2xl border border-slate-900/10 bg-white/95 px-6 py-6 text-sm text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-300 dark:shadow-indigo-500/10"
+        >
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+          >
+            Fähigkeiten
+          </p>
+          <h3 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">
+            Stack & Methoden im Überblick.
+          </h3>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Kuratierte Toolchains für ML, Backend, DevOps und Security – direkt
+            einsetzbar für regulierte Umgebungen.
+          </p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            {
+              capabilities.map((capability) => (
+                <article class="rounded-2xl border border-slate-900/10 bg-white/90 px-5 py-4 text-sm text-gray-700 shadow-sm dark:border-white/5 dark:bg-white/5 dark:text-gray-200">
+                  <p class="text-base font-semibold text-gray-900 dark:text-white">
+                    {capability.title}
+                  </p>
+                  <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                    {capability.description}
+                  </p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <a
+            href="mailto:info@garten.ai?subject=CV%20anfragen"
+            class="inline-flex flex-1 items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:bg-indigo-400"
+          >
+            CV anfragen (PDF)
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex flex-1 items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/20 dark:text-white/90 dark:hover:border-white/40 dark:hover:text-white"
+          >
+            Intro-Call buchen
+          </a>
+        </div>
+        <p
+          class="text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400"
+        >
+          Antwort innerhalb von 24 Stunden.
+        </p>
       </div>
-
-      <a
-        href="mailto:info@garten.ai?subject=CV%20anfragen"
-        class="mt-4 inline-flex items-center justify-center rounded-md bg-white/10 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20"
-      >
-        CV anfragen (PDF)
-      </a>
-    </div>
-  </div>
-
-  <div class="flex-1 flex flex-row">
-    <div class="hidden xl:inline-flex w-3 bg-gray-900">
-      <svg class="w-1.5 h-full" aria-hidden="true">
-        <defs>
-          <pattern id=":S4:" width="6" height="8" patternUnits="userSpaceOnUse">
-            <path
-              d="M0 0H6M0 8H6"
-              class="stroke-gray-900/10 xl:stroke-white/10 dark:stroke-white/10"
-              fill="none"></path>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#:S4:)"></rect>
-      </svg>
     </div>
 
-    <div class="flex-1">
-      <div class="w-3/4 mx-auto py-8 flex flex-col gap-y-8">
-        {timeEntries.map((entry) => <TimeEntry {...entry} />)}
+    <div
+      class="flex flex-1 flex-col bg-gray-100/80 px-6 py-12 sm:px-12 dark:bg-slate-950/30"
+    >
+      <div class="mx-auto flex w-full max-w-3xl flex-col">
+        <div class="border-b border-slate-900/10 pb-8 dark:border-white/5">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.4em] text-indigo-600 dark:text-indigo-200"
+          >
+            Timeline
+          </p>
+          <h2 class="mt-3 text-3xl font-semibold text-gray-900 dark:text-white">
+            Stationen mit messbarer Wirkung.
+          </h2>
+          <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+            Von Plattform-Modernisierungen bis zu GenAI-Governance: Jede Station
+            baut auf der vorherigen auf und erweitert das Playbook für
+            regulierte Organisationen.
+          </p>
+        </div>
+
+        <div class="mt-10 space-y-10">
+          {
+            timeEntries.map((entry, index) => (
+              <TimeEntry {...entry} isLast={index === timeEntries.length - 1} />
+            ))
+          }
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </BaseLayout>
