@@ -1,0 +1,492 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const business = {
+  owner: "Patrik Garten",
+  company: "Patrik Garten AI Development",
+  street: "Ph\u00f6nixstra\u00dfe 30",
+  city: "44263 Dortmund",
+  phoneDisplay: "+49 1516 4587494",
+  phoneHref: "+4915164587494",
+  email: "info@garten.ai",
+};
+
+const restrictionCases = [
+  "Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, ben\u00f6tigen wir in der Regel Zeit, um dies zu \u00fcberpr\u00fcfen. F\u00fcr die Dauer der Pr\u00fcfung haben Sie das Recht, die Einschr\u00e4nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
+  "Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtm\u00e4\u00dfig geschah/geschieht, k\u00f6nnen Sie statt der L\u00f6schung die Einschr\u00e4nkung der Datenverarbeitung verlangen.",
+  "Wenn wir Ihre personenbezogenen Daten nicht mehr ben\u00f6tigen, Sie sie jedoch zur Aus\u00fcbung, Verteidigung oder Geltendmachung von Rechtsanspr\u00fcchen ben\u00f6tigen, haben Sie das Recht, statt der L\u00f6schung die Einschr\u00e4nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
+  "Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abw\u00e4gung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen \u00fcberwiegen, haben Sie das Recht, die Einschr\u00e4nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
+];
+---
+
+<BaseLayout>
+  <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
+    <div class="mx-auto max-w-4xl space-y-5">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200"
+      >
+        Rechtliche Hinweise
+      </p>
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white">
+        Datenschutz&shy;erkl&auml;rung
+      </h1>
+      <p class="text-base leading-7 text-gray-600 dark:text-gray-300">
+        Die folgenden Hinweise geben einen einfachen &Uuml;berblick
+        dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn Sie
+        diese Website besuchen. Personenbezogene Daten sind alle Daten, mit
+        denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 px-6 py-16 dark:bg-gray-900 lg:px-12">
+    <div class="mx-auto max-w-5xl space-y-10">
+      <article
+        class="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-700 dark:bg-gray-950/60"
+      >
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+          1. Datenschutz auf einen Blick
+        </h2>
+
+        <div
+          class="mt-6 space-y-4 text-sm leading-7 text-gray-700 dark:text-gray-300"
+        >
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Allgemeine Hinweise
+            </h3>
+            <p>
+              Die folgenden Hinweise geben einen einfachen &Uuml;berblick
+              dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn
+              Sie diese Website besuchen. Ausf&uuml;hrliche Informationen zum
+              Thema Datenschutz entnehmen Sie der nachfolgenden
+              Datenschutzerkl&auml;rung.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Datenerfassung auf dieser Website
+            </h3>
+            <div class="space-y-2">
+              <h4 class="font-semibold text-gray-900 dark:text-white">
+                Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser
+                Website?
+              </h4>
+              <p>
+                Die Datenverarbeitung erfolgt durch den Websitebetreiber. Dessen
+                Kontaktdaten finden Sie im Abschnitt &bdquo;Hinweis zur
+                Verantwortlichen Stelle&ldquo;.
+              </p>
+              <h4 class="font-semibold text-gray-900 dark:text-white">
+                Wie erfassen wir Ihre Daten?
+              </h4>
+              <p>
+                Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese
+                mitteilen, z.&nbsp;B. &uuml;ber ein Kontaktformular. Andere
+                Daten werden automatisch oder nach Ihrer Einwilligung beim
+                Besuch der Website durch unsere IT-Systeme erfasst (z.&nbsp;B.
+                Browser, Betriebssystem, Uhrzeit des Seitenaufrufs).
+              </p>
+              <h4 class="font-semibold text-gray-900 dark:text-white">
+                Wof&uuml;r nutzen wir Ihre Daten?
+              </h4>
+              <p>
+                Ein Teil der Daten dient der fehlerfreien Bereitstellung der
+                Website. Andere Daten k&ouml;nnen zur Analyse Ihres
+                Nutzerverhaltens verwendet werden. Sofern &uuml;ber die Website
+                Vertr&auml;ge geschlossen oder angebahnt werden k&ouml;nnen,
+                verarbeiten wir die Daten auch f&uuml;r Vertragsangebote,
+                Bestellungen oder sonstige Auftragsanfragen.
+              </p>
+              <h4 class="font-semibold text-gray-900 dark:text-white">
+                Welche Rechte haben Sie?
+              </h4>
+              <p>
+                Sie haben jederzeit das Recht auf unentgeltliche Auskunft
+                &uuml;ber Herkunft, Empf&auml;nger und Zweck Ihrer gespeicherten
+                personenbezogenen Daten. Sie k&ouml;nnen die Berichtigung oder
+                L&ouml;schung dieser Daten verlangen, Ihre Einwilligung
+                widerrufen und unter bestimmten Umst&auml;nden die
+                Einschr&auml;nkung der Verarbeitung fordern. Ihnen steht
+                au&szlig;erdem ein Beschwerderecht bei der zust&auml;ndigen
+                Aufsichtsbeh&ouml;rde zu. Hierzu sowie zu weiteren Fragen zum
+                Thema Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Analyse-Tools und Tools von Dritt&shy;anbietern
+            </h3>
+            <p>
+              Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch
+              ausgewertet werden, vor allem mit Analyseprogrammen. Details
+              hierzu finden Sie in der weiteren Datenschutzerkl&auml;rung.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-700 dark:bg-gray-950/60"
+      >
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+          2. Hosting
+        </h2>
+        <div
+          class="mt-4 space-y-4 text-sm leading-7 text-gray-700 dark:text-gray-300"
+        >
+          <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Hetzner
+            </h3>
+            <p>
+              Anbieter ist die Hetzner Online GmbH, Industriestr. 25, 91710
+              Gunzenhausen (nachfolgend Hetzner).
+            </p>
+            <p>
+              Details entnehmen Sie der Datenschutzerkl&auml;rung von Hetzner:
+              <a
+                href="https://www.hetzner.com/de/legal/privacy-policy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-300"
+              >
+                https://www.hetzner.com/de/legal/privacy-policy/
+              </a>.
+            </p>
+            <p>
+              Die Verwendung von Hetzner erfolgt auf Grundlage von Art. 6 Abs. 1
+              lit. f DSGVO. Sofern eine Einwilligung abgefragt wurde, erfolgt
+              die Verarbeitung zus&auml;tzlich auf Grundlage von Art. 6 Abs. 1
+              lit. a DSGVO und &sect; 25 Abs. 1 TDDDG (z.&nbsp;B. f&uuml;r
+              Cookies oder Device-Fingerprinting). Die Einwilligung ist
+              jederzeit widerrufbar.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-base font-semibold text-gray-900 dark:text-white">
+              Auftragsverarbeitung
+            </h4>
+            <p>
+              Wir haben einen Vertrag &uuml;ber Auftragsverarbeitung (AVV) zur
+              Nutzung des oben genannten Dienstes geschlossen. Damit ist
+              sichergestellt, dass personenbezogene Daten von Websitebesuchern
+              nur nach unseren Weisungen und unter Einhaltung der DSGVO
+              verarbeitet werden.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
+    <div class="mx-auto max-w-5xl space-y-10">
+      <article
+        class="rounded-3xl border border-gray-200 bg-gray-50 p-8 shadow-sm dark:border-gray-800 dark:bg-gray-900/60"
+      >
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+          3. Allgemeine Hinweise und Pflicht&shy;informationen
+        </h2>
+        <div
+          class="mt-6 space-y-6 text-sm leading-7 text-gray-700 dark:text-gray-300"
+        >
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Datenschutz
+            </h3>
+            <p>
+              Wir behandeln Ihre personenbezogenen Daten vertraulich und
+              entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser
+              Datenschutzerkl&auml;rung. Personenbezogene Daten sind
+              Informationen, mit denen Sie pers&ouml;nlich identifiziert werden
+              k&ouml;nnen.
+            </p>
+            <p class="mt-3">
+              Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet
+              Sicherheitsl&uuml;cken aufweisen kann. Ein vollst&auml;ndiger
+              Schutz vor dem Zugriff durch Dritte ist nicht m&ouml;glich.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Hinweis zur verantwortlichen Stelle
+            </h3>
+            <p>
+              Die verantwortliche Stelle f&uuml;r die Datenverarbeitung ist:
+            </p>
+            <div
+              class="mt-3 rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950/60"
+            >
+              <p class="font-semibold text-gray-900 dark:text-white">
+                {business.owner}
+              </p>
+              <p>{business.company}</p>
+              <p>{business.street}</p>
+              <p>{business.city}</p>
+              <p class="mt-3">Telefon: {business.phoneDisplay}</p>
+              <p>E-Mail: {business.email}</p>
+            </div>
+            <p class="mt-3">
+              Verantwortliche Stelle ist die nat&uuml;rliche oder juristische
+              Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke
+              und Mittel der Verarbeitung personenbezogener Daten entscheidet.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Speicherdauer
+            </h3>
+            <p>
+              Soweit innerhalb dieser Datenschutzerkl&auml;rung keine
+              speziellere Speicherdauer genannt wurde, verbleiben Ihre
+              personenbezogenen Daten bei uns, bis der Zweck f&uuml;r die
+              Datenverarbeitung entf&auml;llt. Nach einem berechtigten
+              L&ouml;schersuchen oder Widerruf Ihrer Einwilligung werden die
+              Daten gel&ouml;scht, sofern keine anderen gesetzlich
+              zul&auml;ssigen Gr&uuml;nde (z.&nbsp;B. steuerrechtliche
+              Aufbewahrungspflichten) entgegenstehen.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Allgemeine Hinweise zu Rechtsgrundlagen
+            </h3>
+            <p>
+              Sofern Sie in die Datenverarbeitung eingewilligt haben, erfolgt
+              die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw.
+              Art. 9 Abs. 2 lit. a DSGVO (besondere Kategorien). Bei
+              ausdr&uuml;cklicher Einwilligung in Daten&uuml;bermittlungen in
+              Drittstaaten gilt zus&auml;tzlich Art. 49 Abs. 1 lit. a DSGVO. Bei
+              Einwilligungen in Cookies oder den Zugriff auf Ihr Endger&auml;t
+              verarbeiten wir Ihre Daten zus&auml;tzlich nach &sect; 25 Abs. 1
+              TDDDG. Zur Vertragserf&uuml;llung st&uuml;tzen wir uns auf Art. 6
+              Abs. 1 lit. b DSGVO, bei rechtlichen Verpflichtungen auf Art. 6
+              Abs. 1 lit. c DSGVO und bei berechtigten Interessen auf Art. 6
+              Abs. 1 lit. f DSGVO.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Empf&auml;nger von personenbezogenen Daten
+            </h3>
+            <p>
+              Im Rahmen unserer Gesch&auml;ftst&auml;tigkeit arbeiten wir mit
+              externen Stellen zusammen. Personenbezogene Daten geben wir nur
+              weiter, wenn dies zur Vertragserf&uuml;llung notwendig ist, eine
+              gesetzliche Pflicht besteht, ein berechtigtes Interesse i.S.d.
+              Art. 6 Abs. 1 lit. f DSGVO vorliegt oder eine andere
+              Rechtsgrundlage dies erlaubt. Beim Einsatz von
+              Auftragsverarbeitern bestehen entsprechende Vertr&auml;ge.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Widerruf Ihrer Einwilligung
+            </h3>
+            <p>
+              Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer
+              ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen
+              eine bereits erteilte Einwilligung jederzeit mit Wirkung f&uuml;r
+              die Zukunft widerrufen. Die Rechtm&auml;&szlig;igkeit der bis zum
+              Widerruf erfolgten Verarbeitung bleibt bestehen.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Widerspruchsrecht nach Art. 21 DSGVO
+            </h3>
+            <p class="font-semibold text-gray-900 dark:text-white">
+              WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E
+              ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS
+              GR&Uuml;NDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN,
+              GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH
+              EINZULEGEN. DIES GILT AUCH F&Uuml;R EIN AUF DIESE BESTIMMUNGEN
+              GEST&Uuml;TZTES PROFILING.
+            </p>
+            <p class="mt-3">
+              WERDEN IHRE PERSONENBEZOGENEN DATEN ZUR DIREKTWERBUNG VERARBEITET,
+              HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG
+              ZU ZWECKEN DERARTIGER WERBUNG EINZULEGEN. SOWEIT DAS PROFILING MIT
+              SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT, GILT DIES EBENFALLS.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Beschwerde&shy;recht
+            </h3>
+            <p>
+              Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht Ihnen ein
+              Beschwerderecht bei einer Aufsichtsbeh&ouml;rde, insbesondere in
+              dem Mitgliedstaat Ihres gew&ouml;hnlichen Aufenthalts, Ihres
+              Arbeitsplatzes oder des Orts des mutma&szlig;lichen
+              Versto&szlig;es zu.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Recht auf Daten&shy;&uuml;bertrag&shy;barkeit
+            </h3>
+            <p>
+              Sie haben das Recht, Daten, die wir auf Grundlage Ihrer
+              Einwilligung oder zur Vertragserf&uuml;llung automatisiert
+              verarbeiten, an sich oder an einen Dritten in einem g&auml;ngigen,
+              maschinenlesbaren Format aush&auml;ndigen zu lassen. Soweit
+              technisch machbar, haben Sie das Recht auf direkte
+              &Uuml;bertragung an einen anderen Verantwortlichen.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Auskunft, Berichtigung und L&ouml;schung
+            </h3>
+            <p>
+              Sie haben im Rahmen der gesetzlichen Bestimmungen das Recht auf
+              Auskunft &uuml;ber Ihre gespeicherten personenbezogenen Daten,
+              deren Herkunft, Empf&auml;nger sowie den Zweck der
+              Datenverarbeitung. Zudem haben Sie ggf. ein Recht auf Berichtigung
+              oder L&ouml;schung dieser Daten. Hierzu k&ouml;nnen Sie sich
+              jederzeit an uns wenden.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Recht auf Einschr&auml;nkung der Verarbeitung
+            </h3>
+            <p>
+              Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer
+              personenbezogenen Daten zu verlangen. Das gilt insbesondere in den
+              folgenden F&auml;llen:
+            </p>
+            <ul
+              class="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 dark:text-gray-300"
+            >
+              {restrictionCases.map((item) => <li>{item}</li>)}
+            </ul>
+            <p class="mt-3">
+              Wenn Sie die Verarbeitung eingeschr&auml;nkt haben, d&uuml;rfen
+              diese Daten &ndash; von der Speicherung abgesehen &ndash; nur mit
+              Ihrer Einwilligung oder zur Geltendmachung, Aus&uuml;bung oder
+              Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte
+              anderer Personen bzw. aus Gr&uuml;nden eines wichtigen
+              &ouml;ffentlichen Interesses verarbeitet werden.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              SSL- bzw. TLS-Verschl&uuml;sselung
+            </h3>
+            <p>
+              Diese Seite nutzt aus Sicherheitsgr&uuml;nden eine SSL- bzw.
+              TLS-Verschl&uuml;sselung. Eine verschl&uuml;sselte Verbindung
+              erkennen Sie an der Adresszeile Ihres Browsers
+              (&bdquo;https://&ldquo;) sowie am Schloss-Symbol.
+            </p>
+            <p class="mt-3">
+              Wenn die Verschl&uuml;sselung aktiviert ist, k&ouml;nnen Daten,
+              die Sie an uns &uuml;bermitteln, nicht von Dritten mitgelesen
+              werden.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 px-6 py-16 dark:bg-gray-900 lg:px-12">
+    <div class="mx-auto max-w-5xl space-y-10">
+      <article
+        class="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-700 dark:bg-gray-950/60"
+      >
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+          4. Datenerfassung auf dieser Website
+        </h2>
+
+        <div
+          class="mt-6 space-y-6 text-sm leading-7 text-gray-700 dark:text-gray-300"
+        >
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Kontaktformular
+            </h3>
+            <p>
+              Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden
+              Ihre Angaben inklusive der angegebenen Kontaktdaten zwecks
+              Bearbeitung und f&uuml;r Anschlussfragen gespeichert. Diese Daten
+              geben wir nicht ohne Ihre Einwilligung weiter.
+            </p>
+            <p class="mt-3">
+              Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b
+              DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines Vertrags
+              zusammenh&auml;ngt oder zur Durchf&uuml;hrung vorvertraglicher
+              Ma&szlig;nahmen erforderlich ist. In allen anderen F&auml;llen
+              beruht die Verarbeitung auf unserem berechtigten Interesse (Art. 6
+              Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1
+              lit. a DSGVO). Die Einwilligung ist jederzeit widerrufbar.
+            </p>
+            <p class="mt-3">
+              Die von Ihnen eingegebenen Daten verbleiben bei uns, bis Sie uns
+              zur L&ouml;schung auffordern, Ihre Einwilligung widerrufen oder
+              der Zweck der Speicherung entf&auml;llt. Gesetzliche
+              Aufbewahrungspflichten bleiben unber&uuml;hrt.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Anfrage per E-Mail, Telefon oder Telefax
+            </h3>
+            <p>
+              Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren,
+              speichern und verarbeiten wir Ihre Anfrage inklusive aller daraus
+              hervorgehenden personenbezogenen Daten (z.&nbsp;B. Name, Anliegen)
+              zur Bearbeitung. Diese Daten geben wir nicht ohne Ihre
+              Einwilligung weiter.
+            </p>
+            <p class="mt-3">
+              Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b
+              DSGVO, sofern Ihre Anfrage mit einem Vertrag zusammenh&auml;ngt
+              oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen
+              erforderlich ist. In allen &uuml;brigen F&auml;llen beruht sie auf
+              unserem berechtigten Interesse (Art. 6 Abs. 1 lit. f DSGVO) oder
+              Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+            </p>
+            <p class="mt-3">
+              Die von Ihnen &uuml;bersandten Daten verbleiben bei uns, bis Sie
+              uns zur L&ouml;schung auffordern, Ihre Einwilligung widerrufen
+              oder der Zweck der Speicherung entf&auml;llt. Zwingende
+              gesetzliche Bestimmungen bleiben unber&uuml;hrt.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        Quelle:
+        <a
+          href="https://www.e-recht24.de"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-300"
+        >
+          https://www.e-recht24.de
+        </a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
