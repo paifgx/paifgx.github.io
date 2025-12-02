@@ -6,7 +6,7 @@ import SectionPartners from "../components/index/SectionPartners.astro";
 
 import ServiceArticle from "src/components/ServiceArticle.astro";
 
-import SectionReviews from "src/components/index/SectionReviews.vue";
+import SectionReviews from "src/components/index/SectionReviews.astro";
 import SectionCTA from "src/components/index/SectionCTA.astro";
 ---
 
@@ -101,7 +101,7 @@ import SectionCTA from "src/components/index/SectionCTA.astro";
     class="container mx-auto py-24 px-6 text-gray-900 dark:text-gray-100"
     aria-labelledby="case-studies-heading"
   >
-    <SectionReviews client:load />
+    <SectionReviews />
   </section>
 
   <section class="bg-white dark:bg-gray-950">
