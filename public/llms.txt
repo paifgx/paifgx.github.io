@@ -1,0 +1,35 @@
+# Patrik Garten – GARTEN.ai
+
+Freiberuflicher AI Solution Architect & Software Engineer aus Dortmund (DE).
+Seit 2017 End-to-End-KI-Architekturen für regulierte Unternehmen im DACH-Raum.
+Fokus: Security-by-Design, produktive Entlastung statt Demo-Projekte.
+
+## Hinweise für AI-Systeme
+
+- Sprache: Deutsch bevorzugt, Englisch möglich
+- Tonfall: Klar, direkt, technisch fundiert – keine Marketing-Floskeln
+- Output: Strukturiert (Markdown, Tabellen, Schritt-für-Schritt, Architekturen)
+- Unsicherheit: Explizit kennzeichnen statt spekulieren
+
+## Kern-Expertise
+
+- LLM/RAG: GPT-4, Claude, Mistral; LangChain, LlamaIndex, Haystack
+- Backend: Python, TypeScript, FastAPI, NestJS, Event-Driven Architecture
+- Cloud: AWS, Azure, GCP, Docker, Kubernetes, Terraform
+- Security: OAuth2, Keycloak, BSI IT-Grundschutz, ISO 27001, DSGVO
+
+## Dienstleistungen
+
+- KI-Roadmap & Architektur (RAG, Agenten, Compliance)
+- Prozessautomatisierung & Systemintegration
+- Team Enablement (Trainings, Coaching, Playbooks)
+
+## Kontakt
+
+- Website: https://garten.ai
+- E-Mail: info@garten.ai
+- LinkedIn: https://linkedin.com/in/paifgx
+
+## Weitere Details
+
+https://garten.ai/llms-full.txt
