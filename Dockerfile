@@ -1,12 +1,12 @@
 # Stage 1: Build
 FROM node:22-alpine AS builder
 
-# Install pnpm (Version aus package.json)
+# Install pnpm
 RUN corepack enable && corepack prepare pnpm@10.23.0 --activate
 
 WORKDIR /app
 
-# Copy package files
+# Copy dependency files first (better layer caching)
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install dependencies
@@ -19,17 +19,21 @@ COPY . .
 RUN pnpm run build
 
 # Stage 2: Production
-FROM nginx:alpine
+FROM caddy:alpine
 
-# Copy built files from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+# Copy Caddyfile
+COPY Caddyfile /etc/caddy/Caddyfile
 
-# Copy nginx configuration (optional, falls du eine custom config brauchst)
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy built static files
+COPY --from=builder /app/dist /srv
 
-# Expose port 80
+# Caddy runs as non-root by default (UID 1000)
+# No manual permission changes needed
+
 EXPOSE 80
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD wget --no-verbose --tries=1 --spider http://localhost/ || exit 1
 
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
