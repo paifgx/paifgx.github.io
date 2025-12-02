@@ -1,10 +1,6 @@
 # Stage 1: Build
 FROM node:22-alpine AS builder
 
-# Build argument für Site URL (optional, defaults to garten.ai)
-ARG SITE_URL=https://garten.ai
-ENV SITE_URL=${SITE_URL}
-
 # Install pnpm (Version aus package.json)
 RUN corepack enable && corepack prepare pnpm@10.23.0 --activate
 

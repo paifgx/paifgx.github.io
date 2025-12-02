@@ -29,14 +29,7 @@ docker build -t gartenai-homepage .
 docker run -p 80:80 gartenai-homepage
 ```
 
-### Build Arguments
+### Build
 
-| Argument   | Description                          | Default                      |
-| :--------- | :----------------------------------- | :--------------------------- |
-| `SITE_URL` | Base URL for sitemap generation      | `https://garten.ai`          |
-
-The default SITE_URL is `https://garten.ai`. To override:
-
-```bash
-docker build --build-arg SITE_URL=https://garten.dev -t gartenai-homepage .
-```
+The site domain is hardcoded to `https://garten.ai` in `astro.config.mjs`.
+No build arguments or environment variables are required.
