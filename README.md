@@ -31,10 +31,12 @@ docker run -p 80:80 gartenai-homepage
 
 ### Build Arguments
 
-| Argument   | Description                          | Example                      |
+| Argument   | Description                          | Default                      |
 | :--------- | :----------------------------------- | :--------------------------- |
 | `SITE_URL` | Base URL for sitemap generation      | `https://garten.ai`          |
 
+The default SITE_URL is `https://garten.ai`. To override:
+
 ```bash
-docker build --build-arg SITE_URL=https://garten.ai -t gartenai-homepage .
+docker build --build-arg SITE_URL=https://garten.dev -t gartenai-homepage .
 ```

@@ -1,8 +1,8 @@
 # Stage 1: Build
 FROM node:22-alpine AS builder
 
-# Build argument für Site URL (optional)
-ARG SITE_URL
+# Build argument für Site URL (optional, defaults to garten.ai)
+ARG SITE_URL=https://garten.ai
 ENV SITE_URL=${SITE_URL}
 
 # Install pnpm (Version aus package.json)
