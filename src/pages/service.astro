@@ -2,6 +2,54 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import programmingImage from "../assets/programming.jpg";
 
+// FAQ Schema for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Welche KI-Dienstleistungen bietet Patrik Garten an?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Patrik Garten bietet AI Solution Architecture, RAG- & Agentensysteme mit LangChain/LlamaIndex, Platform Engineering (FastAPI, NestJS, Cloud-Infrastruktur), sowie Team Enablement durch Trainings und Coaching. Alle Leistungen folgen Security-by-Design nach BSI IT-Grundschutz und ISO 27001.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Wie läuft eine Zusammenarbeit ab?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Jede Zusammenarbeit startet mit einem Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen. Daraus entsteht eine priorisierte Roadmap mit Verantwortlichkeiten und KPIs. Die Umsetzung erfolgt hands-on mit Reviews, Architecture Boards und Enablement-Artefakten.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Welche Engagement-Modelle gibt es?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Es gibt drei Modelle: Fractional AI/CIO für strategische Verantwortung, Projekt-Delivery für End-to-end Umsetzung, und Advisory & Enablement für Sparring und Coaching. Alle Modelle sind kombinierbar und remote im DACH-Raum oder vor Ort verfügbar.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Welche Technologien werden eingesetzt?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Der Tech-Stack umfasst LLMs (OpenAI, Azure OpenAI, Claude, Gemini, Mistral), Orchestrierung (LangChain, LlamaIndex, Haystack), Backend (FastAPI, NestJS, Django), Cloud (AWS, Azure, GCP, Kubernetes), und Security (OAuth2, Keycloak, BSI IT-Grundschutz).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Wie schnell kann ein Projekt starten?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Die Reaktionszeit auf Anfragen beträgt 24 Stunden. Time-to-Value für MVP/POC liegt bei unter 90 Tagen. Nach einem initialen Gespräch wird gemeinsam der optimale Startpunkt und Scope definiert.",
+      },
+    },
+  ],
+};
+
 const servicePillars = [
   {
     title: "KI-Roadmap & Verantwortlichkeiten klären",
@@ -497,4 +545,7 @@ const painPoints = [
       </p>
     </div>
   </section>
+
+  <!-- FAQ Schema for rich snippets -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>

@@ -3,3 +3,6 @@ Allow: /
 
 Sitemap: https://garten.ai/sitemap-index.xml
 
+# AI Crawler Information
+# See https://garten.ai/llms.txt for AI-readable summary
+# See https://garten.ai/llms-full.txt for detailed information
