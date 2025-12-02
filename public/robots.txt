@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.garten.ai/sitemap-index.xml
+Sitemap: https://garten.ai/sitemap-index.xml
 
