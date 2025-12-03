@@ -1,26 +1,62 @@
 ---
-import moment from "moment";
-import "moment/locale/de";
-
-const { id, date, title, content, isLast = false } = Astro.props;
-
-moment.locale("de");
-
-let formattedDate: string;
-if (date) {
-  if (moment(date, "YYYY", true).isValid()) {
-    formattedDate = moment(date, "YYYY").format("YYYY");
-  } else if (moment(date, "YYYY-MM", true).isValid()) {
-    formattedDate = moment(date, "YYYY-MM").format("MM.YYYY");
-  } else if (moment(date, "YYYY-MM-DD", true).isValid()) {
-    formattedDate = moment(date, "YYYY-MM-DD").format("DD.MM.YYYY");
-  } else {
-    formattedDate = moment(date).format("DD.MM.YYYY");
-  }
-} else {
-  formattedDate = "Heute";
+interface Props {
+  id: number;
+  date?: string;
+  title: string;
+  content: string;
+  isLast?: boolean;
 }
 
+const { id, date, title, content, isLast = false } = Astro.props as Props;
+
+/**
+ * Formats date strings in German locale format.
+ * Supports: YYYY, YYYY-MM, YYYY-MM-DD
+ */
+function formatDate(dateStr: string | undefined): string {
+  if (!dateStr) {
+    return "Heute";
+  }
+
+  const parts = dateStr.split("-");
+
+  // YYYY format
+  if (parts.length === 1) {
+    return parts[0];
+  }
+
+  // YYYY-MM format
+  if (parts.length === 2) {
+    return `${parts[1]}.${parts[0]}`;
+  }
+
+  // YYYY-MM-DD format
+  if (parts.length === 3) {
+    const date = new Date(dateStr);
+    if (!isNaN(date.getTime())) {
+      return date.toLocaleDateString("de-DE", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+    }
+  }
+
+  // Fallback: try to parse as date
+  const date = new Date(dateStr);
+  if (!isNaN(date.getTime())) {
+    return date.toLocaleDateString("de-DE", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  }
+
+  // Last resort: return original string
+  return dateStr;
+}
+
+const formattedDate = formatDate(date);
 const showConnector = !isLast;
 ---
 
