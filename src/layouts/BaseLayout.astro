@@ -147,7 +147,7 @@ const structuredData = {
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
     <!-- Plausible Analytics -->
-    <script define:vars={{ domain }}>
+    <script is:inline define:vars={{ domain }}>
       import { init } from "@plausible-analytics/tracker";
 
       init({
