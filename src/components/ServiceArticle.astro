@@ -1,4 +1,21 @@
 ---
+interface Paragraphs {
+  intro: string;
+  details: Array<{
+    heading: string;
+    text: string;
+  }>;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  paragraphs: Paragraphs;
+  imagePosition?: "left" | "right";
+  image: string;
+  imageAlt?: string;
+}
+
 const {
   title,
   subtitle,
@@ -6,7 +23,7 @@ const {
   imagePosition = "right",
   image,
   imageAlt = "",
-} = Astro.props;
+} = Astro.props as Props;
 
 const slugify = (value: string) =>
   value
