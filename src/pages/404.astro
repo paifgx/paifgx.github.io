@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Seite nicht gefunden" noindex>
+    <section
+        class="flex min-h-[60vh] items-center justify-center bg-white px-4 py-12 dark:bg-gray-950 sm:px-6"
+    >
+        <div class="mx-auto max-w-2xl text-center">
+            <p class="text-6xl font-bold text-indigo-600 dark:text-indigo-400">
+                404
+            </p>
+            <h1
+                class="mt-4 text-2xl font-semibold text-gray-900 dark:text-white sm:text-3xl"
+            >
+                Seite nicht gefunden
+            </h1>
+            <p class="mt-2 text-base text-gray-600 dark:text-gray-300">
+                Die angeforderte Seite existiert nicht.
+            </p>
+            <a
+                href="/"
+                class="mt-6 inline-block rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-xs transition hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
+            >
+                Zur Startseite
+            </a>
+        </div>
+    </section>
+</BaseLayout>
