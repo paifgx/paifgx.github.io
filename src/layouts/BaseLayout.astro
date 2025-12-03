@@ -13,6 +13,7 @@ import {
 
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, siteMeta.origin);
+const domain = Astro.site ? new URL(Astro.site).hostname : "garten.ai";
 
 const {
   classDefintion,
@@ -28,14 +29,19 @@ const pageDescription = description || siteMeta.description;
 const ogImageURL = new URL(image, siteMeta.origin).href;
 const mainClass = classDefintion ?? "";
 
-const pathSegments = currentPath.split('/').filter(Boolean);
+const pathSegments = currentPath.split("/").filter(Boolean);
 
 const breadcrumbItems = [
-  { "@type": "ListItem", position: 1, name: "Startseite", item: siteMeta.origin }
+  {
+    "@type": "ListItem",
+    position: 1,
+    name: "Startseite",
+    item: siteMeta.origin,
+  },
 ];
 
 pathSegments.forEach((segment, index) => {
-  const url = `${siteMeta.origin}/${pathSegments.slice(0, index + 1).join('/')}/`;
+  const url = `${siteMeta.origin}/${pathSegments.slice(0, index + 1).join("/")}/`;
   const name = pathNames[segment] || segment;
   breadcrumbItems.push({
     "@type": "ListItem",
@@ -80,10 +86,14 @@ const structuredData = {
       telephone: contact.phoneDisplay,
       email: contact.email,
     },
-    ...(pathSegments.length > 0 ? [{
-      "@type": "BreadcrumbList",
-      itemListElement: breadcrumbItems,
-    }] : []),
+    ...(pathSegments.length > 0
+      ? [
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: breadcrumbItems,
+          },
+        ]
+      : []),
   ],
 };
 ---
@@ -121,12 +131,29 @@ const structuredData = {
     <meta name="twitter:creator" content="@paifgx" />
 
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#030712" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#ffffff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#030712"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+    <!-- Plausible Analytics -->
+    <script define:vars={{ domain }}>
+      import { init } from "@plausible-analytics/tracker";
+
+      init({
+        domain: domain,
+      });
+    </script>
 
     <script
       type="application/ld+json"
@@ -144,9 +171,15 @@ const structuredData = {
           try {
             const v = localStorage.getItem(STORAGE_KEY);
             return v === "dark" || v === "light" ? v : null;
-          } catch { return null; }
+          } catch {
+            return null;
+          }
         })();
-        const theme = stored ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        const theme =
+          stored ??
+          (matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
         document.documentElement.classList.toggle("dark", theme === "dark");
         document.documentElement.style.colorScheme = theme;
       })();
