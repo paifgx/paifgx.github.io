@@ -148,11 +148,14 @@ const structuredData = {
 
     <!-- Plausible Analytics -->
     <script is:inline define:vars={{ domain }}>
+      window.__PLAUSIBLE_DOMAIN__ = domain;
+    </script>
+    <script>
       import { init } from "@plausible-analytics/tracker";
-
-      init({
-        domain: domain,
-      });
+      const domain = window.__PLAUSIBLE_DOMAIN__;
+      if (domain) {
+        init({ domain });
+      }
     </script>
 
     <script
