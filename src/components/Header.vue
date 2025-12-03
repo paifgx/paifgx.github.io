@@ -185,7 +185,7 @@ const isActive = (href) => {
           type="button"
           class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-100 dark:hover:bg-gray-800"
           :aria-pressed="isDarkMode"
-          :aria-label="themeToggleLabel"
+          :aria-label="isDarkMode ? 'Dunkler Modus, zum hellen Modus wechseln' : 'Heller Modus, zum dunklen Modus wechseln'"
           :title="themeToggleLabel"
           @click="toggleTheme"
         >
