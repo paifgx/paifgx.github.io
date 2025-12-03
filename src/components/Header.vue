@@ -106,7 +106,6 @@ const isActive = (href) => {
           </a>
         </div>
 
-        <!-- Navigation Links (Desktop) -->
         <nav
           aria-label="Hauptnavigation"
           class="hidden sm:ml-6 sm:flex sm:space-x-8"
@@ -126,7 +125,6 @@ const isActive = (href) => {
           </a>
         </nav>
 
-        <!-- Kontaktbutton & Theme Toggle (Desktop) -->
         <div class="hidden sm:ml-6 sm:flex sm:items-center sm:gap-3">
           <button
             type="button"
@@ -148,7 +146,6 @@ const isActive = (href) => {
           </a>
         </div>
 
-        <!-- Mobile Menü Button -->
         <div class="-mr-2 flex items-center sm:hidden">
           <DisclosureButton
             class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
@@ -162,7 +159,6 @@ const isActive = (href) => {
       </div>
     </div>
 
-    <!-- Mobile Menü -->
     <DisclosurePanel class="sm:hidden dark:bg-gray-950 dark:text-gray-100">
       <nav aria-label="Mobile Hauptnavigation" class="space-y-1 pb-3 pt-2">
         <DisclosureButton
@@ -181,7 +177,6 @@ const isActive = (href) => {
         </DisclosureButton>
       </nav>
 
-      <!-- Theme Toggle (Mobile) -->
       <div class="border-t border-gray-200 px-4 py-4 dark:border-gray-800">
         <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">
           Darstellungsmodus
@@ -200,7 +195,6 @@ const isActive = (href) => {
         </button>
       </div>
 
-      <!-- Kontaktbutton (Mobile) -->
       <div class="border-t border-gray-200 pb-3 pt-4 dark:border-gray-800">
         <div class="flex items-center px-4">
           <a
