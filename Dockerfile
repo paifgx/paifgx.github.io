@@ -11,6 +11,8 @@ RUN pnpm install --frozen-lockfile --prod
 
 COPY . .
 
+ENV ASTRO_TELEMETRY_DISABLED=1
+
 RUN pnpm run build
 
 # Stage 2: Production
