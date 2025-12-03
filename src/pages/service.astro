@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import programmingImage from "../assets/programming.jpg";
+import { serviceStats, contact } from "../config/site";
 
-// FAQ Schema for rich snippets
+// Enables FAQ rich snippets in search results to improve visibility
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -141,16 +142,6 @@ const technologyHighlights = {
   ],
 };
 
-const serviceStats = [
-  {
-    id: 1,
-    value: "25+",
-    label: "aktive KI- & Plattforminitiativen (ML & GenAI)",
-  },
-  { id: 2, value: "<90d", label: "Time-to-Value für MVP/POC" },
-  { id: 3, value: "3", label: "Engagement-Modi kombinierbar" },
-];
-
 const painPoints = [
   {
     title: "Tool-Wildwuchs",
@@ -208,7 +199,7 @@ const painPoints = [
       >
         <a
           class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/90 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
-          href="https://www.garten.ai"
+          href={contact.websites.main}
           target="_blank"
           rel="noreferrer"
         >
@@ -217,19 +208,19 @@ const painPoints = [
         </a>
         <a
           class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
-          href="mailto:info@garten.ai"
+          href={`mailto:${contact.email}`}
         >
           <span class="font-semibold">Mail</span>
-          <span class="text-gray-500 dark:text-white/70">info@garten.ai</span>
+          <span class="text-gray-500 dark:text-white/70">{contact.email}</span>
         </a>
         <a
           class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
-          href="https://www.linkedin.com/in/paifgx"
+          href={contact.linkedin.url}
           target="_blank"
           rel="noreferrer"
         >
           <span class="font-semibold">LinkedIn</span>
-          <span class="text-gray-500 dark:text-white/70">/in/paifgx</span>
+          <span class="text-gray-500 dark:text-white/70">{contact.linkedin.handle}</span>
         </a>
       </div>
 
@@ -510,13 +501,13 @@ const painPoints = [
         <p class="text-base text-gray-600 dark:text-gray-300">
           Schreiben Sie an
           <a
-            href="mailto:info@garten.ai"
+            href={`mailto:${contact.email}`}
             class="font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
-            >info@garten.ai</a
+            >{contact.email}</a
           >
           oder buchen Sie ein Gespräch über
           <a
-            href="https://www.linkedin.com/in/paifgx"
+            href={contact.linkedin.url}
             target="_blank"
             rel="noopener noreferrer"
             class="font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
@@ -526,7 +517,7 @@ const painPoints = [
       </div>
       <div class="flex flex-wrap justify-center gap-4">
         <a
-          href="https://app.reclaim.ai/m/gartenai/meet"
+          href={contact.calendaring}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:bg-indigo-400"
@@ -534,7 +525,7 @@ const painPoints = [
           Kontakt aufnehmen
         </a>
         <a
-          href="mailto:info@garten.ai?subject=Serviceanfrage"
+          href={`mailto:${contact.email}?subject=Serviceanfrage`}
           class="inline-flex items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/20 dark:text-white/90 dark:hover:border-white/40 dark:hover:text-white"
         >
           PDF-Portfolio anfordern
@@ -546,6 +537,5 @@ const painPoints = [
     </div>
   </section>
 
-  <!-- FAQ Schema for rich snippets -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>

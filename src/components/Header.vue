@@ -6,8 +6,16 @@ import {
   SunIcon,
   XMarkIcon,
 } from "@heroicons/vue/24/outline";
-
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+
+import { navigationItems } from "../config/site";
+import {
+  resolveInitialTheme,
+  applyTheme,
+  persistTheme,
+  onSystemThemeChange,
+  onStorageChange,
+} from "../utils/theme";
 
 const props = defineProps({
   currentPath: {
@@ -16,82 +24,41 @@ const props = defineProps({
   },
 });
 
-const navigationItems = [
-  { name: "Werdegang", href: "/about" },
-  { name: "Dienstleistungen", href: "/service" },
-];
-
 const contact = { name: "Kontakt", href: "/contact" };
-
-const THEME_STORAGE_KEY = "theme-preference";
-const THEME_MEDIA_QUERY = "(prefers-color-scheme: dark)";
 
 const isDarkMode = ref(false);
 const themeToggleLabel = computed(() =>
   isDarkMode.value ? "Zum hellen Modus wechseln" : "Zum dunklen Modus wechseln"
 );
-let mediaQueryListener;
 
-const applyThemeClass = (theme) => {
-  const isDark = theme === "dark";
-  document.documentElement.classList.toggle("dark", isDark);
-  document.documentElement.style.colorScheme = theme;
-  isDarkMode.value = isDark;
-};
-
-const getStoredTheme = () => {
-  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-  return storedTheme === "dark" || storedTheme === "light" ? storedTheme : null;
-};
-
-const resolvePreferredTheme = () => {
-  const storedTheme = getStoredTheme();
-  if (storedTheme) {
-    return storedTheme;
-  }
-
-  return window.matchMedia(THEME_MEDIA_QUERY).matches ? "dark" : "light";
-};
-
-const persistTheme = (theme) => {
-  localStorage.setItem(THEME_STORAGE_KEY, theme);
-  applyThemeClass(theme);
-};
+let cleanupSystemListener;
+let cleanupStorageListener;
 
 const toggleTheme = () => {
   const nextTheme = isDarkMode.value ? "light" : "dark";
   persistTheme(nextTheme);
-};
-
-const handleSystemThemeChange = (event) => {
-  if (getStoredTheme()) {
-    return;
-  }
-
-  applyThemeClass(event.matches ? "dark" : "light");
-};
-
-const handleStorageUpdate = (event) => {
-  if (event.key !== THEME_STORAGE_KEY || !event.newValue) {
-    return;
-  }
-
-  const nextTheme = event.newValue === "dark" ? "dark" : "light";
-  applyThemeClass(nextTheme);
+  isDarkMode.value = nextTheme === "dark";
 };
 
 onMounted(() => {
-  applyThemeClass(resolvePreferredTheme());
+  const initialTheme = resolveInitialTheme();
+  applyTheme(initialTheme);
+  isDarkMode.value = initialTheme === "dark";
 
-  mediaQueryListener = window.matchMedia(THEME_MEDIA_QUERY);
-  mediaQueryListener.addEventListener("change", handleSystemThemeChange);
+  cleanupSystemListener = onSystemThemeChange((theme) => {
+    applyTheme(theme);
+    isDarkMode.value = theme === "dark";
+  });
 
-  window.addEventListener("storage", handleStorageUpdate);
+  cleanupStorageListener = onStorageChange((theme) => {
+    applyTheme(theme);
+    isDarkMode.value = theme === "dark";
+  });
 });
 
 onBeforeUnmount(() => {
-  mediaQueryListener?.removeEventListener("change", handleSystemThemeChange);
-  window.removeEventListener("storage", handleStorageUpdate);
+  cleanupSystemListener?.();
+  cleanupStorageListener?.();
 });
 
 const isActive = (href) => {
@@ -139,7 +106,6 @@ const isActive = (href) => {
           </a>
         </div>
 
-        <!-- Navigation Links (Desktop) -->
         <nav
           aria-label="Hauptnavigation"
           class="hidden sm:ml-6 sm:flex sm:space-x-8"
@@ -159,7 +125,6 @@ const isActive = (href) => {
           </a>
         </nav>
 
-        <!-- Kontaktbutton & Theme Toggle (Desktop) -->
         <div class="hidden sm:ml-6 sm:flex sm:items-center sm:gap-3">
           <button
             type="button"
@@ -181,7 +146,6 @@ const isActive = (href) => {
           </a>
         </div>
 
-        <!-- Mobile Menü Button -->
         <div class="-mr-2 flex items-center sm:hidden">
           <DisclosureButton
             class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
@@ -195,7 +159,6 @@ const isActive = (href) => {
       </div>
     </div>
 
-    <!-- Mobile Menü -->
     <DisclosurePanel class="sm:hidden dark:bg-gray-950 dark:text-gray-100">
       <nav aria-label="Mobile Hauptnavigation" class="space-y-1 pb-3 pt-2">
         <DisclosureButton
@@ -214,7 +177,6 @@ const isActive = (href) => {
         </DisclosureButton>
       </nav>
 
-      <!-- Theme Toggle (Mobile) -->
       <div class="border-t border-gray-200 px-4 py-4 dark:border-gray-800">
         <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">
           Darstellungsmodus
@@ -233,7 +195,6 @@ const isActive = (href) => {
         </button>
       </div>
 
-      <!-- Kontaktbutton (Mobile) -->
       <div class="border-t border-gray-200 pb-3 pt-4 dark:border-gray-800">
         <div class="flex items-center px-4">
           <a

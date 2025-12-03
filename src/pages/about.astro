@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import TimeEntry from "@components/about/TimeEntry.astro";
+import { stats, contact } from "../config/site";
 
 const timeEntries = [
   {
@@ -94,12 +95,6 @@ const timeEntries = [
     content:
       "Freelance-Label für Engineering/Bildung & KI-Lösungen: Architektur, Entwicklung, Betrieb und Trainingsprogramme für Auftraggeber wie DB Fernverkehr, CANCOM, MeinPaul und Bringmeister – mit Fokus auf Verantwortung statt Prototyping.",
   },
-];
-
-const stats = [
-  { id: 1, value: ">150", label: "Projekte in regulierten Branchen" },
-  { id: 2, value: "60%", label: "Kooperationen mit Product & Security" },
-  { id: 3, value: "24h", label: "Reaktionszeit auf Projektanfragen" },
 ];
 
 const pillars = [
@@ -258,7 +253,7 @@ const capabilities = [
           >
             <a
               class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
-              href="https://www.garten.ai"
+              href={contact.websites.main}
               target="_blank"
               rel="noreferrer"
             >
@@ -267,21 +262,21 @@ const capabilities = [
             </a>
             <a
               class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
-              href="mailto:info@garten.ai"
+              href={`mailto:${contact.email}`}
             >
               <span class="font-semibold">Mail</span>
               <span class="text-gray-500 dark:text-white/70"
-                >info@garten.ai</span
+                >{contact.email}</span
               >
             </a>
             <a
               class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
-              href="https://www.linkedin.com/in/paifgx"
+              href={contact.linkedin.url}
               target="_blank"
               rel="noreferrer"
             >
               <span class="font-semibold">LinkedIn</span>
-              <span class="text-gray-500 dark:text-white/70">/in/paifgx</span>
+              <span class="text-gray-500 dark:text-white/70">{contact.linkedin.handle}</span>
             </a>
           </div>
         </div>
@@ -450,13 +445,13 @@ const capabilities = [
 
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
-            href="mailto:info@garten.ai?subject=CV%20anfragen"
+            href={`mailto:${contact.email}?subject=CV%20anfragen`}
             class="inline-flex flex-1 items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:bg-indigo-400"
           >
             CV anfragen (PDF)
           </a>
           <a
-            href="https://app.reclaim.ai/m/gartenai/meet"
+            href={contact.calendaring}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex flex-1 items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/20 dark:text-white/90 dark:hover:border-white/40 dark:hover:text-white"

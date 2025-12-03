@@ -1,14 +1,24 @@
+---
+import {
+  business,
+  contact,
+  focusAreas,
+  currentMandates,
+  footerNavigation,
+} from "../config/site";
+---
+
 <footer class="bg-gray-900">
   <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
     <nav
       class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
       aria-label="Footer"
     >
-      <a href="/about" class="text-gray-400 hover:text-white">Werdegang</a>
-      <a href="/service" class="text-gray-400 hover:text-white">Service</a>
-      <a href="/contact" class="text-gray-400 hover:text-white">Kontakt</a>
-      <a href="/impress" class="text-gray-400 hover:text-white">Impressum</a>
-      <a href="/privacy" class="text-gray-400 hover:text-white">Datenschutz</a>
+      {footerNavigation.map((item) => (
+        <a href={item.href} class="text-gray-400 hover:text-white">
+          {item.name}
+        </a>
+      ))}
     </nav>
 
     <div
@@ -19,15 +29,15 @@
         <ul class="mt-4 space-y-2">
           <li>
             <a
-              href="mailto:info@garten.ai"
+              href={`mailto:${contact.email}`}
               class="hover:text-white underline-offset-4 hover:underline"
             >
-              info@garten.ai
+              {contact.email}
             </a>
           </li>
           <li>
             <a
-              href="https://www.garten.ai"
+              href={contact.websites.main}
               class="hover:text-white underline-offset-4 hover:underline"
               rel="noopener noreferrer"
               target="_blank"
@@ -37,12 +47,12 @@
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/in/paifgx"
+              href={contact.linkedin.url}
               class="hover:text-white underline-offset-4 hover:underline"
               rel="noopener noreferrer"
               target="_blank"
             >
-              LinkedIn · /in/paifgx
+              LinkedIn · {contact.linkedin.handle}
             </a>
           </li>
         </ul>
@@ -51,26 +61,24 @@
       <div>
         <p class="font-semibold text-white">Fokusfelder</p>
         <ul class="mt-4 space-y-2">
-          <li>Prozesse automatisieren & Medienbrüche abbauen</li>
-          <li>Wissen sichern & Ausfälle auffangen</li>
-          <li>
-            Sicherer KI-Einsatz nach BSI IT-Grundschutz, ISO/IEC 27001 & DSGVO
-          </li>
+          {focusAreas.map((area) => (
+            <li>{area.title}</li>
+          ))}
         </ul>
       </div>
 
       <div>
-        <p class="font-semibold text-white">Aktuelle Mandate</p>
+        <p class="font-semibold text-white">Ausgewählte Mandate</p>
         <ul class="mt-4 space-y-2">
-          <li>Universitätsklinikum Bonn · AI Solution Architect</li>
-          <li>FlowCraftDB · Event-driven GenAI Plattform</li>
-          <li>AICT Group · Co-Founder &amp; CIO</li>
+          {currentMandates.map((mandate) => (
+            <li>{mandate.company} · {mandate.role}</li>
+          ))}
         </ul>
       </div>
     </div>
 
     <div class="mt-10 text-center text-sm/6 text-gray-400">
-      <p>&copy; {new Date().getFullYear()} Patrik Garten. Alle Rechte vorbehalten.</p>
+      <p>&copy; {new Date().getFullYear()} {business.owner}. Alle Rechte vorbehalten.</p>
       <p>
         Developed by <span class="text-red-500">&hearts;</span> with <a
           href="https://astro.build/"

@@ -1,15 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-const business = {
-  owner: "Patrik Garten",
-  company: "Patrik Garten AI Development",
-  street: "Ph\u00f6nixstra\u00dfe 30",
-  city: "44263 Dortmund",
-  phoneDisplay: "+49 1516 4587494",
-  phoneHref: "+4915164587494",
-  email: "info@garten.ai",
-};
+import { business, contact } from "../config/site";
 
 const restrictionCases = [
   "Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, ben\u00f6tigen wir in der Regel Zeit, um dies zu \u00fcberpr\u00fcfen. F\u00fcr die Dauer der Pr\u00fcfung haben Sie das Recht, die Einschr\u00e4nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
@@ -21,7 +12,8 @@ const restrictionCases = [
 
 <BaseLayout
   title="Datenschutzerklärung"
-  description="Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO bei Patrik Garten AI Development."
+  description={`Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO bei ${business.company}.`}
+  noindex={true}
 >
   <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
     <div class="mx-auto max-w-4xl space-y-5">
@@ -234,9 +226,9 @@ const restrictionCases = [
               </p>
               <p>{business.company}</p>
               <p>{business.street}</p>
-              <p>{business.city}</p>
-              <p class="mt-3">Telefon: {business.phoneDisplay}</p>
-              <p>E-Mail: {business.email}</p>
+              <p>{business.postalCode} {business.city}</p>
+              <p class="mt-3">Telefon: {contact.phoneDisplay}</p>
+              <p>E-Mail: {contact.email}</p>
             </div>
             <p class="mt-3">
               Verantwortliche Stelle ist die nat&uuml;rliche oder juristische

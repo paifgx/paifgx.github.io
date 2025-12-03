@@ -1,28 +1,14 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { business, contact } from "../config/site";
 
-const business = {
-  owner: "Patrik Garten",
-  company: "Patrik Garten AI Development",
-  street: "Phönixstraße 30",
-  city: "44263 Dortmund",
-  phoneDisplay: "+49 1516 4587494",
-  phoneHref: "+4915164587494",
-  email: "info@garten.ai",
-  vatId: "DE351701080",
-  insurer: {
-    name: "exali AG",
-    street: "Franz-Kobinger-Str. 9",
-    city: "86157 Augsburg",
-    coverage: "weltweit",
-  },
-  sourceUrl: "https://www.e-recht24.de",
-};
+const sourceUrl = "https://www.e-recht24.de";
 ---
 
 <BaseLayout
   title="Impressum"
-  description="Impressum von Patrik Garten AI Development. Angaben gemäß § 5 TMG."
+  description={`Impressum von ${business.company}. Angaben gemäß § 5 DDG.`}
+  noindex={true}
 >
   <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
     <div class="mx-auto max-w-3xl space-y-6">
@@ -50,7 +36,7 @@ const business = {
         </p>
         <p>{business.company}</p>
         <p>{business.street}</p>
-        <p>{business.city}</p>
+        <p>{business.postalCode} {business.city}</p>
       </div>
     </div>
   </section>
@@ -70,10 +56,10 @@ const business = {
             <dt class="font-semibold text-gray-900 dark:text-white">Telefon</dt>
             <dd>
               <a
-                href={`tel:${business.phoneHref}`}
+                href={`tel:${contact.phoneHref}`}
                 class="underline-offset-4 hover:underline"
               >
-                {business.phoneDisplay}
+                {contact.phoneDisplay}
               </a>
             </dd>
           </div>
@@ -81,10 +67,10 @@ const business = {
             <dt class="font-semibold text-gray-900 dark:text-white">E-Mail</dt>
             <dd>
               <a
-                href={`mailto:${business.email}`}
+                href={`mailto:${contact.email}`}
                 class="underline-offset-4 hover:underline"
               >
-                {business.email}
+                {contact.email}
               </a>
             </dd>
           </div>
@@ -153,7 +139,7 @@ const business = {
       <p class="text-sm text-gray-500 dark:text-gray-400">
         Quelle:
         <a
-          href={business.sourceUrl}
+          href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-300"
