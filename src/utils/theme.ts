@@ -1,12 +1,6 @@
 /**
- * Zentrale Theme-Utilities für garten.ai
- *
- * Diese Funktionen definieren einheitlich, wie das Theme gelesen, aufgelöst,
- * angewandt und persistiert wird.
- *
- * Verwendung:
- * - Header.vue: Theme-Toggle und System-Listener
- * - BaseLayout.astro: FOUC-Schutz (Inline-Script im <head>)
+ * Centralized theme utilities to ensure consistent behavior across components
+ * and prevent theme logic duplication between Header.vue and BaseLayout.astro.
  */
 
 export type Theme = "light" | "dark";
@@ -14,8 +8,7 @@ export type Theme = "light" | "dark";
 const STORAGE_KEY = "theme";
 
 /**
- * Liest das gespeicherte Theme aus dem localStorage.
- * Gibt null zurück, wenn kein gültiger Wert gespeichert ist.
+ * Returns null if no valid preference exists, allowing fallback to system theme.
  */
 export function getStoredTheme(): Theme | null {
   if (typeof localStorage === "undefined") return null;
@@ -28,7 +21,7 @@ export function getStoredTheme(): Theme | null {
 }
 
 /**
- * Ermittelt das System-Theme basierend auf der OS-Präferenz.
+ * Respects user's OS-level preference when no explicit choice is stored.
  */
 export function getSystemTheme(): Theme {
   if (typeof window === "undefined") return "light";
@@ -39,18 +32,14 @@ export function getSystemTheme(): Theme {
 }
 
 /**
- * Ermittelt das initiale Theme:
- * 1. Gespeichertes Theme aus localStorage (falls vorhanden)
- * 2. System-Präferenz als Fallback
+ * Prioritizes user's explicit choice over system preference to honor their intent.
  */
 export function resolveInitialTheme(): Theme {
   return getStoredTheme() ?? getSystemTheme();
 }
 
 /**
- * Wendet das Theme auf das Dokument an:
- * - Setzt/Entfernt die 'dark'-Klasse auf <html>
- * - Setzt das color-scheme für native Scrollbars etc.
+ * Applies theme synchronously to prevent FOUC during initial page load.
  */
 export function applyTheme(theme: Theme): void {
   if (typeof document === "undefined") return;
@@ -67,7 +56,7 @@ export function applyTheme(theme: Theme): void {
 }
 
 /**
- * Persistiert das Theme im localStorage und wendet es sofort an.
+ * Persists choice immediately so it survives page reloads and syncs across tabs.
  */
 export function persistTheme(theme: Theme): void {
   if (typeof localStorage !== "undefined") {
@@ -77,8 +66,7 @@ export function persistTheme(theme: Theme): void {
 }
 
 /**
- * Toggled das aktuelle Theme und persistiert es.
- * Gibt das neue Theme zurück.
+ * Convenience function for UI toggle buttons that need to switch and persist in one call.
  */
 export function toggleTheme(): Theme {
   const current = resolveInitialTheme();
@@ -88,11 +76,8 @@ export function toggleTheme(): Theme {
 }
 
 /**
- * Registriert einen Listener für System-Theme-Änderungen.
- * Gibt eine Cleanup-Funktion zurück.
- *
- * Der Callback wird nur aufgerufen, wenn kein Theme im localStorage
- * gespeichert ist (d.h. der User hat keine explizite Präferenz).
+ * Only reacts to system changes when user hasn't made an explicit choice,
+ * preventing unwanted overrides of user preferences.
  */
 export function onSystemThemeChange(
   callback: (theme: Theme) => void
@@ -116,9 +101,7 @@ export function onSystemThemeChange(
 }
 
 /**
- * Registriert einen Listener für Storage-Events.
- * Ermöglicht Theme-Sync zwischen Browser-Tabs.
- * Gibt eine Cleanup-Funktion zurück.
+ * Enables cross-tab synchronization so theme changes in one tab reflect in others.
  */
 export function onStorageChange(callback: (theme: Theme) => void): () => void {
   if (typeof window === "undefined") return () => {};

@@ -1,13 +1,6 @@
 /**
- * Zentrale Konfigurationsdatei für garten.ai
- * Single Source of Truth für alle wiederkehrenden Stammdaten.
- *
- * Änderungen hier wirken sich auf alle Komponenten aus, die diese Daten importieren:
- * - BaseLayout.astro (Structured Data, Meta)
- * - Footer.astro
- * - SectionPartners.astro
- * - about.astro, service.astro, contact.astro
- * - impress.astro, privacy.astro
+ * Central configuration file to prevent data inconsistencies and ensure
+ * all components use the same business, contact, and content data.
  */
 
 // ============================================================================
@@ -77,7 +70,7 @@ export interface SiteMeta {
 // ============================================================================
 
 /**
- * Geschäftsdaten für Impressum, Datenschutz und Structured Data
+ * Used across legal pages and structured data to ensure consistency.
  */
 export const business: Business = {
   owner: "Patrik Garten",
@@ -96,9 +89,6 @@ export const business: Business = {
   },
 };
 
-/**
- * Kontaktinformationen
- */
 export const contact: Contact = {
   email: "info@garten.ai",
   phoneDisplay: "+49 1516 4587494",
@@ -116,7 +106,7 @@ export const contact: Contact = {
 };
 
 /**
- * Standard-Metadaten für die Website
+ * Default meta tags when pages don't provide their own title/description.
  */
 export const siteMeta: SiteMeta = {
   title: "Patrik Garten · AI Solution Architect & Software Engineer",
@@ -128,8 +118,7 @@ export const siteMeta: SiteMeta = {
 };
 
 /**
- * Kennzahlen für about.astro und service.astro
- * Konsistent mit Notion-Knowledgebase
+ * Shared stats to keep about and service pages consistent with Notion knowledgebase.
  */
 export const stats: Stat[] = [
   { id: 1, value: ">150", label: "Projekte in regulierten Branchen" },
@@ -137,9 +126,6 @@ export const stats: Stat[] = [
   { id: 3, value: "24h", label: "Reaktionszeit auf Projektanfragen" },
 ];
 
-/**
- * Service-spezifische Kennzahlen (service.astro)
- */
 export const serviceStats: Stat[] = [
   { id: 1, value: "25+", label: "aktive KI- & Plattforminitiativen (ML & GenAI)" },
   { id: 2, value: "<90d", label: "Time-to-Value für MVP/POC" },
@@ -147,8 +133,7 @@ export const serviceStats: Stat[] = [
 ];
 
 /**
- * Mandatsliste für SectionPartners.astro
- * Reihenfolge: aktuellste/prominenteste zuerst
+ * Ordered by recency/prominence to highlight most relevant work first.
  */
 export const clients: string[] = [
   "Universitätsklinikum Bonn",
@@ -163,8 +148,7 @@ export const clients: string[] = [
 ];
 
 /**
- * Fokusfelder für Footer und andere Stellen
- * Konsistent mit Notion-Knowledgebase Abschnitt 0 (Kurzprofil)
+ * Aligned with Notion knowledgebase to maintain consistent messaging.
  */
 export const focusAreas: FocusArea[] = [
   { id: 1, title: "Prozesse automatisieren & Medienbrüche abbauen" },
@@ -173,8 +157,7 @@ export const focusAreas: FocusArea[] = [
 ];
 
 /**
- * Ausgewählte aktuelle Mandate für Footer
- * Teilmenge der wichtigsten laufenden Projekte
+ * Subset of most relevant current projects for footer display.
  */
 export const currentMandates: CurrentMandate[] = [
   { id: 1, company: "Universitätsklinikum Bonn", role: "AI Solution Architect" },
@@ -182,9 +165,6 @@ export const currentMandates: CurrentMandate[] = [
   { id: 3, company: "AICT Group", role: "Co-Founder & CIO" },
 ];
 
-/**
- * Kontaktkanäle für contact.astro
- */
 export const contactChannels = [
   {
     label: "E-Mail",
@@ -206,9 +186,6 @@ export const contactChannels = [
   },
 ];
 
-/**
- * Verfügbarkeitsinfos für contact.astro
- */
 export const availability = [
   {
     title: "Verfügbarkeit",
@@ -226,17 +203,11 @@ export const availability = [
   },
 ];
 
-/**
- * Navigationseinträge (Header)
- */
 export const navigationItems = [
   { name: "Werdegang", href: "/about" },
   { name: "Dienstleistungen", href: "/service" },
 ];
 
-/**
- * Footer-Navigation
- */
 export const footerNavigation = [
   { name: "Werdegang", href: "/about" },
   { name: "Dienstleistungen", href: "/service" },
@@ -246,7 +217,7 @@ export const footerNavigation = [
 ];
 
 /**
- * Seitennamen für Breadcrumbs (BaseLayout)
+ * Human-readable path names for breadcrumb structured data.
  */
 export const pathNames: Record<string, string> = {
   about: "Werdegang",
@@ -260,15 +231,12 @@ export const pathNames: Record<string, string> = {
 // HELPER FUNCTIONS
 // ============================================================================
 
-/**
- * Gibt die vollständige Adresse als einzelnen String zurück
- */
 export function getFullAddress(): string {
   return `${business.street}, ${business.postalCode} ${business.city}, ${business.country}`;
 }
 
 /**
- * Gibt die Adresse für Structured Data zurück
+ * Formats address according to schema.org PostalAddress structure.
  */
 export function getPostalAddress() {
   return {

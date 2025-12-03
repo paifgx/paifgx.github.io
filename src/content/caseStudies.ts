@@ -1,10 +1,6 @@
 /**
- * Zentrale Datenquelle für Case Studies / Referenzen.
- *
- * Diese Daten werden konsistent mit der Notion-Knowledgebase und dem CV gehalten.
- * Änderungen hier wirken sich auf alle Komponenten aus:
- * - SectionReviews.astro (Startseite)
- * - SectionReviews.vue (Vue-basierte Alternative, falls benötigt)
+ * Single source of truth for case studies to keep them aligned with
+ * Notion knowledgebase and CV, preventing duplication across components.
  */
 
 export interface CaseStudy {
@@ -19,8 +15,7 @@ export interface CaseStudy {
 }
 
 /**
- * Ausgewählte Case Studies für den Referenzbereich.
- * Reihenfolge: aktuellste/prominenteste zuerst.
+ * Ordered by recency/prominence to highlight most relevant work first.
  */
 export const caseStudies: CaseStudy[] = [
   {
@@ -110,7 +105,7 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 /**
- * Berechnet die Anzahl der Carousel-Slides (2 Case Studies pro Slide).
+ * Calculates slides assuming 2 case studies per slide for carousel layout.
  */
 export function getTotalSlides(): number {
   return Math.ceil(caseStudies.length / 2);

@@ -145,9 +145,8 @@ const structuredData = {
       set:html={JSON.stringify(structuredData)}
     />
     <!--
-      FOUC-Schutz: Dieses Inline-Script läuft synchron im <head> und verhindert
-      ein Aufblitzen des falschen Themes beim Laden. Die Logik hier muss mit
-      src/utils/theme.ts konsistent sein – insbesondere der Storage-Key.
+      Prevents flash of unstyled content by applying theme before any CSS loads.
+      Must use same storage key as theme.ts utilities to stay in sync.
     -->
     <script is:inline>
       (() => {
