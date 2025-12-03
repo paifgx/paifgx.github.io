@@ -1,0 +1,20 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  value?: string;
+  external?: boolean;
+}
+
+const { href, label, value, external = false } = Astro.props;
+---
+
+<a
+  href={href}
+  class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-1.5 text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:text-white"
+  target={external ? "_blank" : undefined}
+  rel={external ? "noreferrer" : undefined}
+>
+  <span class="font-semibold">{label}</span>
+  {value && <span class="text-gray-500 dark:text-white/70">{value}</span>}
+</a>
