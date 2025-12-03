@@ -3,45 +3,40 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
-const siteOrigin = "https://garten.ai";
+import {
+  business,
+  contact,
+  siteMeta,
+  pathNames,
+  getPostalAddress,
+} from "../config/site";
+
 const currentPath = Astro.url.pathname;
-const canonicalURL = new URL(Astro.url.pathname, siteOrigin);
+const canonicalURL = new URL(Astro.url.pathname, siteMeta.origin);
 
 const {
   classDefintion,
   title,
   description,
   type = "website",
-  image = "/og-image.png",
+  image = siteMeta.ogImage,
   noindex = false,
 } = Astro.props;
 
-const defaultTitle =
-  "Patrik Garten · AI Solution Architect & Software Engineer";
-const defaultDescription =
-  "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end KI-Architekturen – von klassischen ML-Systemen bis zu LLM-/GenAI-Plattformen – sowie Security-by-Design für regulierte DACH-Unternehmen.";
-
-const pageTitle = title ? `${title} · Patrik Garten` : defaultTitle;
-const pageDescription = description || defaultDescription;
-const ogImageURL = new URL(image, siteOrigin).href;
+const pageTitle = title ? `${title} · ${business.owner}` : siteMeta.title;
+const pageDescription = description || siteMeta.description;
+const ogImageURL = new URL(image, siteMeta.origin).href;
 const mainClass = classDefintion ?? "";
 
 // Build breadcrumb data based on path
 const pathSegments = currentPath.split('/').filter(Boolean);
-const pathNames: Record<string, string> = {
-  about: "Werdegang",
-  service: "Dienstleistungen",
-  contact: "Kontakt",
-  impress: "Impressum",
-  privacy: "Datenschutz",
-};
 
 const breadcrumbItems = [
-  { "@type": "ListItem", position: 1, name: "Startseite", item: siteOrigin }
+  { "@type": "ListItem", position: 1, name: "Startseite", item: siteMeta.origin }
 ];
 
 pathSegments.forEach((segment, index) => {
-  const url = `${siteOrigin}/${pathSegments.slice(0, index + 1).join('/')}/`;
+  const url = `${siteMeta.origin}/${pathSegments.slice(0, index + 1).join('/')}/`;
   const name = pathNames[segment] || segment;
   breadcrumbItems.push({
     "@type": "ListItem",
@@ -56,23 +51,25 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Person",
-      name: "Patrik Garten",
+      name: business.owner,
       jobTitle: "AI Solution Architect & Software Engineer",
-      url: canonicalURL.href,
+      // Stabile Profil-URL statt aktuelle Seite
+      url: `${siteMeta.origin}/about`,
       sameAs: [
-        "https://www.linkedin.com/in/paifgx",
-        "https://www.garten.ai",
-        "mailto:info@garten.ai",
+        contact.linkedin.url,
+        contact.websites.main,
+        contact.websites.dev,
+        `mailto:${contact.email}`,
       ],
       worksFor: {
         "@type": "Organization",
-        name: "Patrik Garten AI Development",
+        name: business.company,
       },
     },
     {
       "@type": "ProfessionalService",
-      name: "Patrik Garten AI Development",
-      url: siteOrigin,
+      name: business.company,
+      url: siteMeta.origin,
       image: ogImageURL,
       areaServed: ["Deutschland", "Österreich", "Schweiz"],
       availableLanguage: ["de", "en"],
@@ -81,16 +78,10 @@ const structuredData = {
         "Generative AI Enablement",
         "Software Engineering",
       ],
-      priceRange: "€€€",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Phönixstraße 30",
-        postalCode: "44263",
-        addressLocality: "Dortmund",
-        addressCountry: "DE",
-      },
-      telephone: "+49 1516 4587494",
-      email: "info@garten.ai",
+      // priceRange entfernt, da keine Preiskommunikation auf der Seite
+      address: getPostalAddress(),
+      telephone: contact.phoneDisplay,
+      email: contact.email,
     },
     // Breadcrumbs for subpages
     ...(pathSegments.length > 0 ? [{
@@ -112,7 +103,7 @@ const structuredData = {
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Author & Generator -->
-    <meta name="author" content="Patrik Garten" />
+    <meta name="author" content={business.owner} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Language alternates -->
@@ -127,8 +118,8 @@ const structuredData = {
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="de_DE" />
-    <meta property="og:site_name" content="GARTEN.ai" />
+    <meta property="og:locale" content={siteMeta.locale} />
+    <meta property="og:site_name" content={business.company} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -153,47 +144,23 @@ const structuredData = {
       is:inline
       set:html={JSON.stringify(structuredData)}
     />
+    <!--
+      FOUC-Schutz: Dieses Inline-Script läuft synchron im <head> und verhindert
+      ein Aufblitzen des falschen Themes beim Laden. Die Logik hier muss mit
+      src/utils/theme.ts konsistent sein – insbesondere der Storage-Key.
+    -->
     <script is:inline>
       (() => {
-        const storageKey = "theme-preference";
-        const query = "(prefers-color-scheme: dark)";
-        const mediaQuery = window.matchMedia(query);
-
-        const getStoredTheme = () => {
+        const STORAGE_KEY = "theme";
+        const stored = (() => {
           try {
-            const stored = window.localStorage.getItem(storageKey);
-            return stored === "dark" || stored === "light" ? stored : null;
-          } catch {
-            return null;
-          }
-        };
-
-        const applyTheme = (theme) => {
-          const isDark = theme === "dark";
-          document.documentElement.classList.toggle("dark", isDark);
-          document.documentElement.style.colorScheme = theme;
-        };
-
-        const resolveTheme = () =>
-          getStoredTheme() ?? (mediaQuery.matches ? "dark" : "light");
-
-        applyTheme(resolveTheme());
-
-        const handleSystemChange = (event) => {
-          if (getStoredTheme()) return;
-          applyTheme(event.matches ? "dark" : "light");
-        };
-
-        mediaQuery.addEventListener("change", handleSystemChange);
-
-        window.addEventListener("storage", (event) => {
-          if (event.key !== storageKey) return;
-          if (!event.newValue) {
-            applyTheme(mediaQuery.matches ? "dark" : "light");
-            return;
-          }
-          applyTheme(event.newValue === "dark" ? "dark" : "light");
-        });
+            const v = localStorage.getItem(STORAGE_KEY);
+            return v === "dark" || v === "light" ? v : null;
+          } catch { return null; }
+        })();
+        const theme = stored ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        document.documentElement.style.colorScheme = theme;
       })();
     </script>
   </head>
