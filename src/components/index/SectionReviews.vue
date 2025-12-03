@@ -59,7 +59,6 @@ onBeforeUnmount(() => {
       Referenzen
     </p>
     <h2
-      id="case-studies-heading"
       class="mt-2 text-3xl font-bold text-gray-900 dark:text-white"
     >
       Ausschnitt aus vergangenen Mandaten
