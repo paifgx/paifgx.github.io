@@ -166,7 +166,7 @@ const painPoints = [
   title="Dienstleistungen & Serviceportfolio"
   description="Outcome-basierte AI Delivery: RAG & Agentensysteme, Platform Engineering und Enablement für Teams. Security-by-Design nach BSI IT-Grundschutz & ISO 27001."
 >
-  <section class="relative overflow-hidden px-6 py-20 sm:px-12">
+  <section class="relative overflow-hidden px-4 py-12 sm:px-12 lg:py-20">
     <div
       class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.2),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.35),transparent_55%)]"
     >
@@ -183,7 +183,7 @@ const painPoints = [
           Serviceportfolio
         </span>
         <div class="space-y-5">
-          <h1 class="text-4xl font-semibold sm:text-5xl">
+          <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl">
             KI-Architektur &amp; Delivery, die Ihren Betrieb entlastet – nicht
             nur neue Tools einführt.
           </h1>
@@ -220,12 +220,14 @@ const painPoints = [
           rel="noreferrer"
         >
           <span class="font-semibold">LinkedIn</span>
-          <span class="text-gray-500 dark:text-white/70">{contact.linkedin.handle}</span>
+          <span class="text-gray-500 dark:text-white/70"
+            >{contact.linkedin.handle}</span
+          >
         </a>
       </div>
 
       <div
-        class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/90 p-8 text-sm text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch"
+        class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/90 p-5 text-sm text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch"
       >
         <div class="space-y-8">
           <div
@@ -332,7 +334,7 @@ const painPoints = [
     </div>
   </section>
 
-  <section class="bg-gray-50 px-6 py-16 dark:bg-slate-950/60 sm:px-12">
+  <section class="bg-gray-50 px-4 py-12 dark:bg-slate-950/60 sm:px-12 lg:py-16">
     <div class="mx-auto max-w-6xl space-y-6">
       <div class="space-y-3">
         <p
@@ -340,7 +342,7 @@ const painPoints = [
         >
           Leistungsbausteine
         </p>
-        <h2 class="text-3xl font-semibold">
+        <h2 class="text-2xl font-semibold sm:text-3xl">
           Architektur, Delivery &amp; Enablement.
         </h2>
         <p class="text-base text-gray-600 dark:text-gray-300">
@@ -351,7 +353,7 @@ const painPoints = [
       <div class="grid auto-rows-fr gap-8 md:grid-cols-2 xl:grid-cols-3">
         {
           servicePillars.map((pillar) => (
-            <article class="flex h-full flex-col gap-6 rounded-[2.25rem] border border-slate-900/5 bg-white/90 p-7 text-sm text-gray-700 shadow-lg shadow-indigo-200/20 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10">
+            <article class="flex h-full flex-col gap-6 rounded-[2.25rem] border border-slate-900/5 bg-white/90 p-5 text-sm text-gray-700 shadow-lg shadow-indigo-200/20 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 sm:p-7">
               <div class="space-y-3">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-200">
                   {pillar.subtitle}
@@ -404,7 +406,7 @@ const painPoints = [
     </div>
   </section>
 
-  <section class="bg-white px-6 py-16 dark:bg-slate-950 sm:px-12">
+  <section class="bg-white px-4 py-12 dark:bg-slate-950 sm:px-12 lg:py-16">
     <div class="mx-auto max-w-6xl">
       <div class="space-y-3">
         <p
@@ -412,7 +414,7 @@ const painPoints = [
         >
           Engagement
         </p>
-        <h2 class="text-3xl font-semibold">
+        <h2 class="text-2xl font-semibold sm:text-3xl">
           Modelle für Strategie, Delivery und Sparring.
         </h2>
         <p class="text-base text-gray-600 dark:text-gray-300">
@@ -424,7 +426,7 @@ const painPoints = [
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           engagementModes.map((mode) => (
-            <article class="rounded-4xl border border-slate-900/5 bg-white p-6 shadow-md shadow-indigo-200/25 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10">
+            <article class="rounded-4xl border border-slate-900/5 bg-white p-5 shadow-md shadow-indigo-200/25 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10 sm:p-6">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                 {mode.title}
               </h3>
@@ -439,7 +441,7 @@ const painPoints = [
   </section>
 
   <section
-    class="bg-linear-to-br from-slate-900 via-slate-950 to-black px-6 py-16 text-gray-100 sm:px-12"
+    class="bg-linear-to-br from-slate-900 via-slate-950 to-black px-4 py-12 text-gray-100 sm:px-12 lg:py-16"
   >
     <div class="mx-auto max-w-6xl space-y-10">
       <div class="space-y-3">
@@ -448,7 +450,7 @@ const painPoints = [
         >
           Tooling &amp; Observability
         </p>
-        <h2 class="text-3xl font-semibold text-white">
+        <h2 class="text-2xl font-semibold text-white sm:text-3xl">
           Kuratierte Stacks für LLM, Cloud &amp; Security.
         </h2>
       </div>
@@ -487,7 +489,9 @@ const painPoints = [
     </div>
   </section>
 
-  <section class="bg-white px-6 py-16 text-center dark:bg-slate-950 sm:px-12">
+  <section
+    class="bg-white px-4 py-12 text-center dark:bg-slate-950 sm:px-12 lg:py-16"
+  >
     <div class="mx-auto max-w-3xl space-y-6">
       <div class="space-y-3">
         <p
@@ -495,7 +499,9 @@ const painPoints = [
         >
           Nächste Schritte
         </p>
-        <h2 class="text-3xl font-semibold text-gray-900 dark:text-white">
+        <h2
+          class="text-2xl font-semibold text-gray-900 dark:text-white sm:text-3xl"
+        >
           Bereit für Ihr nächstes Kapitel?
         </h2>
         <p class="text-base text-gray-600 dark:text-gray-300">
@@ -537,5 +543,9 @@ const painPoints = [
     </div>
   </section>
 
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+  />
 </BaseLayout>

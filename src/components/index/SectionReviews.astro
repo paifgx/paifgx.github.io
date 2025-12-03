@@ -35,7 +35,7 @@ const totalSlides = getTotalSlides();
       const slideStudies = caseStudies.slice(startIdx, startIdx + 2);
       return (
         <div
-          class="case-study-slide grid grid-cols-1 gap-12 md:grid-cols-2"
+          class="case-study-slide grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12"
           role="group"
           aria-roledescription="Folie"
           aria-label={`Seite ${slideIndex + 1} von ${totalSlides}`}
@@ -43,7 +43,7 @@ const totalSlides = getTotalSlides();
           style={slideIndex === 0 ? "" : "display: none;"}
         >
           {slideStudies.map((caseStudy) => (
-            <article class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-xs dark:border-gray-700 dark:bg-gray-900">
+            <article class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-5 shadow-xs dark:border-gray-700 dark:bg-gray-900 sm:p-6">
               <div>
                 <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                   {caseStudy.timeframe}
@@ -102,7 +102,12 @@ const totalSlides = getTotalSlides();
   role="group"
   aria-label="Karussell-Navigation"
 >
-  <div class="space-x-2" id="carousel-dots" role="tablist" aria-label="Folien auswählen">
+  <div
+    class="space-x-2"
+    id="carousel-dots"
+    role="tablist"
+    aria-label="Folien auswählen"
+  >
     {
       Array.from({ length: totalSlides }).map((_, index) => (
         <button
@@ -175,7 +180,7 @@ const totalSlides = getTotalSlides();
     if (!carousel) return;
 
     const totalSlides = parseInt(
-      carousel.getAttribute("data-total-slides") || "1"
+      carousel.getAttribute("data-total-slides") || "1",
     );
     const slides = carousel.querySelectorAll<HTMLElement>(".case-study-slide");
     const dots = document.querySelectorAll<HTMLElement>(".carousel-dot");
@@ -184,7 +189,7 @@ const totalSlides = getTotalSlides();
     const toggleBtn = document.getElementById("toggle-autoplay");
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     let currentSlide = 0;
@@ -195,7 +200,7 @@ const totalSlides = getTotalSlides();
     const updateCarouselLabel = (index: number) => {
       carousel.setAttribute(
         "aria-label",
-        `Case Studies, Seite ${index + 1} von ${totalSlides}`
+        `Case Studies, Seite ${index + 1} von ${totalSlides}`,
       );
     };
 
@@ -289,4 +294,3 @@ const totalSlides = getTotalSlides();
     }
   });
 </script>
-

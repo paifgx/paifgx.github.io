@@ -7,14 +7,18 @@ import { contact, contactChannels, availability } from "../config/site";
   title="Kontakt & Verfügbarkeit"
   description="Kontakt für Geschäftsführung, Bereichs- und Operationsleitungen: 30-minütiges Sparring, klare nächste Schritte und vertrauliche Zusammenarbeit für KI- & Automationsvorhaben."
 >
-  <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
+  <section
+    class="bg-white px-4 py-12 dark:bg-gray-950 sm:px-6 lg:px-12 lg:py-16"
+  >
     <div class="mx-auto max-w-3xl text-center">
       <p
         class="text-sm font-semibold uppercase tracking-widest text-indigo-600"
       >
         Kontakt &amp; Verfügbarkeit
       </p>
-      <h1 class="mt-2 text-4xl font-bold text-gray-900 dark:text-white">
+      <h1
+        class="mt-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl"
+      >
         Lassen Sie uns sprechen.
       </h1>
       <p class="mt-4 text-base text-gray-600 dark:text-gray-300">
@@ -30,11 +34,13 @@ import { contact, contactChannels, availability } from "../config/site";
     </div>
   </section>
 
-  <section class="bg-gray-50 px-6 py-16 dark:bg-gray-900 lg:px-12">
-    <div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+  <section
+    class="bg-gray-50 px-4 py-12 dark:bg-gray-900 sm:px-6 lg:px-12 lg:py-16"
+  >
+    <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-3 sm:gap-6">
       {
         contactChannels.map((channel) => (
-          <article class="rounded-3xl border border-gray-200 bg-white p-6 shadow-xs dark:border-gray-700 dark:bg-gray-950/60">
+          <article class="rounded-3xl border border-gray-200 bg-white p-5 shadow-xs dark:border-gray-700 dark:bg-gray-950/60 sm:p-6">
             <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
               {channel.label}
             </p>
@@ -70,11 +76,13 @@ import { contact, contactChannels, availability } from "../config/site";
     </div>
   </section>
 
-  <section class="bg-white px-6 py-16 dark:bg-gray-950 lg:px-12">
+  <section
+    class="bg-white px-4 py-12 dark:bg-gray-950 sm:px-6 lg:px-12 lg:py-16"
+  >
     <div
-      class="mx-auto max-w-4xl rounded-3xl border border-gray-200 p-8 shadow-xs dark:border-gray-700 dark:bg-gray-900"
+      class="mx-auto max-w-4xl rounded-3xl border border-gray-200 p-6 shadow-xs dark:border-gray-700 dark:bg-gray-900 sm:p-8"
     >
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white sm:text-2xl">
         Was bereiten wir für den ersten Call vor?
       </h2>
       <ul

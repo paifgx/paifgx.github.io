@@ -9,20 +9,24 @@ import {
 ---
 
 <footer class="bg-gray-900">
-  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+  <div
+    class="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 sm:py-24 lg:px-8"
+  >
     <nav
       class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
       aria-label="Footer"
     >
-      {footerNavigation.map((item) => (
-        <a href={item.href} class="text-gray-400 hover:text-white">
-          {item.name}
-        </a>
-      ))}
+      {
+        footerNavigation.map((item) => (
+          <a href={item.href} class="text-gray-400 hover:text-white">
+            {item.name}
+          </a>
+        ))
+      }
     </nav>
 
     <div
-      class="mt-16 grid gap-10 text-sm/6 text-gray-300 sm:grid-cols-2 lg:grid-cols-3"
+      class="mt-16 grid gap-8 text-sm/6 text-gray-300 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3"
     >
       <div>
         <p class="font-semibold text-white">Direkter Kontakt</p>
@@ -61,24 +65,29 @@ import {
       <div>
         <p class="font-semibold text-white">Fokusfelder</p>
         <ul class="mt-4 space-y-2">
-          {focusAreas.map((area) => (
-            <li>{area.title}</li>
-          ))}
+          {focusAreas.map((area) => <li>{area.title}</li>)}
         </ul>
       </div>
 
       <div>
         <p class="font-semibold text-white">Ausgewählte Mandate</p>
         <ul class="mt-4 space-y-2">
-          {currentMandates.map((mandate) => (
-            <li>{mandate.company} · {mandate.role}</li>
-          ))}
+          {
+            currentMandates.map((mandate) => (
+              <li>
+                {mandate.company} · {mandate.role}
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
 
     <div class="mt-10 text-center text-sm/6 text-gray-400">
-      <p>&copy; {new Date().getFullYear()} {business.owner}. Alle Rechte vorbehalten.</p>
+      <p>
+        &copy; {new Date().getFullYear()}
+        {business.owner}. Alle Rechte vorbehalten.
+      </p>
       <p>
         Developed by <span class="text-red-500">&hearts;</span> with <a
           href="https://astro.build/"
