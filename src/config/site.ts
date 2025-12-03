@@ -114,7 +114,7 @@ export const siteMeta: SiteMeta = {
     "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end KI-Architekturen – von klassischen ML-Systemen bis zu LLM-/GenAI-Plattformen – sowie Security-by-Design für regulierte DACH-Unternehmen.",
   origin: "https://garten.ai",
   locale: "de_DE",
-  ogImage: "/og-image.png",
+  ogImage: "/og-image.svg",
 };
 
 /**
