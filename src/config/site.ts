@@ -3,10 +3,6 @@
  * all components use the same business, contact, and content data.
  */
 
-// ============================================================================
-// TYPES
-// ============================================================================
-
 export interface Business {
   owner: string;
   company: string;
@@ -65,10 +61,6 @@ export interface SiteMeta {
   ogImage: string;
 }
 
-// ============================================================================
-// DATA
-// ============================================================================
-
 /**
  * Used across legal pages and structured data to ensure consistency.
  */
@@ -105,9 +97,6 @@ export const contact: Contact = {
   calendaring: "https://app.reclaim.ai/m/gartenai/meet",
 };
 
-/**
- * Default meta tags when pages don't provide their own title/description.
- */
 export const siteMeta: SiteMeta = {
   title: "Patrik Garten · AI Solution Architect & Software Engineer",
   description:
@@ -156,9 +145,6 @@ export const focusAreas: FocusArea[] = [
   { id: 3, title: "Sicherer KI-Einsatz nach BSI IT-Grundschutz, ISO/IEC 27001 & DSGVO" },
 ];
 
-/**
- * Subset of most relevant current projects for footer display.
- */
 export const currentMandates: CurrentMandate[] = [
   { id: 1, company: "Universitätsklinikum Bonn", role: "AI Solution Architect" },
   { id: 2, company: "FlowCraftDB", role: "Event-driven GenAI Plattform" },
@@ -216,9 +202,6 @@ export const footerNavigation = [
   { name: "Datenschutz", href: "/privacy" },
 ];
 
-/**
- * Human-readable path names for breadcrumb structured data.
- */
 export const pathNames: Record<string, string> = {
   about: "Werdegang",
   service: "Dienstleistungen",
@@ -228,17 +211,10 @@ export const pathNames: Record<string, string> = {
   "workflow-automatisierung": "Workflow-Automatisierung",
 };
 
-// ============================================================================
-// HELPER FUNCTIONS
-// ============================================================================
-
 export function getFullAddress(): string {
   return `${business.street}, ${business.postalCode} ${business.city}, ${business.country}`;
 }
 
-/**
- * Formats address according to schema.org PostalAddress structure.
- */
 export function getPostalAddress() {
   return {
     "@type": "PostalAddress" as const,
