@@ -15,9 +15,12 @@
 </div>
 
 <script>
-    const stickyCTA = document.getElementById("sticky-cta");
+    let stickyCTA = null;
 
     function toggleStickyCTA() {
+        if (!stickyCTA) {
+            stickyCTA = document.getElementById("sticky-cta");
+        }
         if (window.scrollY > window.innerHeight * 0.8) {
             stickyCTA?.classList.remove("translate-y-24");
         } else {
@@ -25,5 +28,18 @@
         }
     }
 
+    function initStickyCTA() {
+        stickyCTA = document.getElementById("sticky-cta");
+        toggleStickyCTA();
+    }
+
     window.addEventListener("scroll", toggleStickyCTA);
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initStickyCTA);
+    } else {
+        initStickyCTA();
+    }
+
+    document.addEventListener("astro:page-load", initStickyCTA);
 </script>
