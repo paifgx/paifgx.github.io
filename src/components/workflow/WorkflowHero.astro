@@ -1,0 +1,176 @@
+---
+import { contact } from "../../config/site";
+---
+
+<section
+    class="relative min-h-[90svh] overflow-hidden bg-gray-50 dark:bg-gray-950"
+>
+    <!-- Background patterns -->
+    <div
+        class="pointer-events-none absolute inset-0 opacity-50"
+        style="background-size: 40px 40px; background-image: linear-gradient(to right, rgb(229 231 235 / 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgb(229 231 235 / 0.5) 1px, transparent 1px);"
+    >
+    </div>
+    <div
+        class="pointer-events-none absolute inset-0 opacity-50 dark:opacity-30"
+        style="background-size: 40px 40px; background-image: linear-gradient(to right, rgb(55 65 81 / 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgb(55 65 81 / 0.3) 1px, transparent 1px);"
+    >
+    </div>
+
+    <!-- Decorative blurs -->
+    <div
+        class="pointer-events-none absolute right-0 top-0 h-96 w-96 -translate-y-1/4 translate-x-1/4 rounded-full bg-indigo-500/5 blur-3xl dark:bg-indigo-400/10"
+    >
+    </div>
+    <div
+        class="pointer-events-none absolute bottom-0 left-0 h-96 w-96 -translate-x-1/4 translate-y-1/4 rounded-full bg-emerald-500/5 blur-3xl dark:bg-emerald-400/10"
+    >
+    </div>
+
+    <div
+        class="relative z-10 flex min-h-[90svh] items-center justify-center px-4 py-20"
+    >
+        <div class="max-w-4xl text-center">
+            <!-- Availability badge -->
+            <div
+                class="mb-8 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-2 text-sm font-medium text-gray-600 backdrop-blur-sm dark:border-gray-700 dark:bg-gray-800/80 dark:text-gray-300"
+            >
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+                    ></span>
+                    <span
+                        class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"
+                    ></span>
+                </span>
+                Jetzt verfügbar für Q1/2025
+            </div>
+
+            <!-- Main heading -->
+            <h1
+                class="mb-8 text-4xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            >
+                Workflow-Automatisierung <br class="hidden md:block" />
+                <span
+                    class="bg-linear-to-r from-indigo-600 to-emerald-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-emerald-400"
+                >
+                    in 48 Stunden.
+                </span>
+            </h1>
+
+            <!-- Subheading -->
+            <p
+                class="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-300 md:text-2xl"
+            >
+                Schluss mit monatelangen IT-Projekten. Ich automatisiere Ihren
+                zeitfressendsten Prozess – fixfertig, dokumentiert und stabil.
+            </p>
+
+            <!-- Feature cards -->
+            <div
+                class="mx-auto mb-12 grid max-w-3xl gap-4 text-left sm:grid-cols-3"
+            >
+                <div
+                    class="rounded-xl border border-gray-200/60 bg-white/50 p-4 backdrop-blur-sm dark:border-gray-700/60 dark:bg-gray-800/50"
+                >
+                    <div
+                        class="mb-2 w-fit rounded-lg bg-indigo-100 p-2 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <span
+                        class="text-sm font-semibold text-gray-900 dark:text-white"
+                        >Ergebnisse in 48h</span
+                    >
+                </div>
+
+                <div
+                    class="rounded-xl border border-gray-200/60 bg-white/50 p-4 backdrop-blur-sm dark:border-gray-700/60 dark:bg-gray-800/50"
+                >
+                    <div
+                        class="mb-2 w-fit rounded-lg bg-indigo-100 p-2 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <span
+                        class="text-sm font-semibold text-gray-900 dark:text-white"
+                        >Weniger Fehler</span
+                    >
+                </div>
+
+                <div
+                    class="rounded-xl border border-gray-200/60 bg-white/50 p-4 backdrop-blur-sm dark:border-gray-700/60 dark:bg-gray-800/50"
+                >
+                    <div
+                        class="mb-2 w-fit rounded-lg bg-indigo-100 p-2 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                            ></path>
+                        </svg>
+                    </div>
+                    <span
+                        class="text-sm font-semibold text-gray-900 dark:text-white"
+                        >Volle Transparenz</span
+                    >
+                </div>
+            </div>
+
+            <!-- CTA buttons -->
+            <div
+                class="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            >
+                <a
+                    href="#cta"
+                    class="w-full rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:scale-105 hover:bg-indigo-500 hover:shadow-xl sm:w-auto"
+                >
+                    Kostenloses Erstgespräch buchen
+                </a>
+                <a
+                    href={`mailto:${contact.email}`}
+                    class="w-full px-6 py-3 text-base font-medium text-gray-700 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white sm:w-auto"
+                >
+                    Fragen? E-Mail schreiben
+                </a>
+            </div>
+
+            <!-- Trust badge -->
+            <div class="mt-8 text-sm text-gray-500 dark:text-gray-400">
+                <span class="mr-1">🔒</span> DSGVO-konform & Hosted in Germany/EU
+            </div>
+        </div>
+    </div>
+</section>

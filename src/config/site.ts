@@ -225,6 +225,7 @@ export const pathNames: Record<string, string> = {
   contact: "Kontakt",
   impress: "Impressum",
   privacy: "Datenschutz",
+  "workflow-automatisierung": "Workflow-Automatisierung",
 };
 
 // ============================================================================
