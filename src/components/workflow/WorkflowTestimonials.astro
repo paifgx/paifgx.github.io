@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
 
 const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
     neutral: "bg-gray-700 text-white",
-    indigo: "bg-indigo-600 text-white",
+    indigo: "bg-brand-blue text-white",
     emerald: "bg-emerald-600 text-white",
     amber: "bg-amber-500 text-white",
 };
@@ -147,7 +147,7 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
                 {
                     testimonials.map((_, index) => (
                         <button
-                            class="dot-indicator h-3 w-3 rounded-full bg-gray-300 transition-colors hover:bg-indigo-600 data-[active=true]:bg-indigo-600 dark:bg-gray-600 dark:hover:bg-indigo-400 dark:data-[active=true]:bg-indigo-400"
+                            class="dot-indicator h-3 w-3 rounded-full bg-gray-300 transition-colors hover:bg-brand-blue data-[active=true]:bg-brand-blue dark:bg-gray-600 dark:hover:bg-brand-gold dark:data-[active=true]:bg-brand-gold"
                             data-index={index}
                             aria-label={`Gehe zu Testimonial ${index + 1}`}
                         />
