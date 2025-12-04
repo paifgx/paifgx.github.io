@@ -174,8 +174,15 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
                     slider.scrollWidth - slider.clientWidth - slider.scrollLeft,
                 ) <= 10;
 
-            (prevBtn as HTMLButtonElement).disabled = isStart;
-            (nextBtn as HTMLButtonElement).disabled = isEnd;
+            const currentPrevBtn = document.getElementById("prevBtn");
+            const currentNextBtn = document.getElementById("nextBtn");
+
+            if (currentPrevBtn) {
+                (currentPrevBtn as HTMLButtonElement).disabled = isStart;
+            }
+            if (currentNextBtn) {
+                (currentNextBtn as HTMLButtonElement).disabled = isEnd;
+            }
         };
 
         const updateDots = () => {
