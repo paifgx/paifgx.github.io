@@ -162,12 +162,14 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
 </section>
 
 <script>
-    const slider = document.getElementById("slider");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const dots = document.querySelectorAll(".dot-indicator");
+    const initSlider = () => {
+        const slider = document.getElementById("slider");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const dots = document.querySelectorAll(".dot-indicator");
 
-    if (slider && prevBtn && nextBtn) {
+        if (!slider || !prevBtn || !nextBtn) return;
+
         const updateButtons = () => {
             const isStart = slider.scrollLeft <= 10;
             const isEnd =
@@ -206,8 +208,14 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
             }
         };
 
-        prevBtn.addEventListener("click", () => scroll("left"));
-        nextBtn.addEventListener("click", () => scroll("right"));
+        // Remove old listeners to prevent duplicates if re-initialized
+        const newPrevBtn = prevBtn.cloneNode(true);
+        const newNextBtn = nextBtn.cloneNode(true);
+        prevBtn.parentNode?.replaceChild(newPrevBtn, prevBtn);
+        nextBtn.parentNode?.replaceChild(newNextBtn, nextBtn);
+
+        newPrevBtn.addEventListener("click", () => scroll("left"));
+        newNextBtn.addEventListener("click", () => scroll("right"));
 
         slider.addEventListener("scroll", () => {
             updateButtons();
@@ -218,16 +226,28 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
             updateButtons();
             updateDots();
         });
+
+        // Initial update
         updateButtons();
         updateDots();
 
         dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
+            // Clone dot to remove old listeners
+            const newDot = dot.cloneNode(true);
+            dot.parentNode?.replaceChild(newDot, dot);
+
+            newDot.addEventListener("click", () => {
                 const cardWidth = slider.firstElementChild?.clientWidth || 0;
                 const gap = 32;
                 const scrollAmount = (cardWidth + gap) * index;
                 slider.scrollTo({ left: scrollAmount, behavior: "smooth" });
             });
         });
-    }
+    };
+
+    // Run on initial load
+    initSlider();
+
+    // Run on view transitions navigation
+    document.addEventListener("astro:page-load", initSlider);
 </script>
