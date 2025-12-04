@@ -55,7 +55,6 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
         </h2>
 
         <div class="group relative">
-            <!-- Navigation Buttons -->
             <button
                 id="prevBtn"
                 class="absolute left-0 top-1/2 z-10 -translate-x-4 -translate-y-1/2 rounded-full bg-gray-900 p-3 text-white opacity-0 shadow-lg transition-opacity hover:bg-gray-700 disabled:opacity-0 group-hover:opacity-100 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-300"
@@ -96,7 +95,6 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
                 </svg>
             </button>
 
-            <!-- Slider Container -->
             <div
                 id="slider"
                 class="scrollbar-hide flex snap-x snap-mandatory gap-8 overflow-x-auto scroll-smooth pb-8"
@@ -145,7 +143,6 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
                 }
             </div>
 
-            <!-- Dots Indicator -->
             <div class="mt-4 flex justify-center gap-2">
                 {
                     testimonials.map((_, index) => (
@@ -227,12 +224,10 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
             updateDots();
         });
 
-        // Initial update
         updateButtons();
         updateDots();
 
         dots.forEach((dot, index) => {
-            // Clone dot to remove old listeners
             const newDot = dot.cloneNode(true);
             dot.parentNode?.replaceChild(newDot, dot);
 
@@ -245,9 +240,6 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
         });
     };
 
-    // Run on initial load
     initSlider();
-
-    // Run on view transitions navigation
     document.addEventListener("astro:page-load", initSlider);
 </script>
