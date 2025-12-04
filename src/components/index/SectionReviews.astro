@@ -5,9 +5,7 @@ const totalSlides = getTotalSlides();
 ---
 
 <div class="mb-12 max-w-4xl">
-  <p
-    class="text-sm font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400"
-  >
+  <p class="text-sm font-semibold uppercase tracking-widest text-brand-gold">
     Referenzen
   </p>
   <h2
@@ -43,50 +41,60 @@ const totalSlides = getTotalSlides();
           style={slideIndex === 0 ? "" : "display: none;"}
         >
           {slideStudies.map((caseStudy) => (
-            <article class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-5 shadow-xs dark:border-gray-700 dark:bg-gray-900 sm:p-6">
+            <article class="flex flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-brand-blue/30 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-blue/50 dark:hover:bg-white/10">
               <div>
-                <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                  {caseStudy.timeframe}
-                </p>
-                <p class="mt-1 text-xl font-semibold text-gray-900 dark:text-white">
+                <div class="flex items-center justify-between mb-4">
+                  <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                    {caseStudy.timeframe}
+                  </p>
+                  <div class="h-px flex-1 bg-gray-200 dark:bg-white/10 mx-4" />
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
                   {caseStudy.company}
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-300">
+                </h3>
+                <p class="text-sm text-brand-blue font-medium mt-1">
                   {caseStudy.role}
                 </p>
-                <p class="mt-4 text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+                <p class="mt-4 text-sm font-medium text-gray-900 dark:text-gray-200 border-l-2 border-brand-gold pl-3">
                   {caseStudy.mission}
                 </p>
 
-                <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                <div class="mt-6 space-y-4 text-sm text-gray-600 dark:text-gray-300">
                   <div>
-                    <p class="font-semibold text-gray-900 dark:text-white">
+                    <p class="font-semibold text-gray-900 dark:text-white text-xs uppercase tracking-wider mb-1">
                       Ausgangssituation
                     </p>
-                    <p class="mt-1 leading-6">{caseStudy.situation}</p>
+                    <p class="leading-relaxed">{caseStudy.situation}</p>
                   </div>
                   <div>
-                    <p class="font-semibold text-gray-900 dark:text-white">
+                    <p class="font-semibold text-gray-900 dark:text-white text-xs uppercase tracking-wider mb-1">
                       Ansatz
                     </p>
-                    <p class="mt-1 leading-6">{caseStudy.approach}</p>
+                    <p class="leading-relaxed">{caseStudy.approach}</p>
                   </div>
                   <div>
-                    <p class="font-semibold text-gray-900 dark:text-white">
+                    <p class="font-semibold text-gray-900 dark:text-white text-xs uppercase tracking-wider mb-1">
                       Ergebnis
                     </p>
-                    <p class="mt-1 leading-6">{caseStudy.result}</p>
+                    <p class="leading-relaxed text-gray-900 dark:text-white font-medium">
+                      {caseStudy.result}
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div class="mt-6">
-                <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+              <div class="mt-8 pt-6 border-t border-gray-100 dark:border-white/5">
+                <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
                   Stack
                 </p>
-                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                  {caseStudy.stack}
-                </p>
+                <div class="flex flex-wrap gap-2">
+                  {caseStudy.stack.split(",").map((tech) => (
+                    <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 dark:bg-white/5 dark:text-gray-300 dark:ring-white/20">
+                      {tech.trim()}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
@@ -112,7 +120,7 @@ const totalSlides = getTotalSlides();
         <button
           type="button"
           role="tab"
-          class={`carousel-dot h-2 w-2 rounded-full focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 ${index === 0 ? "bg-gray-800 dark:bg-white" : "bg-gray-200 dark:bg-gray-700"}`}
+          class={`carousel-dot h-2 w-2 rounded-full focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 dark:focus:ring-offset-brand-dark transition-colors duration-200 ${index === 0 ? "bg-brand-blue w-4" : "bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600"}`}
           data-slide={index}
           aria-label={`Seite ${index + 1} von ${totalSlides}`}
           aria-selected={index === 0 ? "true" : "false"}
@@ -126,7 +134,7 @@ const totalSlides = getTotalSlides();
     <button
       id="toggle-autoplay"
       aria-pressed="false"
-      class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+      class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-white dark:focus:ring-offset-brand-dark transition-colors"
     >
       Auto-Play pausieren
     </button>
@@ -135,7 +143,7 @@ const totalSlides = getTotalSlides();
       <button
         id="prev-slide"
         aria-label="Vorherige Cases"
-        class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+        class="rounded-full border border-gray-300 p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 dark:border-white/10 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white dark:focus:ring-offset-brand-dark transition-colors"
       >
         <span class="sr-only">Vorherige</span>
         <svg
@@ -154,7 +162,7 @@ const totalSlides = getTotalSlides();
       <button
         id="next-slide"
         aria-label="Nächste Cases"
-        class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+        class="rounded-full border border-gray-300 p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 dark:border-white/10 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white dark:focus:ring-offset-brand-dark transition-colors"
       >
         <span class="sr-only">Nächste</span>
         <svg
@@ -209,13 +217,13 @@ const totalSlides = getTotalSlides();
       });
       dots.forEach((dot, i) => {
         if (i === index) {
-          dot.classList.remove("bg-gray-200", "dark:bg-gray-700");
-          dot.classList.add("bg-gray-800", "dark:bg-white");
+          dot.classList.remove("bg-gray-300", "dark:bg-gray-700", "w-2");
+          dot.classList.add("bg-brand-blue", "w-4");
           dot.setAttribute("aria-selected", "true");
           dot.setAttribute("tabindex", "0");
         } else {
-          dot.classList.remove("bg-gray-800", "dark:bg-white");
-          dot.classList.add("bg-gray-200", "dark:bg-gray-700");
+          dot.classList.remove("bg-brand-blue", "w-4");
+          dot.classList.add("bg-gray-300", "dark:bg-gray-700", "w-2");
           dot.setAttribute("aria-selected", "false");
           dot.setAttribute("tabindex", "-1");
         }

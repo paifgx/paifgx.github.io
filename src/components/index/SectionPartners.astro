@@ -5,12 +5,18 @@ import { clients } from "../../config/site";
 <section
   id="partners"
   aria-label="Ausgewählte Mandate & Auftraggeber"
-  class="py-12 bg-gray-50 transition-colors duration-200 dark:bg-gray-900 sm:py-24 lg:py-32"
+  class="py-12 bg-gray-50 transition-colors duration-200 dark:bg-brand-dark/50 sm:py-24 lg:py-32 relative"
 >
+  <!-- Divider Line -->
+  <div
+    class="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-brand-blue/20 to-transparent"
+  >
+  </div>
+
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">
       <h2
-        class="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400"
+        class="text-sm font-semibold uppercase tracking-widest text-brand-gold"
       >
         Vertrauen von Mittelstand & Enterprise
       </h2>
@@ -31,8 +37,8 @@ import { clients } from "../../config/site";
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {
           clients.map((client) => (
-            <div class="flex items-center justify-center rounded-xl bg-white px-8 py-6 text-center shadow-xs ring-1 ring-gray-900/5 transition-all duration-300 hover:shadow-md hover:ring-gray-900/10 dark:bg-gray-950/60 dark:ring-white/10 dark:hover:ring-white/20">
-              <span class="text-lg font-semibold text-gray-900 dark:text-white">
+            <div class="group flex items-center justify-center rounded-xl bg-white px-8 py-6 text-center shadow-sm ring-1 ring-gray-900/5 transition-all duration-300 hover:shadow-lg hover:shadow-brand-blue/10 hover:ring-brand-blue/20 dark:bg-white/5 dark:ring-white/5 dark:hover:bg-white/10 dark:hover:ring-brand-blue/40">
+              <span class="text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-brand-blue dark:text-gray-100 dark:group-hover:text-brand-blue">
                 {client}
               </span>
             </div>

@@ -54,7 +54,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="mb-12 max-w-4xl">
     <p
-      class="text-sm font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400"
+      class="text-sm font-semibold uppercase tracking-widest text-brand-gold"
     >
       Referenzen
     </p>
@@ -73,7 +73,7 @@ onBeforeUnmount(() => {
     <article
       v-for="(caseStudy, index) in visibleCaseStudies"
       :key="caseStudy.company + index"
-      class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-xs dark:border-gray-700 dark:bg-gray-900"
+      class="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-xs dark:border-white/10 dark:bg-white/5"
     >
       <div>
         <p
@@ -88,7 +88,7 @@ onBeforeUnmount(() => {
           {{ caseStudy.role }}
         </p>
         <p
-          class="mt-4 text-sm font-semibold text-indigo-600 dark:text-indigo-400"
+          class="mt-4 text-sm font-semibold text-brand-blue dark:text-brand-gold"
         >
           {{ caseStudy.mission }}
         </p>
@@ -153,7 +153,7 @@ onBeforeUnmount(() => {
       <button
         @click="togglePause"
         :aria-pressed="isPaused"
-        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-brand-gold dark:focus:ring-offset-gray-900"
       >
         <span v-if="isPaused">Auto-Play fortsetzen</span>
         <span v-else>Auto-Play pausieren</span>
@@ -163,7 +163,7 @@ onBeforeUnmount(() => {
         <button
           @click="showPrevious"
           aria-label="Vorherige Cases"
-          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-brand-gold dark:focus:ring-offset-gray-900"
         >
           <span class="sr-only">Vorherige</span>
           <svg
@@ -184,7 +184,7 @@ onBeforeUnmount(() => {
         <button
           @click="showNext"
           aria-label="Nächste Cases"
-          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-offset-gray-900"
+          class="rounded-full border border-gray-300 p-2 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 dark:focus:ring-brand-gold dark:focus:ring-offset-gray-900"
         >
           <span class="sr-only">Nächste</span>
           <svg
