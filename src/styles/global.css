@@ -2,13 +2,17 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-brand-dark: var(--color-brand-dark);
+  --color-brand-blue: var(--color-brand-blue);
+  --color-brand-gold: var(--color-brand-gold);
+  --color-brand-gold-dim: var(--color-brand-gold-dim);
+}
+
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
 */
 @layer base {
   *,
@@ -22,8 +26,26 @@
 
 @layer base {
   :root {
-    --color-tiber-900: #0e4e53;
-    --color-tiber-500: #05c2c7;
-    --color-granny-apple: #cbf3e2;
+    --color-brand-dark: #02040a; /* Deepest Navy/Black */
+    --color-brand-blue: #2563eb; /* Electric Royal Blue */
+    --color-brand-gold: #e0c49a; /* Champagne Gold */
+    --color-brand-gold-dim: #a68e6d; /* Muted Gold for text */
+    
+    /* Legacy/Fallback overrides if needed, but we should switch to semantic names */
+    --color-tiber-900: var(--color-brand-dark); 
+    --color-tiber-500: var(--color-brand-blue);
+    --color-granny-apple: var(--color-brand-gold);
   }
+}
+
+@utility text-glow {
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+@utility bg-glow-blue {
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+}
+
+@utility carousel-dot {
+  @apply transition-all duration-200 ease-in-out;
 }
