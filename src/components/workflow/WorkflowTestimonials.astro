@@ -184,7 +184,8 @@ const avatarColorClasses: Record<Testimonial["avatarColor"], string> = {
                 slider.clientWidth / (window.innerWidth >= 768 ? 2 : 1);
             const index = Math.round(scrollLeft / cardWidth);
 
-            dots.forEach((dot, i) => {
+            const currentDots = document.querySelectorAll(".dot-indicator");
+            currentDots.forEach((dot, i) => {
                 if (i === index) {
                     dot.setAttribute("data-active", "true");
                 } else {
