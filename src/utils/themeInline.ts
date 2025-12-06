@@ -6,20 +6,28 @@ import { THEME_STORAGE_KEY } from "./theme";
  */
 export const inlineThemeScript = `(() => {
   const STORAGE_KEY = "${THEME_STORAGE_KEY}";
-  const apply = (theme) => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    document.documentElement.style.colorScheme = theme;
+  const apply = (theme, target = document.documentElement) => {
+    target.classList.toggle("dark", theme === "dark");
+    target.style.colorScheme = theme;
   };
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    const theme =
-      stored === "dark" || stored === "light"
-        ? stored
-        : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    apply(theme);
-  } catch {
-    const theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    apply(theme);
-  }
-})();`;
+  const preferredTheme = () => {
+    const system = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored === "dark" || stored === "light" ? stored : system;
+    } catch {
+      return system;
+    }
+  };
+  apply(preferredTheme());
 
+  // Apply theme to incoming document before swap to prevent flash
+  document.addEventListener("astro:before-swap", (e) => {
+    apply(preferredTheme(), e.newDocument.documentElement);
+  });
+
+  // Re-apply immediately after swap as safety net
+  document.addEventListener("astro:after-swap", () => {
+    apply(preferredTheme());
+  });
+})();`;
