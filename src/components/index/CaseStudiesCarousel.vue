@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import {
+  computed,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 
 interface CaseStudy {
   company: string;
@@ -64,19 +71,35 @@ const startAutoplay = () => {
   }, intervalMs);
 };
 
-const handleDotKey = (index: number, e: KeyboardEvent) => {
+const handleDotKey = async (index: number, e: KeyboardEvent) => {
+  let targetIndex: number | null = null;
+
   if (e.key === "ArrowRight" || e.key === "ArrowDown") {
     e.preventDefault();
+    targetIndex = (index + 1) % totalSlides.value;
     showSlide(index + 1);
   } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
     e.preventDefault();
+    targetIndex = (index - 1 + totalSlides.value) % totalSlides.value;
     showSlide(index - 1);
   } else if (e.key === "Home") {
     e.preventDefault();
+    targetIndex = 0;
     showSlide(0);
   } else if (e.key === "End") {
     e.preventDefault();
+    targetIndex = totalSlides.value - 1;
     showSlide(totalSlides.value - 1);
+  }
+
+  if (targetIndex !== null) {
+    await nextTick();
+    const targetButton = document.querySelector(
+      `#carousel-dots button[data-slide="${targetIndex}"]`
+    ) as HTMLButtonElement | null;
+    if (targetButton) {
+      targetButton.focus();
+    }
   }
 };
 
