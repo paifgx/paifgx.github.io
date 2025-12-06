@@ -92,6 +92,13 @@ export const timeEntries: TimeEntry[] = [
   },
   {
     id: 13,
+    date: "2018-01",
+    title: "Full Stack Development – Diverse Kunden",
+    content:
+      "CMS-Modernisierungen (TYPO3/Drupal), Mobile-Projekte (Flutter/Android), Intranet-Systeme für Kliniken und serverlose Event-Plattformen – technische Bandbreite aufgebaut, bevor der Fokus auf Event-Architekturen und später KI wechselte.",
+  },
+  {
+    id: 14,
     date: "2017-10",
     title: "GARTEN gegründet – Freelance-Label",
     content:
