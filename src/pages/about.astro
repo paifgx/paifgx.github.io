@@ -9,24 +9,24 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
 ---
 
 <BaseLayout
-  classDefintion="relative flex min-h-screen flex-col bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-gray-100 xl:flex-row"
+  classDefintion="relative flex min-h-screen flex-col bg-gray-50 text-gray-900 dark:bg-brand-dark dark:text-gray-100 xl:flex-row"
   title="Werdegang & Profil"
   description="Werdegang von Patrik Garten: AI Solution Architect für regulierte KMU, der Prozesse stabilisiert, Security & Compliance integriert und Teams befähigt – u. a. Middleware für personalisierte Medizin (Universitätsklinikum Bonn), CANCOM Assistant & interne App, FlowCraftDB."
 >
   <section class="relative flex flex-1 flex-col xl:flex-row">
     <div
-      class="relative flex flex-1 items-center justify-center overflow-hidden bg-white px-4 py-12 text-slate-900 sm:px-12 lg:py-16 dark:bg-slate-950 dark:text-gray-100"
+      class="relative flex flex-1 items-center justify-center overflow-hidden bg-white px-4 py-12 text-slate-900 sm:px-12 lg:py-16 dark:bg-brand-dark dark:text-gray-100"
     >
       <div
         class="pointer-events-none absolute inset-0 -z-10"
         aria-hidden="true"
       >
         <div
-          class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.18),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(120,119,198,0.35),transparent_55%)]"
+          class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.15),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.25),transparent_55%)]"
         >
         </div>
         <div
-          class="absolute -bottom-32 right-0 h-64 w-64 rounded-full bg-indigo-500/15 blur-[120px] dark:bg-indigo-500/30"
+          class="absolute -bottom-32 right-0 h-64 w-64 rounded-full bg-brand-blue/10 blur-[120px] dark:bg-brand-blue/20"
         >
         </div>
       </div>
@@ -34,7 +34,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
       <div class="relative mx-auto flex w-full max-w-2xl flex-col gap-8">
         <div class="space-y-4">
           <span
-            class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:text-indigo-200"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold dark:border-white/10 dark:bg-white/5 dark:text-brand-gold"
           >
             AI Solution Architect
           </span>
@@ -77,7 +77,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
         </div>
 
         <div
-          class="rounded-3xl border border-slate-900/10 bg-linear-to-br from-white via-indigo-50/70 to-slate-100 px-5 py-5 text-sm text-gray-700 shadow-xl shadow-indigo-200/40 dark:border-white/10 dark:from-white/5 dark:via-slate-900/60 dark:to-slate-900/30 dark:text-gray-300 dark:shadow-indigo-500/10 sm:px-6 sm:py-6"
+          class="rounded-3xl border border-slate-900/10 bg-linear-to-br from-white via-brand-blue/5 to-slate-100 px-5 py-5 text-sm text-gray-700 shadow-xl shadow-brand-blue/10 dark:border-white/10 dark:from-white/5 dark:via-brand-blue/10 dark:to-slate-900/30 dark:text-gray-300 dark:shadow-brand-blue/10 sm:px-6 sm:py-6"
         >
           <SectionSubtitle>Positionierung</SectionSubtitle>
           <p class="mt-3 text-lg leading-8 text-gray-900 dark:text-white">
@@ -99,7 +99,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
         </div>
 
         <dl
-          class="grid gap-4 rounded-2xl border border-slate-900/10 bg-white/90 p-4 shadow-lg shadow-indigo-200/20 sm:grid-cols-3 dark:border-white/5 dark:bg-white/5 dark:shadow-indigo-500/10 sm:p-5"
+          class="grid gap-4 rounded-2xl border border-slate-900/10 bg-white/90 p-4 shadow-lg shadow-brand-blue/10 sm:grid-cols-3 dark:border-white/5 dark:bg-white/5 dark:shadow-brand-blue/10 sm:p-5"
         >
           {
             stats.map((stat) => (
@@ -116,7 +116,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
         </dl>
 
         <div
-          class="rounded-2xl border border-slate-900/10 bg-white/95 px-5 py-6 text-sm leading-relaxed text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 sm:px-6 sm:py-7"
+          class="rounded-2xl border border-slate-900/10 bg-white/95 px-5 py-6 text-sm leading-relaxed text-gray-700 shadow-xl shadow-brand-blue/10 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-brand-blue/10 sm:px-6 sm:py-7"
         >
           <SectionSubtitle>Arbeitsweise</SectionSubtitle>
           <h3 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">
@@ -137,7 +137,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
           {
             pillars.map((pillar) => (
               <article class="rounded-2xl border border-slate-900/10 bg-white/95 px-4 py-3 text-sm text-gray-700 shadow-xs dark:border-white/5 dark:bg-white/5 dark:text-gray-200 sm:px-5 sm:py-4">
-                <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-200">
+                <p class="text-xs font-semibold uppercase tracking-wide text-brand-gold">
                   {pillar.label}
                 </p>
                 <p class="mt-2 text-sm leading-6 text-gray-700 dark:text-white/90">
@@ -149,7 +149,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
         </div>
 
         <div
-          class="rounded-2xl border border-slate-900/10 bg-linear-to-br from-white via-indigo-50/60 to-transparent px-5 py-5 shadow-lg shadow-indigo-200/30 dark:border-white/10 dark:from-white/5 dark:via-indigo-500/5 dark:to-transparent dark:shadow-indigo-500/10 sm:px-6 sm:py-6"
+          class="rounded-2xl border border-slate-900/10 bg-linear-to-br from-white via-brand-blue/5 to-transparent px-5 py-5 shadow-lg shadow-brand-blue/10 dark:border-white/10 dark:from-white/5 dark:via-brand-blue/5 dark:to-transparent dark:shadow-brand-blue/10 sm:px-6 sm:py-6"
         >
           <div class="flex flex-col gap-2">
             <SectionSubtitle>Arbeitsprinzipien</SectionSubtitle>
@@ -165,7 +165,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
             {
               principles.map((principle) => (
                 <li class="flex gap-4">
-                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-200">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/20 dark:text-brand-gold">
                     <svg
                       class="h-3.5 w-3.5"
                       viewBox="0 0 16 16"
@@ -196,7 +196,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
         </div>
 
         <div
-          class="rounded-2xl border border-slate-900/10 bg-white/95 px-5 py-5 text-sm text-gray-700 shadow-xl shadow-indigo-200/30 dark:border-white/10 dark:bg-white/5 dark:text-gray-300 dark:shadow-indigo-500/10 sm:px-6 sm:py-6"
+          class="rounded-2xl border border-slate-900/10 bg-white/95 px-5 py-5 text-sm text-gray-700 shadow-xl shadow-brand-blue/10 dark:border-white/10 dark:bg-white/5 dark:text-gray-300 dark:shadow-brand-blue/10 sm:px-6 sm:py-6"
         >
           <SectionSubtitle>Fähigkeiten</SectionSubtitle>
           <h3 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">
@@ -225,7 +225,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
             href={`mailto:${contact.email}?subject=CV%20anfragen`}
-            class="inline-flex flex-1 items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:bg-indigo-400"
+            class="inline-flex flex-1 items-center justify-center rounded-full bg-brand-blue px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-brand-blue/30 transition hover:bg-blue-600"
           >
             CV anfragen (PDF)
           </a>
@@ -233,7 +233,7 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
             href={contact.calendaring}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex flex-1 items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-indigo-500/60 hover:text-indigo-600 dark:border-white/20 dark:text-white/90 dark:hover:border-white/40 dark:hover:text-white"
+            class="inline-flex flex-1 items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-brand-blue/60 hover:text-brand-blue dark:border-white/20 dark:text-white/90 dark:hover:border-brand-gold/60 dark:hover:text-brand-gold"
           >
             Intro-Call buchen
           </a>
@@ -247,12 +247,12 @@ import { pillars, principles, capabilities } from "../data/aboutMeta";
     </div>
 
     <div
-      class="flex flex-1 flex-col bg-slate-50 px-4 py-12 dark:bg-linear-to-br dark:from-slate-900 dark:via-slate-950 dark:to-black sm:px-12"
+      class="flex flex-1 flex-col bg-slate-50 px-4 py-12 dark:bg-linear-to-br dark:from-slate-900 dark:via-brand-dark dark:to-black sm:px-12"
     >
       <div class="mx-auto flex w-full max-w-3xl flex-col">
         <div class="border-b border-slate-900/10 pb-8 dark:border-white/10">
           <p
-            class="text-xs font-semibold uppercase tracking-[0.4em] text-indigo-600 dark:text-indigo-300"
+            class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-gold"
           >
             Timeline
           </p>

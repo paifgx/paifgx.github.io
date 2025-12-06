@@ -2,21 +2,24 @@
 interface Props {
   id: number;
   date?: string;
+  endDate?: string;
   title: string;
   content: string;
   isLast?: boolean;
 }
 
-const { id, date, title, content, isLast = false } = Astro.props as Props;
+const {
+  id,
+  date,
+  endDate,
+  title,
+  content,
+  isLast = false,
+} = Astro.props as Props;
 
-/**
- * For YYYY-MM-DD format, we parse components manually to avoid timezone
- * issues. new Date("YYYY-MM-DD") parses as UTC midnight, which can shift
- * dates by one day when converted to local time in timezones behind UTC.
- */
-function formatDate(dateStr: string | undefined): string {
+function formatSingleDate(dateStr: string | undefined): string {
   if (!dateStr) {
-    return "Heute";
+    return "heute";
   }
 
   const parts = dateStr.split("-");
@@ -26,60 +29,33 @@ function formatDate(dateStr: string | undefined): string {
   }
 
   if (parts.length === 2) {
-    return `${parts[1]}.${parts[0]}`;
+    return `${parts[1]}/${parts[0]}`;
   }
 
   if (parts.length === 3) {
-    const year = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10) - 1; // Month is 0-indexed
-    const day = parseInt(parts[2], 10);
-
-    if (
-      !isNaN(year) &&
-      !isNaN(month) &&
-      !isNaN(day) &&
-      month >= 0 &&
-      month <= 11 &&
-      day >= 1 &&
-      day <= 31
-    ) {
-      // Create date in local timezone to avoid UTC parsing issues
-      const date = new Date(year, month, day);
-
-      // Verify the date is valid (handles invalid dates like Feb 30)
-      if (
-        date.getFullYear() === year &&
-        date.getMonth() === month &&
-        date.getDate() === day
-      ) {
-        return date.toLocaleDateString("de-DE", {
-          day: "2-digit",
-          month: "2-digit",
-          year: "numeric",
-        });
-      }
-    }
-  }
-
-  const date = new Date(dateStr);
-  if (!isNaN(date.getTime())) {
-    return date.toLocaleDateString("de-DE", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
+    return `${parts[1]}/${parts[0]}`;
   }
 
   return dateStr;
 }
 
-const formattedDate = formatDate(date);
+function formatDateRange(
+  start: string | undefined,
+  end: string | undefined
+): string {
+  const startFormatted = formatSingleDate(start);
+  const endFormatted = formatSingleDate(end);
+
+  return `${startFormatted} – ${endFormatted}`;
+}
+
+const formattedDate = formatDateRange(date, endDate);
 const showConnector = !isLast;
 ---
 
 <article id={`entry-${id}`} class="group relative pl-10">
   <span
-    class="absolute left-4 top-5 inline-flex h-3.5 w-3.5 -translate-x-1/2 items-center justify-center rounded-full border border-indigo-500/50 bg-white text-indigo-600 shadow-lg shadow-indigo-500/20 dark:border-indigo-400/60 dark:bg-slate-950 dark:text-indigo-200"
+    class="absolute left-4 top-5 inline-flex h-3.5 w-3.5 -translate-x-1/2 items-center justify-center rounded-full border border-brand-blue/50 bg-white text-brand-blue shadow-lg shadow-brand-blue/20 dark:border-brand-gold/60 dark:bg-slate-950 dark:text-brand-gold"
     aria-hidden="true"></span>
   {
     showConnector && (
@@ -91,22 +67,22 @@ const showConnector = !isLast;
   }
 
   <header
-    class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-200"
+    class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-brand-blue dark:text-brand-gold"
   >
     <time
       datetime={date}
-      class="text-sm font-semibold tracking-[0.3em] text-indigo-600 dark:text-indigo-100"
+      class="text-sm font-semibold tracking-[0.3em] text-brand-blue dark:text-brand-gold"
     >
       {formattedDate}
     </time>
     <div
-      class="h-px flex-1 bg-linear-to-r from-indigo-600/40 via-slate-900/20 to-transparent dark:from-indigo-400/40 dark:via-white/20"
+      class="h-px flex-1 bg-linear-to-r from-brand-blue/40 via-slate-900/20 to-transparent dark:from-brand-gold/40 dark:via-white/20"
     >
     </div>
   </header>
 
   <div
-    class="mt-4 rounded-3xl border border-slate-900/10 bg-white px-5 py-5 text-gray-700 shadow-lg shadow-indigo-200/20 transition duration-300 group-hover:border-indigo-500/20 group-hover:shadow-indigo-500/30 dark:border-white/5 dark:bg-white/5 dark:text-gray-200 dark:shadow-indigo-500/10 dark:group-hover:border-white/10 dark:group-hover:shadow-indigo-500/20 sm:px-6 sm:py-6"
+    class="mt-4 rounded-3xl border border-slate-900/10 bg-white px-5 py-5 text-gray-700 shadow-lg shadow-brand-blue/10 transition duration-300 group-hover:border-brand-blue/20 group-hover:shadow-brand-blue/20 dark:border-white/5 dark:bg-white/5 dark:text-gray-200 dark:shadow-brand-gold/10 dark:group-hover:border-white/10 dark:group-hover:shadow-brand-gold/20 sm:px-6 sm:py-6"
   >
     <h3 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
       {title}

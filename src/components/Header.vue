@@ -81,11 +81,11 @@ const isActive = (href) => {
 <template>
   <Disclosure
     as="header"
-    class="sticky top-0 z-50 bg-white shadow-sm transition-colors duration-200 dark:bg-gray-950 dark:shadow-gray-900/40"
+    class="sticky top-0 z-50 bg-white shadow-sm transition-colors duration-200 dark:bg-brand-dark dark:shadow-black/40"
     v-slot="{ open }"
   >
     <div
-      class="h-1 bg-linear-to-r from-(--color-tiber-900) via-(--color-tiber-500) to-(--color-granny-apple)"
+      class="h-1 w-full bg-linear-to-r from-brand-blue via-indigo-500 to-brand-gold"
     ></div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
@@ -96,11 +96,13 @@ const isActive = (href) => {
             aria-label="Startseite"
           >
             <span
-              class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white"
+              class="text-lg font-bold tracking-tight text-gray-900 dark:text-white"
             >
               GARTEN.ai
             </span>
-            <span class="text-xs uppercase text-gray-500 dark:text-gray-400">
+            <span
+              class="text-[10px] uppercase tracking-wider text-brand-gold font-medium"
+            >
               AI Solution Architect
             </span>
           </a>
@@ -115,10 +117,10 @@ const isActive = (href) => {
             :key="navItem.name"
             :href="navItem.href"
             :class="[
-              'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium',
+              'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-200',
               isActive(navItem.href)
-                ? 'border-indigo-500 text-gray-900 dark:text-white'
-                : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 dark:hover:border-gray-600',
+                ? 'border-brand-blue text-gray-900 dark:text-white'
+                : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white dark:hover:border-brand-gold/50',
             ]"
           >
             {{ navItem.name }}
@@ -128,7 +130,7 @@ const isActive = (href) => {
         <div class="hidden sm:ml-6 sm:flex sm:items-center sm:gap-3">
           <button
             type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/70 text-gray-600 shadow-xs transition hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
+            class="cursor-pointer inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/70 text-gray-600 shadow-xs transition hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue dark:border-gray-800 dark:bg-white/5 dark:text-gray-400 dark:hover:bg-white/10 dark:hover:text-white"
             :aria-pressed="isDarkMode"
             :aria-label="themeToggleLabel"
             :title="themeToggleLabel"
@@ -140,7 +142,7 @@ const isActive = (href) => {
           </button>
           <a
             :href="contact.href"
-            class="contact-button rounded-md bg-indigo-600 px-4 py-2 text-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-950"
+            class="contact-button rounded-md bg-brand-blue px-4 py-2 text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-brand-dark"
           >
             {{ contact.name }}
           </a>
@@ -148,7 +150,7 @@ const isActive = (href) => {
 
         <div class="-mr-2 flex items-center sm:hidden">
           <DisclosureButton
-            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-brand-blue dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
             aria-label="Menü öffnen"
           >
             <span class="sr-only">Menü öffnen</span>
@@ -159,7 +161,7 @@ const isActive = (href) => {
       </div>
     </div>
 
-    <DisclosurePanel class="sm:hidden dark:bg-gray-950 dark:text-gray-100">
+    <DisclosurePanel class="sm:hidden dark:bg-brand-dark dark:text-gray-100">
       <nav aria-label="Mobile Hauptnavigation" class="space-y-1 pb-3 pt-2">
         <DisclosureButton
           v-for="navItem in navigationItems"
@@ -169,8 +171,8 @@ const isActive = (href) => {
           :class="[
             'block border-l-4 py-2 pl-3 pr-4 text-base font-medium',
             isActive(navItem.href)
-              ? 'border-indigo-500 bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300'
-              : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-900 dark:hover:text-gray-100',
+              ? 'border-brand-blue bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/10 dark:text-white'
+              : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:border-gray-700 dark:hover:bg-white/5 dark:hover:text-white',
           ]"
         >
           {{ navItem.name }}
@@ -178,14 +180,18 @@ const isActive = (href) => {
       </nav>
 
       <div class="border-t border-gray-200 px-4 py-4 dark:border-gray-800">
-        <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">
+        <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
           Darstellungsmodus
         </p>
         <button
           type="button"
-          class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-100 dark:hover:bg-gray-800"
+          class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue dark:border-gray-700 dark:bg-white/5 dark:text-gray-100 dark:hover:bg-white/10"
           :aria-pressed="isDarkMode"
-          :aria-label="isDarkMode ? 'Dunkler Modus, zum hellen Modus wechseln' : 'Heller Modus, zum dunklen Modus wechseln'"
+          :aria-label="
+            isDarkMode
+              ? 'Dunkler Modus, zum hellen Modus wechseln'
+              : 'Heller Modus, zum dunklen Modus wechseln'
+          "
           :title="themeToggleLabel"
           @click="toggleTheme"
         >
@@ -199,7 +205,7 @@ const isActive = (href) => {
         <div class="flex items-center px-4">
           <a
             :href="contact.href"
-            class="w-full rounded-md bg-indigo-600 py-2 text-center text-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus:ring-offset-gray-900"
+            class="w-full rounded-md bg-brand-blue py-2 text-center text-white shadow-lg shadow-brand-blue/20 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 focus:ring-offset-gray-50 dark:hover:bg-blue-600 dark:focus:ring-offset-brand-dark"
           >
             {{ contact.name }}
           </a>

@@ -11,6 +11,8 @@ import {
   pathNames,
   getPostalAddress,
 } from "../config/site";
+import { inlineThemeScript } from "../utils/themeInline";
+import ConsentToast from "../components/ConsentToast.astro";
 
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, siteMeta.origin);
@@ -140,7 +142,7 @@ const structuredData = {
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
-      content="#030712"
+      content="#02040a"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -154,9 +156,43 @@ const structuredData = {
     </script>
     <script>
       import { init } from "@plausible-analytics/tracker";
-      const domain = window.__PLAUSIBLE_DOMAIN__;
-      if (domain) {
+
+      const CONSENT_KEY = "analytics-consent";
+      let initialized = false;
+
+      const hasConsent = () => {
+        try {
+          return localStorage.getItem(CONSENT_KEY) === "granted";
+        } catch {
+          return false;
+        }
+      };
+
+      const maybeInit = () => {
+        if (initialized) return;
+        const domain = (window as any).__PLAUSIBLE_DOMAIN__;
+        if (!domain || domain === "localhost") return;
+        if (!hasConsent()) return;
+
         init({ domain });
+        initialized = true;
+      };
+
+      (window as any).__grantAnalyticsConsent = () => {
+        try {
+          localStorage.setItem(CONSENT_KEY, "granted");
+        } catch {}
+        maybeInit();
+      };
+
+      (window as any).__revokeAnalyticsConsent = () => {
+        try {
+          localStorage.setItem(CONSENT_KEY, "denied");
+        } catch {}
+      };
+
+      if (hasConsent()) {
+        maybeInit();
       }
     </script>
 
@@ -165,41 +201,21 @@ const structuredData = {
       is:inline
       set:html={JSON.stringify(structuredData)}
     />
-    <!--
-      Prevents flash of unstyled content by applying theme before any CSS loads.
-      Must use same storage key as theme.ts utilities to stay in sync.
-    -->
-    <script is:inline>
-      (() => {
-        const STORAGE_KEY = "theme";
-        const stored = (() => {
-          try {
-            const v = localStorage.getItem(STORAGE_KEY);
-            return v === "dark" || v === "light" ? v : null;
-          } catch {
-            return null;
-          }
-        })();
-        const theme =
-          stored ??
-          (matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
-        document.documentElement.classList.toggle("dark", theme === "dark");
-        document.documentElement.style.colorScheme = theme;
-      })();
-    </script>
+    <!-- Prevent FOUC by applying theme before CSS; stays in sync with theme utilities -->
+    <script is:inline set:html={inlineThemeScript} />
   </head>
   <body
-    class="min-h-screen bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100"
+    class="min-h-screen bg-white text-gray-900 antialiased dark:bg-brand-dark dark:text-gray-100"
   >
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-indigo-600 focus:px-4 focus:py-2 focus:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-white focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
     >
       Zum Hauptinhalt springen
     </a>
     <Header currentPath={currentPath} client:load />
+
+    <ConsentToast />
 
     <main id="main-content" class={mainClass}>
       <slot />

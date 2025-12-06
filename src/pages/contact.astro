@@ -8,11 +8,11 @@ import { contact, contactChannels, availability } from "../config/site";
   description="Kontakt für Geschäftsführung, Bereichs- und Operationsleitungen: 30-minütiges Sparring, klare nächste Schritte und vertrauliche Zusammenarbeit für KI- & Automationsvorhaben."
 >
   <section
-    class="bg-white px-4 py-12 dark:bg-gray-950 sm:px-6 lg:px-12 lg:py-16"
+    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12 lg:py-16"
   >
     <div class="mx-auto max-w-3xl text-center">
       <p
-        class="text-sm font-semibold uppercase tracking-widest text-indigo-600"
+        class="text-sm font-semibold uppercase tracking-widest text-brand-gold"
       >
         Kontakt &amp; Verfügbarkeit
       </p>
@@ -22,9 +22,10 @@ import { contact, contactChannels, availability } from "../config/site";
         Lassen Sie uns sprechen.
       </h1>
       <p class="mt-4 text-base text-gray-600 dark:text-gray-300">
-        In einem 30-minütigen Erstgespräch identifizieren wir 2–3 Hebel, die in
-        den nächsten 90 Tagen spürbar Entlastung bringen können – egal ob durch
-        Automatisierung, KI-Assistants oder klare Verantwortlichkeiten.
+        In einem 30-minütigen Erstgespräch identifiziere ich gemeinsam mit Ihnen
+        2–3 Hebel, die in den nächsten 90 Tagen spürbar Entlastung bringen
+        können – egal ob durch Automatisierung, KI-Assistants oder klare
+        Verantwortlichkeiten.
       </p>
       <p class="mt-3 text-base text-gray-600 dark:text-gray-300">
         Ich melde mich in der Regel innerhalb von 24&nbsp;Stunden mit einem
@@ -35,13 +36,13 @@ import { contact, contactChannels, availability } from "../config/site";
   </section>
 
   <section
-    class="bg-gray-50 px-4 py-12 dark:bg-gray-900 sm:px-6 lg:px-12 lg:py-16"
+    class="bg-gray-50 px-4 py-12 dark:bg-brand-dark/50 sm:px-6 lg:px-12 lg:py-16"
   >
     <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-3 sm:gap-6">
       {
         contactChannels.map((channel) => (
-          <article class="rounded-3xl border border-gray-200 bg-white p-5 shadow-xs dark:border-gray-700 dark:bg-gray-950/60 sm:p-6">
-            <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+          <article class="rounded-3xl border border-gray-200 bg-white p-5 shadow-xs dark:border-white/10 dark:bg-white/5 sm:p-6">
+            <p class="text-xs font-semibold uppercase tracking-wide text-brand-gold">
               {channel.label}
             </p>
             <a
@@ -63,7 +64,7 @@ import { contact, contactChannels, availability } from "../config/site";
     <div class="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-3">
       {
         availability.map((item) => (
-          <article class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-900">
+          <article class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-white/10 dark:bg-white/5">
             <p class="text-sm font-semibold text-gray-900 dark:text-white">
               {item.title}
             </p>
@@ -77,16 +78,16 @@ import { contact, contactChannels, availability } from "../config/site";
   </section>
 
   <section
-    class="bg-white px-4 py-12 dark:bg-gray-950 sm:px-6 lg:px-12 lg:py-16"
+    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12 lg:py-16"
   >
     <div
-      class="mx-auto max-w-4xl rounded-3xl border border-gray-200 p-6 shadow-xs dark:border-gray-700 dark:bg-gray-900 sm:p-8"
+      class="mx-auto max-w-4xl rounded-3xl border border-gray-200 p-6 shadow-xs dark:border-white/10 dark:bg-white/5 sm:p-8"
     >
       <h2 class="text-xl font-bold text-gray-900 dark:text-white sm:text-2xl">
-        Was bereiten wir für den ersten Call vor?
+        Was Sie für den ersten Call vorbereiten können
       </h2>
       <ul
-        class="mt-4 ml-4 list-outside list-disc space-y-3 text-sm text-gray-600 marker:text-indigo-500 dark:text-gray-300 dark:marker:text-indigo-300"
+        class="mt-4 ml-4 list-outside list-disc space-y-3 text-sm text-gray-600 marker:text-brand-blue dark:text-gray-300 dark:marker:text-brand-gold"
       >
         <li>
           Wo geht aktuell am meisten Zeit verloren – Rückfragen, Reporting,
@@ -98,7 +99,7 @@ import { contact, contactChannels, availability } from "../config/site";
         </li>
         <li>
           Welche regulatorischen oder organisatorischen Rahmenbedingungen dürfen
-          wir nicht verletzen (DSGVO, BSI, Betriebsrat)?
+          Sie in Ihrem Setup nicht verletzen (DSGVO, BSI, Betriebsrat)?
         </li>
       </ul>
       <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
@@ -112,7 +113,7 @@ import { contact, contactChannels, availability } from "../config/site";
           href={contact.calendaring}
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
+          class="rounded-md bg-brand-blue px-5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-600 dark:hover:bg-blue-500"
         >
           Erstgespräch anfragen
         </a>
@@ -120,7 +121,7 @@ import { contact, contactChannels, availability } from "../config/site";
           href={contact.linkedin.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-400 dark:border-gray-600 dark:text-gray-100 dark:hover:border-gray-500"
+          class="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-400 dark:border-white/20 dark:text-gray-100 dark:hover:border-white/40"
         >
           LinkedIn-Nachricht senden
         </a>

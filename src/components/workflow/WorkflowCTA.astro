@@ -4,16 +4,16 @@ import { contact } from "../../config/site";
 
 <section
     id="cta"
-    class="relative overflow-hidden bg-indigo-600 py-16 text-white dark:bg-indigo-950 md:py-32"
+    class="relative overflow-hidden bg-brand-blue py-16 text-white dark:bg-brand-dark md:py-32"
 >
     <div
-        class="pointer-events-none absolute inset-0 opacity-10 dark:opacity-5"
+        class="pointer-events-none absolute inset-0 opacity-5 dark:opacity-[0.02]"
         style="background-size: 40px 40px; background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); mask-image: radial-gradient(circle at center, black 40%, transparent 100%); -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);"
     >
     </div>
 
     <div
-        class="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] -translate-y-1/2 translate-x-1/2 rounded-full bg-white/10 blur-3xl dark:bg-indigo-500/10"
+        class="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] -translate-y-1/2 translate-x-1/2 rounded-full bg-white/10 blur-3xl dark:bg-brand-blue/10"
     >
     </div>
 
@@ -23,7 +23,7 @@ import { contact } from "../../config/site";
         </h2>
 
         <p
-            class="mx-auto mb-12 max-w-2xl text-xl font-light text-indigo-100 md:text-2xl dark:text-indigo-200"
+            class="mx-auto mb-12 max-w-2xl text-xl font-light text-blue-100 md:text-2xl dark:text-gray-300"
         >
             In 30 Minuten finden wir gemeinsam heraus, welcher Prozess sich für
             Ihren 48h Sprint am meisten lohnt. Ich melde mich innerhalb von 24
@@ -35,19 +35,19 @@ import { contact } from "../../config/site";
         >
             <a
                 href="https://app.reclaim.ai/m/gartenai/workflow-sprint"
-                class="w-full rounded-xl bg-white px-8 py-4 text-lg font-bold text-indigo-600 shadow-2xl transition-transform hover:scale-105 hover:bg-gray-50 sm:w-auto dark:bg-white dark:text-indigo-900"
+                class="w-full rounded-xl bg-white px-8 py-4 text-lg font-bold text-brand-blue shadow-2xl transition-transform hover:scale-105 hover:bg-gray-50 sm:w-auto dark:bg-brand-gold dark:text-brand-dark"
             >
                 Kostenloses Erstgespräch buchen
             </a>
             <a
                 href={`mailto:${contact.email}`}
-                class="text-lg text-indigo-100 opacity-90 transition-opacity hover:opacity-100 hover:underline dark:text-indigo-200"
+                class="text-lg text-blue-100 opacity-90 transition-opacity hover:opacity-100 hover:underline dark:text-gray-300"
             >
                 Oder per E-Mail: {contact.email}
             </a>
         </div>
 
-        <p class="mt-12 text-sm text-indigo-200 dark:text-indigo-300/70">
+        <p class="mt-12 text-sm text-blue-200 dark:text-gray-400">
             Kein Verkaufsgespräch. Nur eine ehrliche Einschätzung Ihres
             Automatisierungspotenzials.
         </p>
