@@ -30,9 +30,9 @@
     --color-brand-blue: #2563eb; /* Electric Royal Blue */
     --color-brand-gold: #e0c49a; /* Champagne Gold */
     --color-brand-gold-dim: #a68e6d; /* Muted Gold for text */
-    
+
     /* Legacy/Fallback overrides if needed, but we should switch to semantic names */
-    --color-tiber-900: var(--color-brand-dark); 
+    --color-tiber-900: var(--color-brand-dark);
     --color-tiber-500: var(--color-brand-blue);
     --color-granny-apple: var(--color-brand-gold);
   }
@@ -43,7 +43,11 @@
 }
 
 @utility bg-glow-blue {
-  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    rgba(37, 99, 235, 0.15) 0%,
+    transparent 70%
+  );
 }
 
 @utility carousel-dot {
