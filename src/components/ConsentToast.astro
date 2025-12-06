@@ -50,6 +50,11 @@ const CONSENT_KEY = "analytics-consent";
 
 <script is:inline>
   (function () {
+    if (window.__consentBannerInitialized) {
+      return;
+    }
+    window.__consentBannerInitialized = true;
+
     var CONSENT_KEY = "analytics-consent";
 
     function initConsentBanner() {
