@@ -100,7 +100,9 @@ const isActive = (href) => {
             >
               GARTEN.ai
             </span>
-            <span class="text-[10px] uppercase tracking-wider text-brand-gold font-medium">
+            <span
+              class="text-[10px] uppercase tracking-wider text-brand-gold font-medium"
+            >
               AI Solution Architect
             </span>
           </a>
@@ -128,7 +130,7 @@ const isActive = (href) => {
         <div class="hidden sm:ml-6 sm:flex sm:items-center sm:gap-3">
           <button
             type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/70 text-gray-600 shadow-xs transition hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue dark:border-gray-800 dark:bg-white/5 dark:text-gray-400 dark:hover:bg-white/10 dark:hover:text-white"
+            class="cursor-pointer inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/70 text-gray-600 shadow-xs transition hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue dark:border-gray-800 dark:bg-white/5 dark:text-gray-400 dark:hover:bg-white/10 dark:hover:text-white"
             :aria-pressed="isDarkMode"
             :aria-label="themeToggleLabel"
             :title="themeToggleLabel"
@@ -185,7 +187,11 @@ const isActive = (href) => {
           type="button"
           class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white/80 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue dark:border-gray-700 dark:bg-white/5 dark:text-gray-100 dark:hover:bg-white/10"
           :aria-pressed="isDarkMode"
-          :aria-label="isDarkMode ? 'Dunkler Modus, zum hellen Modus wechseln' : 'Heller Modus, zum dunklen Modus wechseln'"
+          :aria-label="
+            isDarkMode
+              ? 'Dunkler Modus, zum hellen Modus wechseln'
+              : 'Heller Modus, zum dunklen Modus wechseln'
+          "
           :title="themeToggleLabel"
           @click="toggleTheme"
         >
