@@ -1,70 +1,75 @@
 ---
 interface FAQItem {
-    question: string;
-    answer: string;
+  question: string;
+  answer: string;
 }
 
 const faqs: FAQItem[] = [
-    {
-        question: "Welche Tools setzen Sie ein?",
-        answer: "Ich arbeite primär mit n8n als leistungsstarker Workflow-Engine und binde Ihre bestehenden Systeme an (CRM, Helpdesk, E-Mail, etc.). Wo sinnvoll, ergänze ich KI-Bausteine. Das Ziel ist immer: maximale Wirkung mit Ihrer vorhandenen Landschaft, ohne unnötigen neuen Tool-Ballast.",
-    },
-    {
-        question: "Wie sieht es mit Datenschutz aus?",
-        answer: "Security ist von Anfang an Teil des Designs (orientiert an BSI IT-Grundschutz, ISO 27001 und DSGVO). Sensible Daten verlassen Ihr System nur, wenn es fachlich notwendig und rechtlich vertretbar ist. Viele Workflows können komplett in Ihrer Infrastruktur (Self-Hosted) laufen.",
-    },
-    {
-        question: "Wie viel Aufwand hat unser Team?",
-        answer: "Minimal. Ich benötige 1–2 kompakte Termine (Kickoff, Review), um Ihr Fachwissen über den Prozess abzuholen. Die technische Umsetzung übernehme ich komplett. Im laufenden Betrieb spart Ihr Team deutlich mehr Zeit ein, als es investiert hat.",
-    },
-    {
-        question: "Geht das wirklich in 48 Stunden?",
-        answer: "Ja – vorausgesetzt, wir fokussieren uns auf einen klar definierten Prozess. Das ist der Kern des Sprints. Größere, komplexe Vorhaben teilen wir in mehrere Sprints auf, damit Sie trotzdem schnell erste Ergebnisse sehen.",
-    },
-    {
-        question: "Was kostet das?",
-        answer: 'Sie erhalten einen transparenten Festpreis direkt nach dem Erstgespräch. Keine versteckten Kosten, keine "Stundenabrechnung open end". Die Investition amortisiert sich erfahrungsgemäß in wenigen Wochen allein durch die eingesparte Arbeitszeit Ihrer Mitarbeiter.',
-    },
+  {
+    question: "Welche Tools setzen Sie ein?",
+    answer:
+      "Ich arbeite primär mit n8n als leistungsstarker Workflow-Engine und binde Ihre bestehenden Systeme an (CRM, Helpdesk, E-Mail, etc.). Wo sinnvoll, ergänze ich KI-Bausteine. Das Ziel ist immer: maximale Wirkung mit Ihrer vorhandenen Landschaft, ohne unnötigen neuen Tool-Ballast.",
+  },
+  {
+    question: "Wie sieht es mit Datenschutz aus?",
+    answer:
+      "Security ist von Anfang an Teil des Designs (orientiert an BSI IT-Grundschutz, ISO 27001 und DSGVO). Sensible Daten verlassen Ihr System nur, wenn es fachlich notwendig und rechtlich vertretbar ist. Viele Workflows können komplett in Ihrer Infrastruktur (Self-Hosted) laufen.",
+  },
+  {
+    question: "Wie viel Aufwand hat unser Team?",
+    answer:
+      "Minimal. Ich benötige 1–2 kompakte Termine (Kickoff, Review), um Ihr Fachwissen über den Prozess abzuholen. Die technische Umsetzung übernehme ich komplett. Im laufenden Betrieb spart Ihr Team deutlich mehr Zeit ein, als es investiert hat.",
+  },
+  {
+    question: "Geht das wirklich in 48 Stunden?",
+    answer:
+      "Ja – vorausgesetzt, ich fokussiere mich auf einen klar definierten Prozess. Das ist der Kern des Sprints. Größere, komplexe Vorhaben teile ich in mehrere Sprints auf, damit Sie trotzdem schnell erste Ergebnisse sehen.",
+  },
+  {
+    question: "Was kostet das?",
+    answer:
+      'Sie erhalten einen transparenten Festpreis direkt nach dem Erstgespräch. Keine versteckten Kosten, keine "Stundenabrechnung open end". Die Investition amortisiert sich erfahrungsgemäß in wenigen Wochen allein durch die eingesparte Arbeitszeit Ihrer Mitarbeiter.',
+  },
 ];
 ---
 
 <section class="bg-gray-100 py-24 dark:bg-gray-900">
-    <div class="container mx-auto max-w-3xl px-4">
-        <h2
-            class="mb-12 text-center text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
-        >
-            Häufige Fragen
-        </h2>
+  <div class="container mx-auto max-w-3xl px-4">
+    <h2
+      class="mb-12 text-center text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
+    >
+      Häufige Fragen
+    </h2>
 
-        <div class="space-y-4">
-            {
-                faqs.map((faq, index) => (
-                    <details
-                        class="group rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
-                        open={index === 0}
-                    >
-                        <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-gray-900 dark:text-white">
-                            {faq.question}
-                            <svg
-                                class="h-5 w-5 shrink-0 text-gray-500 transition-transform group-open:rotate-180 dark:text-gray-400"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M19 9l-7 7-7-7"
-                                />
-                            </svg>
-                        </summary>
-                        <div class="border-t border-gray-200 px-6 pb-6 pt-4 text-gray-600 dark:border-gray-700 dark:text-gray-300">
-                            <p>{faq.answer}</p>
-                        </div>
-                    </details>
-                ))
-            }
-        </div>
+    <div class="space-y-4">
+      {
+        faqs.map((faq, index) => (
+          <details
+            class="group rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
+            open={index === 0}
+          >
+            <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-gray-900 dark:text-white">
+              {faq.question}
+              <svg
+                class="h-5 w-5 shrink-0 text-gray-500 transition-transform group-open:rotate-180 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </summary>
+            <div class="border-t border-gray-200 px-6 pb-6 pt-4 text-gray-600 dark:border-gray-700 dark:text-gray-300">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
     </div>
+  </div>
 </section>
