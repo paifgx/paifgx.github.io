@@ -13,5 +13,12 @@ export default defineConfig({
   integrations: [vue(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 1000,
+      },
+      host: true, // Listen on all addresses (0.0.0.0) for container access
+    },
   },
 });
