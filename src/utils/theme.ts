@@ -5,7 +5,7 @@
 
 export type Theme = "light" | "dark";
 
-const STORAGE_KEY = "theme";
+export const THEME_STORAGE_KEY = "theme";
 
 /**
  * Returns null if no valid preference exists, allowing fallback to system theme.
@@ -13,7 +13,7 @@ const STORAGE_KEY = "theme";
 export function getStoredTheme(): Theme | null {
   if (typeof localStorage === "undefined") return null;
 
-  const stored = localStorage.getItem(STORAGE_KEY);
+  const stored = localStorage.getItem(THEME_STORAGE_KEY);
   if (stored === "light" || stored === "dark") {
     return stored;
   }
@@ -60,7 +60,7 @@ export function applyTheme(theme: Theme): void {
  */
 export function persistTheme(theme: Theme): void {
   if (typeof localStorage !== "undefined") {
-    localStorage.setItem(STORAGE_KEY, theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
   }
   applyTheme(theme);
 }
@@ -107,7 +107,7 @@ export function onStorageChange(callback: (theme: Theme) => void): () => void {
   if (typeof window === "undefined") return () => {};
 
   const handler = (e: StorageEvent) => {
-    if (e.key === STORAGE_KEY && (e.newValue === "light" || e.newValue === "dark")) {
+    if (e.key === THEME_STORAGE_KEY && (e.newValue === "light" || e.newValue === "dark")) {
       callback(e.newValue);
     }
   };

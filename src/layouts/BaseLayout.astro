@@ -11,6 +11,7 @@ import {
   pathNames,
   getPostalAddress,
 } from "../config/site";
+import { inlineThemeScript } from "../utils/themeInline";
 
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, siteMeta.origin);
@@ -165,30 +166,8 @@ const structuredData = {
       is:inline
       set:html={JSON.stringify(structuredData)}
     />
-    <!--
-      Prevents flash of unstyled content by applying theme before any CSS loads.
-      Must use same storage key as theme.ts utilities to stay in sync.
-    -->
-    <script is:inline>
-      (() => {
-        const STORAGE_KEY = "theme";
-        const stored = (() => {
-          try {
-            const v = localStorage.getItem(STORAGE_KEY);
-            return v === "dark" || v === "light" ? v : null;
-          } catch {
-            return null;
-          }
-        })();
-        const theme =
-          stored ??
-          (matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
-        document.documentElement.classList.toggle("dark", theme === "dark");
-        document.documentElement.style.colorScheme = theme;
-      })();
-    </script>
+    <!-- Prevent FOUC by applying theme before CSS; stays in sync with theme utilities -->
+    <script is:inline set:html={inlineThemeScript} />
   </head>
   <body
     class="min-h-screen bg-white text-gray-900 antialiased dark:bg-brand-dark dark:text-gray-100"
