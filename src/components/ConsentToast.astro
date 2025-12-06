@@ -109,6 +109,11 @@ const CONSENT_KEY = "analytics-consent";
           hidePanel();
         };
       }
+
+      window.__openAnalyticsConsent = function () {
+        setConsent("");
+        showPanel();
+      };
     }
 
     if (document.readyState === "loading") {
