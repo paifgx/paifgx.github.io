@@ -200,6 +200,7 @@ const totalSlides = getTotalSlides();
     ).matches;
 
     let currentSlide = 0;
+    let userPaused = prefersReducedMotion;
     // Respects user's motion preferences to avoid triggering vestibular disorders
     let isPaused = prefersReducedMotion;
     let interval: ReturnType<typeof setInterval> | null = null;
@@ -240,16 +241,30 @@ const totalSlides = getTotalSlides();
       showSlide((currentSlide - 1 + totalSlides) % totalSlides);
     };
 
+    const stopAutoplay = () => {
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+      }
+    };
+
     const startAutoplay = () => {
-      if (interval) clearInterval(interval);
+      stopAutoplay();
       interval = setInterval(() => {
         if (!isPaused) nextSlide();
       }, 5000);
     };
 
+    const updateToggleUI = () => {
+      if (!toggleBtn) return;
+      toggleBtn.textContent = isPaused
+        ? "Auto-Play fortsetzen"
+        : "Auto-Play pausieren";
+      toggleBtn.setAttribute("aria-pressed", isPaused.toString());
+    };
+
     if (toggleBtn && prefersReducedMotion) {
-      toggleBtn.textContent = "Auto-Play fortsetzen";
-      toggleBtn.setAttribute("aria-pressed", "true");
+      updateToggleUI();
     }
 
     prevBtn?.addEventListener("click", () => {
@@ -261,11 +276,12 @@ const totalSlides = getTotalSlides();
     });
 
     toggleBtn?.addEventListener("click", () => {
-      isPaused = !isPaused;
-      toggleBtn.textContent = isPaused
-        ? "Auto-Play fortsetzen"
-        : "Auto-Play pausieren";
-      toggleBtn.setAttribute("aria-pressed", isPaused.toString());
+      userPaused = !userPaused;
+      isPaused = userPaused;
+      updateToggleUI();
+      if (!isPaused) {
+        startAutoplay();
+      }
     });
 
     dots.forEach((dot, index) => {
@@ -295,6 +311,26 @@ const totalSlides = getTotalSlides();
         }
       });
     });
+
+    const handleVisibility = () => {
+      if (document.hidden) {
+        isPaused = true;
+        stopAutoplay();
+        updateToggleUI();
+        return;
+      }
+      // Only resume if the user did not explicitly pause and motion is allowed
+      if (!userPaused && !prefersReducedMotion) {
+        isPaused = false;
+        updateToggleUI();
+        startAutoplay();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("blur", handleVisibility);
+    window.addEventListener("focus", handleVisibility);
+    window.addEventListener("beforeunload", stopAutoplay);
 
     if (!prefersReducedMotion) {
       startAutoplay();
