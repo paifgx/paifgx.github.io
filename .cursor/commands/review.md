@@ -144,7 +144,7 @@ Deliver a focused review of the DIFFERENCES between main and the feature branch,
 
 Execution:
 
-1. Run `git diff main` to get the changes
+1. Run `git diff` to get the changes
 2. Analyze each changed file
 3. Apply fixes using the edit tools
 4. Summarize what was done
