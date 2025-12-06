@@ -12,6 +12,7 @@ import {
   getPostalAddress,
 } from "../config/site";
 import { inlineThemeScript } from "../utils/themeInline";
+import ConsentToast from "../components/ConsentToast.astro";
 
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, siteMeta.origin);
@@ -214,129 +215,7 @@ const structuredData = {
     </a>
     <Header currentPath={currentPath} client:load />
 
-    <div
-      aria-live="assertive"
-      class="pointer-events-none fixed inset-0 z-50 flex items-end px-4 py-6 sm:items-start sm:p-6"
-    >
-      <div class="flex w-full flex-col items-center space-y-4 sm:items-end">
-        <div
-          id="analytics-toast"
-          class="pointer-events-auto hidden w-full max-w-md transform divide-x divide-gray-200 rounded-lg bg-white opacity-100 shadow-lg outline-1 outline-black/5 transition duration-300 ease-out dark:divide-white/10 dark:bg-gray-800 dark:-outline-offset-1 dark:outline-white/10"
-        >
-          <div class="flex w-0 flex-1 items-center p-4">
-            <div class="w-full">
-              <p class="text-sm font-medium text-gray-900 dark:text-white">
-                Analytics mit Plausible
-              </p>
-              <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                Anonyme Nutzungsstatistik ohne Drittanbieter-Cookies.
-              </p>
-            </div>
-          </div>
-          <div class="flex">
-            <div
-              class="flex flex-col divide-y divide-gray-200 dark:divide-white/10"
-            >
-              <div class="flex h-0 flex-1">
-                <button
-                  id="analytics-accept"
-                  type="button"
-                  class="cursor-pointer flex w-full items-center justify-center rounded-none rounded-tr-lg px-4 py-3 text-sm font-medium text-brand-blue hover:text-blue-600 focus:z-10 focus:outline-2 focus:outline-brand-blue dark:text-brand-gold dark:hover:text-brand-gold/80 dark:focus:outline-brand-gold"
-                >
-                  Zustimmen
-                </button>
-              </div>
-              <div class="flex h-0 flex-1">
-                <button
-                  id="analytics-deny"
-                  type="button"
-                  class="cursor-pointer flex w-full items-center justify-center rounded-none rounded-br-lg px-4 py-3 text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-2 focus:outline-brand-blue dark:text-gray-300 dark:hover:text-white dark:focus:outline-brand-gold"
-                >
-                  Ablehnen
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script is:inline>
-      (function () {
-        var CONSENT_KEY = "analytics-consent";
-
-        function initConsentBanner() {
-          var panel = document.getElementById("analytics-toast");
-          var acceptBtn = document.getElementById("analytics-accept");
-          var denyBtn = document.getElementById("analytics-deny");
-
-          if (!panel) return;
-
-          function getConsent() {
-            try {
-              return localStorage.getItem(CONSENT_KEY);
-            } catch (e) {
-              return null;
-            }
-          }
-
-          function setConsent(value) {
-            try {
-              localStorage.setItem(CONSENT_KEY, value);
-            } catch (e) {}
-          }
-
-          function hidePanel() {
-            if (panel) {
-              panel.classList.remove("flex");
-              panel.classList.add("hidden");
-            }
-          }
-
-          function showPanel() {
-            if (panel) {
-              panel.classList.remove("hidden");
-              panel.classList.add("flex");
-            }
-          }
-
-          var consent = getConsent();
-          if (consent === "granted" || consent === "denied") {
-            hidePanel();
-          } else {
-            showPanel();
-          }
-
-          if (acceptBtn) {
-            acceptBtn.onclick = function () {
-              setConsent("granted");
-              if (window.__grantAnalyticsConsent) {
-                window.__grantAnalyticsConsent();
-              }
-              hidePanel();
-            };
-          }
-
-          if (denyBtn) {
-            denyBtn.onclick = function () {
-              setConsent("denied");
-              if (window.__revokeAnalyticsConsent) {
-                window.__revokeAnalyticsConsent();
-              }
-              hidePanel();
-            };
-          }
-        }
-
-        if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", initConsentBanner);
-        } else {
-          initConsentBanner();
-        }
-
-        document.addEventListener("astro:page-load", initConsentBanner);
-      })();
-    </script>
+    <ConsentToast />
 
     <main id="main-content" class={mainClass}>
       <slot />
