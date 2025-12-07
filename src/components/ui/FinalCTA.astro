@@ -1,0 +1,82 @@
+---
+interface LinkProps {
+  label: string;
+  href: string;
+  external?: boolean;
+  mailtoSubject?: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  primary?: LinkProps;
+  secondary?: LinkProps;
+}
+
+const { eyebrow = "Nächste Schritte", title, primary, secondary } = Astro.props;
+
+const linkTarget = (external?: boolean) => (external ? "_blank" : undefined);
+const linkRel = (external?: boolean) =>
+  external ? "noopener noreferrer" : undefined;
+
+const withSubject = (href: string, subject?: string) =>
+  subject ? `${href}${href.includes("?") ? "&" : "?"}subject=${subject}` : href;
+---
+
+<section class="relative isolate overflow-hidden py-16 sm:py-24">
+  <div
+    class="absolute inset-0 -z-10 bg-linear-to-br from-brand-blue via-blue-700 to-brand-dark dark:from-blue-900 dark:via-brand-dark dark:to-black opacity-100"
+  >
+  </div>
+
+  <div class="mx-auto max-w-3xl px-6 text-center lg:px-8">
+    {
+      eyebrow && (
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm">
+          {eyebrow}
+        </div>
+      )
+    }
+
+    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      {title}
+    </h2>
+
+    <div class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-200">
+      <slot />
+    </div>
+
+    {
+      (primary || secondary) && (
+        <div class="mt-10 flex flex-wrap justify-center gap-6">
+          {primary && (
+            <a
+              href={withSubject(primary.href, primary.mailtoSubject)}
+              target={linkTarget(primary.external)}
+              rel={linkRel(primary.external)}
+              class="rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand-blue shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              {primary.label}
+            </a>
+          )}
+          {secondary && (
+            <a
+              href={withSubject(secondary.href, secondary.mailtoSubject)}
+              target={linkTarget(secondary.external)}
+              rel={linkRel(secondary.external)}
+              class="rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              {secondary.label}
+            </a>
+          )}
+        </div>
+      )
+    }
+
+    <div
+      class="mt-8 text-xs font-medium uppercase tracking-[0.3em] text-white/60"
+    >
+      <slot name="footer" />
+    </div>
+  </div>
+</section>

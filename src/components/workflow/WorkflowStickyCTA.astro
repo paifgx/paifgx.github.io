@@ -3,43 +3,43 @@
 ---
 
 <div
-    id="sticky-cta"
-    class="fixed bottom-4 right-4 z-50 hidden translate-y-24 transition-transform duration-300 ease-in-out md:block"
+  id="sticky-cta"
+  class="fixed bottom-4 right-4 z-50 hidden translate-y-24 transition-transform duration-300 ease-in-out md:block"
 >
-    <a
-        href="https://app.reclaim.ai/m/gartenai/workflow-sprint"
-        class="inline-block rounded-lg bg-brand-blue px-5 py-3 font-semibold text-white shadow-2xl transition-all hover:bg-blue-600 hover:shadow-brand-blue/25"
-    >
-        Erstgespräch buchen
-    </a>
+  <a
+    href="https://app.reclaim.ai/m/gartenai/workflow-sprint"
+    class="inline-block rounded-full bg-orange-600 px-6 py-3 font-bold text-white shadow-2xl transition-all hover:-translate-y-1 hover:bg-orange-500 hover:shadow-orange-600/30"
+  >
+    Erstgespräch buchen
+  </a>
 </div>
 
 <script>
-    let stickyCTA = null;
+  let stickyCTA = null;
 
-    function toggleStickyCTA() {
-        if (!stickyCTA) {
-            stickyCTA = document.getElementById("sticky-cta");
-        }
-        if (window.scrollY > window.innerHeight * 0.8) {
-            stickyCTA?.classList.remove("translate-y-24");
-        } else {
-            stickyCTA?.classList.add("translate-y-24");
-        }
+  function toggleStickyCTA() {
+    if (!stickyCTA) {
+      stickyCTA = document.getElementById("sticky-cta");
     }
-
-    function initStickyCTA() {
-        stickyCTA = document.getElementById("sticky-cta");
-        toggleStickyCTA();
-    }
-
-    window.addEventListener("scroll", toggleStickyCTA);
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initStickyCTA);
+    if (window.scrollY > window.innerHeight * 0.8) {
+      stickyCTA?.classList.remove("translate-y-24");
     } else {
-        initStickyCTA();
+      stickyCTA?.classList.add("translate-y-24");
     }
+  }
 
-    document.addEventListener("astro:page-load", initStickyCTA);
+  function initStickyCTA() {
+    stickyCTA = document.getElementById("sticky-cta");
+    toggleStickyCTA();
+  }
+
+  window.addEventListener("scroll", toggleStickyCTA);
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initStickyCTA);
+  } else {
+    initStickyCTA();
+  }
+
+  document.addEventListener("astro:page-load", initStickyCTA);
 </script>

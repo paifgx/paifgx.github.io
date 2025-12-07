@@ -1,0 +1,58 @@
+---
+import { contact } from "../../config/site";
+import { ctaCopy } from "../../data/home";
+---
+
+<section
+  id="cta"
+  class="relative bg-brand-blue px-6 py-24 sm:px-6 sm:py-32 lg:px-8 overflow-hidden"
+>
+  <div
+    class="absolute inset-0 -z-10 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] bg-size-[16px_16px]"
+  >
+  </div>
+
+  <div
+    class="absolute inset-0 bg-linear-to-br from-brand-blue via-blue-700 to-brand-dark dark:from-blue-900 dark:via-brand-dark dark:to-black opacity-100"
+  >
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-4xl text-center">
+    <h2
+      class="text-3xl font-bold tracking-tight text-white sm:text-4xl drop-shadow-md"
+    >
+      {ctaCopy.title}
+      <br />
+      Sichern Sie sich Ihr kostenloses Sparring.
+    </h2>
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
+      {ctaCopy.subline}
+    </p>
+
+    <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3 text-left">
+      {
+        ctaCopy.steps.map((step) => (
+          <div class="rounded-xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur-md hover:bg-white/15 transition-colors">
+            <div class="mb-4 text-xl font-bold text-brand-gold">
+              {step.number}
+            </div>
+            <h3 class="font-semibold text-white">{step.title}</h3>
+            <p class="mt-2 text-sm text-blue-100">{step.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 flex items-center justify-center gap-x-6">
+      <a
+        href={contact.calendaring}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-full bg-white px-8 py-4 text-lg font-semibold text-brand-blue shadow-lg shadow-brand-blue/50 hover:bg-blue-50 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all hover:scale-105"
+      >
+        Jetzt 30-Minuten-Sparring buchen
+      </a>
+    </div>
+    <p class="mt-6 text-sm text-blue-200">Unverbindlich & kostenlos.</p>
+  </div>
+</section>

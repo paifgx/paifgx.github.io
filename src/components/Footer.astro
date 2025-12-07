@@ -84,7 +84,7 @@ import {
               >
                 <path
                   fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                  d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-1.504 1.663a5.427 5.427 0 0 0-1.73-3.807 7.978 7.978 0 0 1-1.623 3.807Zm-2.647 1.333a7.977 7.977 0 0 1-1.598-3.806h3.33a7.978 7.978 0 0 1-1.732 3.806Zm-3.33-5.306a6.48 6.48 0 0 0 1.598-3.806 7.98 7.98 0 0 1 1.732 3.806h-3.33Zm-1.5 5.306a6.481 6.481 0 0 1-1.732-3.806h3.33a6.48 6.48 0 0 1-1.598 3.806ZM9.019 7.69a6.48 6.48 0 0 1 1.732-3.806 5.426 5.426 0 0 0-1.73 3.807h-1.733Zm-3.25 1.5h3.25a7.977 7.977 0 0 1 1.598 3.806 5.427 5.427 0 0 0 1.73-3.807h-3.25a6.481 6.481 0 0 0-1.73 3.807h-1.598Zm3.328 0a7.98 7.98 0 0 0 1.732 3.806h-3.33a6.481 6.481 0 0 0 1.598-3.806ZM6.75 9.19a5.427 5.427 0 0 0-1.73 3.807h1.73a6.481 6.481 0 0 0 1.598-3.806H6.75Zm5.096-1.5a6.48 6.48 0 0 0 1.732-3.806 7.978 7.978 0 0 1 1.623 3.807h-3.355Z"
                   clip-rule="evenodd"></path>
               </svg>
               www.garten.ai
@@ -122,8 +122,10 @@ import {
           {
             focusAreas.map((area) => (
               <li class="flex items-start gap-2">
-                <span class="mt-1.5 w-1 h-1 rounded-full bg-brand-blue shrink-0" />
-                <span class="text-gray-400">{area.title}</span>
+                <span class="mt-2 w-1 h-1 rounded-full bg-brand-blue shrink-0" />
+                <span class="text-gray-400 flex-1 leading-snug">
+                  {area.title}
+                </span>
               </li>
             ))
           }
@@ -140,8 +142,8 @@ import {
           {
             currentMandates.map((mandate) => (
               <li class="flex items-start gap-2">
-                <span class="mt-1.5 w-1 h-1 rounded-full bg-brand-gold shrink-0" />
-                <span class="text-gray-400">
+                <span class="mt-2 w-1 h-1 rounded-full bg-brand-gold shrink-0" />
+                <span class="text-gray-400 flex-1 leading-snug">
                   <strong class="text-gray-300">{mandate.company}</strong>{" "}
                   <br />
                   <span class="text-xs text-gray-500">{mandate.role}</span>

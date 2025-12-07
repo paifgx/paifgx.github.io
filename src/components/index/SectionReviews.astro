@@ -1,22 +1,26 @@
 ---
 import { caseStudies } from "../../content/caseStudies";
 import CaseStudiesCarousel from "./CaseStudiesCarousel.vue";
+import SectionSubtitle from "../ui/SectionSubtitle.astro";
 ---
 
-<div class="mb-12 max-w-4xl">
-  <p class="text-sm font-semibold uppercase tracking-widest text-brand-gold">
-    Referenzen
-  </p>
-  <h2
-    id="case-studies-heading"
-    class="mt-2 text-3xl font-bold text-gray-900 dark:text-white"
-  >
-    Ausschnitt aus vergangenen Mandaten
-  </h2>
-  <p class="mt-3 text-base text-gray-600 dark:text-gray-300">
-    Drei Blickwinkel pro Projekt: Ausgangslage, Ansatz und was davon im Alltag
-    spürbar bleibt – plus der Tech-Stack für Ihr Audit.
-  </p>
-</div>
+<section
+  class="container mx-auto px-4 py-12 text-gray-900 dark:text-gray-100 sm:px-6 lg:py-24"
+  aria-labelledby="case-studies-heading"
+>
+  <div class="mb-12 max-w-4xl">
+    <SectionSubtitle>Referenzen</SectionSubtitle>
+    <h2
+      id="case-studies-heading"
+      class="mt-2 text-3xl font-bold text-gray-900 dark:text-white"
+    >
+      Ausschnitt aus vergangenen Mandaten
+    </h2>
+    <p class="mt-3 text-base text-gray-600 dark:text-gray-300">
+      Drei Blickwinkel pro Projekt: Ausgangslage, Ansatz und was davon im Alltag
+      spürbar bleibt – plus der Tech-Stack für Ihr Audit.
+    </p>
+  </div>
 
-<CaseStudiesCarousel caseStudies={caseStudies} client:load />
+  <CaseStudiesCarousel caseStudies={caseStudies} client:load />
+</section>

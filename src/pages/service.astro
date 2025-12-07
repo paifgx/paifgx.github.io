@@ -5,12 +5,14 @@ import programmingImage from "../assets/programming.jpg";
 import { serviceStats, contact } from "../config/site";
 import PillLink from "../components/ui/PillLink.astro";
 import SectionSubtitle from "../components/ui/SectionSubtitle.astro";
+import ServiceArticle from "../components/ServiceArticle.astro";
 import {
   servicePillars,
   engagementModes,
   technologyHighlights,
   painPoints,
 } from "../data/service";
+import FinalCTA from "../components/ui/FinalCTA.astro";
 
 // Enables FAQ rich snippets in search results to improve visibility
 const faqSchema = {
@@ -62,32 +64,43 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  classDefintion="bg-gray-50 text-gray-900 dark:bg-brand-dark dark:text-gray-100"
+  classDefintion="bg-white text-gray-900 dark:bg-brand-dark dark:text-gray-100"
   title="Dienstleistungen & Serviceportfolio"
   description="Outcome-basierte AI Delivery: RAG & Agentensysteme, Platform Engineering und Enablement für Teams. Security-by-Design nach BSI IT-Grundschutz & ISO 27001."
 >
-  <section class="relative overflow-hidden px-4 py-12 sm:px-12 lg:py-20">
+  <section class="relative overflow-hidden px-4 py-12 sm:px-12 lg:py-24">
     <div
-      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.15),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.25),transparent_55%)]"
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none overflow-hidden"
     >
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-brand-blue opacity-10 blur-[120px] rounded-full mix-blend-screen"
+      >
+      </div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-brand-blue opacity-5 blur-[100px] rounded-full mix-blend-screen"
+      >
+      </div>
     </div>
-    <div
-      class="pointer-events-none absolute -bottom-32 right-0 -z-10 h-72 w-72 rounded-full bg-brand-blue/10 blur-[140px] dark:bg-brand-blue/20"
-    >
-    </div>
-    <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
+    <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 z-10">
       <div class="space-y-5">
         <span
-          class="inline-flex w-fit items-center gap-2 rounded-full border border-slate-900/10 bg-white/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold dark:border-white/10 dark:bg-white/5 dark:text-brand-gold"
+          class="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-sm font-medium text-brand-gold-dim backdrop-blur-sm dark:text-brand-gold dark:bg-brand-gold/5"
         >
           Serviceportfolio
         </span>
         <div class="space-y-5">
-          <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl">
-            KI-Architektur &amp; Delivery, die Ihren Betrieb entlastet – nicht
-            nur neue Tools einführt.
+          <h1
+            class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl"
+          >
+            KI-Architektur &amp; Delivery, die <br class="hidden lg:block" />
+            <span
+              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-indigo-400"
+              >Ihren Betrieb entlastet
+            </span>.
           </h1>
-          <p class="text-lg leading-8 text-gray-600 dark:text-gray-300">
+          <p
+            class="text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-3xl"
+          >
             Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit,
             Skalierbarkeit und Ownership in Ihrem Team. Leistungsbausteine
             lassen sich kombinieren – remote im DACH-Raum oder vor Ort.
@@ -117,7 +130,7 @@ const faqSchema = {
       </div>
 
       <div
-        class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/90 p-5 text-sm text-gray-700 shadow-xl shadow-brand-blue/10 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-brand-blue/10 sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch"
+        class="grid gap-8 rounded-[2.5rem] border border-gray-200 bg-white p-5 text-sm text-gray-700 shadow-lg shadow-brand-blue/5 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-none sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch"
       >
         <div class="space-y-8">
           <div
@@ -125,11 +138,25 @@ const faqSchema = {
           >
             {
               painPoints.map((pain) => (
-                <article class="flex flex-col">
-                  <p class="mb-3 sm:min-h-12 text-xs font-semibold uppercase tracking-[0.25em] text-brand-gold">
+                <article class="flex flex-col gap-2">
+                  <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold mb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5Zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <p class="text-sm font-semibold text-gray-900 dark:text-white">
                     {pain.title}
                   </p>
-                  <p class="leading-6 text-gray-600 dark:text-gray-300">
+                  <p class="leading-6 text-gray-600 dark:text-gray-400">
                     {pain.description}
                   </p>
                 </article>
@@ -138,10 +165,10 @@ const faqSchema = {
           </div>
           <div class="space-y-3">
             <SectionSubtitle>Hands-on Engineering</SectionSubtitle>
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
               Architektur-Reviews, die direkt im Editor landen.
             </h3>
-            <p class="leading-6 text-gray-700 dark:text-gray-200">
+            <p class="leading-6 text-gray-700 dark:text-gray-300">
               Strategie endet bei mir nicht im Deck. Zwischen Architecture
               Boards, Security-Reviews und Delivery sitze ich selbst im Code,
               begleite Deployments und dokumentiere Entscheidungen für Product,
@@ -153,37 +180,37 @@ const faqSchema = {
             </p>
           </div>
           <div
-            class="space-y-3 border-t border-slate-200/60 pt-6 dark:border-white/10"
+            class="space-y-3 border-t border-gray-100 pt-6 dark:border-white/10"
           >
             <SectionSubtitle>Arbeitsweise</SectionSubtitle>
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
               Strategy-to-Execution mit Verantwortung.
             </h3>
-            <p class="text-gray-700 dark:text-gray-200">
+            <p class="text-gray-700 dark:text-gray-300">
               Ich starte mit Ihrem Engpass (z. B. Medienbrüche, Personalmangel,
               Aufsichtsanforderungen) und bauen von dort aus Architektur-Slices,
               Operating Models und Delivery-Workstreams auf. Security,
               Datenschutz und Enablement laufen nicht nebenher, sondern sind
               Bestandteil jedes Meilensteins.
             </p>
-            <p class="text-sm text-gray-500 dark:text-gray-300">
+            <p class="text-sm text-gray-500 dark:text-gray-400">
               Reviews · Architecture Boards · Shadowing · Enablement
             </p>
           </div>
         </div>
         <figure
-          class="flex min-h-[340px] flex-col overflow-hidden rounded-[2.5rem] bg-slate-900/90 shadow-lg shadow-brand-blue/10 dark:bg-white/5 dark:shadow-brand-blue/10"
+          class="flex min-h-[340px] flex-col overflow-hidden rounded-4xl bg-brand-dark/90 shadow-lg shadow-brand-blue/10 dark:bg-white/5 dark:shadow-none ring-1 ring-gray-900/5 dark:ring-white/10"
         >
           <Image
             src={programmingImage}
             alt="Patrik arbeitet an zwei Monitoren mit Code und Infrastruktur-Dashboards."
-            class="h-full w-full flex-1 object-cover"
+            class="h-full w-full flex-1 object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
             widths={[400, 800, 1200]}
             format="avif"
             loading="lazy"
           />
           <figcaption
-            class="bg-white/95 p-4 text-sm text-gray-600 dark:bg-white/5 dark:text-gray-300"
+            class="bg-white/95 p-6 text-sm text-gray-600 dark:bg-black/40 dark:backdrop-blur-md dark:text-gray-300 border-t border-gray-100 dark:border-white/10"
           >
             „Deep Engineering" heißt: Architekturentscheidungen entstehen dort,
             wo sie implementiert und observiert werden.
@@ -192,21 +219,21 @@ const faqSchema = {
       </div>
 
       <dl
-        class="grid gap-8 rounded-[2.5rem] border border-slate-900/5 bg-white/80 p-8 text-sm shadow-xl shadow-brand-blue/10 sm:grid-cols-3 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-brand-blue/10"
+        class="grid gap-8 rounded-[2.5rem] border border-gray-200 bg-white p-8 text-sm shadow-lg shadow-brand-blue/5 sm:grid-cols-3 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-none"
       >
         {
           serviceStats.map((stat, index) => {
             const dividerClass =
               index === 0
                 ? ""
-                : "sm:border-l sm:pl-8 border-slate-900/10 dark:border-white/15";
+                : "sm:border-l sm:pl-8 border-gray-200 dark:border-white/10";
 
             return (
               <div class={`space-y-2 text-left ${dividerClass}`}>
-                <dt class="text-sm leading-6 text-gray-600 dark:text-gray-300">
+                <dt class="text-sm leading-6 text-gray-600 dark:text-gray-400">
                   {stat.label}
                 </dt>
-                <dd class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                <dd class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {stat.value}
                 </dd>
               </div>
@@ -218,49 +245,154 @@ const faqSchema = {
   </section>
 
   <section
-    class="bg-gray-50 px-4 py-12 dark:bg-brand-dark/50 sm:px-12 lg:py-16"
+    class="relative bg-white dark:bg-brand-dark overflow-hidden py-12 sm:py-16"
   >
-    <div class="mx-auto max-w-6xl space-y-6">
-      <div class="space-y-3">
+    <div class="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <SectionSubtitle>Deep Dives</SectionSubtitle>
+        <h2
+          class="mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+        >
+          Drei Wege zur Entlastung
+        </h2>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+          Von der Prozessautomatisierung über stabile Systemlandschaften bis zum
+          nachhaltigen Team-Enablement.
+        </p>
+      </div>
+    </div>
+
+    <ServiceArticle
+      subtitle="Prozesse entlasten"
+      title="Prozesse automatisieren & Medienbrüche abbauen"
+      imagePosition="right"
+      image="https://images.unsplash.com/photo-1716637644831-e046c73be197?q=80&w=2940&auto=format&fit=crop"
+      imageAlt="Smartphone fotografiert einen Laptop, auf dessen Bildschirm ein leuchtendes, KI-inspiriertes Gehirn im Profil zu sehen ist – Symbol für moderne AI-Lösungen und digitale Innovation."
+      paragraphs={{
+        intro:
+          "Viele KMU kämpfen mit Copy-Paste, Mehrfacherfassung und fehlender Transparenz. Ich baue Automationen und KI-Assistants, die direkt in bestehende Systeme greifen, Medienbrüche schließen und Mitarbeitende spürbar entlasten – ohne die Kontrolle zu verlieren.",
+        details: [
+          {
+            heading: "Auslöser im Alltag",
+            text: "Angebote, Reklamationen, Service-Cases und interne Freigaben laufen über Excel, Word und E-Mail. Wissen steckt in Köpfen, die oft nicht verfügbar sind.",
+          },
+          {
+            heading: "Ansatz",
+            text: "RAG-Assistenten, Tool-Use-Agenten und orchestrierte LLM-Flows ersetzen manuelle Schritte. Ich verbinde ERP, CRM oder Branchensoftware mit LangChain, LlamaIndex oder Custom-Stacks.",
+          },
+          {
+            heading: "Was bleibt",
+            text: "Durchgängige Prozesse, klare KPIs und wenig Nacharbeit – abgesichert durch Guardrails, Prompt-Evaluierung (DeepEval) sowie Security-by-Design nach BSI IT-Grundschutz und ISO/IEC 27001.",
+          },
+        ],
+      }}
+    />
+
+    <ServiceArticle
+      subtitle="Stabile Abläufe"
+      title="Wissen sichern & Abhängigkeiten reduzieren"
+      imagePosition="left"
+      image="https://images.unsplash.com/photo-1650295751050-b184e54e177c?q=80&w=2940&auto=format&fit=crop"
+      imageAlt="Laptopbildschirm mit farblich hervorgehobenem Programmcode – steht für saubere Software- und KI-Entwicklung."
+      paragraphs={{
+        intro:
+          "Ich moderiere zwischen Operations, IT und Fachbereichen, damit Systeme zuverlässig liefern – selbst wenn Schlüsselpersonen ausfallen. Polyglotte Stacks ermöglichen pragmatische Integrationen statt Großprojekte.",
+        details: [
+          {
+            heading: "Systeme verbinden",
+            text: "APIs, Datenpipelines und Integrationen sorgen dafür, dass Daten nur einmal erfasst werden. Backend-Services (FastAPI, NestJS, Micronaut, Laravel) liefern Streaming, WebSockets und Event-Driven Flows.",
+          },
+          {
+            heading: "Lieferfähig bleiben",
+            text: "Cloud- und On-Prem-Setups (AWS, Azure, GCP) werden mit Terraform, Docker/Kubernetes sowie GitHub Actions/GitLab CI betrieben – inklusive Observability mit Prometheus/Grafana oder ELK.",
+          },
+          {
+            heading: "Governance & Compliance",
+            text: "OAuth2, Keycloak, RBAC/IAM, Threat Modeling und Audits nach ISO 27001 oder BSI 200-x reduzieren Abhängigkeiten von Einzelpersonen und sorgen für dokumentierte Verantwortlichkeiten.",
+          },
+        ],
+      }}
+    />
+
+    <ServiceArticle
+      subtitle="Enablement"
+      title="Team befähigen & Skepsis abbauen"
+      imagePosition="right"
+      image="https://images.unsplash.com/photo-1703680968885-22659eb00165?q=80&w=2940&auto=format&fit=crop"
+      imageAlt="Leerer Hörsaal mit Reihen aus Holzstühlen im Sonnenlicht – symbolisiert Wissenstransfer, Schulungen und Vorträge."
+      paragraphs={{
+        intro:
+          "Über 100 Teilnehmende pro Jahr in maßgeschneiderten Trainings – ergänzt durch interne Upskilling-Programme. Ich begleite Teams so, dass neue Systeme nicht an Widerstand oder fehlender Dokumentation scheitern.",
+        details: [
+          {
+            heading: "Curriculum & Upskilling",
+            text: "Workshops zu moderner Softwarearchitektur, GenAI, DevOps und Security-by-Design – zugeschnitten auf Rollen von Product bis Operations.",
+          },
+          {
+            heading: "Coaching im Betrieb",
+            text: "Pair-Architecture, Reviews, Code- & Prompt-Clinics sowie Shadowing für Product & Engineering Leads sichern, dass Entscheidungen verstanden und getragen werden.",
+          },
+          {
+            heading: "Change & Wissen",
+            text: "Assessments, Lernpfade, Runbooks und Wissensdatenbanken (Notion, Confluence, Git) sorgen dafür, dass Know-how nicht wieder in Silos verschwindet.",
+          },
+        ],
+      }}
+    />
+  </section>
+
+  <section class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-12 lg:py-24">
+    <div class="mx-auto max-w-6xl space-y-12">
+      <div class="space-y-4 text-center max-w-2xl mx-auto">
         <SectionSubtitle>Leistungsbausteine</SectionSubtitle>
-        <h2 class="text-2xl font-semibold sm:text-3xl">
+        <h2
+          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+        >
           Architektur, Delivery &amp; Enablement.
         </h2>
-        <p class="text-base text-gray-600 dark:text-gray-300">
+        <p class="text-lg text-gray-600 dark:text-gray-300">
           Jeder Baustein kann als Solo-Mandat oder kombiniert mit anderen
           Engagement Modes beauftragt werden.
         </p>
       </div>
       <div
-        class="isolate mx-auto mt-16 grid w-full grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:items-stretch"
+        class="isolate mx-auto mt-10 grid w-full grid-cols-1 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:items-stretch lg:gap-x-8"
       >
         {
-          servicePillars.map((pillar, index) => {
-            const isFirst = index === 0;
-            const isLast = index === servicePillars.length - 1;
-            const isMiddle = !isFirst && !isLast;
-
+          servicePillars.map((pillar) => {
             return (
-              <div
-                class={`flex h-full flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-inset ring-gray-200 xl:p-10 dark:bg-white/5 dark:ring-white/10 ${
-                  isFirst ? "lg:rounded-r-none -mr-px" : ""
-                } ${isLast ? "lg:rounded-l-none -ml-px" : ""} ${
-                  isMiddle ? "lg:rounded-none lg:z-10" : ""
-                }`}
-              >
+              <div class="flex h-full flex-col justify-between rounded-2xl bg-white p-8 shadow-lg shadow-brand-blue/5 ring-1 ring-gray-200 transition-all hover:shadow-xl hover:-translate-y-1 dark:bg-white/5 dark:ring-white/10 dark:shadow-none">
                 <div class="flex flex-1 flex-col">
-                  <SectionSubtitle class="mb-2">
-                    {pillar.subtitle}
-                  </SectionSubtitle>
-                  <div class="flex items-center justify-between gap-x-4">
-                    <h3
-                      id={pillar.title.toLowerCase().replace(/\s+/g, "-")}
-                      class="text-lg font-semibold text-brand-blue dark:text-brand-blue"
-                    >
-                      {pillar.title}
-                    </h3>
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="text-xs font-medium text-brand-blue dark:text-brand-gold/80 uppercase tracking-wider">
+                      {pillar.subtitle.split("·")[0]}
+                    </div>
                   </div>
-                  <p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
+
+                  <h3
+                    id={pillar.title.toLowerCase().replace(/\s+/g, "-")}
+                    class="text-xl font-bold text-gray-900 dark:text-white"
+                  >
+                    {pillar.title}
+                  </h3>
+
+                  <p class="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">
                     {pillar.description}
                   </p>
 
@@ -270,7 +402,7 @@ const faqSchema = {
                     </p>
                     <ul
                       role="list"
-                      class="mt-4 space-y-3 text-sm leading-6 text-gray-600 dark:text-gray-300"
+                      class="mt-4 space-y-3 text-sm leading-6 text-gray-600 dark:text-gray-400"
                     >
                       {pillar.deliverables.map((item) => (
                         <li class="flex gap-x-3">
@@ -291,41 +423,13 @@ const faqSchema = {
                       ))}
                     </ul>
                   </div>
-
-                  <div class="mt-8">
-                    <p class="text-sm font-semibold text-gray-900 dark:text-white">
-                      Was sich verändert
-                    </p>
-                    <ul
-                      role="list"
-                      class="mt-4 space-y-3 text-sm leading-6 text-gray-600 dark:text-gray-300"
-                    >
-                      {pillar.results.map((item) => (
-                        <li class="flex gap-x-3">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            aria-hidden="true"
-                            class="h-6 w-5 flex-none text-brand-blue dark:text-brand-gold"
-                          >
-                            <path
-                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                              clip-rule="evenodd"
-                              fill-rule="evenodd"
-                            />
-                          </svg>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
 
-                <div class="mt-8 border-t border-gray-200 pt-8 dark:border-white/10">
-                  <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                <div class="mt-8 border-t border-gray-100 pt-6 dark:border-white/10">
+                  <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500">
                     Stack & Werkzeuge
                   </p>
-                  <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     {pillar.stack}
                   </p>
                 </div>
@@ -337,27 +441,31 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-12 lg:py-16">
+  <section
+    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-12 lg:py-24 border-t border-gray-100 dark:border-white/5"
+  >
     <div class="mx-auto max-w-6xl">
-      <div class="space-y-3">
+      <div class="space-y-4 text-center max-w-2xl mx-auto">
         <SectionSubtitle>Engagement</SectionSubtitle>
-        <h2 class="text-2xl font-semibold sm:text-3xl">
+        <h2
+          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+        >
           Modelle für Strategie, Delivery und Sparring.
         </h2>
-        <p class="text-base text-gray-600 dark:text-gray-300">
+        <p class="text-lg text-gray-600 dark:text-gray-300">
           Wählen Sie, wie viel Verantwortung Sie abgeben: vom Fractional AI/CIO
           als verlängertem Arm der Geschäftsführung bis zum projektbasierten
           Delivery- oder Sparringsmodell für Ihre Teams.
         </p>
       </div>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           engagementModes.map((mode) => (
-            <article class="rounded-4xl border border-slate-900/5 bg-white p-5 shadow-md shadow-brand-blue/10 dark:border-white/5 dark:bg-white/5 dark:shadow-brand-blue/10 sm:p-6">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-brand-blue/5 transition hover:shadow-xl hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">
                 {mode.title}
               </h3>
-              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+              <p class="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">
                 {mode.description}
               </p>
             </article>
@@ -416,55 +524,36 @@ const faqSchema = {
     </div>
   </section>
 
-  <section
-    class="bg-white px-4 py-12 text-center dark:bg-brand-dark sm:px-12 lg:py-16"
+  <FinalCTA
+    title="Bereit für Ihr nächstes Kapitel?"
+    primary={{
+      label: "Kontakt aufnehmen",
+      href: contact.calendaring,
+      external: true,
+    }}
+    secondary={{
+      label: "PDF-Portfolio anfordern",
+      href: `mailto:${contact.email}?subject=Serviceanfrage`,
+    }}
   >
-    <div class="mx-auto max-w-3xl space-y-6">
-      <div class="space-y-3">
-        <SectionSubtitle>Nächste Schritte</SectionSubtitle>
-        <h2
-          class="text-2xl font-semibold text-gray-900 dark:text-white sm:text-3xl"
-        >
-          Bereit für Ihr nächstes Kapitel?
-        </h2>
-        <p class="text-base text-gray-600 dark:text-gray-300">
-          Schreiben Sie an
-          <a
-            href={`mailto:${contact.email}`}
-            class="font-semibold text-brand-blue underline-offset-4 hover:underline dark:text-brand-gold"
-            >{contact.email}</a
-          >
-          oder buchen Sie ein Gespräch über
-          <a
-            href={contact.linkedin.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-semibold text-brand-blue underline-offset-4 hover:underline dark:text-brand-gold"
-            >LinkedIn</a
-          >.
-        </p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href={contact.calendaring}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/30 transition hover:bg-blue-600"
-        >
-          Kontakt aufnehmen
-        </a>
-        <a
-          href={`mailto:${contact.email}?subject=Serviceanfrage`}
-          class="inline-flex items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-brand-blue/60 hover:text-brand-blue dark:border-white/20 dark:text-white/90 dark:hover:border-brand-gold/60 dark:hover:text-brand-gold"
-        >
-          PDF-Portfolio anfordern
-        </a>
-      </div>
-      <p class="text-xs uppercase tracking-[0.3em] text-gray-400">
-        Antwort innerhalb von 24 Stunden.
-      </p>
-    </div>
-  </section>
+    <p>
+      Schreiben Sie an
+      <a
+        href={`mailto:${contact.email}`}
+        class="font-semibold text-white underline underline-offset-4 hover:text-brand-gold"
+        >{contact.email}</a
+      >
+      oder vernetzen Sie sich direkt über
+      <a
+        href={contact.linkedin.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold text-white underline underline-offset-4 hover:text-brand-gold"
+        >LinkedIn</a
+      >.
+    </p>
+    <span slot="footer">Antwort innerhalb von 24 Stunden.</span>
+  </FinalCTA>
 
   <script
     is:inline

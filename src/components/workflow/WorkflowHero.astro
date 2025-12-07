@@ -3,161 +3,152 @@ import { contact } from "../../config/site";
 ---
 
 <section
-    class="relative min-h-[90svh] overflow-hidden bg-gray-50 dark:bg-gray-950"
+  class="relative min-h-[90svh] overflow-hidden bg-white dark:bg-gray-950"
 >
-    <div
-        class="pointer-events-none absolute inset-0 opacity-5 dark:opacity-[0.02]"
-        style="background-size: 40px 40px; background-image: linear-gradient(to right, rgb(229 231 235 / 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgb(229 231 235 / 0.5) 1px, transparent 1px); mask-image: radial-gradient(circle at center, black 40%, transparent 100%); -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);"
-    >
-    </div>
+  <div
+    class="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+    style="background-image: radial-gradient(#F97316 1px, transparent 1px); background-size: 32px 32px;"
+  >
+  </div>
 
-    <div
-        class="pointer-events-none absolute right-0 top-0 h-96 w-96 -translate-y-1/4 translate-x-1/4 rounded-full bg-brand-blue/5 blur-3xl dark:bg-brand-blue/10"
-    >
-    </div>
-    <div
-        class="pointer-events-none absolute bottom-0 left-0 h-96 w-96 -translate-x-1/4 translate-y-1/4 rounded-full bg-emerald-500/5 blur-3xl dark:bg-emerald-400/10"
-    >
-    </div>
+  <div
+    class="pointer-events-none absolute right-0 top-0 h-96 w-96 -translate-y-1/4 translate-x-1/4 rounded-full bg-orange-500/10 blur-[100px]"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute bottom-0 left-0 h-96 w-96 -translate-x-1/4 translate-y-1/4 rounded-full bg-brand-blue/10 blur-[100px]"
+  >
+  </div>
 
-    <div
-        class="relative z-10 flex min-h-[90svh] items-center justify-center px-4 py-20"
-    >
-        <div class="max-w-4xl text-center">
-            <div
-                class="mb-8 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-2 text-sm font-medium text-gray-600 backdrop-blur-sm dark:border-gray-700 dark:bg-gray-800/80 dark:text-gray-300"
+  <div
+    class="relative z-10 flex min-h-[90svh] items-center justify-center px-4 py-20"
+  >
+    <div class="max-w-4xl text-center">
+      <div
+        class="mb-8 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50/50 px-4 py-2 text-sm font-bold text-orange-700 backdrop-blur-sm dark:border-orange-900/30 dark:bg-orange-900/10 dark:text-orange-400"
+      >
+        <span class="relative flex h-2.5 w-2.5">
+          <span
+            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-500 opacity-75"
+          ></span>
+          <span
+            class="relative inline-flex h-2.5 w-2.5 rounded-full bg-orange-500"
+          ></span>
+        </span>
+        Jetzt verfügbar für Q1/2025
+      </div>
+
+      <h1
+        class="mb-8 text-5xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-6xl md:text-7xl"
+      >
+        Workflow-Automatisierung <br class="hidden md:block" />
+        <span
+          class="bg-linear-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent dark:from-orange-400 dark:to-orange-200"
+        >
+          in 48 Stunden.
+        </span>
+      </h1>
+
+      <p
+        class="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-gray-600 dark:text-gray-300"
+      >
+        Schluss mit monatelangen IT-Projekten. Ich automatisiere Ihren
+        zeitfressendsten Prozess – fixfertig, dokumentiert und stabil.
+      </p>
+
+      <div class="mx-auto mb-12 grid max-w-3xl gap-6 text-left sm:grid-cols-3">
+        <div
+          class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-orange-500/5 dark:border-white/10 dark:bg-white/5 dark:shadow-none"
+        >
+          <div
+            class="mb-4 w-fit rounded-xl bg-orange-100 p-2.5 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-                <span class="relative flex h-2 w-2">
-                    <span
-                        class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold opacity-75"
-                    ></span>
-                    <span
-                        class="relative inline-flex h-2 w-2 rounded-full bg-brand-gold"
-                    ></span>
-                </span>
-                Jetzt verfügbar für Q1/2025
-            </div>
-
-            <h1
-                class="mb-8 text-4xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl"
-            >
-                Workflow-Automatisierung <br class="hidden md:block" />
-                <span
-                    class="bg-linear-to-r from-brand-blue to-brand-gold bg-clip-text text-transparent dark:from-brand-gold dark:to-blue-400"
-                >
-                    in 48 Stunden.
-                </span>
-            </h1>
-
-            <p
-                class="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-300 md:text-2xl"
-            >
-                Schluss mit monatelangen IT-Projekten. Ich automatisiere Ihren
-                zeitfressendsten Prozess – fixfertig, dokumentiert und stabil.
-            </p>
-
-            <div
-                class="mx-auto mb-12 grid max-w-3xl gap-4 text-left sm:grid-cols-3"
-            >
-                <div
-                    class="rounded-xl border border-gray-200/60 bg-white/50 p-4 backdrop-blur-sm dark:border-gray-700/60 dark:bg-gray-800/50"
-                >
-                    <div
-                        class="mb-2 w-fit rounded-lg bg-brand-blue/10 p-2 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-gold"
-                    >
-                        <svg
-                            class="h-6 w-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <span
-                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                        >Ergebnisse in 48h</span
-                    >
-                </div>
-
-                <div
-                    class="rounded-xl border border-gray-200/60 bg-white/50 p-4 backdrop-blur-sm dark:border-gray-700/60 dark:bg-gray-800/50"
-                >
-                    <div
-                        class="mb-2 w-fit rounded-lg bg-brand-blue/10 p-2 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-gold"
-                    >
-                        <svg
-                            class="h-6 w-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <span
-                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                        >Weniger Fehler</span
-                    >
-                </div>
-
-                <div
-                    class="rounded-xl border border-gray-200/60 bg-white/50 p-4 backdrop-blur-sm dark:border-gray-700/60 dark:bg-gray-800/50"
-                >
-                    <div
-                        class="mb-2 w-fit rounded-lg bg-brand-blue/10 p-2 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-gold"
-                    >
-                        <svg
-                            class="h-6 w-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                            ></path>
-                        </svg>
-                    </div>
-                    <span
-                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                        >Volle Transparenz</span
-                    >
-                </div>
-            </div>
-
-            <div
-                class="flex flex-col items-center justify-center gap-4 sm:flex-row"
-            >
-                <a
-                    href="#cta"
-                    class="w-full rounded-lg bg-brand-blue px-6 py-3 text-base font-semibold text-white shadow-lg shadow-brand-blue/25 transition-all hover:scale-105 hover:bg-blue-600 hover:shadow-xl sm:w-auto"
-                >
-                    Kostenloses Erstgespräch buchen
-                </a>
-                <a
-                    href={`mailto:${contact.email}`}
-                    class="w-full px-6 py-3 text-base font-medium text-gray-700 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white sm:w-auto"
-                >
-                    Fragen? E-Mail schreiben
-                </a>
-            </div>
-
-            <div class="mt-8 text-sm text-gray-500 dark:text-gray-400">
-                <span class="mr-1">🔒</span> DSGVO-konform & Hosted in Germany/EU
-            </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <span class="block text-base font-bold text-gray-900 dark:text-white"
+            >Ergebnisse in 48h</span
+          >
         </div>
+
+        <div
+          class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-orange-500/5 dark:border-white/10 dark:bg-white/5 dark:shadow-none"
+        >
+          <div
+            class="mb-4 w-fit rounded-xl bg-orange-100 p-2.5 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <span class="block text-base font-bold text-gray-900 dark:text-white"
+            >Weniger Fehler</span
+          >
+        </div>
+
+        <div
+          class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-orange-500/5 dark:border-white/10 dark:bg-white/5 dark:shadow-none"
+        >
+          <div
+            class="mb-4 w-fit rounded-xl bg-orange-100 p-2.5 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+              ></path>
+            </svg>
+          </div>
+          <span class="block text-base font-bold text-gray-900 dark:text-white"
+            >Volle Transparenz</span
+          >
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href="#cta"
+          class="w-full rounded-full bg-orange-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-orange-600/25 transition-all hover:scale-105 hover:bg-orange-500 hover:shadow-xl sm:w-auto"
+        >
+          Kostenloses Erstgespräch buchen
+        </a>
+        <a
+          href={`mailto:${contact.email}`}
+          class="w-full px-6 py-3 text-base font-semibold text-gray-600 transition-colors hover:text-orange-600 dark:text-gray-400 dark:hover:text-white sm:w-auto"
+        >
+          Fragen? E-Mail schreiben
+        </a>
+      </div>
+
+      <div class="mt-10 text-sm font-medium text-gray-500 dark:text-gray-500">
+        <span class="mr-1">🔒</span> DSGVO-konform & Hosted in Germany/EU
+      </div>
     </div>
+  </div>
 </section>

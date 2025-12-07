@@ -25,8 +25,8 @@ export interface PainPoint {
 
 export const servicePillars: ServicePillar[] = [
   {
-    title: "KI-Roadmap & Verantwortlichkeiten klären",
-    subtitle: "FlowCraftDB · CANCOM · Universitätsklinikum Bonn",
+    title: "Roadmap & Verantwortlichkeiten klären",
+    subtitle: "Universitätsklinikum Bonn",
     description:
       "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken – von der ersten Rechtsprüfung bis zur Governance im Betrieb.",
     deliverables: [
@@ -35,15 +35,15 @@ export const servicePillars: ServicePillar[] = [
       "Security, IAM & Compliance nach BSI IT-Grundschutz, ISO/IEC 27001, DSGVO/DPIA mit OAuth2/Keycloak und dokumentierten Guardrails.",
     ],
     results: [
-      "Priorisierte Roadmap mit Verantwortlichkeiten, KPIs und Budgetrahmen – freigabefähig für Geschäftsführung & Aufsicht.",
-      "Enablement-Artefakte (Decision Logs, Runbooks, DPIA) verhindern Tool-Wildwuchs und schaffen klare Zuständigkeiten.",
+      "Investitionssicherheit: Sie wissen vor dem Start genau, was machbar ist und was es kostet.",
+      "Rechtssicherheit: Klare Ampel für Datenschutz & Compliance (DSGVO) – kein Blindflug.",
     ],
     stack:
       "LLMs: GPT, Claude, Gemini, Mistral, LLaMA/Mixtral · Orchestrierung: LangChain, LlamaIndex, Haystack, Custom Agents.",
   },
   {
-    title: "Operative Abläufe mit KI entlasten",
-    subtitle: "Bringmeister · MeinPaul · CANCOM",
+    title: "Operative Abläufe mit smarter Automatisierung entlasten",
+    subtitle: "FlowCraftDB",
     description:
       "Ich begleite End-to-end Delivery – von der Architektur über APIs bis zum Betrieb. Ziel: weniger manuelle Nacharbeit, stabile Releases und Systeme, die mitwachsen.",
     deliverables: [
@@ -52,16 +52,15 @@ export const servicePillars: ServicePillar[] = [
       "Automation von Tests, Monitoring & Incident-Response – damit Teams liefern können, ohne ständig Feuer zu löschen.",
     ],
     results: [
-      "Durchgängige Prozesse ohne Mehrfacherfassung, sinkende Fehlerquote und klar messbare Durchlaufzeiten.",
-      "Stabile Plattformen mit dokumentierten Übergaben – unabhängig von einzelnen Personen oder externen Dienstleistern.",
+      "Messbare Effizienz: Prozesse laufen automatisch in Sekunden statt manuell in Stunden.",
+      "Reduzierte Betriebskosten durch stabile Software-Architektur, die wenig Wartung braucht.",
     ],
     stack:
       "Python, TypeScript/Node, Kotlin, PHP, Dart/Flutter, SQL/NoSQL, Kafka, RabbitMQ, Docker/Kubernetes, Terraform.",
   },
   {
     title: "Team befähigen & Skepsis abbauen",
-    subtitle:
-      "Nextise · ptm-Akademie · GFU Cyrus AG · interne Upskilling-Programme",
+    subtitle: "GFU Cyrus AG",
     description:
       "Neue Systeme scheitern selten an Technik, sondern an Kommunikation. Ich kombiniere Trainings, Shadowing und Change-Arbeit, damit Ihr Team Verantwortung übernehmen kann.",
     deliverables: [
@@ -70,8 +69,8 @@ export const servicePillars: ServicePillar[] = [
       "Wissenssysteme, Playbooks und Enablement-Artefakte (Notion, Confluence, Git) als Single Source of Truth.",
     ],
     results: [
-      "Teams verstehen Architekturentscheidungen, treffen souveräne Freigaben und holen skeptische Mitarbeitende ins Boot.",
-      "Neue Kolleg:innen werden schneller produktiv, weil Runbooks, Lernpfade und Ansprechpartner klar sind.",
+      "Volle Unabhängigkeit: Ihr Team versteht das System und kann es ohne mich weiterentwickeln.",
+      "Schnelleres Onboarding: Neue Mitarbeiter sind dank perfekter Dokumentation sofort produktiv.",
     ],
     stack:
       "Workshops, Pair-Architecture, Code-/Prompt-Clinics, Assessments, OKRs & KPI-Frameworks.",

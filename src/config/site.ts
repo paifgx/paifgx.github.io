@@ -110,13 +110,17 @@ export const siteMeta: SiteMeta = {
  * Shared stats to keep about and service pages consistent with Notion knowledgebase.
  */
 export const stats: Stat[] = [
-  { id: 1, value: ">150", label: "Projekte in regulierten Branchen" },
+  { id: 1, value: "8+", label: "Jahre Erfahrung in Architektur & Development" },
   { id: 2, value: "60%", label: "Kooperationen mit Product & Security" },
   { id: 3, value: "24h", label: "Reaktionszeit auf Projektanfragen" },
 ];
 
 export const serviceStats: Stat[] = [
-  { id: 1, value: "25+", label: "aktive KI- & Plattforminitiativen (ML & GenAI)" },
+  {
+    id: 1,
+    value: "25+",
+    label: "aktive KI- & Plattforminitiativen (ML & GenAI)",
+  },
   { id: 2, value: "<90d", label: "Time-to-Value für MVP/POC" },
   { id: 3, value: "3", label: "Engagement-Modi kombinierbar" },
 ];
@@ -142,11 +146,18 @@ export const clients: string[] = [
 export const focusAreas: FocusArea[] = [
   { id: 1, title: "Prozesse automatisieren & Medienbrüche abbauen" },
   { id: 2, title: "Wissen sichern & Ausfälle auffangen" },
-  { id: 3, title: "Sicherer KI-Einsatz nach BSI IT-Grundschutz, ISO/IEC 27001 & DSGVO" },
+  {
+    id: 3,
+    title: "Sicherer KI-Einsatz nach BSI IT-Grundschutz, ISO/IEC 27001 & DSGVO",
+  },
 ];
 
 export const currentMandates: CurrentMandate[] = [
-  { id: 1, company: "Universitätsklinikum Bonn", role: "AI Solution Architect" },
+  {
+    id: 1,
+    company: "Universitätsklinikum Bonn",
+    role: "AI Solution Architect",
+  },
   { id: 2, company: "FlowCraftDB", role: "Event-driven GenAI Plattform" },
   { id: 3, company: "AICT Group", role: "Co-Founder & CIO" },
 ];
@@ -224,4 +235,3 @@ export function getPostalAddress() {
     addressCountry: business.countryCode,
   };
 }
-

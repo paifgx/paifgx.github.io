@@ -3,53 +3,50 @@ import { contact } from "../../config/site";
 ---
 
 <section
-    id="cta"
-    class="relative overflow-hidden bg-brand-blue py-16 text-white dark:bg-brand-dark md:py-32"
+  id="cta"
+  class="relative overflow-hidden bg-gray-950 py-16 text-white md:py-32"
 >
-    <div
-        class="pointer-events-none absolute inset-0 opacity-5 dark:opacity-[0.02]"
-        style="background-size: 40px 40px; background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); mask-image: radial-gradient(circle at center, black 40%, transparent 100%); -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);"
+  <div
+    class="pointer-events-none absolute inset-0 opacity-[0.05]"
+    style="background-image: radial-gradient(#F97316 1px, transparent 1px); background-size: 24px 24px;"
+  >
+  </div>
+
+  <div
+    class="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] -translate-y-1/2 translate-x-1/2 rounded-full bg-orange-500/10 blur-3xl"
+  >
+  </div>
+
+  <div class="container relative z-10 mx-auto max-w-4xl px-4 text-center">
+    <h2 class="mb-8 text-4xl font-bold leading-tight md:text-5xl">
+      Bereit für Ihren ersten <br /> automatisierten Workflow?
+    </h2>
+
+    <p
+      class="mx-auto mb-12 max-w-2xl text-xl font-medium text-gray-300 md:text-2xl"
     >
+      In 30 Minuten finden wir gemeinsam heraus, welcher Prozess sich für Ihren
+      48h Sprint am meisten lohnt. Ich melde mich innerhalb von 24 Stunden.
+    </p>
+
+    <div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
+      <a
+        href="https://app.reclaim.ai/m/gartenai/workflow-sprint"
+        class="w-full rounded-full bg-orange-600 px-8 py-4 text-lg font-bold text-white shadow-2xl shadow-orange-600/20 transition-all hover:-translate-y-1 hover:bg-orange-500 hover:shadow-orange-600/40 sm:w-auto"
+      >
+        Kostenloses Erstgespräch buchen
+      </a>
+      <a
+        href={`mailto:${contact.email}`}
+        class="text-lg font-semibold text-gray-300 transition-all hover:text-white hover:underline"
+      >
+        Oder per E-Mail: {contact.email}
+      </a>
     </div>
 
-    <div
-        class="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] -translate-y-1/2 translate-x-1/2 rounded-full bg-white/10 blur-3xl dark:bg-brand-blue/10"
-    >
-    </div>
-
-    <div class="container relative z-10 mx-auto max-w-4xl px-4 text-center">
-        <h2 class="mb-8 text-4xl font-bold leading-tight md:text-5xl">
-            Bereit für Ihren ersten <br /> automatisierten Workflow?
-        </h2>
-
-        <p
-            class="mx-auto mb-12 max-w-2xl text-xl font-light text-blue-100 md:text-2xl dark:text-gray-300"
-        >
-            In 30 Minuten finden wir gemeinsam heraus, welcher Prozess sich für
-            Ihren 48h Sprint am meisten lohnt. Ich melde mich innerhalb von 24
-            Stunden.
-        </p>
-
-        <div
-            class="flex flex-col items-center justify-center gap-6 sm:flex-row"
-        >
-            <a
-                href="https://app.reclaim.ai/m/gartenai/workflow-sprint"
-                class="w-full rounded-xl bg-white px-8 py-4 text-lg font-bold text-brand-blue shadow-2xl transition-transform hover:scale-105 hover:bg-gray-50 sm:w-auto dark:bg-brand-gold dark:text-brand-dark"
-            >
-                Kostenloses Erstgespräch buchen
-            </a>
-            <a
-                href={`mailto:${contact.email}`}
-                class="text-lg text-blue-100 opacity-90 transition-opacity hover:opacity-100 hover:underline dark:text-gray-300"
-            >
-                Oder per E-Mail: {contact.email}
-            </a>
-        </div>
-
-        <p class="mt-12 text-sm text-blue-200 dark:text-gray-400">
-            Kein Verkaufsgespräch. Nur eine ehrliche Einschätzung Ihres
-            Automatisierungspotenzials.
-        </p>
-    </div>
+    <p class="mt-12 text-sm font-medium text-gray-500">
+      Kein Verkaufsgespräch. Nur eine ehrliche Einschätzung Ihres
+      Automatisierungspotenzials.
+    </p>
+  </div>
 </section>

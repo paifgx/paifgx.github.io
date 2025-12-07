@@ -1,60 +1,54 @@
 ---
+interface DetailItem {
+  heading: string;
+  text: string;
+}
+
 interface Paragraphs {
   intro: string;
-  details: Array<{
-    heading: string;
-    text: string;
-  }>;
+  details: DetailItem[];
 }
 
 interface Props {
-  title: string;
   subtitle: string;
-  paragraphs: Paragraphs;
-  imagePosition?: "left" | "right";
+  title: string;
+  imagePosition: "left" | "right";
   image: string;
-  imageAlt?: string;
+  imageAlt: string;
+  paragraphs: Paragraphs;
 }
 
-const {
-  title,
-  subtitle,
-  paragraphs,
-  imagePosition = "right",
-  image,
-  imageAlt = "",
-} = Astro.props as Props;
+const { subtitle, title, imagePosition, image, imageAlt, paragraphs } =
+  Astro.props;
 
-const slugify = (value: string) =>
-  value
-    .toString()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)+/g, "");
-
-const headingId = slugify(title);
+const isImageLeft = imagePosition === "left";
+const slugId = title
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/(^-|-$)/g, "");
 ---
 
 <article
   class="container mx-auto px-4 py-12 sm:px-6 lg:px-0 lg:py-16"
   role="region"
-  aria-labelledby={headingId}
+  aria-labelledby={slugId}
 >
   <div
-    class={`relative isolate flex flex-col gap-12 overflow-hidden rounded-3xl border border-gray-200/60 bg-white/90 px-6 py-8 shadow-xl ring-1 ring-black/5 dark:border-white/10 dark:bg-gray-900/80 dark:ring-white/5 sm:px-12 sm:py-10 ${imagePosition === "left" ? "lg:flex-row-reverse" : "lg:flex-row"}`}
+    class:list={[
+      "relative isolate flex flex-col gap-12 overflow-hidden rounded-2xl border border-gray-200 bg-white px-6 py-8 shadow-lg shadow-brand-blue/5 ring-1 ring-gray-900/5 dark:border-white/10 dark:bg-white/5 dark:ring-white/5 dark:shadow-none sm:px-12 sm:py-12",
+      isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse",
+    ]}
   >
     <div
       aria-hidden="true"
-      class="pointer-events-none absolute inset-0 opacity-80"
+      class="pointer-events-none absolute inset-0 opacity-50 dark:opacity-20"
     >
       <div
-        class="absolute -left-16 top-0 h-48 w-48 rounded-full bg-brand-blue/20 blur-3xl dark:bg-brand-blue/10"
+        class="absolute -left-16 top-0 h-48 w-48 rounded-full bg-brand-blue/10 blur-3xl"
       >
       </div>
       <div
-        class="absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-emerald-200/50 blur-3xl dark:bg-emerald-400/10"
+        class="absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-brand-gold/10 blur-3xl"
       >
       </div>
     </div>
@@ -63,49 +57,47 @@ const headingId = slugify(title);
       class="relative z-10 flex-1 space-y-8 text-gray-900 dark:text-gray-100"
     >
       <p
-        class="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand-blue dark:text-brand-gold"
+        class="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-brand-blue dark:text-brand-gold"
       >
-        <span class="h-px w-10 bg-brand-blue/40 dark:bg-brand-gold/40"></span>
+        <span class="h-px w-8 bg-brand-blue/40 dark:bg-brand-gold/40"></span>
         {subtitle}
       </p>
+
       <h2
-        id={headingId}
-        class="text-3xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-4xl"
+        id={slugId}
+        class="text-3xl font-bold leading-tight text-gray-900 dark:text-white sm:text-4xl"
       >
         {title}
       </h2>
-      <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+
+      <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
         {paragraphs.intro}
       </p>
 
-      <div class={`grid gap-4 xl:grid-cols-3 sm:gap-6`}>
+      <div class="grid gap-4 xl:grid-cols-1 sm:gap-6">
         {
-          paragraphs.details.map(
-            (detail: { heading: string; text: string }) => (
-              <div class="rounded-2xl border border-gray-200/70 bg-white/85 p-4 shadow-xs backdrop-blur-sm dark:border-white/10 dark:bg-gray-950/40 sm:p-5">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  {detail.heading}
-                </h3>
-                <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
-                  {detail.text}
-                </p>
-              </div>
-            ),
-          )
+          paragraphs.details.map((detail) => (
+            <div class="rounded-xl border border-gray-100 bg-white/50 p-4 dark:border-white/5 dark:bg-white/5 sm:p-5">
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">
+                {detail.heading}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                {detail.text}
+              </p>
+            </div>
+          ))
         }
       </div>
     </div>
 
-    <div
-      class={`relative z-10 flex flex-1 items-center justify-center ${imagePosition === "left" ? "lg:pr-8" : "lg:pl-8"}`}
-    >
+    <div class="relative z-10 flex flex-1 items-center justify-center lg:pr-8">
       <div class="relative w-full max-w-xl">
         <div
           class="absolute inset-0 rounded-[3rem] bg-linear-to-br from-brand-blue/20 to-transparent blur-2xl dark:from-brand-blue/10"
         >
         </div>
         <svg viewBox="0 0 655 680" fill="none" class="relative z-10 w-full">
-          <g clip-path={`url(#${headingId}-clip)`} class="group">
+          <g clip-path={`url(#${slugId}-clip)`} class="group">
             <g
               class="origin-center scale-100 transition duration-700 ease-out motion-safe:group-hover:scale-105"
             >
@@ -120,17 +112,21 @@ const headingId = slugify(title);
               </foreignObject>
             </g>
             <use
-              href={`#${headingId}-shape`}
+              href={`#${slugId}-shape`}
               stroke-width="2"
-              class="stroke-black/10 dark:stroke-white/15"></use>
+              class="stroke-black/10 dark:stroke-white/15"
+            >
+            </use>
           </g>
           <defs>
-            <clipPath id={`${headingId}-clip`}>
+            <clipPath id={`${slugId}-clip`}>
               <path
-                id={`${headingId}-shape`}
+                id={`${slugId}-shape`}
                 d="M537.827 9.245A11.5 11.5 0 0 1 549.104 0h63.366c7.257 0 12.7 6.64 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 586.87 151h-28.275a15.999 15.999 0 0 0-15.689 12.862l-59.4 297c-1.98 9.901 5.592 19.138 15.689 19.138h17.275l.127.001c.85.009 1.701.074 2.549.009 11.329-.874 21.411-7.529 24.88-25.981.002-.012.016-.016.023-.007.008.009.022.005.024-.006l24.754-123.771A11.5 11.5 0 0 1 580.104 321h63.366c7.257 0 12.7 6.639 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 617.87 472H559c-22.866 0-28.984 7.98-31.989 25.931-.004.026-.037.035-.052.014-.015-.02-.048-.013-.053.012l-24.759 123.798A11.5 11.5 0 0 1 490.87 631h-29.132a14.953 14.953 0 0 0-14.664 12.021c-4.3 21.502-23.18 36.979-45.107 36.979H83.502c-29.028 0-50.8-26.557-45.107-55.021l102.4-512C145.096 91.477 163.975 76 185.902 76h318.465c10.136 0 21.179-5.35 23.167-15.288l10.293-51.467Zm-512 160A11.5 11.5 0 0 1 37.104 160h63.366c7.257 0 12.7 6.639 11.277 13.755l-25.6 128A11.5 11.5 0 0 1 74.87 311H11.504c-7.257 0-12.7-6.639-11.277-13.755l25.6-128Z"
                 fill-rule="evenodd"
-                clip-rule="evenodd"></path>
+                clip-rule="evenodd"
+              >
+              </path>
             </clipPath>
           </defs>
         </svg>

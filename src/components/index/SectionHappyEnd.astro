@@ -1,0 +1,58 @@
+---
+import SectionSubtitle from "../ui/SectionSubtitle.astro";
+import { benefits } from "../../data/home";
+---
+
+<section
+  class="bg-white px-4 py-16 dark:bg-brand-dark sm:px-6 lg:px-8 relative overflow-hidden"
+>
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none overflow-hidden opacity-30"
+  >
+    <div
+      class="absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] bg-brand-gold opacity-10 blur-[120px] rounded-full mix-blend-screen"
+    >
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl relative z-10">
+    <div class="mx-auto max-w-3xl text-center mb-12">
+      <SectionSubtitle>Ergebnis</SectionSubtitle>
+      <h2
+        class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+      >
+        Ihr Unternehmen nach unserer Zusammenarbeit
+      </h2>
+    </div>
+
+    <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        benefits.map((benefit) => (
+          <div class="relative pl-10 group">
+            <dt class="font-semibold text-gray-900 dark:text-white text-lg group-hover:text-brand-blue dark:group-hover:text-brand-gold transition-colors">
+              <div class="absolute left-0 top-1 h-6 w-6">
+                <svg
+                  class="h-6 w-6 text-brand-blue dark:text-brand-gold"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5"
+                  />
+                </svg>
+              </div>
+              {benefit.title}
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
+              {benefit.description}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

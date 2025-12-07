@@ -33,7 +33,7 @@ const faqs: FAQItem[] = [
 ];
 ---
 
-<section class="bg-gray-100 py-24 dark:bg-gray-900">
+<section class="bg-gray-50 py-24 dark:bg-gray-950/50">
   <div class="container mx-auto max-w-3xl px-4">
     <h2
       class="mb-12 text-center text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
@@ -45,13 +45,13 @@ const faqs: FAQItem[] = [
       {
         faqs.map((faq, index) => (
           <details
-            class="group rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
+            class="group rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md dark:border-white/10 dark:bg-white/5"
             open={index === 0}
           >
-            <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-gray-900 dark:text-white">
+            <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-gray-900 dark:text-white">
               {faq.question}
               <svg
-                class="h-5 w-5 shrink-0 text-gray-500 transition-transform group-open:rotate-180 dark:text-gray-400"
+                class="h-5 w-5 shrink-0 text-orange-500 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -64,7 +64,7 @@ const faqs: FAQItem[] = [
                 />
               </svg>
             </summary>
-            <div class="border-t border-gray-200 px-6 pb-6 pt-4 text-gray-600 dark:border-gray-700 dark:text-gray-300">
+            <div class="border-t border-gray-100 px-6 pb-6 pt-4 text-base leading-relaxed text-gray-600 dark:border-white/5 dark:text-gray-300">
               <p>{faq.answer}</p>
             </div>
           </details>
