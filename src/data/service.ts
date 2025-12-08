@@ -29,7 +29,7 @@ export const servicePillars: ServicePillar[] = [
     title: "Audit & Roadmap",
     subtitle: "2–4 Wochen • Architektur-Assessment & Governance-Plan",
     description:
-      "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken – von der ersten Rechtsprüfung bis zur Governance im Betrieb.",
+      "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken – von der ersten Bewertung bis zur Governance im Betrieb.",
     deliverables: [
       "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen inkl. Stakeholder-Interviews.",
       "Architektur-Review und Risiko-Mapping mit klaren Quick-Wins.",
