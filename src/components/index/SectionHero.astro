@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import heroImage from "../../assets/DSC00758.jpg";
+import { contact } from "../../config/site";
 ---
 
 <section
@@ -28,45 +29,52 @@ import heroImage from "../../assets/DSC00758.jpg";
           <div
             class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium text-brand-gold-dim ring-1 ring-inset ring-brand-gold/30 bg-brand-gold/10 backdrop-blur-sm mb-6 dark:text-brand-gold dark:bg-brand-gold/5"
           >
-            AI Solution Architect &amp; Software Engineer
+            AI Solution Architect für Mittelstand &amp; IT-Dienstleister
           </div>
 
           <h1
             class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl"
           >
             Produktive KI-Workflows statt <span
-              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-indigo-400"
+              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-indigo-400 whitespace-nowrap"
             >
               Proof-of-Concepts.
             </span>
           </h1>
 
-          <p
-            class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-xl"
-          >
-            Schluss mit teuren Experimenten. Ich integriere KI-Lösungen direkt
-            in Ihre Systeme – orientiert an BSI-Standards, mit sauberer Doku für
-            Auditoren.
-          </p>
-
-          <div
-            class="mt-4 flex items-start gap-2 text-xs text-gray-500 dark:text-gray-400 max-w-xl"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="w-4 h-4 mt-0.5 shrink-0 text-brand-blue/60 dark:text-brand-gold/60"
+          <div class="mt-5 max-w-xl">
+            <p
+              class="text-lg leading-8 text-gray-600 dark:text-gray-300 inline"
             >
-              <path
-                fill-rule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
-                clip-rule="evenodd"></path>
-            </svg>
-            <p>
-              Hinweis: Die rechtliche Bewertung liegt bei Ihren Datenschutz- und
-              Rechtsabteilungen.
+              Schluss mit teuren Experimenten. Ich integriere KI-Lösungen direkt
+              in Ihre Systeme – orientiert am BSI IT-Grundschutz, mit sauberer
+              Doku und Logging für Prüfungen.
             </p>
+            <div
+              class="relative group inline-block ml-1 align-baseline translate-y-[2px]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-4 h-4 text-brand-blue/60 dark:text-brand-gold/60 cursor-help"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <div
+                class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-64 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none font-normal leading-normal"
+              >
+                Die rechtliche Bewertung und Abnahme liegt bei Ihren
+                Datenschutz- und Rechtsabteilungen.
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 bg-white dark:bg-gray-800 border-b border-r border-gray-100 dark:border-gray-700 rotate-45"
+                >
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center">
@@ -77,6 +85,12 @@ import heroImage from "../../assets/DSC00758.jpg";
               class="inline-flex items-center justify-center rounded-lg bg-brand-blue px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
             >
               30-Minuten-Sparring buchen
+            </a>
+            <a
+              href={`mailto:${contact.email}`}
+              class="text-sm font-medium text-gray-900 hover:text-brand-blue dark:text-white dark:hover:text-brand-gold transition-colors"
+            >
+              Oder Erstkontakt per E-Mail <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>
@@ -93,13 +107,13 @@ import heroImage from "../../assets/DSC00758.jpg";
     </div>
 
     <div
-      class="absolute inset-0 bg-linear-to-t from-brand-dark via-transparent to-transparent z-20 pointer-events-none opacity-60"
+      class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-20 pointer-events-none opacity-60"
     >
     </div>
 
     <Image
       src={heroImage}
-      alt="Portraitfoto von Patrik Garten, mit einem Lächelnden Gesicht, verschränkten Armen und sichtbaren Tattoos vor dunklem Messe-Hintergrund."
+      alt="Portraitfoto von Patrik Garten mit verschränkten Armen vor dunklem Hintergrund."
       class="aspect-3/2 object-cover object-top lg:aspect-auto lg:h-full lg:w-full opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-1000 ease-out"
       widths={[400, 800, 1200, 1600]}
       format="avif"
