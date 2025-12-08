@@ -1,38 +1,44 @@
+// Mini-Styleguide für Texte:
+// - Einheitlich "Sie" in Kundentexten
+// - Englische Begriffe nur bei fachlicher Notwendigkeit (Stack, Tools, Methoden)
+// - Verbotene/kritische Begriffe: "konform", "state-of-the-art", "ganzheitlich" (ersetzen oder bewusst begründen)
+// - Ziel: Klarheit und Sauberkeit, nicht literarische Perfektion
+
 export const painPoints = [
   {
     title: "Versteckte Kosten durch ineffiziente IT",
     description:
-      "Ihre Mitarbeiter verbringen Stunden mit Datenpflege in Excel und Copy-Paste, statt beim Kunden. Das kostet täglich Marge und Nerven.",
+      "Mitarbeiter pflegen Excel statt Kundenbeziehungen. Manuelle Datenübertragung kostet täglich Marge.",
     icon: "BanknotesIcon",
   },
   {
     title: "Entscheidungen im Blindflug",
     description:
-      "ERP, Shop und CRM sprechen nicht miteinander. Sie warten Tage auf Berichte, die eigentlich auf Knopfdruck verfügbar sein sollten.",
+      "ERP, Shop und CRM schweigen sich an. Berichte dauern Tage statt Sekunden.",
     icon: "ChartBarSquareIcon",
   },
   {
     title: "Angst vor DSGVO-Verstößen",
     description:
-      "KI klingt gut, aber die Rechtsabteilung winkt ab? Ich entwickle Lösungen, die BSI- und DSGVO-konform sind – prüfbar ab Tag 1.",
+      "KI ja, aber sicher. Architekturen orientiert an BSI IT-Grundschutz und DSGVO – mit audit-fähiger Doku statt Blackbox.",
     icon: "ShieldCheckIcon",
   },
   {
     title: "Systeme, die nicht mitwachsen",
     description:
-      "Was im Kleinen klappt, bricht unter Last zusammen. Sie brauchen eine IT, die stabil läuft – auch wenn sich Ihr Umsatz verdoppelt.",
+      "Prototypen brechen unter Last zusammen. Sie brauchen IT, die auch bei doppeltem Umsatz stabil läuft.",
     icon: "ArrowTrendingUpIcon",
   },
   {
     title: "Wissen in den Köpfen, nicht im System",
     description:
-      "Wenn Schlüsselpersonen ausfallen, steht der Betrieb still. Ich dokumentiere Prozesse so, dass jeder sie versteht.",
+      "Kopfmonopole gefährden den Betrieb. Ich sichere Wissen in Systemen und Doku.",
     icon: "DocumentTextIcon",
   },
   {
     title: "Sorge vor Abhängigkeit (Lock-in)",
     description:
-      "Sie wollen keine Blackbox mieten, sondern Eigentum. Der Code gehört Ihnen – ohne Knebelverträge. Technische Abhängigkeiten bleiben transparent.",
+      "Kein Blackbox-Mietmodell. Der Code gehört Ihnen, Abhängigkeiten bleiben transparent.",
     icon: "LockOpenIcon",
   },
 ];
@@ -101,21 +107,20 @@ export const authority = {
 
 export const authorityHighlights = [
   {
-    title: "Universitätsklinikum in NRW",
-    description:
-      "Sichere Middleware für Patientendaten – ohne manuelle Überträge.",
+    title: "Gesundheitswesen",
+    description: "Sichere Middleware für Patientendaten (Uniklinik).",
   },
   {
-    title: "DAX-nahes E-Commerce-Unternehmen",
-    description: "Skalierung der E-Commerce Systeme für Hochlast-Zeiten.",
+    title: "E-Commerce",
+    description: "Skalierung für Hochlast-Zeiten (DAX-nah).",
   },
   {
     title: "IT-Dienstleister",
-    description: "DSGVO-konformer KI-Assistent für interne Teams.",
+    description: "DSGVO-orientierter KI-Assistent für interne Teams.",
   },
   {
-    title: "Technologie-Startup",
-    description: "Echtzeit-Plattform: Von der Idee zum marktreifen Produkt.",
+    title: "Startup",
+    description: "Echtzeit-Plattform – Von der Idee zum Produkt.",
   },
 ];
 
@@ -123,7 +128,7 @@ export const ctaCopy = {
   title: "Klarheit in 30 Minuten.",
   subline:
     "Kein Sales-Pitch, sondern echte Strategie. Ich prüfe gemeinsam mit Ihnen, ob und wie ich Ihnen helfen kann.",
-  buttonLabel: "Jetzt 30-Minuten-Sparring buchen",
+  buttonLabel: "Jetzt Sparring-Call buchen",
   steps: [
     {
       number: "01",

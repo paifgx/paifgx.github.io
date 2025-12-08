@@ -148,7 +148,7 @@ export const focusAreas: FocusArea[] = [
   { id: 2, title: "Wissen sichern & Ausfälle auffangen" },
   {
     id: 3,
-    title: "Sicherer KI-Einsatz nach BSI IT-Grundschutz, ISO/IEC 27001 & DSGVO",
+    title: "KI-Einsatz orientiert an BSI IT-Grundschutz, ISO/IEC 27001 & DSGVO",
   },
 ];
 
@@ -192,7 +192,7 @@ export const availability = [
   {
     title: "Fokus 2024/2025",
     detail:
-      "KI & GenAI im Gesundheitswesen, E-Commerce, Wissensmanagement und Public Sector – von klassischen ML-Anwendungen bis zu LLM-Systemen. Beratungs- & Delivery-Kombinationen bevorzugt.",
+      "KI & GenAI für Mittelstand & IT-Dienstleister – Schwerpunkte Gesundheitswesen und B2B-SaaS/IT-Dienstleister. Von klassischen Anwendungen bis zu ML/LLM-Systemen.",
   },
   {
     title: "Ausgewählte Mandate",

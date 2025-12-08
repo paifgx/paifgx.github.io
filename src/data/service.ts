@@ -26,55 +26,40 @@ export interface PainPoint {
 
 export const servicePillars: ServicePillar[] = [
   {
-    title: "Roadmap & Verantwortlichkeiten klären",
-    subtitle: "FlowCraftDB",
+    title: "Audit & Roadmap",
+    subtitle: "2–4 Wochen • Architektur-Assessment & Governance-Plan",
     description:
       "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken – von der ersten Rechtsprüfung bis zur Governance im Betrieb.",
     deliverables: [
       "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen inkl. Stakeholder-Interviews.",
-      "RAG- & Agentensysteme mit LangChain, LlamaIndex, Haystack, OpenSearch/Qdrant/Weaviate – abgestimmt auf bestehende IT.",
-      "Security, IAM & Compliance orientiert an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO/DPIA – mit OAuth2/Keycloak und dokumentierten Guardrails in enger Abstimmung mit Datenschutz- und Security-Verantwortlichen.",
+      "Architektur-Review und Risiko-Mapping mit klaren Quick-Wins.",
+      "Security, IAM & Compliance orientiert an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO – mit dokumentierten Guardrails.",
     ],
     results: [
+      "Architektur-Blueprint: Klare technische Roadmap für die nächsten 12 Wochen.",
+      "Risiko-Matrix: Prüfbare Entscheidungsgrundlagen für Datenschutz & Compliance.",
       "Investitionssicherheit: Sie wissen vor dem Start genau, was machbar ist und was es kostet.",
-      "Prüfbare Entscheidungsgrundlagen: Klare Ampel für Datenschutz & Compliance (DSGVO) – die rechtliche Bewertung liegt bei Ihren Datenschutz- und Rechtsabteilungen.",
     ],
     stack:
-      "LLMs: GPT, Claude, Gemini, Mistral, LLaMA/Mixtral · Orchestrierung: LangChain, LlamaIndex, Haystack, Custom Agents.",
+      "LLMs: GPT, Claude, Gemini, Mistral · Orchestrierung: LangChain, LlamaIndex, Haystack.",
   },
   {
-    title: "Operative Abläufe mit smarter Automatisierung entlasten",
-    subtitle: "Universitätsklinikum Bonn",
+    title: "PoC → produktiver Workflow",
+    subtitle: "6–12 Wochen • Von Prototyp zu skalierbarem System",
     description:
-      "Ich begleite End-to-end Delivery – von der Architektur über APIs bis zum Betrieb. Ziel: weniger manuelle Nacharbeit, stabile Releases und Systeme, die mitwachsen.",
+      "Übergang von bestehendem PoC zu produktivem, audit-fähigem Workflow. Architektur, Infra, Integration und Doku – alles für stabilen Betrieb unter Last.",
     deliverables: [
-      "Backend- & API-Engineering (FastAPI, NestJS, Micronaut, Django, Laravel, GraphQL, WebSockets) inklusive Datenpipelines.",
-      "Cloud & Infrastruktur: AWS, Azure, GCP, Terraform, Docker/Kubernetes, GitHub Actions/GitLab CI/CD mit Observability (Prometheus/Grafana, ELK).",
-      "Automation von Tests, Monitoring & Incident-Response – damit Teams liefern können, ohne ständig Feuer zu löschen.",
+      "Backend- & API-Engineering (FastAPI, NestJS, Django) inklusive Datenpipelines und Event-Handling.",
+      "Cloud & Infrastruktur: AWS/Azure/GCP, Terraform, Docker/Kubernetes, CI/CD mit Monitoring.",
+      "Security-by-Design: IAM, OAuth2, Keycloak, Observability und Incident-Response.",
     ],
     results: [
-      "Messbare Effizienz: Prozesse laufen automatisch in Sekunden statt manuell in Stunden.",
-      "Reduzierte Betriebskosten durch stabile Software-Architektur, die wenig Wartung braucht.",
+      "Produktionsreifer Workflow: Skalierbar, audit-fähig, mit Runbook und Logging.",
+      "Eigentum & Unabhängigkeit: Code gehört Ihnen, technische Abhängigkeiten transparent.",
+      "Messbare Effizienz: Prozesse laufen automatisch statt manuell.",
     ],
     stack:
-      "Python, TypeScript/Node, Kotlin, PHP, Dart/Flutter, SQL/NoSQL, Kafka, RabbitMQ, Docker/Kubernetes, Terraform.",
-  },
-  {
-    title: "Team befähigen & Skepsis abbauen",
-    subtitle: "GFU Cyrus AG",
-    description:
-      "Neue Systeme scheitern selten an Technik, sondern an Kommunikation. Ich kombiniere Trainings, Shadowing und Change-Arbeit, damit Ihr Team Verantwortung übernehmen kann.",
-    deliverables: [
-      "Modulare Trainings (Web, DevOps, KI, Security) für Fach- und Führungskräfte mit über 100 Teilnehmenden pro Jahr.",
-      "Shadowing & Coaching für Architekt:innen, Product Owner, Operations- und Security-Rollen – direkt an Ihren Fällen.",
-      "Wissenssysteme, Playbooks und Enablement-Artefakte (Notion, Confluence, Git) als Single Source of Truth.",
-    ],
-    results: [
-      "Volle Unabhängigkeit: Ihr Team versteht das System und kann es ohne mich weiterentwickeln.",
-      "Schnelleres Onboarding: Neue Mitarbeiter sind dank perfekter Dokumentation sofort produktiv.",
-    ],
-    stack:
-      "Workshops, Pair-Architecture, Code-/Prompt-Clinics, Assessments, OKRs & KPI-Frameworks.",
+      "Python, TypeScript, SQL/NoSQL, Docker/Kubernetes, Terraform, Prometheus/Grafana.",
   },
 ];
 

@@ -19,7 +19,7 @@ export interface CaseStudy {
  */
 export const caseStudies: CaseStudy[] = [
   {
-    company: "FlowCraftDB",
+    company: "FlowCraftDB (E-Commerce)",
     timeframe: "12/2024 – heute",
     role: "AI Solution Architect & Consultant (Freelancer)",
     mission: "Event-getriebene Datenanreicherung im E-Commerce",
@@ -33,7 +33,7 @@ export const caseStudies: CaseStudy[] = [
       "GPT-4, Gemini, LangChain, FastAPI, Docker, Kubernetes, AWS (S3/SQS/ECR), Azure, MongoDB, Redis, Terraform, GitHub Actions, Prometheus, Grafana, ELK, OAuth2, Keycloak.",
   },
   {
-    company: "CANCOM",
+    company: "CANCOM (IT-Dienstleister)",
     timeframe: "02/2025 – 08/2025",
     role: "AI Consultant & Software Engineer (Freelancer)",
     mission: "CANCOM Assistant Framework absichern & produktisieren",
@@ -42,7 +42,7 @@ export const caseStudies: CaseStudy[] = [
     approach:
       "LLM-Orchestrierung mit GPT-4/4o, GPT-3.5 und Mistral, Aufbau von Knowledge Bases, SSO-/Berechtigungskonzepten und ERP-/CRM-Connectoren plus Admin-Governance.",
     result:
-      "Unternehmen erhalten individuell konfigurierbare Bots mit überprüfbaren Quellen, DSGVO-konformer Datenhaltung und skalierbarer Betriebsführung.",
+      "Unternehmen erhalten individuell konfigurierbare Bots mit überprüfbaren Quellen, DSGVO-orientierter Datenhaltung und skalierbarer Betriebsführung.",
     stack:
       "GPT-4/4o, GPT-3.5 Turbo, Mistral, LangChain, Azure/AWS, SSO/SCIM, ERP-/CRM-APIs, Monitoring & Guardrails.",
   },
@@ -61,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
       "Flutter, Dart, REST/gRPC-APIs, Firebase/AWS, GitHub Actions, QA-Automatisierung, Observability.",
   },
   {
-    company: "Universitätsklinikum Bonn AöR",
+    company: "Universitätsklinikum Bonn (Gesundheitswesen)",
     timeframe: "11/2025 – heute",
     role: "AI Solution Architect & Consultant (Freelancer)",
     mission: "Middleware für personalisierte Medizin & Forschungsnetzwerke",
@@ -75,7 +75,7 @@ export const caseStudies: CaseStudy[] = [
       "Kotlin, Micronaut, Azure, MSSQL, Keycloak/IAM, Observability-Playbooks, DSGVO/DPIA-Governance.",
   },
   {
-    company: "AICT Group",
+    company: "AICT Group (Public Sector)",
     timeframe: "06/2024 – heute",
     role: "Co-Founder & CIO",
     mission: "KI-Plattform zur Konfliktprävention (LLMs & Knowledge Graphs)",
@@ -110,4 +110,3 @@ export const caseStudies: CaseStudy[] = [
 export function getTotalSlides(): number {
   return Math.ceil(caseStudies.length / 2);
 }
-

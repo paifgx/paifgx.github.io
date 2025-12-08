@@ -62,6 +62,12 @@ export const principles: Principle[] = [
     description:
       "Metriken, Runbooks und Decision Logs schaffen Klarheit für Produkt, Security und Management – inklusive Verantwortlichkeiten, Eskalationswegen und KPIs.",
   },
+  {
+    id: 4,
+    title: "Klartext statt Agentur-Bullshit",
+    description:
+      "Keine Buzzwords, sondern Entscheidungsgrundlagen, die Revision und IT gemeinsam unterschreiben können. Ich sitze selbst im Code und liefere Pull Requests, keine PowerPoint-Präsentationen.",
+  },
 ];
 
 export const capabilities: Capability[] = [
