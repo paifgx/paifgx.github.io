@@ -14,7 +14,7 @@ export const painPoints = [
   {
     title: "Angst vor DSGVO-Verstößen",
     description:
-      "KI klingt gut, aber die Rechtsabteilung winkt ab? Wir bauen Lösungen, die BSI- und DSGVO-konform sind – auditiersicher ab Tag 1.",
+      "KI klingt gut, aber die Rechtsabteilung winkt ab? Ich entwickle Lösungen, die BSI- und DSGVO-konform sind – prüfbar ab Tag 1.",
     icon: "ShieldCheckIcon",
   },
   {
@@ -26,13 +26,13 @@ export const painPoints = [
   {
     title: "Wissen in den Köpfen, nicht im System",
     description:
-      "Wenn Schlüsselpersonen ausfallen, steht der Betrieb still. Wir dokumentieren Prozesse so, dass jeder sie versteht.",
+      "Wenn Schlüsselpersonen ausfallen, steht der Betrieb still. Ich dokumentiere Prozesse so, dass jeder sie versteht.",
     icon: "DocumentTextIcon",
   },
   {
     title: "Sorge vor Abhängigkeit (Lock-in)",
     description:
-      "Sie wollen keine Blackbox mieten, sondern Eigentum erwerben. Bei mir gibt es keine Knebelverträge – der Code gehört Ihnen.",
+      "Sie wollen keine Blackbox mieten, sondern Eigentum erwerben. Bei mir gibt es keine Knebelverträge – der Code gehört Ihnen. Technische Abhängigkeiten (Cloud, LLMs, APIs) werden transparent gehalten.",
     icon: "LockOpenIcon",
   },
 ];
@@ -42,21 +42,25 @@ export const benefits = [
     title: "Effizienz, die man misst",
     description:
       "Medienbrüche verschwinden. Prozesse, die früher Stunden dauerten, laufen jetzt in Sekunden automatisch.",
+    icon: "ClockIcon",
   },
   {
-    title: "100% Unabhängigkeit & Eigentum",
+    title: "Eigentum & Unabhängigkeit",
     description:
-      "Sie erhalten den vollen Quellcode und alle Rechte. Keine Lizenzmiete für meine Arbeit, kein Vendor Lock-in.",
+      "Der Projektcode gehört Ihnen – kein Agentur-Lock-in, keine Lizenzmiete für meine Arbeit. Technische Abhängigkeiten (Cloud, Datenbanken, LLMs) halten wir bewusst transparent und so austauschbar wie möglich.",
+    icon: "KeyIcon",
   },
   {
-    title: "Rechtssicherer KI-Einsatz",
+    title: "Prüfbare KI-Architekturen",
     description:
-      "Datenschutz (DSGVO) und IT-Sicherheit (BSI) sind fest eingebaut. Keine Grauzonen, sondern Audit-Ready.",
+      "Architekturen und Implementierungen, die sich an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO orientieren. Audit-fähige Doku und Logging – die fachliche Freigabe liegt bei Datenschutz & Revision Ihres Hauses.",
+    icon: "ClipboardDocumentCheckIcon",
   },
   {
     title: "Investitionsschutz",
     description:
-      "Keine Wegwerf-Software. Wir bauen eine solide Architektur, die auch in 5 Jahren noch wartbar und skalierbar ist.",
+      "Keine Wegwerf-Software. Ich baue eine solide Architektur, die auch in 5 Jahren noch wartbar und skalierbar ist.",
+    icon: "CheckBadgeIcon",
   },
 ];
 
@@ -65,19 +69,19 @@ export const processSteps = [
     id: "01",
     name: "Analyse & Business Case",
     description:
-      "Wir prüfen Ihre Prozesse und Daten auf Herz und Nieren. Lohnt sich die Automatisierung? Wir rechnen es durch, bevor wir eine Zeile Code schreiben.",
+      "Ich prüfe Ihre Prozesse und Daten auf Herz und Nieren. Lohnt sich die Automatisierung? Ich rechne es durch, bevor ich eine Zeile Code schreibe.",
   },
   {
     id: "02",
     name: "Architektur & Prototyp",
     description:
-      "Wir bauen einen funktionsfähigen Piloten (MVP). Sicherheit und Datenschutz sind von Tag 1 an integriert, damit Sie sofort testen können.",
+      "Ich baue einen funktionsfähigen Piloten (MVP). Sicherheit und Datenschutz sind von Tag 1 an integriert, damit Sie sofort testen können.",
   },
   {
     id: "03",
     name: "Umsetzung & Integration",
     description:
-      "Iterative Entwicklung in Ihrer Umgebung. Wir binden bestehende Systeme (ERP, CRM) an und sorgen für stabilen Betrieb unter Last.",
+      "Iterative Entwicklung in Ihrer Umgebung. Ich binde bestehende Systeme (ERP, CRM) an und sorge für stabilen Betrieb unter Last.",
   },
   {
     id: "04",
@@ -96,20 +100,20 @@ export const authority = {
 
 export const authorityHighlights = [
   {
-    title: "Universitätsklinikum Bonn",
+    title: "Universitätsklinikum in NRW",
     description:
       "Sichere Middleware für Patientendaten – ohne manuelle Überträge.",
   },
   {
-    title: "Bringmeister (Edeka)",
+    title: "DAX-nahes E-Commerce-Unternehmen",
     description: "Skalierung der E-Commerce Systeme für Hochlast-Zeiten.",
   },
   {
-    title: "CANCOM",
+    title: "IT-Dienstleister",
     description: "DSGVO-konformer KI-Assistent für interne Teams.",
   },
   {
-    title: "AICT Group",
+    title: "Technologie-Startup",
     description: "Echtzeit-Plattform: Von der Idee zum marktreifen Produkt.",
   },
 ];
@@ -117,7 +121,7 @@ export const authorityHighlights = [
 export const ctaCopy = {
   title: "Klarheit in 30 Minuten.",
   subline:
-    "Kein Sales-Pitch, sondern echte Strategie. Wir prüfen gemeinsam, ob und wie ich Ihnen helfen kann.",
+    "Kein Sales-Pitch, sondern echte Strategie. Ich prüfe gemeinsam mit Ihnen, ob und wie ich Ihnen helfen kann.",
   buttonLabel: "Jetzt 30-Minuten-Sparring buchen",
   steps: [
     {

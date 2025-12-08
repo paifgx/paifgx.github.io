@@ -12,7 +12,6 @@ import {
   getPostalAddress,
 } from "../config/site";
 import { inlineThemeScript } from "../utils/themeInline";
-import ConsentToast from "../components/ConsentToast.astro";
 
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, siteMeta.origin);
@@ -157,42 +156,9 @@ const structuredData = {
     <script>
       import { init } from "@plausible-analytics/tracker";
 
-      const CONSENT_KEY = "analytics-consent";
-      let initialized = false;
-
-      const hasConsent = () => {
-        try {
-          return localStorage.getItem(CONSENT_KEY) === "granted";
-        } catch {
-          return false;
-        }
-      };
-
-      const maybeInit = () => {
-        if (initialized) return;
-        const domain = (window as any).__PLAUSIBLE_DOMAIN__;
-        if (!domain || domain === "localhost") return;
-        if (!hasConsent()) return;
-
+      const domain = (window as any).__PLAUSIBLE_DOMAIN__;
+      if (domain && domain !== "localhost") {
         init({ domain });
-        initialized = true;
-      };
-
-      (window as any).__grantAnalyticsConsent = () => {
-        try {
-          localStorage.setItem(CONSENT_KEY, "granted");
-        } catch {}
-        maybeInit();
-      };
-
-      (window as any).__revokeAnalyticsConsent = () => {
-        try {
-          localStorage.setItem(CONSENT_KEY, "denied");
-        } catch {}
-      };
-
-      if (hasConsent()) {
-        maybeInit();
       }
     </script>
 
@@ -214,8 +180,6 @@ const structuredData = {
       Zum Hauptinhalt springen
     </a>
     <Header currentPath={currentPath} client:load />
-
-    <ConsentToast />
 
     <main id="main-content" class={mainClass}>
       <slot />

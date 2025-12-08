@@ -1,6 +1,19 @@
 ---
 import SectionSubtitle from "../ui/SectionSubtitle.astro";
 import { benefits } from "../../data/home";
+import {
+  ClockIcon,
+  KeyIcon,
+  ClipboardDocumentCheckIcon,
+  CheckBadgeIcon,
+} from "@heroicons/vue/24/outline";
+
+const iconMap = {
+  ClockIcon,
+  KeyIcon,
+  ClipboardDocumentCheckIcon,
+  CheckBadgeIcon,
+};
 ---
 
 <section
@@ -16,7 +29,7 @@ import { benefits } from "../../data/home";
   </div>
 
   <div class="mx-auto max-w-7xl relative z-10">
-    <div class="mx-auto max-w-3xl text-center mb-12">
+    <div class="mx-auto max-w-3xl text-center mb-16">
       <SectionSubtitle>Ergebnis</SectionSubtitle>
       <h2
         class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
@@ -25,34 +38,27 @@ import { benefits } from "../../data/home";
       </h2>
     </div>
 
-    <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       {
-        benefits.map((benefit) => (
-          <div class="relative pl-10 group">
-            <dt class="font-semibold text-gray-900 dark:text-white text-lg group-hover:text-brand-blue dark:group-hover:text-brand-gold transition-colors">
-              <div class="absolute left-0 top-1 h-6 w-6">
-                <svg
-                  class="h-6 w-6 text-brand-blue dark:text-brand-gold"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"
-                  />
-                </svg>
+        benefits.map((benefit) => {
+          const Icon = iconMap[benefit.icon as keyof typeof iconMap];
+          return (
+            <div class="relative flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-lg shadow-brand-blue/5 ring-1 ring-gray-200 dark:bg-white/5 dark:ring-white/10 dark:shadow-none transition-all hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold">
+                {Icon && <Icon class="h-6 w-6" />}
               </div>
-              {benefit.title}
-            </dt>
-            <dd class="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
-              {benefit.description}
-            </dd>
-          </div>
-        ))
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {benefit.title}
+                </h3>
+                <p class="text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                  {benefit.description}
+                </p>
+              </div>
+            </div>
+          );
+        })
       }
-    </dl>
+    </div>
   </div>
 </section>

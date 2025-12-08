@@ -26,7 +26,7 @@ export interface PainPoint {
 export const servicePillars: ServicePillar[] = [
   {
     title: "Roadmap & Verantwortlichkeiten klären",
-    subtitle: "Universitätsklinikum Bonn",
+    subtitle: "FlowCraftDB",
     description:
       "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken – von der ersten Rechtsprüfung bis zur Governance im Betrieb.",
     deliverables: [
@@ -43,7 +43,7 @@ export const servicePillars: ServicePillar[] = [
   },
   {
     title: "Operative Abläufe mit smarter Automatisierung entlasten",
-    subtitle: "FlowCraftDB",
+    subtitle: "Universitätsklinikum Bonn",
     description:
       "Ich begleite End-to-end Delivery – von der Architektur über APIs bis zum Betrieb. Ziel: weniger manuelle Nacharbeit, stabile Releases und Systeme, die mitwachsen.",
     deliverables: [
