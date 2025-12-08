@@ -98,7 +98,9 @@ export const contact: Contact = {
 };
 
 export const uspPrimary =
-  "Ich helfe Mittelstand & IT-Teams, aus KI-Experimenten produktive Workflows zu machen – integriert in bestehende Systeme, mit Security-by-Design und Doku, die für Audits ausgelegt ist.";
+  "Ich helfe Mittelstand und IT-Teams, aus KI-Experimenten produktive Workflows zu machen – integriert in Ihre Systeme, mit Governance & Doku, die Audits vereinfacht.";
+
+export const tagline = "AI Solution Architect für Mittelstand & IT-Teams";
 
 export const uspAlt =
   "Ich baue produktive KI-Systeme für Mittelstand & IT-Dienstleister – mit sauberer Architektur, Integration & Governance, statt noch ein weiteres KI-Tool in Ihren Stack zu kippen.";

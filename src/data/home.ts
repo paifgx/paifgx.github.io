@@ -128,7 +128,7 @@ export const ctaCopy = {
   title: "Klarheit in 30 Minuten.",
   subline:
     "Kein Sales-Pitch, sondern echte Strategie. Ich prüfe gemeinsam mit Ihnen, ob und wie ich Ihnen helfen kann.",
-  buttonLabel: "Jetzt Sparring-Call buchen",
+  buttonLabel: "Sparring-Call buchen",
   steps: [
     {
       number: "01",

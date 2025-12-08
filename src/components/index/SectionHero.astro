@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import InfoTooltip from "../ui/InfoTooltip.astro";
 import heroImage from "../../assets/DSC00758.jpg";
-import { contact, uspPrimary } from "../../config/site";
+import { contact, uspPrimary, tagline } from "../../config/site";
 ---
 
 <section
@@ -30,14 +30,14 @@ import { contact, uspPrimary } from "../../config/site";
           <div
             class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium text-brand-gold-dim ring-1 ring-inset ring-brand-gold/30 bg-brand-gold/10 backdrop-blur-sm mb-6 dark:text-brand-gold dark:bg-brand-gold/5"
           >
-            AI Solution Architect für Mittelstand &amp; IT-Dienstleister
+            {tagline}
           </div>
 
           <h1
             class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl"
           >
             Produktive KI-Workflows statt <span
-              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-indigo-400 whitespace-nowrap"
+              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-indigo-400 whitespace-nowrap inline-block sm:inline"
             >
               Proof-of-Concepts.
             </span>
@@ -54,21 +54,27 @@ import { contact, uspPrimary } from "../../config/site";
             />
           </div>
 
-          <div class="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center">
-            <a
-              href="https://app.reclaim.ai/m/gartenai/meet"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center rounded-lg bg-brand-blue px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
-            >
-              Sparring-Call buchen
-            </a>
-            <a
-              href={`mailto:${contact.email}`}
-              class="text-sm font-medium text-gray-900 hover:text-brand-blue dark:text-white dark:hover:text-brand-gold transition-colors"
-            >
-              Oder Erstkontakt per E-Mail <span aria-hidden="true">&rarr;</span>
-            </a>
+          <div class="mt-10 flex flex-col gap-6 items-start">
+            <div class="flex flex-col gap-2 w-full sm:w-auto">
+              <a
+                href="https://app.reclaim.ai/m/gartenai/meet"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-lg bg-brand-blue px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue w-full sm:w-auto"
+              >
+                Sparring-Call buchen
+              </a>
+              <p class="text-sm text-gray-500 dark:text-gray-400 text-center">
+                30 Minuten, kostenlos &amp; unverbindlich.
+              </p>
+            </div>
+            <p class="text-base text-gray-600 dark:text-gray-300">
+              Oder schreiben Sie mir eine kurze E-Mail an <a
+                href={`mailto:${contact.email}`}
+                class="font-semibold text-brand-blue hover:text-blue-600 dark:text-brand-gold dark:hover:text-brand-gold/80 transition-colors"
+                >{contact.email}</a
+              > – ich melde mich innerhalb von 24 Stunden.
+            </p>
           </div>
         </div>
       </div>
