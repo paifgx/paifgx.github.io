@@ -55,7 +55,7 @@ export const principles: Principle[] = [
     id: 2,
     title: "Security-first Delivery",
     description:
-      "Privacy-by-Design, Threat-Modelling und Compliance-Reviews laufen mit – so bestehen Vorstände, Betriebsräte und Auditor:innen dieselben Unterlagen.",
+      "Privacy-by-Design, Threat-Modelling und Compliance-Reviews laufen mit – so nutzen Vorstände, Betriebsräte und Auditor:innen dieselben Unterlagen.",
   },
   {
     id: 3,
@@ -119,7 +119,7 @@ export const capabilities: Capability[] = [
     title: "Security, Identity & Compliance",
     icon: "ShieldCheckIcon",
     description:
-      "OAuth2, Keycloak, IAM, Security/Privacy-by-Design, BSI IT-Grundschutz, ISO/IEC 27001, DSGVO, DPIA",
+      "OAuth2, Keycloak, IAM, Security/Privacy-by-Design, BSI IT-Grundschutz, ISO/IEC 27001, Technische DSGVO-Compliance",
   },
   {
     id: 8,

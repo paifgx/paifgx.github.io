@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     result:
       "Qualitätsgesicherte Datenintegration, revisionssichere Nachvollziehbarkeit und automatisierte Übergaben an Forschungsdatenbanken – ohne sensible Interna zu veröffentlichen.",
     stack:
-      "Kotlin, Micronaut, Azure, MSSQL, Keycloak/IAM, Observability-Playbooks, DSGVO/DPIA-Governance.",
+      "Kotlin, Micronaut, Azure, MSSQL, Keycloak/IAM, Observability-Playbooks, Technische DSGVO/DPIA-Umsetzung.",
   },
   {
     company: "AICT Group (Public Sector)",

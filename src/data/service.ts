@@ -37,7 +37,7 @@ export const servicePillars: ServicePillar[] = [
     ],
     results: [
       "Architektur-Blueprint: Klare technische Roadmap für die nächsten 12 Wochen.",
-      "Risiko-Matrix: Prüfbare Entscheidungsgrundlagen für Datenschutz & Compliance.",
+      "Risiko-Matrix: Fundierte Entscheidungsgrundlagen für Datenschutz & Compliance.",
       "Investitionssicherheit: Sie wissen vor dem Start genau, was machbar ist und was es kostet.",
     ],
     stack:
@@ -94,7 +94,7 @@ export const technologyHighlights: TechnologyHighlights = {
   ],
   security: [
     "Security/Privacy-by-Design, IAM/RBAC, OAuth2, Keycloak, Supabase Auth",
-    "BSI IT-Grundschutz (200-1/-2/-3), ISO/IEC 27001, DSGVO, DPIA",
+    "Technische DSGVO-Konformität, BSI IT-Grundschutz (200-1/-2/-3), ISO/IEC 27001",
     "Observability: Prometheus, Grafana, ELK/OpenSearch, DeepEval für Prompt-Qualität",
   ],
 };
