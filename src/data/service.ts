@@ -21,6 +21,7 @@ export interface TechnologyHighlights {
 export interface PainPoint {
   title: string;
   description: string;
+  icon: string;
 }
 
 export const servicePillars: ServicePillar[] = [
@@ -118,15 +119,18 @@ export const painPoints: PainPoint[] = [
     title: "Tool-Wildwuchs",
     description:
       "Jede Abteilung nutzt eigene Lösungen, Daten liegen in Excel, Outlook, Branchensoftware – nichts greift ineinander.",
+    icon: "SquaresPlusIcon",
   },
   {
     title: "Abhängigkeit von Einzelpersonen",
     description:
       "Wenn Schlüsselpersonen fehlen, steht das Tagesgeschäft. Prozesse existieren nur im Kopf – nicht im System.",
+    icon: "UserGroupIcon",
   },
   {
     title: "Skepsis & Risikoangst",
     description:
       "Teams sind KI-müde oder fürchten Datenschutzprobleme. Es fehlt ein Setup, das Verantwortung und Nutzen verbindet.",
+    icon: "ShieldExclamationIcon",
   },
 ];
