@@ -53,7 +53,8 @@ export const benefits = [
   {
     title: "Prüfbare KI-Architekturen",
     description:
-      "Architekturen und Implementierungen, die sich an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO orientieren. Audit-fähige Doku und Logging – die fachliche Freigabe liegt bei Datenschutz & Revision Ihres Hauses.",
+      "Architekturen und Implementierungen, die sich an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO orientieren. Audit-fähige Doku und Logging",
+    hint: "Die fachliche Freigabe liegt bei Datenschutz & Revision Ihres Hauses.",
     icon: "ClipboardDocumentCheckIcon",
   },
   {

@@ -1,5 +1,6 @@
 ---
 import SectionSubtitle from "../ui/SectionSubtitle.astro";
+import InfoTooltip from "../ui/InfoTooltip.astro";
 import { benefits } from "../../data/home";
 import {
   ClockIcon,
@@ -52,7 +53,8 @@ const iconMap = {
                   {benefit.title}
                 </h3>
                 <p class="text-base leading-relaxed text-gray-600 dark:text-gray-300">
-                  {benefit.description}
+                  {benefit.description}{" "}
+                  {benefit.hint && <InfoTooltip text={benefit.hint} />}
                 </p>
               </div>
             </div>

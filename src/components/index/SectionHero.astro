@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import InfoTooltip from "../ui/InfoTooltip.astro";
 import heroImage from "../../assets/DSC00758.jpg";
 import { contact } from "../../config/site";
 ---
@@ -50,31 +51,9 @@ import { contact } from "../../config/site";
               in Ihre Systeme – orientiert am BSI IT-Grundschutz, mit sauberer
               Doku und Logging für Prüfungen.
             </p>
-            <div
-              class="relative group inline-block ml-1 align-baseline translate-y-[2px]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="w-4 h-4 text-brand-blue/60 dark:text-brand-gold/60 cursor-help"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <div
-                class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-64 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none font-normal leading-normal"
-              >
-                Die rechtliche Bewertung und Abnahme liegt bei Ihren
-                Datenschutz- und Rechtsabteilungen.
-                <div
-                  class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 bg-white dark:bg-gray-800 border-b border-r border-gray-100 dark:border-gray-700 rotate-45"
-                >
-                </div>
-              </div>
-            </div>
+            <InfoTooltip
+              text="Die rechtliche Bewertung und Abnahme liegt bei Ihren Datenschutz- und Rechtsabteilungen."
+            />
           </div>
 
           <div class="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center">
