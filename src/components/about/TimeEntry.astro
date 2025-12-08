@@ -54,17 +54,17 @@ const showConnector = !isLast;
 ---
 
 <article id={`entry-${id}`} class="group relative pl-10">
-  <span
-    class="absolute left-4 top-5 inline-flex h-3.5 w-3.5 -translate-x-1/2 items-center justify-center rounded-full border border-brand-blue/50 bg-white text-brand-blue shadow-lg shadow-brand-blue/20 dark:border-brand-gold/60 dark:bg-slate-950 dark:text-brand-gold"
-    aria-hidden="true"></span>
   {
     showConnector && (
       <span
-        class="absolute left-4 top-8 bottom-0 w-px -translate-x-1/2 bg-linear-to-b from-slate-900/20 via-slate-900/10 to-transparent dark:from-white/20 dark:via-white/5"
+        class="absolute left-4 top-4 bottom-0 w-px -translate-x-1/2 bg-linear-to-b from-slate-900/20 via-slate-900/10 to-transparent dark:from-white/20 dark:via-white/5"
         aria-hidden="true"
       />
     )
   }
+  <span
+    class="absolute left-4 top-1 inline-flex h-3.5 w-3.5 -translate-x-1/2 items-center justify-center rounded-full border border-brand-blue/50 bg-white text-brand-blue shadow-lg shadow-brand-blue/20 dark:border-brand-gold/60 dark:bg-slate-950 dark:text-brand-gold"
+    aria-hidden="true"></span>
 
   <header
     class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-brand-blue dark:text-brand-gold"
