@@ -47,7 +47,7 @@ export const servicePillars: ServicePillar[] = [
     title: "PoC → produktiver Workflow",
     subtitle: "6–12 Wochen • Von Prototyp zu skalierbarem System",
     description:
-      "Übergang von bestehendem PoC zu produktivem, audit-fähigem Workflow. Architektur, Infra, Integration und Doku – alles für stabilen Betrieb unter Last.",
+      "Übergang von bestehendem PoC oder Konzept zu produktivem, audit-fähigem Workflow. Architektur, Infra, Integration und Doku – alles für stabilen Betrieb unter Last.",
     deliverables: [
       "Backend- & API-Engineering (FastAPI, NestJS, Django) inklusive Datenpipelines und Event-Handling.",
       "Cloud & Infrastruktur: AWS/Azure/GCP, Terraform, Docker/Kubernetes, CI/CD mit Monitoring.",

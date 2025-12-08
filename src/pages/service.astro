@@ -397,7 +397,7 @@ const faqSchema = {
         </p>
       </div>
       <div
-        class="isolate mx-auto mt-10 grid w-full grid-cols-1 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:items-stretch lg:gap-x-8"
+        class="isolate mx-auto mt-10 grid w-full grid-cols-1 gap-y-8 lg:mx-auto lg:max-w-5xl lg:grid-cols-2 lg:items-stretch lg:gap-x-8"
       >
         {
           servicePillars.map((pillar) => {
@@ -461,6 +461,17 @@ const faqSchema = {
                           </svg>
                           {item}
                         </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div class="mt-6 border-t border-gray-100 pt-4 dark:border-white/10">
+                    <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                      Ergebnisse &amp; Artefakte
+                    </p>
+                    <ul class="mt-2 space-y-2 text-sm text-gray-600 dark:text-gray-400 list-disc pl-4 marker:text-gray-400 dark:marker:text-gray-600">
+                      {pillar.results.map((result) => (
+                        <li>{result}</li>
                       ))}
                     </ul>
                   </div>
