@@ -32,7 +32,7 @@ export const painPoints = [
   {
     title: "Sorge vor Abhängigkeit (Lock-in)",
     description:
-      "Sie wollen keine Blackbox mieten, sondern Eigentum erwerben. Bei mir gibt es keine Knebelverträge – der Code gehört Ihnen. Technische Abhängigkeiten (Cloud, LLMs, APIs) werden transparent gehalten.",
+      "Sie wollen keine Blackbox mieten, sondern Eigentum. Der Code gehört Ihnen – ohne Knebelverträge. Technische Abhängigkeiten bleiben transparent.",
     icon: "LockOpenIcon",
   },
 ];

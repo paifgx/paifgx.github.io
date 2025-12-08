@@ -33,11 +33,11 @@ export const servicePillars: ServicePillar[] = [
     deliverables: [
       "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen inkl. Stakeholder-Interviews.",
       "RAG- & Agentensysteme mit LangChain, LlamaIndex, Haystack, OpenSearch/Qdrant/Weaviate – abgestimmt auf bestehende IT.",
-      "Security, IAM & Compliance nach BSI IT-Grundschutz, ISO/IEC 27001, DSGVO/DPIA mit OAuth2/Keycloak und dokumentierten Guardrails.",
+      "Security, IAM & Compliance orientiert an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO/DPIA – mit OAuth2/Keycloak und dokumentierten Guardrails in enger Abstimmung mit Datenschutz- und Security-Verantwortlichen.",
     ],
     results: [
       "Investitionssicherheit: Sie wissen vor dem Start genau, was machbar ist und was es kostet.",
-      "Rechtssicherheit: Klare Ampel für Datenschutz & Compliance (DSGVO) – kein Blindflug.",
+      "Prüfbare Entscheidungsgrundlagen: Klare Ampel für Datenschutz & Compliance (DSGVO) – die rechtliche Bewertung liegt bei Ihren Datenschutz- und Rechtsabteilungen.",
     ],
     stack:
       "LLMs: GPT, Claude, Gemini, Mistral, LLaMA/Mixtral · Orchestrierung: LangChain, LlamaIndex, Haystack, Custom Agents.",
