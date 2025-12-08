@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import InfoTooltip from "../ui/InfoTooltip.astro";
 import heroImage from "../../assets/DSC00758.jpg";
-import { contact } from "../../config/site";
+import { contact, uspPrimary } from "../../config/site";
 ---
 
 <section
@@ -47,9 +47,7 @@ import { contact } from "../../config/site";
             <p
               class="text-lg leading-8 text-gray-600 dark:text-gray-300 inline"
             >
-              Integriert in Ihre Systeme, mit Governance & Doku, die für
-              Prüfungen ausgelegt ist – von der Architektur bis zu Pull
-              Requests.
+              {uspPrimary}
             </p>
             <InfoTooltip
               text="Die rechtliche Bewertung und Abnahme liegt bei Ihren Datenschutz- und Rechtsabteilungen."

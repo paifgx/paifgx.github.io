@@ -97,6 +97,12 @@ export const contact: Contact = {
   calendaring: "https://app.reclaim.ai/m/gartenai/meet",
 };
 
+export const uspPrimary =
+  "Ich helfe Mittelstand & IT-Teams, aus KI-Experimenten produktive Workflows zu machen – integriert in bestehende Systeme, mit Security-by-Design und Doku, die für Audits ausgelegt ist.";
+
+export const uspAlt =
+  "Ich baue produktive KI-Systeme für Mittelstand & IT-Dienstleister – mit sauberer Architektur, Integration & Governance, statt noch ein weiteres KI-Tool in Ihren Stack zu kippen.";
+
 export const siteMeta: SiteMeta = {
   title: "Patrik Garten · AI Solution Architect & Software Engineer",
   description:

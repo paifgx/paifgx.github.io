@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+import SectionSubtitle from "../ui/SectionSubtitle.astro";
+import speakerImage from "../../assets/DSC00129.jpg";
+---
+
+<section
+  id="fuer-wen-ich-arbeite"
+  class="relative bg-white px-4 py-16 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-24 overflow-hidden"
+>
+  <div
+    class="pointer-events-none absolute top-1/2 left-0 -translate-y-1/2 w-[40vw] h-[40vw] bg-brand-blue/5 blur-[140px] rounded-full"
+  >
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+      <div class="relative mb-12 lg:mb-0">
+        <div
+          class="relative rounded-2xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 dark:bg-white/5 dark:ring-white/10 backdrop-blur-sm"
+        >
+          <Image
+            src={speakerImage}
+            alt="Patrik Garten als Speaker bei Non Plus Ultra - Vortrag über KI-Hindernisse und Systemintegration"
+            class="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 opacity-90 hover:opacity-100 transition-opacity duration-500"
+            width={800}
+          />
+
+          <div
+            class="absolute bottom-6 left-6 right-6 lg:left-8 lg:right-auto lg:max-w-xs"
+          >
+            <div
+              class="rounded-lg bg-white/90 px-3 py-2 text-xs font-medium text-gray-900 shadow-lg backdrop-blur-sm dark:bg-black/80 dark:text-white/90 border border-white/20"
+            >
+              Impulsvortrag: „Haupthindernisse bei der KI-Umsetzung“
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div class="space-y-4">
+          <SectionSubtitle>Für wen ich arbeite</SectionSubtitle>
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+          >
+            Typische Mandate &amp; Partner
+          </h2>
+          <p class="text-lg leading-8 text-gray-600 dark:text-gray-300">
+            Ich bin kein „Allzweck-KI-Berater“, sondern komme ins Spiel, wenn es
+            um produktive Systeme geht, die mehrere Stakeholder zufriedenstellen
+            müssen.
+          </p>
+        </div>
+
+        <ul
+          class="space-y-6 text-base leading-relaxed text-gray-700 dark:text-gray-300"
+        >
+          <li class="flex gap-3">
+            <span class="text-brand-blue dark:text-brand-gold mt-1">•</span>
+            <span>
+              <strong>Unternehmen mit eigener IT / Produktentwicklung</strong>,
+              bei denen bereits 1–3 KI-PoCs gelaufen sind – aber im Alltag noch
+              nichts wirklich stabil und audit-fähig läuft.
+            </span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-brand-blue dark:text-brand-gold mt-1">•</span>
+            <span>
+              <strong>
+                Organisationen mit hohem Dokumentations- und Prüfungsdruck
+              </strong>
+              (z. B. Kliniken, öffentliche Einrichtungen, E-Commerce- und B2B-Plattformen),
+              die KI nutzen wollen, ohne Datenschutz & Revision gegen sich aufzubringen.
+            </span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-brand-blue dark:text-brand-gold mt-1">•</span>
+            <span>
+              <strong>IT-Dienstleister & Tech-Teams</strong>, die eine
+              belastbare KI- oder Automatisierungsplattform aufbauen wollen –
+              statt lose Skripte, Tool-Zoo und Schatten-IT.
+            </span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-brand-blue dark:text-brand-gold mt-1">•</span>
+            <span>
+              <strong>Mittelständische Unternehmen im DACH-Raum</strong>, die
+              bereit sind, Prozesse strukturiert zu automatisieren und
+              Governance mitzudenken – aber jemanden brauchen, der
+              Architekturdiagramm und Pull Request gleichermaßen liefert.
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

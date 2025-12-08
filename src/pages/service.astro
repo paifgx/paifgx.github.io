@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import programmingImage from "../assets/programming.jpg";
-import { serviceStats, contact } from "../config/site";
+import { serviceStats, contact, uspPrimary } from "../config/site";
 import PillLink from "../components/ui/PillLink.astro";
 import SectionSubtitle from "../components/ui/SectionSubtitle.astro";
 import ServiceArticle from "../components/ServiceArticle.astro";
@@ -115,6 +115,11 @@ const faqSchema = {
             Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit,
             Skalierbarkeit und Ownership in Ihrem Team. Leistungsbausteine
             lassen sich kombinieren – remote im DACH-Raum oder vor Ort.
+          </p>
+          <p
+            class="text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-3xl"
+          >
+            {uspPrimary}
           </p>
         </div>
       </div>
