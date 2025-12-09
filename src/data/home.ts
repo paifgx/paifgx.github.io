@@ -4,6 +4,7 @@
 // - Verbotene/kritische Begriffe: "konform", "state-of-the-art", "ganzheitlich" (ersetzen oder bewusst begründen)
 // - Ziel: Klarheit und Sauberkeit, nicht literarische Perfektion
 
+// Pain points for homepage - general business challenges
 export const painPoints = [
   {
     title: "Versteckte Kosten durch ineffiziente IT",

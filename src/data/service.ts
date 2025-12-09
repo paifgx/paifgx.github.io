@@ -99,6 +99,7 @@ export const technologyHighlights: TechnologyHighlights = {
   ],
 };
 
+// Pain points for service page - specific to workflow automation services
 export const painPoints: PainPoint[] = [
   {
     title: "Tool-Wildwuchs",

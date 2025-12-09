@@ -33,7 +33,10 @@ export interface Contact {
     url: string;
     handle: string;
   };
-  calendaring: string;
+  calendaring: {
+    general: string;
+    workflowSprint: string;
+  };
 }
 
 export interface Stat {
@@ -94,7 +97,10 @@ export const contact: Contact = {
     url: "https://www.linkedin.com/in/paifgx",
     handle: "/in/paifgx",
   },
-  calendaring: "https://app.reclaim.ai/m/gartenai/meet",
+  calendaring: {
+    general: "https://app.reclaim.ai/m/gartenai/meet",
+    workflowSprint: "https://app.reclaim.ai/m/gartenai/workflow-sprint",
+  },
 };
 
 export const uspPrimary =
