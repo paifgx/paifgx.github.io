@@ -20,119 +20,78 @@ export interface Capability {
 export const pillars: Pillar[] = [
   {
     id: 1,
-    label: "Rollen",
+    label: "Marke & Rolle",
     description:
-      "AI Solution Architect & Consultant · Software Engineer · Fractional CIO · IT-Trainer & Coach",
+      "AI Solution Architect für den deutschen Mittelstand. Freelancer, Multi-Unternehmer, Software Engineer und Sparringspartner für Geschäftsführung, Fachbereiche und IT-Teams.",
   },
   {
     id: 2,
-    label: "Methodik",
+    label: "Arbeitsweise",
     description:
-      "RAG & Agentensysteme · Security-by-Design · Observability · Continuous Delivery · Governance & Enablement",
+      "Problem vor Technologie · System statt Tool · Governance & Security-by-Design · Vendor-Neutralität · Enablement statt Handoff",
   },
   {
     id: 3,
-    label: "Aktuelle Schwerpunkte",
+    label: "Fokus",
     description:
-      "GenAI im Gesundheitswesen & E-Commerce · Realtime Knowledge Graphs · Trainingsprogramme für moderne Softwarearchitektur",
-  },
-  {
-    id: 4,
-    label: "Ausbildung & Zertifikate",
-    description:
-      "BSc Informatik (IU Internationale Hochschule, seit 09/2023) · TÜV Rheinland zertifizierter AI Consultant (03/2024)",
+      "Wertschöpfende Kernprozesse in E-Commerce, Gesundheitswesen, IT-Dienstleistern und wissensintensiven Organisationen. Keine Showcases, sondern stabile Systeme.",
   },
 ];
 
 export const principles: Principle[] = [
   {
     id: 1,
-    title: "Enablement statt Handoff",
+    title: "Nachhaltigkeit",
     description:
-      "Teams erhalten Toolkits, Playbooks und Trainings, damit Architekturentscheidungen ohne externe Feuerwehr weitergeführt werden können.",
+      "Langlebige, wartbare Lösungen statt Wegwerf-Prototypen. Systeme, die Teams entlasten und Wissen verteilen statt neue Abhängigkeiten schaffen. Schlanke, effiziente Architekturen statt Overengineering.",
   },
   {
     id: 2,
-    title: "Security-first Delivery",
+    title: "Verantwortung",
     description:
-      "Privacy-by-Design, Threat-Modelling und technische Compliance-Reviews laufen mit, sodass Vorstände, Betriebsräte und Auditor:innen dieselben Unterlagen nutzen.",
+      "Kein Schönreden von Risiken. Klare Aussagen zu Datenschutz, Sicherheit, Machbarkeit. Transparente Kommunikation von Annahmen, Grenzen und Trade-offs. Governance & Security-by-Design von Anfang an.",
   },
   {
     id: 3,
-    title: "Transparente Governance",
+    title: "Humanismus",
     description:
-      "Metriken, Runbooks und Decision Logs schaffen Klarheit für Produkt, Security und Management, inklusive Verantwortlichkeiten, Eskalationswegen und KPIs.",
+      "Systeme sollen Menschen stärken, nicht ersetzen oder kontrollieren. Fokus auf bessere Arbeit für Wissensarbeiter: weniger stumpfe Tätigkeiten, mehr Empathie, Kreativität, Verantwortung.",
   },
   {
     id: 4,
-    title: "Klartext statt Agentur-Bullshit",
+    title: "Partnerschaft",
     description:
-      "Keine Buzzwords, sondern Entscheidungsgrundlagen, die Revision und IT gemeinsam unterschreiben können. Ich sitze selbst im Code und liefere Pull Requests, keine PowerPoint-Präsentationen.",
+      "Zusammenarbeit auf Augenhöhe, keine Blackbox-Agentur. Ziel: langfristige, vertrauensvolle Beziehungen statt einmalige Feuerwehr-Einsätze. Dokumentation & Ownership bleiben beim Kunden.",
   },
 ];
 
 export const capabilities: Capability[] = [
   {
     id: 1,
-    title: "Programmiersprachen",
-    icon: "CommandLineIcon",
+    title: "Digitale Architektur & Workflow-Design",
+    icon: "ServerStackIcon",
     description:
-      "Python, TypeScript, JavaScript, Kotlin, PHP, Java, Dart, SQL, Bash, C/C++",
+      "Analyse bestehender Prozess- und Systemlandschaften, Definition von Zielbildern und Soll-Prozessen, Design von Architekturen für Geschäftslogik, APIs, Events, Datenmodelle und Integrationslayer.",
   },
   {
     id: 2,
-    title: "KI & LLM-Ökosystem",
+    title: "Assistenzsysteme & Automatisierung",
     icon: "CpuChipIcon",
     description:
-      "GPT-4/3.5, Claude, Gemini, Mistral, LLaMA/Mixtral, LangChain, LlamaIndex, Haystack, RAG & Agentensysteme, Embeddings, Reranker, DeepEval, PromptLayer",
+      "Aufbau unternehmensspezifischer Assistenz- und Automatisierungslösungen. Kombination aus klassischer Automatisierung und intelligenten Komponenten (LLMs, RAG, Klassifikatoren), wo sie Mehrwert liefern.",
   },
   {
     id: 3,
-    title: "Machine Learning & Statistik",
-    icon: "ChartBarIcon",
+    title: "Governance & Security-by-Design",
+    icon: "ShieldCheckIcon",
     description:
-      "scikit-learn, XGBoost, LightGBM, TensorFlow, Keras, PyTorch, Pandas, NumPy, Feature Engineering, Drift/Bias Monitoring",
+      "Sicherheits-, Datenschutz- und Governance-Fragen von Anfang an mitgedacht (orientiert an IT-Grundschutz/ISO). Dokumentation, Runbooks und Trainingspfade für nachhaltigen Betrieb.",
   },
   {
     id: 4,
-    title: "Retrieval & Vektordatenbanken",
-    icon: "MagnifyingGlassIcon",
+    title: "Beratung & Enablement",
+    icon: "ChartBarIcon",
     description:
-      "OpenSearch, Elasticsearch, Qdrant, Weaviate, Pinecone, FAISS, Hybrid Retrieval, Chunking & Reranking Pipelines",
-  },
-  {
-    id: 5,
-    title: "Backend & API-Entwicklung",
-    icon: "ServerStackIcon",
-    description:
-      "FastAPI, Django, Node.js, NestJS, GraphQL, WebSockets/Streaming, Event-Driven Architecture, Microservices",
-  },
-  {
-    id: 6,
-    title: "Cloud, Infrastruktur & DevOps",
-    icon: "CloudIcon",
-    description:
-      "Docker, Kubernetes, Terraform, Cloudflare, AWS (EC2/S3/Lambda/RDS/ECR/SQS), Azure (OpenAI, Blob, CosmosDB), GCP (Vertex AI, BigQuery)",
-  },
-  {
-    id: 7,
-    title: "Security, Identity & Compliance",
-    icon: "ShieldCheckIcon",
-    description:
-      "OAuth2, Keycloak, IAM, Security/Privacy-by-Design, BSI IT-Grundschutz, ISO/IEC 27001, Technische DSGVO-Compliance",
-  },
-  {
-    id: 8,
-    title: "Observability & Automation",
-    icon: "EyeIcon",
-    description:
-      "Prometheus, Grafana, ELK-Stack, GitHub Actions, GitLab CI/CD, Jenkins, Kafka, RabbitMQ, n8n, Make, Zapier",
-  },
-  {
-    id: 9,
-    title: "Frontend & Mobile",
-    icon: "DevicePhoneMobileIcon",
-    description:
-      "Vue/Nuxt, React, Svelte, Tailwind CSS, Storybook, Figma, Flutter, React Native, Android (Kotlin)",
+      "Sparring für Geschäftsführung & Leitungen, Architektur-Workshops mit IT & Fachbereichen, Trainings zu moderner Softwarearchitektur und KI-/LLM-Architekturen mit Praxisfokus.",
   },
 ];

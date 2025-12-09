@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { business, contact } from "../config/site";
 import datenschutzSiegelLight from "../assets/datenschutz-siegel-light-horizontal-large.png";
 import datenschutzSiegelDark from "../assets/datenschutz-siegel-dark-horizontal-large.png";
+import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
 
 const restrictionCases = [
   "Wenn Sie die Richtigkeit Ihrer bei mir gespeicherten personenbezogenen Daten bestreiten, benötige ich in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
@@ -18,8 +19,9 @@ const restrictionCases = [
   noindex={true}
 >
   <section
-    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12 lg:py-16"
+    class="relative overflow-hidden bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-16"
   >
+    <BackgroundGlow />
     <div class="mx-auto max-w-4xl space-y-8">
       <div
         class="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-start sm:justify-between sm:gap-8 sm:text-left"
@@ -56,7 +58,7 @@ const restrictionCases = [
   </section>
 
   <section
-    class="bg-gray-50 px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12 lg:py-16"
+    class="bg-gray-50 px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-16"
   >
     <div class="mx-auto max-w-5xl space-y-8 lg:space-y-10">
       <article
@@ -231,7 +233,7 @@ const restrictionCases = [
   </section>
 
   <section
-    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12 lg:py-16"
+    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-16"
   >
     <div class="mx-auto max-w-5xl space-y-8 lg:space-y-10">
       <article
@@ -516,7 +518,7 @@ const restrictionCases = [
   </section>
 
   <section
-    class="bg-gray-50 px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12 lg:py-16"
+    class="bg-gray-50 px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-16"
   >
     <div class="mx-auto max-w-5xl space-y-8 lg:space-y-10">
       <article

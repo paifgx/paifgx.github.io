@@ -113,7 +113,7 @@ export const engagementModes: EngagementMode[] = [
   {
     title: "Strategische Verantwortung",
     description:
-      "Ich übernehme die Rolle des Fractional AI/CIO: Roadmaps priorisieren, Budgets argumentieren, Security/Compliance vertreten und Teams coachen.",
+      "Ich übernehme die Rolle des Fractional AI/CIO: Roadmaps priorisieren, Budgets argumentieren, technische Security/Compliance-Anforderungen vertreten und Teams coachen.",
   },
   {
     title: "End-to-end Delivery",
