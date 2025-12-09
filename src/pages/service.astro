@@ -5,7 +5,6 @@ import programmingImage from "../assets/programming.jpg";
 import { serviceStats, contact, uspPrimary } from "../config/site";
 import PillLink from "../components/ui/PillLink.astro";
 import SectionSubtitle from "../components/ui/SectionSubtitle.astro";
-import ServiceArticle from "../components/ServiceArticle.astro";
 import ServiceAudience from "../components/service/ServiceAudience.astro";
 import {
   servicePillars,
@@ -103,9 +102,10 @@ const faqSchema = {
           <p
             class="text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-3xl"
           >
-            Jede Zusammenarbeit startet mit klaren Outcomes: Sicherheit,
-            Skalierbarkeit und Ownership in Ihrem Team. Leistungsbausteine
-            lassen sich kombinieren, remote im DACH-Raum oder vor Ort.
+            Für mittelständische Unternehmen, die unter Medienbrüchen,
+            Tool-Wildwuchs und Abhängigkeiten von Schlüsselpersonen leiden. Ich
+            baue digitale Systeme und Automatisierungen, die Ihre Kernprozesse
+            entlasten – mit klarem Business Case und Governance-Rahmen.
           </p>
           <p
             class="text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-3xl"
@@ -157,104 +157,6 @@ const faqSchema = {
         }
       </div>
 
-      <div
-        class="grid gap-8 rounded-[2.5rem] border border-gray-200 bg-white p-5 text-sm text-gray-700 shadow-lg shadow-brand-blue/5 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-none sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch"
-      >
-        <div class="flex flex-col justify-center space-y-8">
-          <div class="space-y-3">
-            <SectionSubtitle>Hands-on Engineering</SectionSubtitle>
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
-              Architektur-Reviews, die direkt im Editor landen.
-            </h3>
-            <p class="leading-6 text-gray-700 dark:text-gray-300">
-              Strategie endet bei mir nicht im Deck. Zwischen Architecture
-              Boards, Security-Reviews und Delivery sitze ich selbst im Code,
-              begleite Deployments und dokumentiere Entscheidungen für Product,
-              Security und Betrieb.
-            </p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-              Ergebnis: Systeme, die prüfbar sind, und Artefakte, die Ihr Team
-              ohne externe Feuerwehr weiterpflegt.
-            </p>
-          </div>
-          <div
-            class="space-y-3 border-t border-gray-100 pt-6 dark:border-white/10"
-          >
-            <SectionSubtitle>Arbeitsweise</SectionSubtitle>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-              Strategy-to-Execution mit Verantwortung.
-            </h3>
-            <p class="text-gray-700 dark:text-gray-300">
-              Ich starte mit Ihrem Engpass (z. B. Medienbrüche, Personalmangel,
-              Aufsichtsanforderungen) und baue von dort aus Architektur-Slices,
-              Operating Models und Delivery-Workstreams auf. Security,
-              Datenschutz und Enablement laufen nicht nebenher, sondern sind
-              Bestandteil jedes Meilensteins.
-            </p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-              Reviews · Architecture Boards · Shadowing · Enablement
-            </p>
-          </div>
-
-          <div
-            class="space-y-4 border-t border-gray-100 pt-6 dark:border-white/10"
-          >
-            <div class="grid gap-4 sm:grid-cols-2">
-              <div
-                class="rounded-lg border border-red-200 bg-red-50 p-4 dark:border-red-800 dark:bg-red-900/20"
-              >
-                <h4
-                  class="text-sm font-semibold text-red-800 dark:text-red-400 mb-2"
-                >
-                  So arbeite ich nicht
-                </h4>
-                <ul class="text-sm text-red-700 dark:text-red-300 space-y-1">
-                  <li>• PoC-Spielzeug ohne Produktivierung</li>
-                  <li>• Blackbox-AI ohne Governance</li>
-                  <li>• Reine Prompt-Bastelei</li>
-                  <li>• Consulting-Decks ohne Code</li>
-                </ul>
-              </div>
-              <div
-                class="rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-800 dark:bg-green-900/20"
-              >
-                <h4
-                  class="text-sm font-semibold text-green-800 dark:text-green-400 mb-2"
-                >
-                  So arbeite ich
-                </h4>
-                <ul
-                  class="text-sm text-green-700 dark:text-green-300 space-y-1"
-                >
-                  <li>• Architektur + Infra + Integration</li>
-                  <li>• Security & Compliance by Design</li>
-                  <li>• Hands-on im Code & Deployment</li>
-                  <li>• Enablement & Team-Verantwortung</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <figure
-          class="flex min-h-[340px] flex-col overflow-hidden rounded-4xl bg-brand-dark/90 shadow-lg shadow-brand-blue/10 dark:bg-white/5 dark:shadow-none ring-1 ring-gray-900/5 dark:ring-white/10"
-        >
-          <Image
-            src={programmingImage}
-            alt="Patrik arbeitet an zwei Monitoren mit Code und Infrastruktur-Dashboards."
-            class="h-full w-full flex-1 object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
-            widths={[400, 800, 1200]}
-            format="avif"
-            loading="lazy"
-          />
-          <figcaption
-            class="bg-white/95 p-6 text-sm text-gray-600 dark:bg-black/40 dark:backdrop-blur-md dark:text-gray-300 border-t border-gray-100 dark:border-white/10"
-          >
-            „Deep Engineering" heißt: Architekturentscheidungen entstehen dort,
-            wo sie implementiert und observiert werden.
-          </figcaption>
-        </figure>
-      </div>
-
       <dl
         class="grid gap-8 rounded-[2.5rem] border border-gray-200 bg-white p-8 text-sm shadow-lg shadow-brand-blue/5 sm:grid-cols-3 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:shadow-none"
       >
@@ -283,103 +185,6 @@ const faqSchema = {
 
   <ServiceAudience />
 
-  <section
-    class="relative bg-white dark:bg-brand-dark overflow-hidden py-12 sm:py-16"
-  >
-    <div class="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto">
-        <SectionSubtitle>Deep Dives</SectionSubtitle>
-        <h2
-          class="mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-        >
-          Drei Wege zur Entlastung
-        </h2>
-        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Von der Prozessautomatisierung über stabile Systemlandschaften bis zum
-          nachhaltigen Team-Enablement.
-        </p>
-      </div>
-    </div>
-
-    <ServiceArticle
-      subtitle="Prozesse entlasten"
-      title="Prozesse automatisieren & Medienbrüche abbauen"
-      imagePosition="right"
-      image="https://images.unsplash.com/photo-1716637644831-e046c73be197?q=80&w=2940&auto=format&fit=crop"
-      imageAlt="Smartphone fotografiert einen Laptop, auf dessen Bildschirm ein leuchtendes, KI-inspiriertes Gehirn im Profil zu sehen ist, Symbol für moderne AI-Lösungen und digitale Innovation."
-      paragraphs={{
-        intro:
-          "Viele KMU kämpfen mit Copy-Paste, Mehrfacherfassung und fehlender Transparenz. Ich baue Automationen und KI-Assistants, die direkt in bestehende Systeme greifen, Medienbrüche schließen und Mitarbeitende spürbar entlasten, ohne die Kontrolle zu verlieren.",
-        details: [
-          {
-            heading: "Auslöser im Alltag",
-            text: "Angebote, Reklamationen, Service-Cases und interne Freigaben laufen über Excel, Word und E-Mail. Wissen steckt in Köpfen, die oft nicht verfügbar sind.",
-          },
-          {
-            heading: "Ansatz",
-            text: "RAG-Assistenten, Tool-Use-Agenten und orchestrierte LLM-Flows ersetzen manuelle Schritte. Ich verbinde ERP, CRM oder Branchensoftware mit LangChain, LlamaIndex oder Custom-Stacks.",
-          },
-          {
-            heading: "Was bleibt",
-            text: "Durchgängige Prozesse, klare KPIs und wenig Nacharbeit, abgesichert durch Guardrails, Prompt-Evaluierung (DeepEval) sowie Security-by-Design orientiert an BSI IT-Grundschutz und ISO/IEC 27001.",
-          },
-        ],
-      }}
-    />
-
-    <ServiceArticle
-      subtitle="Stabile Abläufe"
-      title="Wissen sichern & Abhängigkeiten reduzieren"
-      imagePosition="left"
-      image="https://images.unsplash.com/photo-1650295751050-b184e54e177c?q=80&w=2940&auto=format&fit=crop"
-      imageAlt="Laptopbildschirm mit farblich hervorgehobenem Programmcode, steht für saubere Software- und KI-Entwicklung."
-      paragraphs={{
-        intro:
-          "Ich moderiere zwischen Operations, IT und Fachbereichen, damit Systeme zuverlässig liefern, selbst wenn Schlüsselpersonen ausfallen. Polyglotte Stacks ermöglichen pragmatische Integrationen statt Großprojekte.",
-        details: [
-          {
-            heading: "Systeme verbinden",
-            text: "APIs, Datenpipelines und Integrationen sorgen dafür, dass Daten nur einmal erfasst werden. Backend-Services (FastAPI, NestJS, Micronaut, Laravel) liefern Streaming, WebSockets und Event-Driven Flows.",
-          },
-          {
-            heading: "Lieferfähig bleiben",
-            text: "Cloud- und On-Prem-Setups (AWS, Azure, GCP) werden mit Terraform, Docker/Kubernetes sowie GitHub Actions/GitLab CI betrieben, inklusive Observability mit Prometheus/Grafana oder ELK.",
-          },
-          {
-            heading: "Governance & Compliance",
-            text: "OAuth2, Keycloak, RBAC/IAM, Threat Modeling und Vorbereitung auf Audits nach ISO 27001 oder BSI 200-x reduzieren Abhängigkeiten von Einzelpersonen und sorgen für dokumentierte Verantwortlichkeiten.",
-          },
-        ],
-      }}
-    />
-
-    <ServiceArticle
-      subtitle="Enablement"
-      title="Team befähigen & Skepsis abbauen"
-      imagePosition="right"
-      image="https://images.unsplash.com/photo-1703680968885-22659eb00165?q=80&w=2940&auto=format&fit=crop"
-      imageAlt="Leerer Hörsaal mit Reihen aus Holzstühlen im Sonnenlicht, symbolisiert Wissenstransfer, Schulungen und Vorträge."
-      paragraphs={{
-        intro:
-          "Über 100 Teilnehmende pro Jahr in maßgeschneiderten Trainings, ergänzt durch interne Upskilling-Programme. Ich begleite Teams so, dass neue Systeme nicht an Widerstand oder fehlender Dokumentation scheitern.",
-        details: [
-          {
-            heading: "Curriculum & Upskilling",
-            text: "Workshops zu moderner Softwarearchitektur, GenAI, DevOps und Security-by-Design, zugeschnitten auf Rollen von Product bis Operations.",
-          },
-          {
-            heading: "Coaching im Betrieb",
-            text: "Pair-Architecture, Reviews, Code- & Prompt-Clinics sowie Shadowing für Product & Engineering Leads sichern, dass Entscheidungen verstanden und getragen werden.",
-          },
-          {
-            heading: "Change & Wissen",
-            text: "Assessments, Lernpfade, Runbooks und Wissensdatenbanken (Notion, Confluence, Git) sorgen dafür, dass Know-how nicht wieder in Silos verschwindet.",
-          },
-        ],
-      }}
-    />
-  </section>
-
   <section class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-12 lg:py-24">
     <div class="mx-auto max-w-6xl space-y-12">
       <div class="space-y-4 text-center max-w-2xl mx-auto">
@@ -390,8 +195,9 @@ const faqSchema = {
           Architektur, Delivery &amp; Enablement.
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-300">
-          Jeder Baustein kann als Solo-Mandat oder kombiniert mit anderen
-          Engagement Modes beauftragt werden.
+          Kombinierbare Bausteine für digitale Architektur, Automatisierung und
+          Enablement. Jeder Baustein kann als Solo-Mandat oder kombiniert
+          beauftragt werden.
         </p>
       </div>
       <div
@@ -496,6 +302,288 @@ const faqSchema = {
   >
     <div class="mx-auto max-w-6xl">
       <div class="space-y-4 text-center max-w-2xl mx-auto">
+        <SectionSubtitle>Projektablauf</SectionSubtitle>
+        <h2
+          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+        >
+          Von der Analyse bis zur Übergabe.
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Ein strukturierter Prozess, der Risiken minimiert und sicherstellt,
+          dass Sie am Ende ein System haben, das Ihr Team eigenständig betreibt.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="space-y-3">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold text-2xl font-bold"
+          >
+            1
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+            Analyse & Business Case
+          </h3>
+          <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Tiefen-Analyse von Prozessen, Systemen und Stakeholdern.
+            Identifikation von Quick-Wins und strategischen Hebeln. Kompaktes
+            Decision-Memo mit Szenarien, ROI-Einschätzung und klarer Empfehlung.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold text-2xl font-bold"
+          >
+            2
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+            Architektur & MVP
+          </h3>
+          <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Ausarbeitung einer tragfähigen Architektur mit Security- und
+            Governance-Konzept. Umsetzung eines funktionsfähigen MVP, den echte
+            Nutzer im Alltag ausprobieren – keine reine Demo.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold text-2xl font-bold"
+          >
+            3
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+            Umsetzung & Integration
+          </h3>
+          <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Iterativer Ausbau des MVP in eine produktive Lösung. Integration in
+            bestehende Systemlandschaft. Aufbau von Monitoring, Logging,
+            Alerting und Rollen- und Rechtekonzepten.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold text-2xl font-bold"
+          >
+            4
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+            Übergabe & Enablement
+          </h3>
+          <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Saubere Dokumentation (Architektur, APIs, Runbooks,
+            Betriebskonzepte). Onboarding und Schulung interner Teams. Ziel: Sie
+            können Systeme eigenständig betreiben und weiterentwickeln.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-12 lg:py-24 border-t border-gray-100 dark:border-white/5"
+  >
+    <div class="mx-auto max-w-6xl">
+      <div class="space-y-4 text-center max-w-2xl mx-auto">
+        <SectionSubtitle>Arbeitsprinzipien</SectionSubtitle>
+        <h2
+          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+        >
+          Wie ich arbeite – und wie nicht.
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Klare Prinzipien für nachhaltige Systeme und ehrliche Zusammenarbeit.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <div
+          class="rounded-2xl border border-green-200 bg-green-50 p-6 dark:border-green-800 dark:bg-green-900/20"
+        >
+          <h3
+            class="text-lg font-semibold text-green-800 dark:text-green-400 mb-4"
+          >
+            So arbeite ich
+          </h3>
+          <ul class="space-y-3 text-sm text-green-700 dark:text-green-300">
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-green-600 dark:text-green-400 mt-0.5"
+              >
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"></path>
+              </svg>
+              <span
+                ><strong>Problem vor Technologie:</strong> Startpunkt ist immer der
+                konkrete Prozess und Business-Case, nicht der Wunsch nach KI.</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-green-600 dark:text-green-400 mt-0.5"
+              >
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"></path>
+              </svg>
+              <span
+                ><strong>System statt Tool:</strong> Fokus auf End-to-End-Systeme,
+                die einen Kernprozess zuverlässig tragen.</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-green-600 dark:text-green-400 mt-0.5"
+              >
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"></path>
+              </svg>
+              <span
+                ><strong>Governance & Security-by-Design:</strong> Sicherheit, Datenschutz
+                und Governance von Anfang an mitgedacht (BSI IT-Grundschutz, ISO/IEC
+                27001).</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-green-600 dark:text-green-400 mt-0.5"
+              >
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"></path>
+              </svg>
+              <span
+                ><strong>Hands-on im Code:</strong> Architektur-Reviews, Security-Checks
+                und Delivery – nicht nur Consulting-Decks.</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-green-600 dark:text-green-400 mt-0.5"
+              >
+                <path
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"></path>
+              </svg>
+              <span
+                ><strong>Enablement & Ownership:</strong> Code, Architekturwissen
+                und Betriebskompetenz bleiben bei Ihnen.</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div
+          class="rounded-2xl border border-red-200 bg-red-50 p-6 dark:border-red-800 dark:bg-red-900/20"
+        >
+          <h3 class="text-lg font-semibold text-red-800 dark:text-red-400 mb-4">
+            So arbeite ich nicht
+          </h3>
+          <ul class="space-y-3 text-sm text-red-700 dark:text-red-300">
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-red-600 dark:text-red-400 mt-0.5"
+              >
+                <path
+                  d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                ></path>
+              </svg>
+              <span>PoC-Spielzeug ohne Produktivierung oder Skalierung.</span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-red-600 dark:text-red-400 mt-0.5"
+              >
+                <path
+                  d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                ></path>
+              </svg>
+              <span
+                >Blackbox-AI ohne Governance, Dokumentation oder
+                Verantwortlichkeit.</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-red-600 dark:text-red-400 mt-0.5"
+              >
+                <path
+                  d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                ></path>
+              </svg>
+              <span
+                >Reine Prompt-Bastelei ohne Architektur oder Integration.</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-red-600 dark:text-red-400 mt-0.5"
+              >
+                <path
+                  d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                ></path>
+              </svg>
+              <span
+                >Consulting-Decks ohne Code, Deployment oder Enablement.</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-5 flex-none text-red-600 dark:text-red-400 mt-0.5"
+              >
+                <path
+                  d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                ></path>
+              </svg>
+              <span
+                >Vendor-Lock-in oder Abhängigkeiten, die Sie intern nicht
+                verstehen können.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-12 lg:py-24 border-t border-gray-100 dark:border-white/5"
+  >
+    <div class="mx-auto max-w-6xl">
+      <div class="space-y-4 text-center max-w-2xl mx-auto">
         <SectionSubtitle>Engagement</SectionSubtitle>
         <h2
           class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
@@ -503,9 +591,8 @@ const faqSchema = {
           Modelle für Strategie, Delivery und Sparring.
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-300">
-          Wählen Sie, wie viel Verantwortung Sie abgeben: vom Fractional AI/CIO
-          als verlängertem Arm der Geschäftsführung bis zum projektbasierten
-          Delivery- oder Sparringsmodell für Ihre Teams.
+          Wählen Sie, wie viel Verantwortung Sie abgeben: von strategischer
+          Verantwortung bis zum projektbasierten Sparring.
         </p>
       </div>
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -528,8 +615,8 @@ const faqSchema = {
   <section
     class="bg-linear-to-br from-slate-900 via-brand-dark to-black px-4 py-12 text-gray-100 sm:px-12 lg:py-16"
   >
-    <div class="mx-auto max-w-6xl space-y-10">
-      <div class="space-y-3">
+    <div class="mx-auto max-w-6xl space-y-8">
+      <div class="space-y-3 text-center">
         <p
           class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold"
         >
@@ -538,8 +625,12 @@ const faqSchema = {
         <h2 class="text-2xl font-semibold text-white sm:text-3xl">
           Kuratierte Stacks für LLM, Cloud &amp; Security.
         </h2>
+        <p class="text-sm text-gray-300 max-w-2xl mx-auto">
+          Vendor-neutrale Auswahl nach Use-Case, Regulatorik und
+          Wirtschaftlichkeit – nicht nach Hype.
+        </p>
       </div>
-      <div class="grid gap-10 lg:grid-cols-3">
+      <div class="grid gap-8 lg:grid-cols-3">
         <div>
           <p
             class="text-sm font-semibold uppercase tracking-widest text-brand-gold"
