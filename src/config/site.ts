@@ -112,9 +112,10 @@ export const uspAlt =
   "Ich baue produktive KI-Systeme für Mittelstand & IT-Dienstleister, mit sauberer Architektur, Integration & Governance, statt noch ein weiteres KI-Tool in Ihren Stack zu kippen.";
 
 export const siteMeta: SiteMeta = {
-  title: "Patrik Garten · AI Solution Architect & Software Engineer",
+  title:
+    "garten.ai · Digitale System- & Workflow-Architektur für den deutschen Mittelstand",
   description:
-    "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end KI-Architekturen, von klassischen ML-Systemen bis zu LLM-/GenAI-Plattformen, sowie Security-by-Design für regulierte DACH-Unternehmen.",
+    "Stabile Kernprozesse statt Tool-Zoo: Ich helfe deutschen KMU, ihre wertschöpfenden Prozesse zu automatisieren. 20–40 % weniger Handarbeit durch End-to-End-Systeme mit Governance & DSGVO-Konformität.",
   origin: "https://garten.ai",
   locale: "de_DE",
   ogImage: "/og-image.png",

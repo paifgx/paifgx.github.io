@@ -1,4 +1,3 @@
-// Call-to-action content
 export const ctaCopy = {
   title: "Klarheit in 30 Minuten.",
   subline:
@@ -13,15 +12,15 @@ export const ctaCopy = {
     },
     {
       number: "02",
-      title: "Status Quo Analyse",
+      title: "Problem & Prozess verstehen",
       description:
-        "Ich bespreche mit Ihnen Ihre aktuelle Herausforderung und Ziele.",
+        "Wir klären Ihre aktuellen Engpässe und identifizieren echte Automatisierungshebel – vor jeder Technologie-Entscheidung.",
     },
     {
       number: "03",
-      title: "Strategie & Fahrplan",
+      title: "Lösungsansätze skizzieren",
       description:
-        "Sie erhalten erste Lösungsansätze, egal ob eine Zusammenarbeit zustande kommt oder nicht.",
+        "Sie erhalten konkrete Ideen für System statt Tool – mit Fokus auf Governance, Sicherheit und Ihrer Unabhängigkeit.",
     },
   ],
 };

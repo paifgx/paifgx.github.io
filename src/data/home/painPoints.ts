@@ -1,41 +1,46 @@
-// Pain points for homepage - general business challenges
 import type { PainPoint } from "../../types/common";
 
 export const painPoints: PainPoint[] = [
   {
-    title: "Versteckte Kosten durch ineffiziente IT",
+    title: "Manuelle Routine-Arbeit frisst Ihre Zeit",
     description:
-      "Mitarbeiter pflegen Excel statt Kundenbeziehungen. Ein Angebotsprozess zieht sich über drei Systeme und fünf Mail-Threads, bevor jemand unterschreibt.",
+      "Ihr Team verbringt zu viel Zeit mit Copy & Paste, manueller Recherche und Excel-Pflege statt mit eigentlicher Wertschöpfung.",
     icon: "BanknotesIcon",
   },
   {
-    title: "Entscheidungen im Blindflug",
+    title: "Schlecht integrierte Systeme",
     description:
-      "ERP, Shop und CRM schweigen sich an. Berichte dauern Tage statt Sekunden, und wenn sie fertig sind, sind die Zahlen schon wieder veraltet.",
+      "Ihre Kernprozesse laufen über mehrere Systeme, die nicht miteinander reden. Zahlen sind langsam, unvollständig oder widersprüchlich.",
     icon: "ChartBarSquareIcon",
   },
   {
-    title: "Angst vor DSGVO-Verstößen",
+    title: "DSGVO- und Security-Risiken",
     description:
-      "Niemand will als erster ein KI-Projekt unterschreiben. Zwischen Datenschutz, Betriebsrat und Fachbereich bleibt KI stecken – lieber gar nichts, als später Ärger mit der Aufsicht.",
+      "Ihnen sind Datenschutz, Sicherheit und Governance wichtig – aber niemand möchte persönlich das Risiko für Fehler tragen.",
     icon: "ShieldCheckIcon",
   },
   {
-    title: "Systeme, die nicht mitwachsen",
+    title: "PoCs, die nicht skalieren",
     description:
-      "Prototypen brechen unter Last zusammen. Was im Piloten funktioniert hat, kollabiert, sobald mehr als fünf Leute gleichzeitig draufklicken.",
+      "Sie haben Prototypen oder Skripte, die im Kleinen funktionieren, aber unter echter Last oder mit mehreren Abteilungen zusammenbrechen.",
     icon: "ArrowTrendingUpIcon",
   },
   {
-    title: "Wissen in den Köpfen, nicht im System",
+    title: "Kopfmonopole gefährden den Betrieb",
     description:
-      "Der Kollege, der das System versteht, ist im Urlaub. Oder krank. Oder hat gekündigt. Kopfmonopole gefährden den Betrieb, aber niemand hat Zeit, Doku zu schreiben.",
+      "Zentrale Prozesse hängen an wenigen Schlüsselpersonen. Fällt jemand aus, steht der gesamte Ablauf still.",
     icon: "DocumentTextIcon",
   },
   {
-    title: "Sorge vor Abhängigkeit (Lock-in)",
+    title: "Lock-in durch frühere Dienstleister",
     description:
-      "Sie haben schon mal einen Dienstleister beauftragt, der dann mit dem Know-how verschwand. Der Code lag irgendwo, aber niemand wusste, wie er funktioniert.",
+      "Frühere Dienstleister haben Sie in technische oder organisatorische Abhängigkeiten gebracht – das Know-how blieb nicht bei Ihnen.",
     icon: "LockOpenIcon",
+  },
+  {
+    title: "Change-Müdigkeit und unklare Rollen",
+    description:
+      "Digitalisierungsprojekte scheitern nicht an der Technik, sondern an unklaren Rollen, fehlender Verantwortung und Change-Müdigkeit.",
+    icon: "UserGroupIcon",
   },
 ];
