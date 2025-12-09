@@ -52,9 +52,11 @@ const bentoStyles = [
           const style = bentoStyles[index] || { col: "", row: "" };
           const isLarge = index === 0 || index === 5;
 
+          const orderClass = index === 5 ? "order-last lg:order-none" : "";
+
           return (
             <div
-              class={`group relative flex flex-col rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-200/50 dark:bg-white/5 dark:ring-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/5 hover:-translate-y-1 ${style.col} ${style.row}`}
+              class={`group relative flex flex-col rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-200/50 dark:bg-white/5 dark:ring-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/5 hover:-translate-y-1 ${style.col} ${style.row} ${orderClass}`}
             >
               <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-brand-blue/0 group-hover:ring-brand-blue/20 transition-all duration-300" />
 
@@ -78,10 +80,6 @@ const bentoStyles = [
                       {point.description}
                     </p>
                   </div>
-
-                  {isLarge && (
-                    <div class="mt-4 h-1 w-12 rounded-full bg-brand-blue/20 dark:bg-brand-gold/20 group-hover:w-24 group-hover:bg-brand-blue dark:group-hover:bg-brand-gold transition-all duration-500 ease-out" />
-                  )}
                 </div>
               </div>
             </div>
