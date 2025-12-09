@@ -1,6 +1,6 @@
 # GARTEN.ai Homepage
 
-Personal website for Patrik Garten – AI Solution Architect & Software Engineer.
+Personal website for Patrik Garten, AI Solution Architect & Software Engineer.
 
 Built with [Astro](https://astro.build), [Vue.js](https://vuejs.org), and [Tailwind CSS](https://tailwindcss.com).
 
@@ -63,6 +63,7 @@ The site includes several SEO and AI-crawler optimizations:
 Add an Open Graph image at `public/og-image.png` (1200×630px recommended) for social sharing previews.
 
 Example tools to create OG images:
+
 - [Figma](https://figma.com)
 - [Canva](https://canva.com)
 - [OG Image Generator](https://og-image.vercel.app)

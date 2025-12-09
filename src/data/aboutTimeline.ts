@@ -12,7 +12,7 @@ export const timeEntries: TimeEntry[] = [
     date: "2025-11",
     title: "AI Solution Architect – Universitätsklinikum Bonn",
     content:
-      "Middleware für personalisierte Medizin aufgebaut: klinische Datensätze werden qualitätsgesichert validiert, harmonisiert und sicher zwischen lokalen Systemen und nationalen Forschungsnetzwerken ausgetauscht – ohne sensible Interna offenzulegen.",
+      "Middleware für personalisierte Medizin aufgebaut: klinische Datensätze werden qualitätsgesichert validiert, harmonisiert und sicher zwischen lokalen Systemen und nationalen Forschungsnetzwerken ausgetauscht, ohne sensible Interna offenzulegen.",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const timeEntries: TimeEntry[] = [
     date: "2024-12",
     title: "AI Solution Architect – FlowCraftDB",
     content:
-      "Event-getriebene Datenanreicherung im E-Commerce: LangChain-Workflows, FastAPI-Services, Docker/Kubernetes, AWS/Azure, Terraform und Observability via Prometheus/Grafana/ELK – um Kampagnen ohne Copy-Paste und mit nachvollziehbarer Datenherkunft zu steuern.",
+      "Event-getriebene Datenanreicherung im E-Commerce: LangChain-Workflows, FastAPI-Services, Docker/Kubernetes, AWS/Azure, Terraform und Observability via Prometheus/Grafana/ELK, um Kampagnen ohne Copy-Paste und mit nachvollziehbarer Datenherkunft zu steuern.",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ export const timeEntries: TimeEntry[] = [
     endDate: "2025-03",
     title: "AI Engineer – mib Management Institut Bochum",
     content:
-      "RAG-Assistenz für 'copiki' mit semantischer Suche, Prompt-Flows, API-Design, Security-Maßnahmen sowie Betrieb mit Python, FastAPI, OpenSearch und Docker/Kubernetes – damit Berater:innen Antworten ohne manuelles Nachfassen liefern können.",
+      "RAG-Assistenz für 'copiki' mit semantischer Suche, Prompt-Flows, API-Design, Security-Maßnahmen sowie Betrieb mit Python, FastAPI, OpenSearch und Docker/Kubernetes, damit Berater:innen Antworten ohne manuelles Nachfassen liefern können.",
   },
   {
     id: 9,
@@ -72,7 +72,7 @@ export const timeEntries: TimeEntry[] = [
     endDate: "2024-03",
     title: "Softwareentwickler – DB Fernverkehr AG",
     content:
-      "Weiterentwicklung von Sprachassistenzsystemen (Alexa Skills) mit TypeScript/Node.js & Python, Feature-Delivery, technische Doku und CI/CD auf AWS – um Fahrgästen verlässliche Informationen zu liefern und interne Supportketten zu entlasten.",
+      "Weiterentwicklung von Sprachassistenzsystemen (Alexa Skills) mit TypeScript/Node.js & Python, Feature-Delivery, technische Doku und CI/CD auf AWS, um Fahrgästen verlässliche Informationen zu liefern und interne Supportketten zu entlasten.",
   },
   {
     id: 10,
@@ -80,7 +80,7 @@ export const timeEntries: TimeEntry[] = [
     endDate: "2024-09",
     title: "Backend Developer – MeinPaul GmbH",
     content:
-      "Skalierbares Laravel-Backend für digitale Steuerprozesse, AuthN/AuthZ, Azure-Integrationen, Cloudflare-Härtung sowie Flutter/Dart-Anbindungen – damit Wachstumsphasen ohne zusätzliche Sachbearbeitung abbildbar bleiben.",
+      "Skalierbares Laravel-Backend für digitale Steuerprozesse, AuthN/AuthZ, Azure-Integrationen, Cloudflare-Härtung sowie Flutter/Dart-Anbindungen, damit Wachstumsphasen ohne zusätzliche Sachbearbeitung abbildbar bleiben.",
   },
   {
     id: 11,
@@ -104,13 +104,13 @@ export const timeEntries: TimeEntry[] = [
     endDate: "2021-11",
     title: "Full Stack Development – Diverse Kunden",
     content:
-      "CMS-Modernisierungen (TYPO3/Drupal), Mobile-Projekte (Flutter/Android), Intranet-Systeme für Kliniken und serverlose Event-Plattformen – technische Bandbreite aufgebaut, bevor der Fokus auf Event-Architekturen und später KI wechselte.",
+      "CMS-Modernisierungen (TYPO3/Drupal), Mobile-Projekte (Flutter/Android), Intranet-Systeme für Kliniken und serverlose Event-Plattformen, technische Bandbreite aufgebaut, bevor der Fokus auf Event-Architekturen und später KI wechselte.",
   },
   {
     id: 14,
     date: "2017-10",
     title: "GARTEN gegründet – Freelance-Label",
     content:
-      "Freelance-Label für Engineering/Bildung & KI-Lösungen: Architektur, Entwicklung, Betrieb und Trainingsprogramme für Auftraggeber wie DB Fernverkehr, CANCOM, MeinPaul und Bringmeister – mit Fokus auf Verantwortung statt Prototyping.",
+      "Freelance-Label für Engineering/Bildung & KI-Lösungen: Architektur, Entwicklung, Betrieb und Trainingsprogramme für Auftraggeber wie DB Fernverkehr, CANCOM, MeinPaul und Bringmeister, mit Fokus auf Verantwortung statt Prototyping.",
   },
 ];

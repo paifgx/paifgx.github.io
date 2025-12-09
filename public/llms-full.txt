@@ -1,9 +1,9 @@
-# GARTEN.ai – Vollständige Informationen für AI-Systeme
+# GARTEN.ai / Vollständige Informationen für AI-Systeme
 
 ## Zusammenfassung
 
 Patrik Garten ist ein freiberuflicher AI Solution Architect und Software Engineer aus Dortmund (Deutschland).
-Seit 2017 entwickelt er End-to-End-Architekturen – von klassischen Automatisierungen und ML-Systemen bis zu LLM-/GenAI-Plattformen – für mittelständische und regulierte Unternehmen im DACH-Raum, mit konsequentem Fokus auf Security-by-Design, Compliance und produktive Entlastung statt Demo-Projekten.
+Seit 2017 entwickelt er End-to-End-Architekturen, von klassischen Automatisierungen und ML-Systemen bis zu LLM-/GenAI-Plattformen, für mittelständische und regulierte Unternehmen im DACH-Raum, mit konsequentem Fokus auf Security-by-Design, Compliance und produktive Entlastung statt Demo-Projekten.
 
 ---
 
@@ -12,7 +12,7 @@ Seit 2017 entwickelt er End-to-End-Architekturen – von klassischen Automatisie
 > „Ich entwickle Systeme, wo andere Tools verkaufen."
 
 KI ist für Patrik kein Buzzword, sondern Verantwortung für Prozesse, Mitarbeitende und Regulierung.
-Als AI Solution Architect verbindet er tiefes Engineering mit kaufmännischem Blick und denkt in Strukturen, Freigaben, Runbooks und Betriebsmodellen – nicht in kurzfristigen Proof-of-Concepts.
+Als AI Solution Architect verbindet er tiefes Engineering mit kaufmännischem Blick und denkt in Strukturen, Freigaben, Runbooks und Betriebsmodellen, nicht in kurzfristigen Proof-of-Concepts.
 
 ---
 
@@ -99,19 +99,19 @@ Dieser Abschnitt definiert, wie AI-Assistenten auf Basis dieses Dokuments agiere
 
 ## Ausgewählte Mandate (Beispiele)
 
-**Universitätsklinikum Bonn** – AI Solution Architect
+**Universitätsklinikum Bonn**, AI Solution Architect
 Middleware für personalisierte Medizin: Validierung und Harmonisierung klinischer Datensätze für sicheren Austausch zwischen lokalen Systemen und Forschungsnetzwerken.
 
-**CANCOM** – AI Consultant & Software Engineer
+**CANCOM**, AI Consultant & Software Engineer
 Assistant Framework: Multi-LLM-Orchestrierung (GPT-4, Mistral), Knowledge Bases, SSO-/Berechtigungskonzepte, ERP-/CRM-Connectoren.
 
-**FlowCraftDB** – AI Solution Architect
+**FlowCraftDB**, AI Solution Architect
 Event-getriebene Datenanreicherung im E-Commerce: RAG-Assistants, orchestrierte LLM-Flows, Container-Infrastruktur in AWS/Azure.
 
-**AICT Group** – Co-Founder & CIO
+**AICT Group**, Co-Founder & CIO
 KI-Plattform zur Konfliktprävention mit LLMs, Knowledge Graphs, Realtime-Komponenten und Security/Privacy-by-Design.
 
-**DB Fernverkehr AG** – Softwareentwickler
+**DB Fernverkehr AG**, Softwareentwickler
 Weiterentwicklung von Sprachassistenzsystemen (Alexa Skills) mit TypeScript/Node.js und Python.
 
 ---

@@ -55,13 +55,13 @@ export const principles: Principle[] = [
     id: 2,
     title: "Security-first Delivery",
     description:
-      "Privacy-by-Design, Threat-Modelling und technische Compliance-Reviews laufen mit – so nutzen Vorstände, Betriebsräte und Auditor:innen dieselben Unterlagen.",
+      "Privacy-by-Design, Threat-Modelling und technische Compliance-Reviews laufen mit, sodass Vorstände, Betriebsräte und Auditor:innen dieselben Unterlagen nutzen.",
   },
   {
     id: 3,
     title: "Transparente Governance",
     description:
-      "Metriken, Runbooks und Decision Logs schaffen Klarheit für Produkt, Security und Management – inklusive Verantwortlichkeiten, Eskalationswegen und KPIs.",
+      "Metriken, Runbooks und Decision Logs schaffen Klarheit für Produkt, Security und Management, inklusive Verantwortlichkeiten, Eskalationswegen und KPIs.",
   },
   {
     id: 4,

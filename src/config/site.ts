@@ -98,17 +98,17 @@ export const contact: Contact = {
 };
 
 export const uspPrimary =
-  "Ich helfe Mittelstand und IT-Teams, aus KI-Experimenten produktive Workflows zu machen – integriert in Ihre Systeme, mit Governance & Doku, die Audits vereinfacht.";
+  "Ich helfe Mittelstand und IT-Teams, aus KI-Experimenten produktive Workflows zu machen, integriert in Ihre Systeme, mit Governance & Doku, die Audits vereinfacht.";
 
 export const tagline = "AI Solution Architect für Mittelstand & IT-Teams";
 
 export const uspAlt =
-  "Ich baue produktive KI-Systeme für Mittelstand & IT-Dienstleister – mit sauberer Architektur, Integration & Governance, statt noch ein weiteres KI-Tool in Ihren Stack zu kippen.";
+  "Ich baue produktive KI-Systeme für Mittelstand & IT-Dienstleister, mit sauberer Architektur, Integration & Governance, statt noch ein weiteres KI-Tool in Ihren Stack zu kippen.";
 
 export const siteMeta: SiteMeta = {
   title: "Patrik Garten · AI Solution Architect & Software Engineer",
   description:
-    "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end KI-Architekturen – von klassischen ML-Systemen bis zu LLM-/GenAI-Plattformen – sowie Security-by-Design für regulierte DACH-Unternehmen.",
+    "Freelance AI Solution Architect, Software Engineer & IT-Dozent. End-to-end KI-Architekturen, von klassischen ML-Systemen bis zu LLM-/GenAI-Plattformen, sowie Security-by-Design für regulierte DACH-Unternehmen.",
   origin: "https://garten.ai",
   locale: "de_DE",
   ogImage: "/og-image.png",
@@ -200,7 +200,7 @@ export const availability = [
   {
     title: "Fokus 2024/2025",
     detail:
-      "KI & GenAI für Mittelstand & IT-Dienstleister – Schwerpunkte Gesundheitswesen und B2B-SaaS/IT-Dienstleister. Von klassischen Anwendungen bis zu ML/LLM-Systemen.",
+      "KI & GenAI für Mittelstand & IT-Dienstleister, Schwerpunkte Gesundheitswesen und B2B-SaaS/IT-Dienstleister. Von klassischen Anwendungen bis zu ML/LLM-Systemen.",
   },
   {
     title: "Ausgewählte Mandate",

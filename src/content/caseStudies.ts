@@ -66,11 +66,11 @@ export const caseStudies: CaseStudy[] = [
     role: "AI Solution Architect & Consultant (Freelancer)",
     mission: "Middleware für personalisierte Medizin & Forschungsnetzwerke",
     situation:
-      "Klinische Datensätze mussten zwischen lokalen Krankenhaus-Systemen und nationalen Forschungsverbünden interoperabel ausgetauscht werden – unter strengen Datenschutz- und Aufsichtsanforderungen.",
+      "Klinische Datensätze mussten zwischen lokalen Krankenhaus-Systemen und nationalen Forschungsverbünden interoperabel ausgetauscht werden, unter strengen Datenschutz- und Aufsichtsanforderungen.",
     approach:
       "Kotlin/Micronaut-Backend mit strikter Schema-Validierung, Prozess-Tracking und automatisierter Transformation heterogener Datenströme in standardisierte Formate; Governance mit Datenschutz, Medizin-IT und Forschungsgremien abgestimmt.",
     result:
-      "Qualitätsgesicherte Datenintegration, revisionssichere Nachvollziehbarkeit und automatisierte Übergaben an Forschungsdatenbanken – ohne sensible Interna zu veröffentlichen.",
+      "Qualitätsgesicherte Datenintegration, revisionssichere Nachvollziehbarkeit und automatisierte Übergaben an Forschungsdatenbanken, ohne sensible Interna zu veröffentlichen.",
     stack:
       "Kotlin, Micronaut, Azure, MSSQL, Keycloak/IAM, Observability-Playbooks, Technische DSGVO/DPIA-Umsetzung.",
   },

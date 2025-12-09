@@ -27,13 +27,13 @@ export interface PainPoint {
 export const servicePillars: ServicePillar[] = [
   {
     title: "Audit & Roadmap",
-    subtitle: "2–4 Wochen • Architektur-Assessment & Governance-Plan",
+    subtitle: "2 bis 4 Wochen • Architektur-Assessment & Governance-Plan",
     description:
-      "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken – von der ersten Bewertung bis zur Governance im Betrieb.",
+      "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken, von der ersten Bewertung bis zur Governance im Betrieb.",
     deliverables: [
       "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen inkl. Stakeholder-Interviews.",
       "Architektur-Review und Risiko-Mapping mit klaren Quick-Wins.",
-      "Security, IAM & Compliance orientiert an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO – mit dokumentierten Guardrails.",
+      "Security, IAM & Compliance orientiert an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO, mit dokumentierten Guardrails.",
     ],
     results: [
       "Architektur-Blueprint: Klare technische Roadmap für die nächsten 12 Wochen.",
@@ -45,9 +45,9 @@ export const servicePillars: ServicePillar[] = [
   },
   {
     title: "PoC → produktiver Workflow",
-    subtitle: "6–12 Wochen • Von Prototyp zu skalierbarem System",
+    subtitle: "6 bis 12 Wochen • Von Prototyp zu skalierbarem System",
     description:
-      "Übergang von bestehendem PoC oder Konzept zu produktivem, audit-fähigem Workflow. Architektur, Infra, Integration und Doku – alles für stabilen Betrieb unter Last.",
+      "Übergang von bestehendem PoC oder Konzept zu produktivem, audit-fähigem Workflow. Architektur, Infra, Integration und Doku, alles für stabilen Betrieb unter Last.",
     deliverables: [
       "Backend- & API-Engineering (FastAPI, NestJS, Django) inklusive Datenpipelines und Event-Handling.",
       "Cloud & Infrastruktur: AWS/Azure/GCP, Terraform, Docker/Kubernetes, CI/CD mit Monitoring.",
@@ -72,12 +72,12 @@ export const engagementModes: EngagementMode[] = [
   {
     title: "Projekt-Delivery",
     description:
-      "End-to-end Umsetzung mit Verantwortung für Architektur, Engineering, Security und Übergabe – inklusive Runbooks, Tests und Onboarding.",
+      "End-to-end Umsetzung mit Verantwortung für Architektur, Engineering, Security und Übergabe, inklusive Runbooks, Tests und Onboarding.",
   },
   {
     title: "Advisory & Enablement",
     description:
-      "Sparring, Reviews, Architecture Boards, Trainings und On-the-job-Coaching – ideal, wenn interne Teams liefern, aber Guidance brauchen.",
+      "Sparring, Reviews, Architecture Boards, Trainings und On-the-job-Coaching, ideal, wenn interne Teams liefern, aber Guidance brauchen.",
   },
 ];
 
@@ -103,13 +103,13 @@ export const painPoints: PainPoint[] = [
   {
     title: "Tool-Wildwuchs",
     description:
-      "Jede Abteilung nutzt eigene Lösungen, Daten liegen in Excel, Outlook, Branchensoftware – nichts greift ineinander.",
+      "Jede Abteilung nutzt eigene Lösungen, Daten liegen in Excel, Outlook, Branchensoftware, nichts greift ineinander.",
     icon: "SquaresPlusIcon",
   },
   {
     title: "Abhängigkeit von Einzelpersonen",
     description:
-      "Wenn Schlüsselpersonen fehlen, steht das Tagesgeschäft. Prozesse existieren nur im Kopf – nicht im System.",
+      "Wenn Schlüsselpersonen fehlen, steht das Tagesgeschäft. Prozesse existieren nur im Kopf, nicht im System.",
     icon: "UserGroupIcon",
   },
   {

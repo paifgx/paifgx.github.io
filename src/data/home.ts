@@ -20,7 +20,7 @@ export const painPoints = [
   {
     title: "Angst vor DSGVO-Verstößen",
     description:
-      "KI ja, aber sicher. Architekturen orientiert an BSI IT-Grundschutz und DSGVO – mit audit-fähiger Doku statt Blackbox.",
+      "KI ja, aber sicher. Architekturen orientiert an BSI IT-Grundschutz und DSGVO, mit audit-fähiger Doku statt Blackbox.",
     icon: "ShieldCheckIcon",
   },
   {
@@ -53,7 +53,7 @@ export const benefits = [
   {
     title: "Eigentum & Unabhängigkeit",
     description:
-      "Der Projektcode gehört Ihnen – kein Agentur-Lock-in, keine Lizenzmiete für meine Arbeit. Technische Abhängigkeiten (Cloud, Datenbanken, LLMs) halten wir bewusst transparent und so austauschbar wie möglich.",
+      "Der Projektcode gehört Ihnen, kein Agentur-Lock-in, keine Lizenzmiete für meine Arbeit. Technische Abhängigkeiten (Cloud, Datenbanken, LLMs) halten wir bewusst transparent und so austauschbar wie möglich.",
     icon: "KeyIcon",
   },
   {
@@ -94,7 +94,7 @@ export const processSteps = [
     id: "04",
     name: "Übergabe & Unabhängigkeit",
     description:
-      "Ich mache mich überflüssig. Sie erhalten Code, Doku und Trainings. Ihr Team übernimmt das Steuer – ohne laufende Abhängigkeit von mir.",
+      "Ich mache mich überflüssig. Sie erhalten Code, Doku und Trainings. Ihr Team übernimmt das Steuer, ohne laufende Abhängigkeit von mir.",
   },
 ];
 
@@ -120,7 +120,7 @@ export const authorityHighlights = [
   },
   {
     title: "Startup",
-    description: "Echtzeit-Plattform – Von der Idee zum Produkt.",
+    description: "Echtzeit-Plattform, von der Idee zum Produkt.",
   },
 ];
 
@@ -145,7 +145,7 @@ export const ctaCopy = {
       number: "03",
       title: "Strategie & Fahrplan",
       description:
-        "Sie erhalten erste Lösungsansätze – egal ob wir zusammenarbeiten oder nicht.",
+        "Sie erhalten erste Lösungsansätze, egal ob wir zusammenarbeiten oder nicht.",
     },
   ],
 };

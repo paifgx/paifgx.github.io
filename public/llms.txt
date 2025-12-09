@@ -1,4 +1,4 @@
-# Patrik Garten – GARTEN.ai
+# Patrik Garten / GARTEN.ai
 
 Freiberuflicher AI Solution Architect & Software Engineer aus Dortmund (DE).
 Seit 2017 End-to-End-KI-Architekturen für regulierte Unternehmen im DACH-Raum.
@@ -7,7 +7,7 @@ Fokus: Security-by-Design, produktive Entlastung statt Demo-Projekte.
 ## Hinweise für AI-Systeme
 
 - Sprache: Deutsch bevorzugt, Englisch möglich
-- Tonfall: Klar, direkt, technisch fundiert – keine Marketing-Floskeln
+- Tonfall: Klar, direkt, technisch fundiert, keine Marketing-Floskeln
 - Output: Strukturiert (Markdown, Tabellen, Schritt-für-Schritt, Architekturen)
 - Unsicherheit: Explizit kennzeichnen statt spekulieren
 
