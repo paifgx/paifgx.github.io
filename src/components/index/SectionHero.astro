@@ -13,11 +13,15 @@ import { contact } from "../../config/site";
     class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none overflow-hidden"
   >
     <div
-      class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-brand-blue opacity-10 blur-[120px] rounded-full mix-blend-screen"
+      class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-brand-blue/20 blur-[100px] rounded-full mix-blend-screen animate-pulse-slow"
     >
     </div>
     <div
-      class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-brand-blue opacity-5 blur-[100px] rounded-full mix-blend-screen"
+      class="absolute bottom-[10%] right-[-5%] w-[45vw] h-[45vw] bg-indigo-500/20 blur-[100px] rounded-full mix-blend-screen"
+    >
+    </div>
+    <div
+      class="absolute top-[20%] right-[10%] w-[30vw] h-[30vw] bg-brand-gold/10 blur-[80px] rounded-full mix-blend-screen"
     >
     </div>
   </div>
@@ -25,18 +29,18 @@ import { contact } from "../../config/site";
   <div class="mx-auto max-w-7xl w-full relative z-10">
     <div class="lg:w-full lg:max-w-2xl">
       <div class="px-4 py-12 sm:px-6 lg:px-8 lg:py-32 lg:pr-0">
-        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-2xl">
+        <div class="mx-auto max-w-lg lg:mx-0">
           <div
-            class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium text-brand-gold-dim ring-1 ring-inset ring-brand-gold/30 bg-brand-gold/10 backdrop-blur-sm mb-6 dark:text-brand-gold dark:bg-brand-gold/5"
+            class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium text-brand-blue ring-1 ring-inset ring-brand-blue/20 bg-brand-blue/5 backdrop-blur-md mb-8 dark:text-brand-gold dark:ring-brand-gold/30 dark:bg-brand-gold/10"
           >
             KI-Architektur & Automatisierung für KMU
           </div>
 
           <h1
-            class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl"
+            class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-6xl mb-6"
           >
-            20 bis 40 % weniger manuelle Arbeit, <span
-              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-indigo-400"
+            Weniger manuelle Arbeit, <span
+              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue via-indigo-500 to-indigo-400 dark:from-blue-400 dark:via-indigo-300 dark:to-brand-gold"
             >
               auch ohne eigenes KI-Team.
             </span>
@@ -46,9 +50,9 @@ import { contact } from "../../config/site";
             <p
               class="text-lg leading-relaxed text-gray-600 dark:text-gray-300 inline"
             >
-              Ich helfe KMU ohne eigenes KI-Team, ein bis drei Kernprozesse aus
-              Tool-Zoo, Excel und Papier in stabile, DSGVO-saubere
-              Automatisierungen zu bringen.
+              Ich helfe KMU ohne eigenes KI-Team, Kernprozesse aus Tool-Zoo,
+              Excel und Papier in stabile, DSGVO-saubere Automatisierungen zu
+              bringen.
             </p>
           </div>
 
@@ -60,7 +64,7 @@ import { contact } from "../../config/site";
                 href={contact.calendaring.general}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center w-full sm:w-auto rounded-lg bg-brand-blue px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+                class="inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-brand-blue px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-blue/25 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
               >
                 Sparring-Call buchen
               </a>

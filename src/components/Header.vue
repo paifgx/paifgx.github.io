@@ -76,7 +76,7 @@ const isActive = (href) => {
 <template>
   <Disclosure
     as="header"
-    class="sticky top-0 z-50 bg-white shadow-sm transition-colors duration-200 dark:bg-brand-dark dark:shadow-black/40"
+    class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10 dark:bg-brand-dark/80 transition-colors duration-200"
     v-slot="{ open }"
   >
     <div
