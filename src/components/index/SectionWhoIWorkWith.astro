@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
 import SectionSubtitle from "../ui/SectionSubtitle.astro";
-import speakerImage from "../../assets/DSC00129.jpg";
 ---
 
 <section
@@ -13,49 +11,28 @@ import speakerImage from "../../assets/DSC00129.jpg";
   >
   </div>
 
-  <div class="relative z-10 mx-auto max-w-7xl">
-    <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-      <div class="relative mb-12 lg:mb-0">
-        <div
-          class="relative rounded-2xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 dark:bg-white/5 dark:ring-white/10 backdrop-blur-sm"
+  <div class="relative z-10 mx-auto max-w-3xl">
+    <div class="space-y-8">
+      <div class="space-y-4">
+        <SectionSubtitle>Zielgruppe</SectionSubtitle>
+        <h2
+          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
         >
-          <Image
-            src={speakerImage}
-            alt="Patrik Garten als Speaker bei Non Plus Ultra - Vortrag über KI-Hindernisse und Systemintegration"
-            class="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 opacity-90 hover:opacity-100 transition-opacity duration-500"
-            width={800}
-          />
-
-          <div
-            class="absolute bottom-6 left-6 right-6 lg:left-8 lg:right-auto lg:max-w-sm"
-          >
-            <div
-              class="rounded-lg bg-white/90 px-4 py-3 text-xs font-medium text-gray-900 shadow-lg backdrop-blur-sm dark:bg-black/80 dark:text-white/90 border border-white/20"
-            >
-              <p class="font-semibold">
-                Impulsvortrag: „Haupthindernisse bei der KI-Umsetzung"
-              </p>
-            </div>
-          </div>
-        </div>
+          Passt das für uns?
+        </h2>
       </div>
 
       <div class="space-y-8">
-        <div class="space-y-4">
-          <SectionSubtitle>Zielgruppe</SectionSubtitle>
-          <h2
-            class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-          >
-            Passt das für uns?
-          </h2>
-        </div>
+        <div
+          class="relative overflow-hidden rounded-2xl bg-white p-8 ring-1 ring-gray-200 dark:bg-white/5 dark:ring-white/10"
+        >
+          <div class="absolute top-0 left-0 w-1 h-full bg-red-400"></div>
 
-        <div class="space-y-8">
-          <div
-            class="p-6 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20"
+          <h3
+            class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3"
           >
-            <h3
-              class="text-lg font-semibold text-red-900 dark:text-red-200 mb-4 flex items-center gap-2"
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-xl bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,38 +44,47 @@ import speakerImage from "../../assets/DSC00129.jpg";
                   d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
                 ></path>
               </svg>
-              Nicht das Richtige für Sie, wenn…
-            </h3>
-            <ul class="space-y-3 text-red-800 dark:text-red-300/80">
-              <li class="flex gap-2">
-                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
-                ></span>
-                <span>
-                  Sie primär „schnell irgendwas mit KI“ wollen, ohne Prozesse
-                  anzufassen
-                </span>
-              </li>
-              <li class="flex gap-2">
-                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
-                ></span>
-                <span>
-                  Sie erwarten, dass ich Ihre komplette IT-Basis erstmal
-                  aufräume
-                </span>
-              </li>
-              <li class="flex gap-2">
-                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
-                ></span>
-                <span> Sie KI vor allem als Marketing-Gag sehen </span>
-              </li>
-            </ul>
-          </div>
+            </span>
+            Nicht das Richtige für Sie, wenn…
+          </h3>
 
-          <div
-            class="p-6 rounded-xl bg-brand-blue/5 border border-brand-blue/10"
+          <ul class="space-y-4">
+            <li class="flex gap-4 items-start text-gray-600 dark:text-gray-300">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
+              ></span>
+              <span class="text-base leading-relaxed"
+                >Sie wollen mal schnell irgendwas mit KI, weil alle das machen</span
+              >
+            </li>
+            <li class="flex gap-4 items-start text-gray-600 dark:text-gray-300">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
+              ></span>
+              <span class="text-base leading-relaxed"
+                >Reine Showcase-Projekte ohne echten Prozess- oder
+                Ergebnis-Impact</span
+              >
+            </li>
+            <li class="flex gap-4 items-start text-gray-600 dark:text-gray-300">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
+              ></span>
+              <span class="text-base leading-relaxed"
+                >Projekte ohne Entscheidungsfähigkeit, bei denen grundlegende
+                Strukturfragen nicht angegangen werden sollen</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="relative overflow-hidden rounded-2xl bg-brand-blue/5 p-8 ring-1 ring-brand-blue/20 dark:bg-brand-blue/10 dark:ring-brand-blue/30"
+        >
+          <div class="absolute top-0 left-0 w-1 h-full bg-brand-blue"></div>
+
+          <h3
+            class="text-lg font-bold text-brand-blue dark:text-blue-400 mb-6 flex items-center gap-3"
           >
-            <h3
-              class="text-lg font-semibold text-brand-blue dark:text-brand-blue-light mb-4 flex items-center gap-2"
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,40 +97,45 @@ import speakerImage from "../../assets/DSC00129.jpg";
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
                   clip-rule="evenodd"></path>
               </svg>
-              Besonders passend, wenn…
-            </h3>
-            <ul class="space-y-3 text-gray-700 dark:text-gray-300">
-              <li class="flex gap-2">
-                <span
-                  class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
-                ></span>
-                <span>
-                  Sie klare Schmerzpunkte haben – z. B. Angebote >2.000 €/Stück,
-                  Reklamationen mit viel Dokumentation,
-                  Pflege-/Behandlungsplanung
-                </span>
-              </li>
-              <li class="flex gap-2">
-                <span
-                  class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
-                ></span>
-                <span>
-                  Ihnen DSGVO, Revision und Security wichtig sind, Sie aber kein
-                  eigenes KI-Team haben
-                </span>
-              </li>
-              <li class="flex gap-2">
-                <span
-                  class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
-                ></span>
-                <span>
-                  Sie bereit sind, eine bis zwei interne Ansprechpersonen zu
-                  benennen, die mit mir das Ding zum Fliegen bringen
-                </span>
-              </li>
-            </ul>
-          </div>
+            </span>
+            Besonders passend, wenn…
+          </h3>
+
+          <ul class="space-y-4">
+            <li class="flex gap-4 items-start text-gray-700 dark:text-gray-200">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
+              ></span>
+              <span class="text-base leading-relaxed font-medium"
+                >Sie haben klare Schmerzpunkte in wertschöpfenden Kernprozessen</span
+              >
+            </li>
+            <li class="flex gap-4 items-start text-gray-700 dark:text-gray-200">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
+              ></span>
+              <span class="text-base leading-relaxed font-medium"
+                >Ihnen DSGVO, Sicherheit und Governance wichtig sind – Sie sind
+                bereit, Verantwortung zu tragen</span
+              >
+            </li>
+            <li class="flex gap-4 items-start text-gray-700 dark:text-gray-200">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
+              ></span>
+              <span class="text-base leading-relaxed font-medium"
+                >Sie sind bereit, interne Ressourcen für Change und Governance
+                zu aktivieren</span
+              >
+            </li>
+          </ul>
         </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="/service"
+          class="text-sm font-semibold leading-6 text-brand-blue hover:text-blue-500 dark:text-brand-gold dark:hover:text-brand-gold/80"
+        >
+          Mehr zu meiner Arbeitsweise <span aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </div>

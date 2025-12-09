@@ -1,10 +1,17 @@
+import type { IconName } from "../utils/icons";
+
+export interface ServicePillarCard {
+  title: string;
+  description: string;
+}
+
 export interface ServicePillar {
   title: string;
   subtitle: string;
   description: string;
-  deliverables: string[];
-  results: string[];
-  stack: string;
+  cards: ServicePillarCard[];
+  icon: IconName;
+  image: string;
 }
 
 export interface EngagementMode {
@@ -22,76 +29,119 @@ import type { PainPoint } from "../types/common";
 
 export const servicePillars: ServicePillar[] = [
   {
-    title: "Audit & Roadmap",
-    subtitle: "2 bis 4 Wochen • Architektur-Assessment & Governance-Plan",
+    title: "Architektur & Workflow-Design",
+    subtitle:
+      "2 bis 6 Wochen • Von Engpass-Analyse zu skalierbarer Architektur",
     description:
-      "Sie wissen, dass KI/Automation nötig ist, aber Initiativen verlaufen im Silo. Ich ordne Anforderungen, Datenlage und Risiken, von der ersten Bewertung bis zur Governance im Betrieb.",
-    deliverables: [
-      "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen inkl. Stakeholder-Interviews.",
-      "Architektur-Review und Risiko-Mapping mit klaren Quick-Wins.",
-      "Security, IAM & Compliance orientiert an BSI IT-Grundschutz, ISO/IEC 27001 und DSGVO, mit dokumentierten Guardrails.",
+      "Ihr Engpass wird zur Grundlage eines Systems, das nicht nur technisch funktioniert, sondern auch unter Last und im Audit bestehen kann.",
+    cards: [
+      {
+        title: "Auslöser im Alltag",
+        description:
+          "Medienbrüche, Personalmangel oder Aufsichtsanforderungen bremsen Ihr Tagesgeschäft. Prozesse existieren nur in Köpfen, nicht in Systemen.",
+      },
+      {
+        title: "Ansatz",
+        description:
+          "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen. Architektur-Blueprint mit Governance- und Risiko-Mapping für 3–6 Monate.",
+      },
+      {
+        title: "Was bleibt",
+        description:
+          "Klare Roadmap mit messbaren Meilensteinen. Security-by-Design nach BSI IT-Grundschutz und ISO/IEC 27001. System statt Tool.",
+      },
     ],
-    results: [
-      "Architektur-Blueprint: Klare technische Roadmap für die nächsten 12 Wochen.",
-      "Risiko-Matrix: Technische Entscheidungsgrundlagen für die Umsetzung von Datenschutz & Compliance.",
-      "Investitionssicherheit: Sie wissen vor dem Start genau, was machbar ist und was es kostet.",
-    ],
-    stack:
-      "LLMs: GPT, Claude, Gemini, Mistral · Orchestrierung: LangChain, LlamaIndex, Haystack.",
+    icon: "ClipboardDocumentCheckIcon",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    title: "PoC → produktiver Workflow",
-    subtitle: "6 bis 12 Wochen • Von Prototyp zu skalierbarem System",
+    title: "Assistenzsysteme & Automatisierung",
+    subtitle: "4 bis 10 Wochen • Von PoC zu produktivem Workflow",
     description:
-      "Übergang von bestehendem PoC oder Konzept zu produktivem, audit-fähigem Workflow. Architektur, Infra, Integration und Doku, alles für stabilen Betrieb unter Last.",
-    deliverables: [
-      "Backend- & API-Engineering (FastAPI, NestJS, Django) inklusive Datenpipelines und Event-Handling.",
-      "Cloud & Infrastruktur: AWS/Azure/GCP, Terraform, Docker/Kubernetes, CI/CD mit Monitoring.",
-      "Security-by-Design: IAM, OAuth2, Keycloak, Observability und Incident-Response.",
+      "RAG-Assistenten, Agenten-Workflows und Automatisierungen, die direkt in Ihre Systeme greifen. Medienbrüche auflösen, ohne Kontrolle zu verlieren.",
+    cards: [
+      {
+        title: "Auslöser im Alltag",
+        description:
+          "Copy-Paste, Mehrfacherfassung und fehlende Transparenz. Angebote, Reklamationen und Freigaben laufen über Excel, Word und E-Mail.",
+      },
+      {
+        title: "Ansatz",
+        description:
+          "Backend-Engineering mit APIs und Datenpipelines. KI-Assistenzsysteme mit Guardrails, Prompt-Evaluierung und Incident-Response.",
+      },
+      {
+        title: "Was bleibt",
+        description:
+          "Automatische Prozesse statt manuelle Schritte. Audit-fähige Systeme – Code gehört Ihnen, skalierbar von Pilot zu Enterprise.",
+      },
     ],
-    results: [
-      "Produktionsreifer Workflow: Skalierbar, audit-fähig, mit Runbook und Logging.",
-      "Eigentum & Unabhängigkeit: Code gehört Ihnen, technische Abhängigkeiten transparent.",
-      "Messbare Effizienz: Prozesse laufen automatisch statt manuell.",
+    icon: "CpuChipIcon",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop",
+  },
+  {
+    title: "Enablement & Sparring",
+    subtitle: "Laufend oder projektbezogen • Ihr Team macht den Unterschied",
+    description:
+      "Architektur-Reviews, Pair-Programming, Trainings und Coaching. Ihr Team übernimmt Ownership, ich sorge für Governance und Wissenstransfer.",
+    cards: [
+      {
+        title: "Auslöser im Alltag",
+        description:
+          "Ihr Team entwickelt selbst, braucht aber strategische Sicherheit. Entscheidungen werden ad-hoc getroffen, Wissen geht mit Einzelpersonen.",
+      },
+      {
+        title: "Ansatz",
+        description:
+          "Reviews, Architecture Boards und Shadowing-Sessions. Maßgeschneiderte Trainings zu Softwarearchitektur, KI und Security-by-Design.",
+      },
+      {
+        title: "Was bleibt",
+        description:
+          "Team-Kompetenz: Ihr Team versteht und betreibt Systeme eigenständig. Runbooks und Wissensdatenbanken statt Einzelpersonen-Abhängigkeit.",
+      },
     ],
-    stack:
-      "Python, TypeScript, SQL/NoSQL, Docker/Kubernetes, Terraform, Prometheus/Grafana.",
+    icon: "UserGroupIcon",
+    image:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
   },
 ];
 
 export const engagementModes: EngagementMode[] = [
   {
-    title: "Fractional AI/CIO",
+    title: "Strategische Verantwortung",
     description:
-      "Sie brauchen jemanden, der Verantwortung übernimmt: Steering Committees leiten, Roadmaps priorisieren, Budgets argumentieren und Security/Compliance vertreten.",
+      "Ich übernehme die Rolle des Fractional AI/CIO: Roadmaps priorisieren, Budgets argumentieren, technische Security/Compliance-Anforderungen vertreten und Teams coachen.",
   },
   {
-    title: "Projekt-Delivery",
+    title: "End-to-end Delivery",
     description:
-      "End-to-end Umsetzung mit Verantwortung für Architektur, Engineering, Security und Übergabe, inklusive Runbooks, Tests und Onboarding.",
+      "Vollständige Umsetzung von Architektur bis Deployment. Ihr Team übernimmt Ownership, ich liefere Governance und Enablement.",
   },
   {
-    title: "Advisory & Enablement",
+    title: "Sparring & Guidance",
     description:
-      "Sparring, Reviews, Architecture Boards, Trainings und On-the-job-Coaching, ideal, wenn interne Teams liefern, aber Guidance brauchen.",
+      "Reviews, Architecture Boards und Trainings für Teams, die selbst entwickeln, aber strategische Sicherheit brauchen.",
   },
 ];
 
 export const technologyHighlights: TechnologyHighlights = {
   llm: [
-    "LangChain, LlamaIndex, Haystack, RAG-Tooling",
-    "Embeddings: OpenAI, Hugging Face, Cohere, BGE, MiniLM",
-    "Agenten-Patterns: ReAct, CoT, Tool-Use, AutoGPT-ähnlich",
+    "LangChain, LlamaIndex, Haystack für RAG & Agenten-Workflows",
+    "Embeddings: OpenAI, Cohere, lokale Modelle mit BGE/MiniLM",
+    "Prompt-Evaluierung: DeepEval für Qualität und Sicherheit",
   ],
   cloud: [
-    "AWS (EC2, S3, Lambda, DynamoDB, RDS, ElastiCache, API Gateway, CloudFront, ECR, SQS, Fargate)",
-    "Azure (OpenAI, Cognitive Services, CosmosDB, Blob, IaaS), GCP (Vertex AI, BigQuery, Firebase)",
-    "Infrastructure-as-Code mit Terraform, Docker, Kubernetes, Helm, GitHub Actions/GitLab CI",
+    "AWS/Azure/GCP mit Infrastructure-as-Code (Terraform, Docker/K8s)",
+    "CI/CD: GitHub Actions, GitLab CI mit Monitoring (Prometheus/Grafana)",
+    "Event-Driven Architecture: APIs, Streaming, Serverless",
   ],
   security: [
-    "Security/Privacy-by-Design, IAM/RBAC, OAuth2, Keycloak, Supabase Auth",
-    "Technische DSGVO-Konformität, BSI IT-Grundschutz (200-1/-2/-3), ISO/IEC 27001",
-    "Observability: Prometheus, Grafana, ELK/OpenSearch, DeepEval für Prompt-Qualität",
+    "Security-by-Design: IAM/RBAC, OAuth2, Keycloak",
+    "Compliance: BSI IT-Grundschutz, ISO/IEC 27001, technische DSGVO",
+    "Observability: Prometheus, Grafana, ELK für Logging & Monitoring",
   ],
 };
 

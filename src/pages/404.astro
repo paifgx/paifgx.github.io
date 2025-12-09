@@ -3,27 +3,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Seite nicht gefunden" noindex>
-    <section
-        class="flex min-h-[60vh] items-center justify-center bg-white px-4 py-12 dark:bg-brand-dark sm:px-6"
-    >
-        <div class="mx-auto max-w-2xl text-center">
-            <p class="text-6xl font-bold text-brand-blue dark:text-brand-gold">
-                404
-            </p>
-            <h1
-                class="mt-4 text-2xl font-semibold text-gray-900 dark:text-white sm:text-3xl"
-            >
-                Seite nicht gefunden
-            </h1>
-            <p class="mt-2 text-base text-gray-600 dark:text-gray-300">
-                Die angeforderte Seite existiert nicht.
-            </p>
-            <a
-                href="/"
-                class="mt-6 inline-block rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 hover:-translate-y-0.5 dark:bg-brand-blue dark:hover:bg-blue-500"
-            >
-                Zur Startseite
-            </a>
-        </div>
-    </section>
+  <section
+    class="flex min-h-[60vh] items-center justify-center bg-white px-4 py-12 dark:bg-brand-dark sm:px-6"
+  >
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-6xl font-bold text-brand-blue dark:text-brand-gold">404</p>
+      <h1
+        class="mt-4 text-2xl font-semibold text-gray-900 dark:text-white sm:text-3xl"
+      >
+        Seite nicht gefunden
+      </h1>
+      <p class="mt-2 text-base text-gray-600 dark:text-gray-300">
+        Die angeforderte Seite existiert nicht.
+      </p>
+      <a
+        href="/"
+        class="mt-6 inline-block rounded-full bg-brand-blue px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-blue/25 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+      >
+        Zur Startseite
+      </a>
+    </div>
+  </section>
 </BaseLayout>

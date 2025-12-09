@@ -54,7 +54,7 @@ const withSubject = (href: string, subject?: string) =>
               href={withSubject(primary.href, primary.mailtoSubject)}
               target={linkTarget(primary.external)}
               rel={linkRel(primary.external)}
-              class="rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand-blue shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              class="rounded-full bg-white px-8 py-3.5 text-base font-bold text-brand-blue shadow-lg shadow-brand-blue/50 hover:bg-blue-50 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all"
             >
               {primary.label}
             </a>
@@ -64,7 +64,7 @@ const withSubject = (href: string, subject?: string) =>
               href={withSubject(secondary.href, secondary.mailtoSubject)}
               target={linkTarget(secondary.external)}
               rel={linkRel(secondary.external)}
-              class="rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              class="rounded-full border border-white/30 px-8 py-3.5 text-base font-semibold text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all"
             >
               {secondary.label}
             </a>

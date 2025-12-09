@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { business, contact } from "../config/site";
 import impressumSiegelLight from "../assets/impressum-siegel-light-horizontal-large.png";
 import impressumSiegelDark from "../assets/impressum-siegel-dark-horizontal-large.png";
+import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
 ---
 
 <BaseLayout
@@ -13,16 +14,7 @@ import impressumSiegelDark from "../assets/impressum-siegel-dark-horizontal-larg
   <section
     class="relative overflow-hidden py-12 sm:py-16 lg:py-24 border-b border-gray-100 dark:border-white/5"
   >
-    <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.15),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.25),transparent_55%)]"
-      >
-      </div>
-      <div
-        class="absolute -bottom-32 right-0 h-64 w-64 rounded-full bg-brand-blue/10 blur-[120px] dark:bg-brand-blue/20"
-      >
-      </div>
-    </div>
+    <BackgroundGlow />
 
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <div

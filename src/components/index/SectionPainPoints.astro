@@ -2,57 +2,94 @@
 import SectionSubtitle from "../ui/SectionSubtitle.astro";
 import { painPoints } from "../../data/home";
 import { iconMap, type IconName } from "../../utils/icons";
+
+const bentoStyles = [
+  { col: "md:col-span-2 lg:col-span-2", row: "md:row-span-2 lg:row-span-2" },
+  { col: "md:col-span-2 lg:col-span-2", row: "" },
+  { col: "", row: "" },
+  { col: "", row: "" },
+  { col: "", row: "md:row-span-2 lg:row-span-2" },
+  { col: "md:col-span-2 lg:col-span-2", row: "md:row-span-2 lg:row-span-2" },
+  { col: "", row: "md:row-span-2 lg:row-span-2" },
+];
 ---
 
 <section class="section-base">
-  <div class="absolute inset-0 -z-10">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
     <div
-      class="absolute top-0 right-0 -mr-40 -mt-40 h-[600px] w-[600px] rounded-full bg-brand-blue/5 blur-3xl dark:bg-brand-blue/10"
+      class="absolute top-0 right-0 -mr-40 -mt-40 h-[600px] w-[600px] rounded-full bg-brand-blue/10 blur-[100px] opacity-70 dark:bg-brand-blue/20"
     >
     </div>
     <div
-      class="absolute bottom-0 left-0 -ml-40 -mb-40 h-[600px] w-[600px] rounded-full bg-brand-gold/5 blur-3xl dark:bg-brand-gold/5"
+      class="absolute bottom-0 left-0 -ml-40 -mb-40 h-[600px] w-[600px] rounded-full bg-brand-gold/10 blur-[100px] opacity-70 dark:bg-brand-gold/10"
     >
     </div>
   </div>
 
   <div class="mx-auto max-w-7xl relative z-10">
-    <div class="mx-auto max-w-2xl text-center mb-16">
+    <div class="mx-auto max-w-3xl text-center mb-16">
       <SectionSubtitle>Herausforderungen</SectionSubtitle>
       <h2
-        class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+        class="mt-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl"
       >
-        Erkennen Sie Ihren Alltag wieder?
+        Erkennen Sie Ihren <span
+          class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-brand-gold"
+          >Alltag</span
+        > wieder?
       </h2>
-      <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
-        Viele Unternehmen scheitern nicht an der Vision, sondern an der
-        Komplexität der Umsetzung.
+      <p class="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+        Wenn Sie sich in mehreren dieser Punkte wiederfinden, dann sind Sie
+        nicht allein <br /> und es gibt einen besseren Weg.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-min max-w-7xl mx-auto"
+    >
       {
-        painPoints.map((point) => {
+        painPoints.map((point, index) => {
           const Icon = iconMap[point.icon as IconName];
+          const style = bentoStyles[index] || { col: "", row: "" };
+          const isLarge = index === 0 || index === 5;
+
+          const orderClass = index === 5 ? "order-last lg:order-none" : "";
+
           return (
-            <div class="relative flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-lg shadow-brand-blue/5 ring-1 ring-gray-200 dark:bg-white/5 dark:ring-white/10 dark:shadow-none transition-all hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 h-full">
-              <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold">
-                <Icon class="h-6 w-6" />
+            <div
+              class={`group relative flex flex-col rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-200/50 dark:bg-white/5 dark:ring-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/5 hover:-translate-y-1 ${style.col} ${style.row} ${orderClass}`}
+            >
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-brand-blue/0 group-hover:ring-brand-blue/20 transition-all duration-300" />
+
+              <div class="flex flex-col h-full gap-4 relative z-10">
+                <div
+                  class={`flex shrink-0 items-center justify-center rounded-xl bg-white text-brand-blue shadow-sm ring-1 ring-gray-100 dark:bg-white/10 dark:text-brand-gold dark:ring-white/10 group-hover:bg-brand-blue group-hover:text-white dark:group-hover:bg-brand-gold dark:group-hover:text-brand-dark transition-colors duration-300 ${isLarge ? "h-12 w-12" : "h-10 w-10"}`}
+                >
+                  <Icon class={isLarge ? "h-6 w-6" : "h-5 w-5"} />
+                </div>
+
+                <div class="flex-1 min-w-0 flex flex-col justify-between">
+                  <div>
+                    <h3
+                      class={`font-bold leading-tight text-gray-900 dark:text-white mb-2 ${isLarge ? "text-xl md:text-2xl" : "text-lg"}`}
+                    >
+                      {point.title}
+                    </h3>
+                    <p
+                      class={`leading-relaxed text-gray-600 dark:text-gray-400 ${isLarge ? "text-base" : "text-sm"}`}
+                    >
+                      {point.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 class="text-lg font-semibold leading-8 text-gray-900 dark:text-white">
-                {point.title}
-              </h3>
-              <p class="text-base leading-7 text-gray-600 dark:text-gray-300">
-                {point.description}
-              </p>
             </div>
           );
         })
       }
     </div>
 
-    <div class="mt-12 text-center">
-      <p class="text-lg font-medium text-gray-700 dark:text-gray-300">
+    <div class="mt-10 text-center">
+      <p class="text-base font-medium text-gray-700 dark:text-gray-300">
         Genau an diesen Stellen setze ich an – ein Kernprozess nach dem anderen.
       </p>
     </div>

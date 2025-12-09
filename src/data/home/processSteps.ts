@@ -1,4 +1,3 @@
-// Process steps showing the methodology
 import type { ProcessStep } from "../../types/common";
 
 export const processSteps: ProcessStep[] = [
@@ -6,24 +5,24 @@ export const processSteps: ProcessStep[] = [
     id: "01",
     name: "Analyse & Business Case",
     description:
-      "Ich prüfe Ihre Prozesse und Daten auf Herz und Nieren. Sie bekommen ein 2-seitiges Decision-Memo mit ROI-Schätzung und Risiken, bevor ich eine Zeile Code schreibe.",
+      "Tiefen-Analyse von Prozessen, Systemen und Stakeholdern. Sie erhalten ein kompaktes Decision-Memo mit Szenarien, ROI-Schätzung und klarer Empfehlung.",
   },
   {
     id: "02",
     name: "Architektur & Prototyp",
     description:
-      "Ich baue einen funktionsfähigen Piloten (MVP). Sie erhalten Architektur-Diagramme und Security-Konzept, damit Sie sofort testen können.",
+      "Ausarbeitung einer tragfähigen Architektur mit Sicherheit und Governance. Umsetzung eines funktionsfähigen MVP für echte Nutzer-Tests.",
   },
   {
     id: "03",
     name: "Umsetzung & Integration",
     description:
-      "Iterative Entwicklung in Ihrer Umgebung. Ich binde bestehende Systeme (ERP, CRM) an und liefere wöchentliche Demo-Sessions mit Ihrem Team.",
+      "Iterativer Ausbau in Ihre Systemlandschaft. Integration bestehender Tools mit Monitoring, Logging und regelmäßigen Reviews.",
   },
   {
     id: "04",
-    name: "Übergabe & Unabhängigkeit",
+    name: "Übergabe & Enablement",
     description:
-      "Ihr Team erhält Runbooks, Doku und einen Migrationsplan, der mich überflüssig macht. Sie übernehmen das Steuer, ohne laufende Abhängigkeit.",
+      "Saubere Dokumentation und Schulung. Ihr Team übernimmt eigenständig – ich werde überflüssig, aber bleibe optionaler Sparringspartner.",
   },
 ];

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { contact, contactChannels, availability } from "../config/site";
+import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
 ---
 
 <BaseLayout
@@ -8,18 +9,9 @@ import { contact, contactChannels, availability } from "../config/site";
   description="Kontakt für Geschäftsführung, Bereichs- und Operationsleitungen: 30-minütiges Sparring, klare nächste Schritte und vertrauliche Zusammenarbeit für KI- & Automationsvorhaben."
 >
   <section
-    class="relative overflow-hidden bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12 lg:py-24 border-b border-gray-100 dark:border-white/5"
+    class="relative overflow-hidden bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-24 border-b border-gray-100 dark:border-white/5"
   >
-    <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.15),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.25),transparent_55%)]"
-      >
-      </div>
-      <div
-        class="absolute -bottom-32 right-0 h-64 w-64 rounded-full bg-brand-blue/10 blur-[120px] dark:bg-brand-blue/20"
-      >
-      </div>
-    </div>
+    <BackgroundGlow />
 
     <div class="mx-auto max-w-3xl text-center">
       <div
@@ -46,7 +38,7 @@ import { contact, contactChannels, availability } from "../config/site";
     </div>
   </section>
 
-  <section class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12">
+  <section class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8">
     <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-3 sm:gap-6">
       {
         contactChannels.map((channel) => (
@@ -87,7 +79,7 @@ import { contact, contactChannels, availability } from "../config/site";
   </section>
 
   <section
-    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-12 lg:py-16"
+    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-16"
   >
     <div
       class="mx-auto max-w-5xl rounded-3xl border border-gray-200 p-8 shadow-lg shadow-brand-blue/5 dark:border-white/10 dark:bg-white/5 dark:shadow-none sm:p-10"
@@ -102,7 +94,7 @@ import { contact, contactChannels, availability } from "../config/site";
         <div class="flex gap-4">
           <div class="flex-none mt-1">
             <div
-              class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-blue/10 dark:bg-brand-gold/10"
+              class="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-blue/10 dark:bg-brand-gold/10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +125,7 @@ import { contact, contactChannels, availability } from "../config/site";
         <div class="flex gap-4">
           <div class="flex-none mt-1">
             <div
-              class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-blue/10 dark:bg-brand-gold/10"
+              class="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-blue/10 dark:bg-brand-gold/10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +156,7 @@ import { contact, contactChannels, availability } from "../config/site";
         <div class="flex gap-4">
           <div class="flex-none mt-1">
             <div
-              class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-blue/10 dark:bg-brand-gold/10"
+              class="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-blue/10 dark:bg-brand-gold/10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -205,7 +197,7 @@ import { contact, contactChannels, availability } from "../config/site";
             href={contact.calendaring.general}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 hover:-translate-y-0.5"
+            class="inline-flex items-center justify-center rounded-full bg-brand-blue px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-blue/25 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
           >
             Automatisierungs-Potenzial-Check buchen
           </a>
@@ -213,7 +205,7 @@ import { contact, contactChannels, availability } from "../config/site";
             href={contact.linkedin.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center rounded-full border border-gray-200 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:border-brand-blue/60 hover:text-brand-blue dark:border-white/20 dark:text-white/90 dark:hover:border-brand-gold/60 dark:hover:text-brand-gold"
+            class="inline-flex items-center justify-center rounded-full border border-gray-200 px-8 py-3.5 text-base font-semibold text-gray-900 transition hover:border-brand-blue/60 hover:text-brand-blue dark:border-white/20 dark:text-white/90 dark:hover:border-brand-gold/60 dark:hover:text-brand-gold"
           >
             LinkedIn-Nachricht senden
           </a>
