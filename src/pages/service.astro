@@ -15,49 +15,48 @@ import {
 import FinalCTA from "../components/ui/FinalCTA.astro";
 import { iconMap, type IconName } from "../utils/icons";
 
-// Enables FAQ rich snippets in search results to improve visibility
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
     {
       "@type": "Question",
-      name: "Welche KI-Dienstleistungen bietet Patrik Garten an?",
+      name: "Für wen sind die Dienstleistungen von garten.ai geeignet?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Patrik Garten bietet AI Solution Architecture, RAG- & Agentensysteme mit LangChain/LlamaIndex, Platform Engineering (FastAPI, NestJS, Cloud-Infrastruktur), sowie Team Enablement durch Trainings und Coaching. Alle Leistungen orientieren sich an Security-by-Design nach BSI IT-Grundschutz und ISO 27001.",
+        text: "Die Leistungen richten sich an mittelständische Unternehmen (KMU) mit klaren Kernprozessen, die unter Medienbrüchen, Tool-Wildwuchs oder Abhängigkeiten von Schlüsselpersonen leiden. Typische Branchen: E-Commerce/Retail, Gesundheitswesen, IT-Dienstleister und wissensintensive Organisationen. Geschäftsführung und IT-Leitung, die digitale Transformation mit klarem Business Case und Governance-Rahmen angehen wollen.",
       },
     },
     {
       "@type": "Question",
-      name: "Wie läuft eine Zusammenarbeit ab?",
+      name: "Welche Leistungsbausteine bietet garten.ai?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Jede Zusammenarbeit startet mit einem Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen. Daraus entsteht eine priorisierte Roadmap mit Verantwortlichkeiten und KPIs. Die Umsetzung erfolgt hands-on mit Reviews, Architecture Boards und Enablement-Artefakten.",
+        text: "Drei kombinierbare Bausteine: 1) Architektur & Workflow-Design (Assessment, Blueprint, Governance-Plan), 2) Assistenzsysteme & Automatisierung (RAG-Assistenten, Agenten-Workflows, Integration in bestehende Systeme), 3) Enablement & Sparring (Reviews, Trainings, Coaching für nachhaltigen Betrieb). Alle Bausteine orientieren sich an Security-by-Design nach BSI IT-Grundschutz und ISO/IEC 27001.",
       },
     },
     {
       "@type": "Question",
-      name: "Welche Engagement-Modelle gibt es?",
+      name: "Wie läuft ein typisches Projekt ab?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Es gibt drei Modelle: Fractional AI/CIO für strategische Verantwortung, Projekt-Delivery für End-to-end Umsetzung, und Advisory & Enablement für Sparring und Coaching. Alle Modelle sind kombinierbar und remote im DACH-Raum oder vor Ort verfügbar.",
+        text: "Ein Projekt durchläuft vier Phasen: 1) Analyse & Business Case (Tiefen-Analyse, Quick-Wins, Decision-Memo), 2) Architektur & MVP (tragfähige Architektur, funktionsfähiger MVP für echte Nutzer), 3) Umsetzung & Integration (iterativer Ausbau, Integration, Monitoring), 4) Übergabe & Enablement (Dokumentation, Onboarding, Schulung). Ziel: Sie können Systeme eigenständig betreiben und weiterentwickeln.",
       },
     },
     {
       "@type": "Question",
-      name: "Welche Technologien werden eingesetzt?",
+      name: "Wie wird Governance, Security und Compliance berücksichtigt?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Der Tech-Stack umfasst LLMs (OpenAI, Azure OpenAI, Claude, Gemini, Mistral), Orchestrierung (LangChain, LlamaIndex, Haystack), Backend (FastAPI, NestJS, Django), Cloud (AWS, Azure, GCP, Kubernetes), und Security (OAuth2, Keycloak, BSI IT-Grundschutz).",
+        text: "Security, Datenschutz und Governance sind Bestandteil jedes Meilensteins, nicht nachträglich drübergestülpt. Orientierung an BSI IT-Grundschutz und ISO/IEC 27001. Dokumentierte Guardrails, Risiko-Mapping, IAM/RBAC-Konzepte und Vorbereitung auf Audits. Kein Blackbox-Ansatz – Code, Architekturwissen und Betriebskompetenz bleiben beim Kunden.",
       },
     },
     {
       "@type": "Question",
-      name: "Wie schnell kann ein Projekt starten?",
+      name: "Wie schnell kann ein Projekt starten und wie läuft der erste Kontakt ab?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Die Reaktionszeit auf Anfragen beträgt 24 Stunden. Time-to-Value für MVP/POC liegt bei unter 90 Tagen. Nach einem initialen Gespräch wird gemeinsam der optimale Startpunkt und Scope definiert.",
+        text: "Die Reaktionszeit auf Anfragen beträgt 24 Stunden. Nach einem initialen Gespräch (z. B. Automatisierungs-Potenzial-Check oder Digitalisierungs-Sparring) wird gemeinsam der optimale Startpunkt und Scope definiert. Time-to-Value für MVP liegt bei unter 90 Tagen. Alle Modelle sind kombinierbar und remote im DACH-Raum oder vor Ort verfügbar.",
       },
     },
   ],
@@ -67,7 +66,7 @@ const faqSchema = {
 <BaseLayout
   classDefintion="bg-white text-gray-900 dark:bg-brand-dark dark:text-gray-100"
   title="Dienstleistungen & Serviceportfolio"
-  description="Outcome-basierte AI Delivery: RAG & Agentensysteme, Platform Engineering und Enablement für Teams. Security-by-Design orientiert an BSI IT-Grundschutz & ISO 27001."
+  description="Digitale Architektur & Automatisierung für den Mittelstand: Workflow-Design, Assistenzsysteme und Enablement. Security-by-Design nach BSI IT-Grundschutz & ISO 27001."
 >
   <section class="relative overflow-hidden px-4 py-12 sm:px-12 lg:py-24">
     <div
