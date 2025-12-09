@@ -18,11 +18,7 @@ export interface TechnologyHighlights {
   security: string[];
 }
 
-export interface PainPoint {
-  title: string;
-  description: string;
-  icon: string;
-}
+import type { PainPoint } from "../types/common";
 
 export const servicePillars: ServicePillar[] = [
   {

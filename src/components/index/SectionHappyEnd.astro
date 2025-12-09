@@ -2,24 +2,10 @@
 import SectionSubtitle from "../ui/SectionSubtitle.astro";
 import InfoTooltip from "../ui/InfoTooltip.astro";
 import { benefits } from "../../data/home";
-import {
-  ClockIcon,
-  KeyIcon,
-  ClipboardDocumentCheckIcon,
-  CheckBadgeIcon,
-} from "@heroicons/vue/24/outline";
-
-const iconMap = {
-  ClockIcon,
-  KeyIcon,
-  ClipboardDocumentCheckIcon,
-  CheckBadgeIcon,
-};
+import { iconMap, type IconName } from "../../utils/icons";
 ---
 
-<section
-  class="bg-white px-4 py-16 dark:bg-brand-dark sm:px-6 lg:px-8 relative overflow-hidden"
->
+<section class="section-base">
   <div
     class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none overflow-hidden opacity-30"
   >
@@ -42,7 +28,7 @@ const iconMap = {
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       {
         benefits.map((benefit) => {
-          const Icon = iconMap[benefit.icon as keyof typeof iconMap];
+          const Icon = iconMap[benefit.icon as IconName];
           return (
             <div class="relative flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-lg shadow-brand-blue/5 ring-1 ring-gray-200 dark:bg-white/5 dark:ring-white/10 dark:shadow-none transition-all hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 h-full">
               <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold">

@@ -14,17 +14,7 @@ import {
   painPoints,
 } from "../data/service";
 import FinalCTA from "../components/ui/FinalCTA.astro";
-import {
-  SquaresPlusIcon,
-  UserGroupIcon,
-  ShieldExclamationIcon,
-} from "@heroicons/vue/24/outline";
-
-const iconMap = {
-  SquaresPlusIcon,
-  UserGroupIcon,
-  ShieldExclamationIcon,
-};
+import { iconMap, type IconName } from "../utils/icons";
 
 // Enables FAQ rich snippets in search results to improve visibility
 const faqSchema = {
@@ -149,7 +139,7 @@ const faqSchema = {
       <div class="mb-12 grid gap-6 md:grid-cols-3">
         {
           painPoints.map((pain) => {
-            const Icon = iconMap[pain.icon as keyof typeof iconMap];
+            const Icon = iconMap[pain.icon as IconName];
             return (
               <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-brand-blue/5 transition hover:shadow-xl hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 dark:shadow-none">
                 <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold mb-4">

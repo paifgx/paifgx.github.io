@@ -1,11 +1,6 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import {
-  Bars3Icon,
-  MoonIcon,
-  SunIcon,
-  XMarkIcon,
-} from "@heroicons/vue/24/outline";
+import { iconMap } from "../utils/icons";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 import { navigationItems } from "../config/site";
@@ -136,8 +131,18 @@ const isActive = (href) => {
             :title="themeToggleLabel"
             @click="toggleTheme"
           >
-            <MoonIcon v-if="isDarkMode" class="h-5 w-5" aria-hidden="true" />
-            <SunIcon v-else class="h-5 w-5" aria-hidden="true" />
+            <component
+              :is="iconMap.MoonIcon"
+              v-if="isDarkMode"
+              class="h-5 w-5"
+              aria-hidden="true"
+            />
+            <component
+              :is="iconMap.SunIcon"
+              v-else
+              class="h-5 w-5"
+              aria-hidden="true"
+            />
             <span class="sr-only">{{ themeToggleLabel }}</span>
           </button>
           <a
@@ -154,8 +159,18 @@ const isActive = (href) => {
             aria-label="Menü öffnen"
           >
             <span class="sr-only">Menü öffnen</span>
-            <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-            <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
+            <component
+              :is="iconMap.Bars3Icon"
+              v-if="!open"
+              class="block h-6 w-6"
+              aria-hidden="true"
+            />
+            <component
+              :is="iconMap.XMarkIcon"
+              v-else
+              class="block h-6 w-6"
+              aria-hidden="true"
+            />
           </DisclosureButton>
         </div>
       </div>
@@ -196,8 +211,18 @@ const isActive = (href) => {
           @click="toggleTheme"
         >
           <span>{{ isDarkMode ? "Dunkler Modus" : "Heller Modus" }}</span>
-          <MoonIcon v-if="isDarkMode" class="h-5 w-5" aria-hidden="true" />
-          <SunIcon v-else class="h-5 w-5" aria-hidden="true" />
+          <component
+            :is="iconMap.MoonIcon"
+            v-if="isDarkMode"
+            class="h-5 w-5"
+            aria-hidden="true"
+          />
+          <component
+            :is="iconMap.SunIcon"
+            v-else
+            class="h-5 w-5"
+            aria-hidden="true"
+          />
         </button>
       </div>
 

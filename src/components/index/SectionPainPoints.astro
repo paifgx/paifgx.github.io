@@ -1,28 +1,10 @@
 ---
 import SectionSubtitle from "../ui/SectionSubtitle.astro";
 import { painPoints } from "../../data/home";
-import {
-  BanknotesIcon,
-  ChartBarSquareIcon,
-  ShieldCheckIcon,
-  ArrowTrendingUpIcon,
-  DocumentTextIcon,
-  LockOpenIcon,
-} from "@heroicons/vue/24/outline";
-
-const iconMap = {
-  BanknotesIcon,
-  ChartBarSquareIcon,
-  ShieldCheckIcon,
-  ArrowTrendingUpIcon,
-  DocumentTextIcon,
-  LockOpenIcon,
-};
+import { iconMap, type IconName } from "../../utils/icons";
 ---
 
-<section
-  class="bg-white px-4 py-16 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-24 relative overflow-hidden"
->
+<section class="section-base">
   <div class="absolute inset-0 -z-10">
     <div
       class="absolute top-0 right-0 -mr-40 -mt-40 h-[600px] w-[600px] rounded-full bg-brand-blue/5 blur-3xl dark:bg-brand-blue/10"
@@ -51,7 +33,7 @@ const iconMap = {
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         painPoints.map((point) => {
-          const Icon = iconMap[point.icon as keyof typeof iconMap];
+          const Icon = iconMap[point.icon as IconName];
           return (
             <div class="relative flex flex-col gap-4 rounded-2xl bg-white p-8 shadow-lg shadow-brand-blue/5 ring-1 ring-gray-200 dark:bg-white/5 dark:ring-white/10 dark:shadow-none transition-all hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 h-full">
               <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold">

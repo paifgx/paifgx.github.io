@@ -5,30 +5,8 @@ import { stats, contact } from "../config/site";
 import SectionSubtitle from "../components/ui/SectionSubtitle.astro";
 import { timeEntries } from "../data/aboutTimeline";
 import { pillars, principles, capabilities } from "../data/aboutMeta";
-import {
-  CommandLineIcon,
-  CpuChipIcon,
-  ChartBarIcon,
-  MagnifyingGlassIcon,
-  ServerStackIcon,
-  CloudIcon,
-  ShieldCheckIcon,
-  EyeIcon,
-  DevicePhoneMobileIcon,
-} from "@heroicons/vue/24/outline";
+import { iconMap, type IconName } from "../utils/icons";
 import PillLink from "@components/ui/PillLink.astro";
-
-const iconMap = {
-  CommandLineIcon,
-  CpuChipIcon,
-  ChartBarIcon,
-  MagnifyingGlassIcon,
-  ServerStackIcon,
-  CloudIcon,
-  ShieldCheckIcon,
-  EyeIcon,
-  DevicePhoneMobileIcon,
-};
 ---
 
 <BaseLayout
@@ -236,7 +214,7 @@ const iconMap = {
           <div class="mt-8 grid gap-y-12 gap-x-8 sm:grid-cols-2">
             {
               capabilities.map((capability) => {
-                const Icon = iconMap[capability.icon as keyof typeof iconMap];
+                const Icon = iconMap[capability.icon as IconName];
                 return (
                   <article class="flex flex-col gap-3">
                     <div class="flex items-center gap-3 border-b border-gray-100 dark:border-white/10 pb-3">

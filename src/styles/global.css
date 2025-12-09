@@ -50,6 +50,19 @@
   );
 }
 
+/* Common section styles following DRY principle */
+@utility section-container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+@utility section-base {
+  @apply bg-white px-4 py-16 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-24 relative overflow-hidden;
+}
+
+@utility section-grid-3 {
+  @apply grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3;
+}
+
 @utility carousel-dot {
   @apply transition-all duration-200 ease-in-out;
 }
