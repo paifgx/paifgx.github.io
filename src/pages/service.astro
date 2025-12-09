@@ -6,6 +6,7 @@ import { serviceStats, contact, uspPrimary } from "../config/site";
 import PillLink from "../components/ui/PillLink.astro";
 import SectionSubtitle from "../components/ui/SectionSubtitle.astro";
 import ServiceArticle from "../components/ServiceArticle.astro";
+import ServiceAudience from "../components/service/ServiceAudience.astro";
 import {
   servicePillars,
   engagementModes,
@@ -289,6 +290,8 @@ const faqSchema = {
       </dl>
     </div>
   </section>
+
+  <ServiceAudience />
 
   <section
     class="relative bg-white dark:bg-brand-dark overflow-hidden py-12 sm:py-16"
