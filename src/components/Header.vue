@@ -145,7 +145,7 @@ const isActive = (href) => {
           </button>
           <a
             :href="contact.href"
-            class="contact-button rounded-md bg-brand-blue px-4 py-2 text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-brand-dark"
+            class="contact-button rounded-full bg-brand-blue px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 hover:-translate-y-0.5 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-brand-dark"
           >
             {{ contact.name }}
           </a>
@@ -228,7 +228,7 @@ const isActive = (href) => {
         <div class="flex items-center px-4">
           <a
             :href="contact.href"
-            class="w-full rounded-md bg-brand-blue py-2 text-center text-white shadow-lg shadow-brand-blue/20 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 focus:ring-offset-gray-50 dark:hover:bg-blue-600 dark:focus:ring-offset-brand-dark"
+            class="w-full rounded-full bg-brand-blue py-3 text-center text-sm font-semibold text-white shadow-lg shadow-brand-blue/20 transition hover:bg-blue-600 hover:-translate-y-0.5 focus:outline-hidden focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 focus:ring-offset-gray-50 dark:focus:ring-offset-brand-dark"
           >
             {{ contact.name }}
           </a>
