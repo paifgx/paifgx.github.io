@@ -3,7 +3,7 @@ export const ctaCopy = {
   title: "Klarheit in 30 Minuten.",
   subline:
     "Kein Sales-Pitch, sondern echte Strategie. Ich prüfe gemeinsam mit Ihnen, ob und wie ich Ihnen helfen kann.",
-  buttonLabel: "Sparring-Call buchen",
+  buttonLabel: "30-Minuten KI-Workflow-Sparring buchen",
   steps: [
     {
       number: "01",
