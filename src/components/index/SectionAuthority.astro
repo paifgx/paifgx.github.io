@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import teamMeetingImage from "../../assets/Gemini_Generated_Image_b8bva1b8bva1b8bv.png";
+import speakingImage from "../../assets/DSC00129.jpg";
 import SectionSubtitle from "../ui/SectionSubtitle.astro";
 import { authority, authorityHighlights } from "../../data/home";
 ---
@@ -71,16 +71,16 @@ import { authority, authorityHighlights } from "../../data/home";
           </a>
         </div>
       </div>
-      <div class="relative pl-6 pt-6 lg:pl-0">
+      <div class="relative flex items-center justify-center">
         <div
-          class="relative rounded-2xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 dark:bg-white/5 dark:ring-white/10 backdrop-blur-sm"
+          class="relative rounded-2xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl lg:p-4 dark:bg-white/5 dark:ring-white/10 backdrop-blur-sm"
         >
           <Image
-            src={teamMeetingImage}
-            alt="Team Meeting und Whiteboard Session - Strategische Planung"
-            class="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:ml-0 opacity-90 hover:opacity-100 transition-opacity duration-500"
-            width={1216}
-            height={721}
+            src={speakingImage}
+            alt="Patrik Garten bei einem Vortrag über KI-Implementierung im Mittelstand"
+            class="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 opacity-90 hover:opacity-100 transition-opacity duration-500"
+            widths={[400, 800, 1200, 1600]}
+            format="avif"
           />
         </div>
       </div>

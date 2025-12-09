@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { serviceStats, contact, uspPrimary } from "../config/site";
 import SectionSubtitle from "../components/ui/SectionSubtitle.astro";
@@ -12,6 +13,7 @@ import {
 } from "../data/service";
 import FinalCTA from "../components/ui/FinalCTA.astro";
 import { iconMap, type IconName } from "../utils/icons";
+import workingImage from "../assets/programming.jpg";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -535,19 +537,36 @@ const faqSchema = {
     class="bg-linear-to-br from-brand-dark via-brand-dark to-black border-t border-gray-100 dark:border-white/5"
   >
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 sm:py-20 lg:py-24">
-      <div class="max-w-3xl space-y-6 mb-12">
-        <SectionSubtitle class="text-brand-gold"
-          >Tooling &amp; Observability</SectionSubtitle
-        >
-        <h2
-          class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-        >
-          Kuratierte Stacks für LLM, Cloud &amp; Security.
-        </h2>
-        <p class="text-lg leading-relaxed text-gray-300">
-          Vendor-neutrale Auswahl nach Use-Case, Regulatorik und
-          Wirtschaftlichkeit – nicht nach Hype.
-        </p>
+      <div class="flex flex-col lg:flex-row lg:items-end gap-10 mb-12">
+        <div class="lg:w-1/4 shrink-0">
+          <div class="relative rounded-xl overflow-hidden ring-1 ring-white/10">
+            <Image
+              src={workingImage}
+              alt="Hands-on Entwicklung: Patrik Garten bei der Arbeit am Code"
+              class="w-full aspect-square object-cover object-[center_20%] brightness-90 saturate-[0.9] hover:brightness-100 hover:saturate-100 transition-all duration-500"
+              widths={[250, 400]}
+              format="avif"
+            />
+            <div
+              class="absolute inset-0 bg-linear-to-t from-brand-dark/90 via-brand-dark/30 to-brand-dark/20"
+            >
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 space-y-6">
+          <SectionSubtitle class="text-brand-gold"
+            >Tooling &amp; Observability</SectionSubtitle
+          >
+          <h2
+            class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          >
+            Kuratierte Stacks für LLM, Cloud &amp; Security.
+          </h2>
+          <p class="text-lg leading-relaxed text-gray-300">
+            Vendor-neutrale Auswahl nach Use-Case, Regulatorik und
+            Wirtschaftlichkeit – nicht nach Hype.
+          </p>
+        </div>
       </div>
       <div class="grid gap-8 lg:grid-cols-3">
         <div>
