@@ -37,7 +37,7 @@ export const servicePillars: ServicePillar[] = [
     ],
     results: [
       "Architektur-Blueprint: Klare technische Roadmap für die nächsten 12 Wochen.",
-      "Risiko-Matrix: Fundierte Entscheidungsgrundlagen für Datenschutz & Compliance.",
+      "Risiko-Matrix: Technische Entscheidungsgrundlagen für die Umsetzung von Datenschutz & Compliance.",
       "Investitionssicherheit: Sie wissen vor dem Start genau, was machbar ist und was es kostet.",
     ],
     stack:

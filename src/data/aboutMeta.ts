@@ -55,7 +55,7 @@ export const principles: Principle[] = [
     id: 2,
     title: "Security-first Delivery",
     description:
-      "Privacy-by-Design, Threat-Modelling und Compliance-Reviews laufen mit – so nutzen Vorstände, Betriebsräte und Auditor:innen dieselben Unterlagen.",
+      "Privacy-by-Design, Threat-Modelling und technische Compliance-Reviews laufen mit – so nutzen Vorstände, Betriebsräte und Auditor:innen dieselben Unterlagen.",
   },
   {
     id: 3,
