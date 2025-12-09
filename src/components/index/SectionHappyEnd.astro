@@ -5,7 +5,7 @@ import { benefits } from "../../data/home";
 import { iconMap, type IconName } from "../../utils/icons";
 ---
 
-<section class="section-base">
+<section class="section-base relative">
   <div
     class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none overflow-hidden opacity-30"
   >
@@ -23,6 +23,95 @@ import { iconMap, type IconName } from "../../utils/icons";
       >
         Ihr Unternehmen nach unserer Zusammenarbeit
       </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+      <div
+        class="group relative bg-white dark:bg-brand-dark/50 backdrop-blur-sm p-8 rounded-2xl ring-1 ring-gray-200 dark:ring-white/10 flex flex-col justify-between overflow-hidden hover:ring-brand-blue/30 transition-all duration-300"
+      >
+        <div
+          class="absolute inset-0 bg-linear-to-br from-brand-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+        </div>
+        <div>
+          <div
+            class="text-xs font-mono font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2"
+          >
+            ROI
+          </div>
+          <div
+            class="text-3xl font-extrabold text-brand-blue dark:text-brand-blue-light mb-1"
+          >
+            &lt; 6 Monate
+          </div>
+          <div class="font-medium text-gray-900 dark:text-white">
+            Amortisation
+          </div>
+        </div>
+        <p
+          class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-4 border-t border-gray-100 dark:border-white/5 pt-4"
+        >
+          Wegfall manueller Routine-Tätigkeiten & Fehlerkosten
+        </p>
+      </div>
+
+      <div
+        class="group relative bg-white dark:bg-brand-dark/50 backdrop-blur-sm p-8 rounded-2xl ring-1 ring-gray-200 dark:ring-white/10 flex flex-col justify-between overflow-hidden hover:ring-brand-blue/30 transition-all duration-300"
+      >
+        <div
+          class="absolute inset-0 bg-linear-to-br from-brand-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+        </div>
+        <div>
+          <div
+            class="text-xs font-mono font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2"
+          >
+            Flow
+          </div>
+          <div
+            class="text-3xl font-extrabold text-brand-blue dark:text-brand-blue-light mb-1"
+          >
+            -40 %
+          </div>
+          <div class="font-medium text-gray-900 dark:text-white">
+            Durchlaufzeit
+          </div>
+        </div>
+        <p
+          class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-4 border-t border-gray-100 dark:border-white/5 pt-4"
+        >
+          Weniger Medienbrüche zwischen Fachabteilungen & IT
+        </p>
+      </div>
+
+      <div
+        class="group relative bg-white dark:bg-brand-dark/50 backdrop-blur-sm p-8 rounded-2xl ring-1 ring-gray-200 dark:ring-white/10 flex flex-col justify-between overflow-hidden hover:ring-brand-blue/30 transition-all duration-300"
+      >
+        <div
+          class="absolute inset-0 bg-linear-to-br from-brand-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+        </div>
+        <div>
+          <div
+            class="text-xs font-mono font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2"
+          >
+            Audit
+          </div>
+          <div
+            class="text-3xl font-extrabold text-brand-blue dark:text-brand-blue-light mb-1"
+          >
+            100 %
+          </div>
+          <div class="font-medium text-gray-900 dark:text-white">
+            Revisionssicher
+          </div>
+        </div>
+        <p
+          class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-4 border-t border-gray-100 dark:border-white/5 pt-4"
+        >
+          Klare Verantwortlichkeiten, Rollen & Policies
+        </p>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">

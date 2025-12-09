@@ -24,90 +24,106 @@ import SectionSubtitle from "../ui/SectionSubtitle.astro";
 
       <div class="space-y-8">
         <div
-          class="p-6 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20"
+          class="relative overflow-hidden rounded-2xl bg-white p-8 ring-1 ring-gray-200 dark:bg-white/5 dark:ring-white/10"
         >
+          <div class="absolute top-0 left-0 w-1 h-full bg-red-400"></div>
+
           <h3
-            class="text-lg font-semibold text-red-900 dark:text-red-200 mb-4 flex items-center gap-2"
+            class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="w-5 h-5"
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400"
             >
-              <path
-                d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
-              ></path>
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
+                ></path>
+              </svg>
+            </span>
             Nicht das Richtige für Sie, wenn…
           </h3>
-          <ul class="space-y-3 text-red-800 dark:text-red-300/80">
-            <li class="flex gap-2">
+
+          <ul class="space-y-4">
+            <li class="flex gap-4 items-start text-gray-600 dark:text-gray-300">
               <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
               ></span>
-              <span>
-                Sie wollen mal schnell irgendwas mit KI, weil alle das machen
-              </span>
+              <span class="text-base leading-relaxed"
+                >Sie wollen mal schnell irgendwas mit KI, weil alle das machen</span
+              >
             </li>
-            <li class="flex gap-2">
+            <li class="flex gap-4 items-start text-gray-600 dark:text-gray-300">
               <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
               ></span>
-              <span>
-                Reine Showcase-Projekte ohne echten Prozess- oder
-                Ergebnis-Impact
-              </span>
+              <span class="text-base leading-relaxed"
+                >Reine Showcase-Projekte ohne echten Prozess- oder
+                Ergebnis-Impact</span
+              >
             </li>
-            <li class="flex gap-2">
+            <li class="flex gap-4 items-start text-gray-600 dark:text-gray-300">
               <span class="mt-2 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"
               ></span>
-              <span>
-                Projekte ohne Entscheidungsfähigkeit, bei denen grundlegende
-                Strukturfragen nicht angegangen werden sollen
-              </span>
+              <span class="text-base leading-relaxed"
+                >Projekte ohne Entscheidungsfähigkeit, bei denen grundlegende
+                Strukturfragen nicht angegangen werden sollen</span
+              >
             </li>
           </ul>
         </div>
 
-        <div class="p-6 rounded-xl bg-brand-blue/5 border border-brand-blue/10">
+        <div
+          class="relative overflow-hidden rounded-2xl bg-brand-blue/5 p-8 ring-1 ring-brand-blue/20 dark:bg-brand-blue/10 dark:ring-brand-blue/30"
+        >
+          <div class="absolute top-0 left-0 w-1 h-full bg-brand-blue"></div>
+
           <h3
-            class="text-lg font-semibold text-brand-blue dark:text-brand-blue-light mb-4 flex items-center gap-2"
+            class="text-lg font-bold text-brand-blue dark:text-brand-blue-light mb-6 flex items-center gap-3"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="w-5 h-5"
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-blue-light"
             >
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                clip-rule="evenodd"></path>
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </span>
             Besonders passend, wenn…
           </h3>
-          <ul class="space-y-3 text-gray-700 dark:text-gray-300">
-            <li class="flex gap-2">
+
+          <ul class="space-y-4">
+            <li class="flex gap-4 items-start text-gray-700 dark:text-gray-200">
               <span class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
               ></span>
-              <span>
-                Sie haben klare Schmerzpunkte in wertschöpfenden Kernprozessen
-              </span>
+              <span class="text-base leading-relaxed font-medium"
+                >Sie haben klare Schmerzpunkte in wertschöpfenden Kernprozessen</span
+              >
             </li>
-            <li class="flex gap-2">
+            <li class="flex gap-4 items-start text-gray-700 dark:text-gray-200">
               <span class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
               ></span>
-              <span>
-                Ihnen DSGVO, Sicherheit und Governance wichtig sind – Sie sind
-                bereit, Verantwortung zu tragen
-              </span>
+              <span class="text-base leading-relaxed font-medium"
+                >Ihnen DSGVO, Sicherheit und Governance wichtig sind – Sie sind
+                bereit, Verantwortung zu tragen</span
+              >
             </li>
-            <li class="flex gap-2">
+            <li class="flex gap-4 items-start text-gray-700 dark:text-gray-200">
               <span class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"
               ></span>
-              <span>
-                Sie sind bereit, interne Ressourcen für Change und Governance zu
-                aktivieren
-              </span>
+              <span class="text-base leading-relaxed font-medium"
+                >Sie sind bereit, interne Ressourcen für Change und Governance
+                zu aktivieren</span
+              >
             </li>
           </ul>
         </div>
