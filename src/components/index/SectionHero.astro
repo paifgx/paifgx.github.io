@@ -1,8 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import InfoTooltip from "../ui/InfoTooltip.astro";
 import heroImage from "../../assets/DSC00758.jpg";
-import { contact, uspPrimary, tagline } from "../../config/site";
+import { contact } from "../../config/site";
 ---
 
 <section
@@ -30,16 +29,16 @@ import { contact, uspPrimary, tagline } from "../../config/site";
           <div
             class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium text-brand-gold-dim ring-1 ring-inset ring-brand-gold/30 bg-brand-gold/10 backdrop-blur-sm mb-6 dark:text-brand-gold dark:bg-brand-gold/5"
           >
-            {tagline}
+            KI-Architektur & Automatisierung für KMU
           </div>
 
           <h1
-            class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl text-balance"
+            class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl"
           >
-            Produktive KI-Workflows statt <span
-              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-indigo-400 whitespace-nowrap inline-block sm:inline"
+            20–40 % weniger manuelle Arbeit – <span
+              class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-indigo-400"
             >
-              Proof-of-Concepts.
+              auch ohne eigenes KI-Team.
             </span>
           </h1>
 
@@ -47,11 +46,10 @@ import { contact, uspPrimary, tagline } from "../../config/site";
             <p
               class="text-lg leading-relaxed text-gray-600 dark:text-gray-300 inline"
             >
-              {uspPrimary}
+              Ich helfe KMU ohne eigenes KI-Team, 1–3 Kernprozesse aus Tool-Zoo,
+              Excel und Papier in stabile, DSGVO-saubere Automatisierungen zu
+              bringen.
             </p>
-            <InfoTooltip
-              text="Die rechtliche Bewertung und Abnahme liegt bei Ihren Datenschutz- und Rechtsabteilungen."
-            />
           </div>
 
           <div
