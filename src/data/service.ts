@@ -1,10 +1,17 @@
+import type { IconName } from "../utils/icons";
+
+export interface ServicePillarCard {
+  title: string;
+  description: string;
+}
+
 export interface ServicePillar {
   title: string;
   subtitle: string;
   description: string;
-  deliverables: string[];
-  results: string[];
-  stack: string;
+  cards: ServicePillarCard[];
+  icon: IconName;
+  image: string;
 }
 
 export interface EngagementMode {
@@ -26,55 +33,79 @@ export const servicePillars: ServicePillar[] = [
     subtitle:
       "2 bis 6 Wochen • Von Engpass-Analyse zu skalierbarer Architektur",
     description:
-      "Ihr Engpass (Medienbrüche, Personalmangel, Aufsichtsanforderungen) wird zur Grundlage eines Systems, das nicht nur technisch funktioniert, sondern auch unter Last und im Audit bestehen kann.",
-    deliverables: [
-      "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen mit Stakeholder-Interviews.",
-      "Architektur-Blueprint mit Governance- und Risiko-Mapping für die nächsten 3–6 Monate.",
-      "Security-by-Design mit dokumentierten Guardrails nach BSI IT-Grundschutz und ISO/IEC 27001.",
+      "Ihr Engpass wird zur Grundlage eines Systems, das nicht nur technisch funktioniert, sondern auch unter Last und im Audit bestehen kann.",
+    cards: [
+      {
+        title: "Auslöser im Alltag",
+        description:
+          "Medienbrüche, Personalmangel oder Aufsichtsanforderungen bremsen Ihr Tagesgeschäft. Prozesse existieren nur in Köpfen, nicht in Systemen.",
+      },
+      {
+        title: "Ansatz",
+        description:
+          "Assessment von Prozessen, Datenquellen und Sicherheitsanforderungen. Architektur-Blueprint mit Governance- und Risiko-Mapping für 3–6 Monate.",
+      },
+      {
+        title: "Was bleibt",
+        description:
+          "Klare Roadmap mit messbaren Meilensteinen. Security-by-Design nach BSI IT-Grundschutz und ISO/IEC 27001. System statt Tool.",
+      },
     ],
-    results: [
-      "Klare technische Roadmap mit messbaren Meilensteinen und Risiko-Einschätzung.",
-      "Investitionssicherheit: Sie wissen vor dem Start genau, was machbar ist und welche Abhängigkeiten bestehen.",
-      "System statt Tool: Integrationsfähige Architektur, die Ihre bestehende IT einbindet.",
-    ],
-    stack:
-      "LLMs: OpenAI, Azure OpenAI, Claude, Gemini · Orchestrierung: LangChain, LlamaIndex, Haystack.",
+    icon: "ClipboardDocumentCheckIcon",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Assistenzsysteme & Automatisierung",
     subtitle: "4 bis 10 Wochen • Von PoC zu produktivem Workflow",
     description:
       "RAG-Assistenten, Agenten-Workflows und Automatisierungen, die direkt in Ihre Systeme greifen. Medienbrüche auflösen, ohne Kontrolle zu verlieren.",
-    deliverables: [
-      "Backend-Engineering mit APIs und Datenpipelines für nahtlose Integration.",
-      "KI-Assistenzsysteme mit Guardrails, Prompt-Evaluierung und Incident-Response.",
-      "Deployment in Ihre Infrastruktur mit Monitoring und skalierbarer Architektur.",
+    cards: [
+      {
+        title: "Auslöser im Alltag",
+        description:
+          "Copy-Paste, Mehrfacherfassung und fehlende Transparenz. Angebote, Reklamationen und Freigaben laufen über Excel, Word und E-Mail.",
+      },
+      {
+        title: "Ansatz",
+        description:
+          "Backend-Engineering mit APIs und Datenpipelines. KI-Assistenzsysteme mit Guardrails, Prompt-Evaluierung und Incident-Response.",
+      },
+      {
+        title: "Was bleibt",
+        description:
+          "Automatische Prozesse statt manuelle Schritte. Audit-fähige Systeme – Code gehört Ihnen, skalierbar von Pilot zu Enterprise.",
+      },
     ],
-    results: [
-      "Automatische Prozesse statt manuelle Schritte – messbare Effizienzsteigerung.",
-      "Audit-fähige Systeme: Code gehört Ihnen, technische Abhängigkeiten transparent dokumentiert.",
-      "Skalierbare Lösungen: Von Pilot zu unternehmensweiter Nutzung ohne Neuaufbau.",
-    ],
-    stack:
-      "Backend: FastAPI, NestJS, Python · Cloud: AWS/Azure/GCP, Docker/Kubernetes, Terraform.",
+    icon: "CpuChipIcon",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop",
   },
   {
     title: "Enablement & Sparring",
     subtitle: "Laufend oder projektbezogen • Ihr Team macht den Unterschied",
     description:
       "Architektur-Reviews, Pair-Programming, Trainings und Coaching. Ihr Team übernimmt Ownership, ich sorge für Governance und Wissenstransfer.",
-    deliverables: [
-      "Hands-on Guidance durch Reviews, Architecture Boards und Shadowing-Sessions.",
-      "Maßgeschneiderte Trainings zu moderner Softwarearchitektur, KI und Security-by-Design.",
-      "Runbooks, Wissensdatenbanken und Enablement-Artefakte für nachhaltigen Betrieb.",
+    cards: [
+      {
+        title: "Auslöser im Alltag",
+        description:
+          "Ihr Team entwickelt selbst, braucht aber strategische Sicherheit. Entscheidungen werden ad-hoc getroffen, Wissen geht mit Einzelpersonen.",
+      },
+      {
+        title: "Ansatz",
+        description:
+          "Reviews, Architecture Boards und Shadowing-Sessions. Maßgeschneiderte Trainings zu Softwarearchitektur, KI und Security-by-Design.",
+      },
+      {
+        title: "Was bleibt",
+        description:
+          "Team-Kompetenz: Ihr Team versteht und betreibt Systeme eigenständig. Runbooks und Wissensdatenbanken statt Einzelpersonen-Abhängigkeit.",
+      },
     ],
-    results: [
-      "Team-Kompetenz: Ihr Team versteht und betreibt die Systeme eigenständig.",
-      "Wissen bleibt im Unternehmen: Dokumentierte Entscheidungen statt Einzelpersonen-Abhängigkeit.",
-      "Schnellere Iteration: Reviews und Coaching beschleunigen Ihre Entwicklung.",
-    ],
-    stack:
-      "Tools: GitHub/GitLab, Notion/Confluence, DeepEval für Prompt-Qualität.",
+    icon: "UserGroupIcon",
+    image:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
   },
 ];
 
