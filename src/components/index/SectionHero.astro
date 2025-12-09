@@ -32,19 +32,21 @@ import { contact } from "../../config/site";
   </div>
 
   <div class="mx-auto max-w-7xl w-full relative z-10">
-    <div class="lg:w-full lg:max-w-2xl">
+    <div class="lg:w-full lg:max-w-2xl xl:max-w-3xl">
       <div class="px-4 py-12 sm:px-6 lg:px-8 lg:py-32 lg:pr-0">
-        <div class="mx-auto max-w-lg lg:mx-0">
+        <div
+          class="mx-auto max-w-xl lg:mx-0 lg:max-w-none lg:bg-white/60 lg:dark:bg-brand-dark/70 lg:backdrop-blur-xl lg:rounded-3xl lg:p-8 lg:-ml-8 lg:shadow-xl lg:shadow-black/5 lg:ring-1 lg:ring-white/10"
+        >
           <div
-            class="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase text-brand-blue ring-1 ring-inset ring-brand-blue/30 bg-white/60 backdrop-blur-sm mb-8 dark:text-brand-gold dark:ring-brand-gold/30 dark:bg-brand-gold/5 shadow-sm"
+            class="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase text-brand-blue ring-1 ring-inset ring-brand-blue/30 bg-white/80 backdrop-blur-sm mb-8 dark:text-brand-gold dark:ring-brand-gold/30 dark:bg-brand-dark/50 shadow-sm"
           >
             Digitale System- & Workflow-Architektur
           </div>
 
           <h1
-            class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-[1.2] sm:text-5xl lg:text-6xl"
+            class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-[1.1] sm:text-5xl lg:text-[3.5rem] xl:text-6xl"
           >
-            Stabile Kernprozesse statt Tool-Zoo,
+            Stabile Kernprozesse<br class="hidden lg:block" /> statt Tool-Zoo,
             <span
               class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-brand-gold dark:from-blue-400 dark:to-brand-gold"
             >
@@ -52,7 +54,7 @@ import { contact } from "../../config/site";
             </span>
           </h1>
 
-          <div class="mt-8 max-w-lg">
+          <div class="mt-8 max-w-xl lg:max-w-lg">
             <p
               class="text-base leading-relaxed text-gray-600 dark:text-gray-300 font-normal"
             >
@@ -70,7 +72,9 @@ import { contact } from "../../config/site";
             </p>
           </div>
 
-          <div class="mt-8 flex flex-col sm:flex-row gap-8 items-start">
+          <div
+            class="mt-8 flex flex-col sm:flex-row gap-8 items-center sm:items-start"
+          >
             <div class="flex flex-col gap-3 w-full sm:w-auto">
               <a
                 href={contact.calendaring.general}
@@ -140,7 +144,7 @@ import { contact } from "../../config/site";
   </div>
 
   <div
-    class="relative h-[400px] w-full sm:h-[500px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2 lg:overflow-hidden lg:[clip-path:polygon(25%_0,100%_0,100%_100%,0%_100%)]"
+    class="relative h-[400px] w-full sm:h-[500px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2 lg:overflow-hidden lg:[clip-path:polygon(18%_0,100%_0,100%_100%,0%_100%)]"
   >
     <div
       class="absolute inset-0 bg-brand-dark/20 z-10 mix-blend-multiply pointer-events-none"
