@@ -14,13 +14,14 @@ export const ctaCopy = {
     {
       number: "02",
       title: "Status Quo Analyse",
-      description: "Wir besprechen Ihre aktuelle Herausforderung und Ziele.",
+      description:
+        "Ich bespreche mit Ihnen Ihre aktuelle Herausforderung und Ziele.",
     },
     {
       number: "03",
       title: "Strategie & Fahrplan",
       description:
-        "Sie erhalten erste Lösungsansätze, egal ob wir zusammenarbeiten oder nicht.",
+        "Sie erhalten erste Lösungsansätze, egal ob eine Zusammenarbeit zustande kommt oder nicht.",
     },
   ],
 };

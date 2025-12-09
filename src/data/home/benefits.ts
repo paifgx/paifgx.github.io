@@ -11,7 +11,7 @@ export const benefits: Benefit[] = [
   {
     title: "Eigentum & Unabhängigkeit",
     description:
-      "Der Projektcode gehört Ihnen, kein Agentur-Lock-in, keine Lizenzmiete für meine Arbeit. Technische Abhängigkeiten (Cloud, Datenbanken, LLMs) halten wir bewusst transparent und so austauschbar wie möglich.",
+      "Der Projektcode gehört Ihnen, kein Agentur-Lock-in, keine Lizenzmiete für meine Arbeit. Technische Abhängigkeiten (Cloud, Datenbanken, LLMs) halte ich bewusst transparent und so austauschbar wie möglich.",
     icon: "KeyIcon",
   },
   {
