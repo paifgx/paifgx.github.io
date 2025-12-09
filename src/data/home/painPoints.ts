@@ -2,10 +2,10 @@ import type { PainPoint } from "../../types/common";
 
 export const painPoints: PainPoint[] = [
   {
-    title: "Manuelle Routine-Arbeit frisst Ihre Zeit",
+    title: "Change-Müdigkeit und unklare Rollen",
     description:
-      "Ihr Team verbringt zu viel Zeit mit Copy & Paste, manueller Recherche und Excel-Pflege statt mit eigentlicher Wertschöpfung.",
-    icon: "BanknotesIcon",
+      "Digitalisierungsprojekte scheitern selten an der Technik, sondern an unklaren Rollen, fehlender Verantwortung, mangelnder Kommunikation und Change-Müdigkeit im Team.",
+    icon: "UserGroupIcon",
   },
   {
     title: "Schlecht integrierte Systeme",
@@ -38,9 +38,9 @@ export const painPoints: PainPoint[] = [
     icon: "LockOpenIcon",
   },
   {
-    title: "Change-Müdigkeit und unklare Rollen",
+    title: "Manuelle Routine-Arbeit frisst Ihre Zeit",
     description:
-      "Digitalisierungsprojekte scheitern nicht an der Technik, sondern an unklaren Rollen, fehlender Verantwortung und Change-Müdigkeit.",
-    icon: "UserGroupIcon",
+      "Ihr Team verbringt zu viel Zeit mit Copy & Paste, manueller Recherche und Excel-Pflege statt mit eigentlicher Wertschöpfung.",
+    icon: "BanknotesIcon",
   },
 ];
