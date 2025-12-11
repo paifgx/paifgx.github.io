@@ -68,30 +68,30 @@ export const principles: Principle[] = [
 export const capabilities: Capability[] = [
   {
     id: 1,
-    title: "Digitale Architektur & Workflow-Design",
+    title: "Digitale Prozesse & Architektur",
     icon: "ServerStackIcon",
     description:
-      "Analyse bestehender Prozess- und Systemlandschaften, Definition von Zielbildern und Soll-Prozessen, Design von Architekturen für Geschäftslogik, APIs, Events, Datenmodelle und Integrationslayer.",
+      "End-to-End-Architekturen und Workflows, mit denen Ihre Kernprozesse klar definiert, automatisierbar und zukunftsfähig werden.",
   },
   {
     id: 2,
-    title: "Assistenzsysteme & Automatisierung",
+    title: "Assistenz & Automatisierung",
     icon: "CpuChipIcon",
     description:
-      "Aufbau unternehmensspezifischer Assistenz- und Automatisierungslösungen. Kombination aus klassischer Automatisierung und intelligenten Komponenten (LLMs, RAG, Klassifikatoren), wo sie Mehrwert liefern.",
+      "Assistenz- und Automatisierungslösungen, die wiederkehrende Wissensarbeit abnehmen und sich sauber in Ihre bestehenden Systeme integrieren.",
   },
   {
     id: 3,
-    title: "Governance & Security-by-Design",
+    title: "Security-by-Design",
     icon: "ShieldCheckIcon",
     description:
-      "Sicherheits-, Datenschutz- und Governance-Fragen von Anfang an mitgedacht (orientiert an IT-Grundschutz/ISO). Dokumentation, Runbooks und Trainingspfade für nachhaltigen Betrieb.",
+      "Governance-, Sicherheits- und Datenschutzkonzepte, die KI- und Automatisierungsvorhaben revisionssicher und auditierbar machen.",
   },
   {
     id: 4,
     title: "Beratung & Enablement",
     icon: "ChartBarIcon",
     description:
-      "Sparring für Geschäftsführung & Leitungen, Architektur-Workshops mit IT & Fachbereichen, Trainings zu moderner Softwarearchitektur und KI-/LLM-Architekturen mit Praxisfokus.",
+      "Sparring, Workshops und Trainings, damit Ihr Team selbst fundierte Architektur- und KI-Entscheidungen treffen kann.",
   },
 ];
