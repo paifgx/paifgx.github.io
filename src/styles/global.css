@@ -68,3 +68,11 @@
 @utility carousel-dot {
   @apply transition-all duration-200 ease-in-out;
 }
+
+@utility clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
