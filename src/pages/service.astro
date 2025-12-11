@@ -14,6 +14,7 @@ import {
 import FinalCTA from "../components/ui/FinalCTA.astro";
 import { iconMap, type IconName } from "../utils/icons";
 import workingImage from "../assets/programming.jpg";
+import { AUTOMATION_SPARRING } from "../data/offer";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -56,7 +57,7 @@ const faqSchema = {
       name: "Wie schnell kann ein Projekt starten und wie läuft der erste Kontakt ab?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Die Reaktionszeit auf Anfragen beträgt 24 Stunden. Nach einem initialen Gespräch (z. B. Automatisierungs-Potenzial-Check oder Digitalisierungs-Sparring) wird gemeinsam der optimale Startpunkt und Scope definiert. Time-to-Value für MVP liegt bei unter 90 Tagen. Alle Modelle sind kombinierbar und remote im DACH-Raum oder vor Ort verfügbar.",
+        text: "Die Reaktionszeit auf Anfragen beträgt 24 Stunden. Der Einstieg ist immer ein 30-minütiges Automatisierungs-Sparring – 30 Minuten Klarheit: Wir schauen gemeinsam auf 1–2 Ihrer Kernprozesse und identifizieren 2–3 konkrete Automatisierungs-Hebel für die nächsten 90 Tage. Optional kann daraus ein vertiefender Automatisierungs-Potenzial-Check werden. Time-to-Value für MVP liegt bei unter 90 Tagen. Alle Modelle sind kombinierbar und remote im DACH-Raum oder vor Ort verfügbar.",
       },
     },
   ],
@@ -107,7 +108,7 @@ const faqSchema = {
               rel="noopener noreferrer"
               class="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-blue px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-blue/25 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
             >
-              <span>Automatisierungs-Potenzial-Check buchen</span>
+              <span>{AUTOMATION_SPARRING.buttonLabel}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -120,6 +121,11 @@ const faqSchema = {
                   clip-rule="evenodd"></path>
               </svg>
             </a>
+            <p
+              class="text-sm text-gray-500 dark:text-gray-400 text-center max-w-xs"
+            >
+              {AUTOMATION_SPARRING.shortClaim}
+            </p>
             <div
               class="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
             >
@@ -209,7 +215,9 @@ const faqSchema = {
           Je nach Ausgangslage starten wir mit Architektur &amp;
           Workflow-Design, bauen Assistenzsysteme &amp; Automatisierung oder
           stärken Ihr Team durch Enablement &amp; Sparring – einzeln oder
-          kombiniert.
+          kombiniert. Der Einstieg ist immer das Automatisierungs-Sparring (30
+          Minuten). Optional kann daraus ein vertiefender
+          Automatisierungs-Potenzial-Check werden.
         </p>
       </div>
     </div>
@@ -604,13 +612,13 @@ const faqSchema = {
   <FinalCTA
     title="Bereit für Ihr nächstes Kapitel?"
     primary={{
-      label: "Automatisierungs-Potenzial-Check buchen",
+      label: AUTOMATION_SPARRING.buttonLabel,
       href: contact.calendaring.general,
       external: true,
     }}
   >
     <p>
-      Schreiben Sie an
+      Der Einstieg ist immer das {AUTOMATION_SPARRING.name}. Schreiben Sie an
       <a
         href={`mailto:${contact.email}`}
         class="font-semibold text-white underline underline-offset-4 hover:text-brand-gold"

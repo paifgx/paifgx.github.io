@@ -1,5 +1,6 @@
 ---
 import { contact } from "../../config/site";
+import { AUTOMATION_SPARRING } from "../../data/offer";
 ---
 
 <section
@@ -25,9 +26,7 @@ import { contact } from "../../config/site";
     <p
       class="mx-auto mb-12 max-w-2xl text-xl font-medium text-gray-300 md:text-2xl"
     >
-      In 30 Minuten finde ich gemeinsam mit Ihnen heraus, welcher Prozess sich
-      für Ihren 48h Sprint am meisten lohnt. Ich melde mich innerhalb von 24
-      Stunden.
+      {AUTOMATION_SPARRING.description} Ich melde mich innerhalb von 24 Stunden.
     </p>
 
     <div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
@@ -35,7 +34,7 @@ import { contact } from "../../config/site";
         href={contact.calendaring.workflowSprint}
         class="w-full rounded-full bg-orange-600 px-8 py-4 text-lg font-bold text-white shadow-2xl shadow-orange-600/20 transition-all hover:-translate-y-1 hover:bg-orange-500 hover:shadow-orange-600/40 sm:w-auto"
       >
-        Automatisierungs-Potenzial-Check buchen
+        {AUTOMATION_SPARRING.buttonLabel}
       </a>
       <a
         href={`mailto:${contact.email}`}

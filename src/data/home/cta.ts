@@ -1,8 +1,9 @@
+import { AUTOMATION_SPARRING } from "../offer";
+
 export const ctaCopy = {
-  title: "Klarheit in 30 Minuten.",
-  subline:
-    "Kein Sales-Pitch, sondern echte Strategie. Ich prüfe gemeinsam mit Ihnen, ob und wie ich Ihnen helfen kann.",
-  buttonLabel: "Automatisierungs-Potenzial-Check buchen",
+  title: AUTOMATION_SPARRING.name,
+  subline: AUTOMATION_SPARRING.description,
+  buttonLabel: AUTOMATION_SPARRING.buttonLabel,
   steps: [
     {
       number: "01",

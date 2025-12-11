@@ -7,6 +7,6 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#grad)"/>
-  <text x="600" y="315" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">GARTEN.ai</text>
+  <text x="600" y="315" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">garten.ai</text>
   <text x="600" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="rgba(255,255,255,0.9)" text-anchor="middle" dominant-baseline="middle">AI Solution Architect &amp; Software Engineer</text>
 </svg>

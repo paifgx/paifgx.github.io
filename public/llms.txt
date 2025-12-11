@@ -1,4 +1,4 @@
-# Patrik Garten / GARTEN.ai
+# Patrik Garten / garten.ai
 
 Freiberuflicher AI Solution Architect & Software Engineer aus Dortmund (DE).
 Seit 2017 End-to-End-KI-Architekturen für regulierte Unternehmen im DACH-Raum.

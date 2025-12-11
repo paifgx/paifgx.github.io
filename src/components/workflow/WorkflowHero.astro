@@ -1,5 +1,6 @@
 ---
 import { contact } from "../../config/site";
+import { AUTOMATION_SPARRING } from "../../data/offer";
 ---
 
 <section
@@ -53,7 +54,9 @@ import { contact } from "../../config/site";
         class="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-gray-600 dark:text-gray-300"
       >
         Schluss mit monatelangen IT-Projekten. Ich automatisiere Ihren
-        zeitfressendsten Prozess, fixfertig, dokumentiert und stabil.
+        zeitfressendsten Prozess, fixfertig, dokumentiert und stabil. Der
+        48h-Sprint startet immer mit einem kostenlosen
+        Automatisierungs-Sparring.
       </p>
 
       <div class="mx-auto mb-12 grid max-w-3xl gap-6 text-left sm:grid-cols-3">
@@ -134,15 +137,9 @@ import { contact } from "../../config/site";
       <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
         <a
           href="#cta"
-          class="w-full rounded-full bg-orange-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-orange-600/25 transition-all hover:scale-105 hover:bg-orange-500 hover:shadow-xl sm:w-auto"
+          class="w-full rounded-full bg-orange-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-orange-600/25 transition-all hover:scale-105 hover:bg-orange-500 hover:shadow-xl"
         >
-          Kostenlosen Sparring-Call buchen
-        </a>
-        <a
-          href={`mailto:${contact.email}`}
-          class="w-full px-6 py-3 text-base font-semibold text-gray-600 transition-colors hover:text-orange-600 dark:text-gray-400 dark:hover:text-white sm:w-auto"
-        >
-          Fragen? E-Mail schreiben
+          {AUTOMATION_SPARRING.buttonLabel}
         </a>
       </div>
 

@@ -1,4 +1,4 @@
-# GARTEN.ai Homepage
+# garten.ai Homepage
 
 Personal website for Patrik Garten, AI Solution Architect & Software Engineer.
 

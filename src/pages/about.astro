@@ -7,6 +7,7 @@ import { timeEntries } from "../data/aboutTimeline";
 import { pillars, principles, capabilities } from "../data/aboutMeta";
 import { iconMap, type IconName } from "../utils/icons";
 import FinalCTA from "../components/ui/FinalCTA.astro";
+import { AUTOMATION_SPARRING } from "../data/offer";
 ---
 
 <BaseLayout
@@ -264,9 +265,9 @@ import FinalCTA from "../components/ui/FinalCTA.astro";
   </section>
 
   <FinalCTA
-    title="Lassen Sie uns sprechen"
+    title={AUTOMATION_SPARRING.name}
     primary={{
-      label: "Digitalisierungs-Sparring buchen",
+      label: AUTOMATION_SPARRING.buttonLabel,
       href: contact.calendaring.general,
       external: true,
     }}
@@ -276,8 +277,7 @@ import FinalCTA from "../components/ui/FinalCTA.astro";
     }}
   >
     <p>
-      In 30 Minuten klären wir, welcher Prozess sich für Ihre Digitalisierung am
-      meisten lohnt. Kein Verkaufsgespräch – nur eine ehrliche Einschätzung.
+      {AUTOMATION_SPARRING.description}
     </p>
     <span slot="footer">Antwort innerhalb von 24 Stunden.</span>
   </FinalCTA>

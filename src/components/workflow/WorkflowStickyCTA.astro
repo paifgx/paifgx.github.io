@@ -1,5 +1,6 @@
 ---
 import { contact } from "src/config/site";
+import { AUTOMATION_SPARRING } from "../../data/offer";
 ---
 
 <div
@@ -10,7 +11,7 @@ import { contact } from "src/config/site";
     href={contact.calendaring.workflowSprint}
     class="inline-block rounded-full bg-orange-600 px-6 py-3 font-bold text-white shadow-2xl transition-all hover:-translate-y-1 hover:bg-orange-500 hover:shadow-orange-600/30"
   >
-    Sparring-Call buchen
+    {AUTOMATION_SPARRING.buttonLabel}
   </a>
 </div>
 

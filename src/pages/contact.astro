@@ -1,88 +1,88 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { contact, contactChannels, availability } from "../config/site";
+import { AUTOMATION_SPARRING } from "../data/offer";
 ---
 
 <BaseLayout
   title="Kontakt & Verfügbarkeit"
-  description="Kontakt für Geschäftsführung, Bereichs- und Operationsleitungen: 30-minütiges Sparring, klare nächste Schritte und vertrauliche Zusammenarbeit für KI- & Automationsvorhaben."
+  description={`${AUTOMATION_SPARRING.name}: ${AUTOMATION_SPARRING.description} Vertrauliche Zusammenarbeit für KI- & Automationsvorhaben.`}
   backgroundGlow={true}
 >
-  <section
-    class="relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-24 border-b border-gray-100 dark:border-white/5"
-  >
-    <div class="mx-auto max-w-3xl text-center">
-      <div
-        class="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-sm font-medium text-brand-gold-dim backdrop-blur-md dark:text-brand-gold dark:bg-brand-gold/5"
-      >
-        Kontakt & Verfügbarkeit
+  <section class="relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-24">
+    <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
+      <div class="space-y-5">
+        <span
+          class="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-sm font-medium text-brand-gold-dim backdrop-blur-md dark:text-brand-gold dark:bg-brand-gold/5"
+        >
+          Kontakt & Verfügbarkeit
+        </span>
+        <div class="space-y-5">
+          <h1
+            class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-7xl text-wrap max-w-2xl lg:max-w-5xl"
+          >
+            {AUTOMATION_SPARRING.name}
+          </h1>
+          <p
+            class="text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl"
+          >
+            {AUTOMATION_SPARRING.description}
+          </p>
+          <p
+            class="text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl"
+          >
+            Ich melde mich in der Regel innerhalb von 24&nbsp;Stunden mit einem
+            konkreten Vorschlag zur weiteren Vorgehensweise. Remote im
+            DACH-Raum, Vor-Ort nach Bedarf.
+          </p>
+        </div>
       </div>
-      <h1
-        class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-7xl"
-      >
-        Lassen Sie uns sprechen.
-      </h1>
-      <p class="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-        In einem 30-minütigen Sparring-Call identifiziere ich gemeinsam mit
-        Ihnen zwei bis drei Hebel, die in den nächsten 90 Tagen spürbar
-        Entlastung bringen können, egal ob durch Automatisierung, KI-Assistants
-        oder klare Verantwortlichkeiten.
-      </p>
-      <p class="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-        Ich melde mich in der Regel innerhalb von 24&nbsp;Stunden mit einem
-        konkreten Vorschlag zur weiteren Vorgehensweise (Sparring, Delivery,
-        Fractional CIO). Remote im DACH-Raum, Vor-Ort nach Bedarf.
-      </p>
+
+      <div class="grid gap-4 md:grid-cols-3 sm:gap-6 mt-8">
+        {
+          contactChannels.map((channel) => (
+            <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-brand-blue/5 transition hover:shadow-xl hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+              <p class="text-xs font-bold uppercase tracking-wide text-brand-gold text-wrap max-w-2xl">
+                {channel.label}
+              </p>
+              <a
+                href={channel.href}
+                class="mt-3 inline-flex text-lg font-bold text-gray-900 underline-offset-4 hover:text-brand-blue dark:text-white dark:hover:text-brand-gold"
+                rel="noopener noreferrer"
+                target={channel.href.startsWith("http") ? "_blank" : undefined}
+              >
+                {channel.value}
+              </a>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                {channel.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        {
+          availability.map((item) => (
+            <article class="rounded-xl border border-gray-100 bg-gray-50/50 p-5 dark:border-white/5 dark:bg-white/5">
+              <p class="text-sm font-bold text-gray-900 dark:text-white">
+                {item.title}
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                {item.detail}
+              </p>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 
   <section
-    class="bg-white/30 backdrop-blur-xl px-4 py-12 dark:bg-brand-dark/20 sm:px-6 lg:px-8"
-  >
-    <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-3 sm:gap-6">
-      {
-        contactChannels.map((channel) => (
-          <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-brand-blue/5 transition hover:shadow-xl hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 dark:shadow-none">
-            <p class="text-xs font-bold uppercase tracking-wide text-brand-gold">
-              {channel.label}
-            </p>
-            <a
-              href={channel.href}
-              class="mt-3 inline-flex text-lg font-bold text-gray-900 underline-offset-4 hover:text-brand-blue dark:text-white dark:hover:text-brand-gold"
-              rel="noopener noreferrer"
-              target={channel.href.startsWith("http") ? "_blank" : undefined}
-            >
-              {channel.value}
-            </a>
-            <p class="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-              {channel.description}
-            </p>
-          </article>
-        ))
-      }
-    </div>
-
-    <div class="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
-      {
-        availability.map((item) => (
-          <article class="rounded-xl border border-gray-100 bg-gray-50/50 p-5 dark:border-white/5 dark:bg-white/5">
-            <p class="text-sm font-bold text-gray-900 dark:text-white">
-              {item.title}
-            </p>
-            <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-              {item.detail}
-            </p>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-
-  <section
-    class="bg-white/30 backdrop-blur-xl px-4 py-12 dark:bg-brand-dark/20 sm:px-6 lg:px-8 lg:py-16"
+    class="bg-white/30 backdrop-blur-xl px-4 py-12 dark:bg-brand-dark/20 sm:px-6 lg:px-8 lg:py-16 border-t border-gray-100 dark:border-white/5"
   >
     <div
-      class="mx-auto max-w-5xl rounded-3xl border border-gray-200 p-8 shadow-lg shadow-brand-blue/5 dark:border-white/10 dark:bg-white/5 dark:shadow-none sm:p-10"
+      class="mx-auto max-w-6xl rounded-3xl border border-gray-200 p-8 shadow-lg shadow-brand-blue/5 dark:border-white/10 dark:bg-white/5 dark:shadow-none sm:p-10"
     >
       <h2
         class="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl mb-8"
@@ -199,7 +199,7 @@ import { contact, contactChannels, availability } from "../config/site";
             rel="noopener noreferrer"
             class="inline-flex items-center justify-center rounded-full bg-brand-blue px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-blue/25 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
           >
-            Automatisierungs-Potenzial-Check buchen
+            {AUTOMATION_SPARRING.buttonLabel}
           </a>
           <a
             href={contact.linkedin.url}

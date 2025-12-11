@@ -91,7 +91,7 @@ const isActive = (href) => {
             <span
               class="text-lg font-bold tracking-tight text-gray-900 dark:text-white"
             >
-              GARTEN.ai
+              garten.ai
             </span>
             <span
               class="text-[10px] uppercase tracking-wider text-brand-gold font-medium"
