@@ -1,18 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { contact, contactChannels, availability } from "../config/site";
-import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
 ---
 
 <BaseLayout
   title="Kontakt & Verfügbarkeit"
   description="Kontakt für Geschäftsführung, Bereichs- und Operationsleitungen: 30-minütiges Sparring, klare nächste Schritte und vertrauliche Zusammenarbeit für KI- & Automationsvorhaben."
+  backgroundGlow={true}
 >
   <section
-    class="relative overflow-hidden bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-24 border-b border-gray-100 dark:border-white/5"
+    class="relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-24 border-b border-gray-100 dark:border-white/5"
   >
-    <BackgroundGlow />
-
     <div class="mx-auto max-w-3xl text-center">
       <div
         class="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-sm font-medium text-brand-gold-dim backdrop-blur-md dark:text-brand-gold dark:bg-brand-gold/5"
@@ -38,7 +36,9 @@ import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
     </div>
   </section>
 
-  <section class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8">
+  <section
+    class="bg-white/30 backdrop-blur-xl px-4 py-12 dark:bg-brand-dark/20 sm:px-6 lg:px-8"
+  >
     <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-3 sm:gap-6">
       {
         contactChannels.map((channel) => (
@@ -79,7 +79,7 @@ import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
   </section>
 
   <section
-    class="bg-white px-4 py-12 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-16"
+    class="bg-white/30 backdrop-blur-xl px-4 py-12 dark:bg-brand-dark/20 sm:px-6 lg:px-8 lg:py-16"
   >
     <div
       class="mx-auto max-w-5xl rounded-3xl border border-gray-200 p-8 shadow-lg shadow-brand-blue/5 dark:border-white/10 dark:bg-white/5 dark:shadow-none sm:p-10"

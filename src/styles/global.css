@@ -58,7 +58,7 @@
 }
 
 @utility section-base {
-  @apply bg-white px-4 py-16 dark:bg-brand-dark sm:px-6 lg:px-8 lg:py-24 relative overflow-hidden;
+  @apply bg-white/30 backdrop-blur-xl px-4 py-16 dark:bg-brand-dark/20 sm:px-6 lg:px-8 lg:py-24 relative overflow-hidden;
 }
 
 @utility section-grid-3 {

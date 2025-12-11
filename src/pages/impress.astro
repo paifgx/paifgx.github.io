@@ -3,7 +3,6 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { business, contact } from "../config/site";
 import impressumSiegelLight from "../assets/impressum-siegel-light-horizontal-large.png";
 import impressumSiegelDark from "../assets/impressum-siegel-dark-horizontal-large.png";
-import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
 import SectionSubtitle from "../components/ui/SectionSubtitle.astro";
 ---
 
@@ -11,10 +10,9 @@ import SectionSubtitle from "../components/ui/SectionSubtitle.astro";
   title="Impressum"
   description={`Impressum von ${business.company}. Angaben gemäß § 5 DDG.`}
   noindex={true}
+  backgroundGlow={true}
 >
   <section class="relative overflow-hidden py-12 sm:py-16 lg:py-24">
-    <BackgroundGlow />
-
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-16 clearfix">
         <div class="float-right ml-6 mb-6 w-48 lg:w-64">

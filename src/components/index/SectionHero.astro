@@ -7,73 +7,43 @@ import { contact } from "../../config/site";
 <section
   id="hero"
   aria-label="Hauptbereich"
-  class="relative bg-white dark:bg-brand-dark overflow-hidden lg:flex lg:items-center lg:min-h-[calc(100vh-4rem)]"
+  class="relative overflow-hidden lg:flex lg:items-center lg:min-h-[calc(100vh-4rem)]"
 >
-  <div
-    class="absolute inset-0 z-0 opacity-40 dark:opacity-20 pointer-events-none"
-  >
-    <div
-      class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"
-    >
-    </div>
-  </div>
-
-  <div
-    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none overflow-hidden"
-  >
-    <div
-      class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-brand-blue/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen animate-pulse-slow"
-    >
-    </div>
-    <div
-      class="absolute bottom-[10%] right-[-5%] w-[45vw] h-[45vw] bg-brand-gold/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen"
-    >
-    </div>
-  </div>
-
   <div class="mx-auto max-w-7xl w-full relative z-10">
     <div class="lg:w-full lg:max-w-2xl xl:max-w-3xl">
       <div class="px-4 py-12 sm:px-6 lg:px-8 lg:py-32 lg:pr-0">
         <div
-          class="mx-auto max-w-xl lg:mx-0 lg:max-w-none lg:bg-white/60 lg:dark:bg-brand-dark/70 lg:backdrop-blur-xl lg:rounded-3xl lg:p-8 lg:-ml-8 lg:shadow-xl lg:shadow-black/5 lg:ring-1 lg:ring-white/10"
+          class="mx-auto max-w-xl lg:mx-0 lg:max-w-none lg:bg-white/80 lg:dark:bg-brand-dark/80 lg:backdrop-blur-xl lg:rounded-3xl lg:p-8 lg:-ml-8 lg:shadow-xl lg:shadow-black/5 lg:ring-1 lg:ring-white/10"
         >
           <div
             class="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase text-brand-blue ring-1 ring-inset ring-brand-blue/30 bg-white/80 backdrop-blur-sm mb-8 dark:text-brand-gold dark:ring-brand-gold/30 dark:bg-brand-dark/50 shadow-sm"
           >
-            Digitale System- & Workflow-Architektur
+            Prozessautomatisierung für den Mittelstand
           </div>
 
           <h1
-            class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-[1.1] sm:text-5xl lg:text-[3.5rem] xl:text-6xl"
+            class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4 leading-[1.1] sm:text-5xl lg:text-[3.5rem] xl:text-6xl"
           >
-            Stabile Kernprozesse<br class="hidden lg:block" /> statt Tool-Zoo,
             <span
               class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-brand-gold dark:from-blue-400 dark:to-brand-gold"
             >
-              für den deutschen Mittelstand.
-            </span>
+              Mehr Ergebnis.
+            </span><br />
+            Weniger Aufwand.
           </h1>
 
           <div class="mt-8">
             <p
               class="text-base leading-relaxed text-gray-600 dark:text-gray-300 font-normal"
             >
-              Ich helfe deutschen KMU, ihre wertschöpfenden Prozesse so zu
-              automatisieren,<br class="hidden lg:block" /> dass <span
-                class="font-semibold text-gray-900 dark:text-white"
-                >20 bis 40 % manueller Arbeit wegfallen</span
-              >.
-            </p>
-            <p
-              class="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-300 font-normal"
-            >
-              Das Ergebnis: DSGVO-saubere End-to-End-Systeme ohne
-              Agentur-Lock-in.
+              Ich automatisiere Ihre Prozesse, damit Ihr bestehendes Team mehr
+              Aufträge in der gleichen Zeit abwickelt – ohne zusätzliche Köpfe
+              einstellen zu müssen.
             </p>
           </div>
 
           <div
-            class="mt-8 flex flex-col sm:flex-row gap-8 items-center sm:items-start"
+            class="mt-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start"
           >
             <div class="flex flex-col gap-3 w-full sm:w-auto">
               <a
@@ -82,7 +52,7 @@ import { contact } from "../../config/site";
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-brand-blue px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-blue/25 transition hover:bg-blue-600 hover:shadow-brand-blue/40 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
               >
-                Potenzial-Check buchen
+                Unverbindliches Erstgespräch
               </a>
               <div
                 class="flex items-center justify-center gap-3 text-xs font-medium text-gray-500 dark:text-gray-400 px-1"
@@ -114,28 +84,9 @@ import { contact } from "../../config/site";
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M5 13l4 4L19 7"></path></svg
-                  > Kostenlos</span
+                  > Klarheit statt Sales</span
                 >
               </div>
-            </div>
-
-            <div
-              class="flex flex-col items-center sm:items-start gap-1 sm:mt-2.5"
-            >
-              <a
-                href={`mailto:${contact.email}`}
-                class="group flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-blue dark:hover:text-brand-gold transition-colors"
-              >
-                <span>Fragen vorab per E-Mail?</span>
-                <span
-                  aria-hidden="true"
-                  class="transition-transform group-hover:translate-x-0.5"
-                  >&rarr;</span
-                >
-              </a>
-              <p class="text-[10px] text-gray-400 uppercase tracking-wider">
-                Antwort in &lt;24h
-              </p>
             </div>
           </div>
         </div>
