@@ -19,7 +19,14 @@ import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
     <div
       class="relative flex flex-1 items-center justify-center overflow-hidden bg-white px-4 py-12 text-gray-900 sm:px-6 lg:py-16 dark:bg-brand-dark dark:text-gray-100 border-b xl:border-b-0 xl:border-r border-gray-100 dark:border-white/5"
     >
-      <BackgroundGlow />
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none overflow-hidden"
+      >
+        <div
+          class="absolute top-[-10%] left-[-10%] w-full h-[50%] bg-brand-blue opacity-10 blur-[100px] rounded-full mix-blend-screen"
+        >
+        </div>
+      </div>
 
       <div class="relative mx-auto flex w-full max-w-2xl flex-col gap-10">
         <div class="space-y-6">
@@ -32,7 +39,10 @@ import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
             <h1
               class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-7xl"
             >
-              Patriks Werdegang
+              Patriks <span
+                class="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-brand-gold dark:from-blue-400 dark:to-brand-gold"
+                >Werdegang</span
+              >
             </h1>
             <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
               Seit 2017 helfe ich mittelständischen Unternehmen, ihre digitalen
@@ -52,31 +62,47 @@ import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
             kein Buzzword, sondern Verantwortung für Prozesse, Mitarbeiter und
             Compliance.
           </p>
-          <ul
-            class="mt-2 space-y-1 text-sm leading-relaxed text-gray-600 dark:text-gray-300"
-          >
-            <li>
-              <span class="font-semibold text-gray-900 dark:text-white"
-                >Problem vor Technologie:</span
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <article
+              class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:shadow-none"
+            >
+              <h4 class="text-base font-bold text-gray-900 dark:text-white">
+                Problem vor Technologie
+              </h4>
+              <p
+                class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400"
               >
-              Ausgangspunkt ist immer Ihr konkreter Prozess, nicht der Wunsch, „irgendwo
-              KI einzubauen“.
-            </li>
-            <li>
-              <span class="font-semibold text-gray-900 dark:text-white"
-                >System statt Tool:</span
+                Ausgangspunkt ist immer Ihr konkreter Prozess, nicht der Wunsch,
+                „irgendwo KI einzubauen“.
+              </p>
+            </article>
+            <article
+              class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:shadow-none"
+            >
+              <h4 class="text-base font-bold text-gray-900 dark:text-white">
+                System statt Tool
+              </h4>
+              <p
+                class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400"
               >
-              Fokus auf End-to-End-Systeme, die einen Kernprozess tragen, statt weiterer
-              Insellösungen.
-            </li>
-            <li>
-              <span class="font-semibold text-gray-900 dark:text-white"
-                >Governance & Enablement:</span
+                Fokus auf End-to-End-Systeme, die einen Kernprozess tragen,
+                statt weiterer Insellösungen.
+              </p>
+            </article>
+            <article
+              class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:shadow-none sm:col-span-2"
+            >
+              <h4 class="text-base font-bold text-gray-900 dark:text-white">
+                Governance & Enablement
+              </h4>
+              <p
+                class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400"
               >
-              Security, Datenschutz und Dokumentation von Anfang an, damit Ihre Teams
-              Verantwortung übernehmen können.
-            </li>
-          </ul>
+                Security, Datenschutz und Dokumentation von Anfang an, damit
+                Ihre Teams Verantwortung übernehmen können.
+              </p>
+            </article>
+          </div>
         </div>
 
         <dl
@@ -113,16 +139,13 @@ import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
             Kernprozesse, Governance und Ergebniswirkung im Mittelpunkt stehen –
             nicht Marketing-Spielereien.
           </p>
-          <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 font-medium">
-            &gt;150 Projekte · Remote-first · Einsätze vor Ort nach Absprache
-          </p>
         </div>
 
-        <div class="grid gap-8 sm:grid-cols-2">
+        <div class="grid gap-4 sm:grid-cols-2">
           {
             pillars.map((pillar) => (
-              <article class="space-y-2">
-                <p class="text-xs font-bold uppercase tracking-wide text-brand-gold">
+              <article class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+                <p class="text-xs font-bold uppercase tracking-wide text-brand-gold mb-2">
                   {pillar.label}
                 </p>
                 <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
@@ -144,10 +167,10 @@ import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
               Entscheidungsgrundlagen, Runbooks und Trainingspfaden.
             </p>
           </div>
-          <ul class="mt-8 space-y-6">
+          <ul class="mt-8 space-y-4">
             {
               principles.map((principle) => (
-                <li class="flex gap-4">
+                <li class="flex gap-4 p-4 rounded-xl border border-transparent hover:border-gray-100 hover:bg-gray-50 transition dark:hover:border-white/5 dark:hover:bg-white/5">
                   <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue dark:bg-brand-gold/10 dark:text-brand-gold">
                     <svg
                       class="h-3.5 w-3.5"
@@ -188,12 +211,12 @@ import BackgroundGlow from "../components/ui/BackgroundGlow.astro";
             über Architektur bis zum Enablement, direkt einsetzbar für
             regulierte Umgebungen.
           </p>
-          <div class="mt-8 grid gap-y-12 gap-x-8 sm:grid-cols-2">
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
             {
               capabilities.map((capability) => {
                 const Icon = iconMap[capability.icon as IconName];
                 return (
-                  <article class="flex flex-col gap-3">
+                  <article class="flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:shadow-none">
                     <div class="flex items-center gap-3 border-b border-gray-100 dark:border-white/10 pb-3">
                       <span class="text-brand-blue dark:text-brand-gold">
                         {Icon && <Icon class="h-5 w-5" />}
