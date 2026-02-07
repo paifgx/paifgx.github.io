@@ -16,10 +16,9 @@ import { inlineThemeScript } from "../utils/themeInline";
 
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, siteMeta.origin);
-const domain = Astro.site ? new URL(Astro.site).hostname : "garten.ai";
 
 const {
-  classDefintion,
+  classDefinition,
   title,
   description,
   type = "website",
@@ -31,7 +30,7 @@ const {
 const pageTitle = title ? `${title} · ${business.owner}` : siteMeta.title;
 const pageDescription = description || siteMeta.description;
 const ogImageURL = new URL(image, siteMeta.origin).href;
-const mainClass = classDefintion ?? "";
+const mainClass = classDefinition ?? "";
 
 const pathSegments = currentPath.split("/").filter(Boolean);
 
@@ -147,22 +146,7 @@ const structuredData = {
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
-
     <ClientRouter />
-
-    <script is:inline define:vars={{ domain }}>
-      window.__PLAUSIBLE_DOMAIN__ = domain;
-    </script>
-    <script>
-      import { init } from "@plausible-analytics/tracker";
-
-      const domain = (window as any).__PLAUSIBLE_DOMAIN__;
-      if (domain && domain !== "localhost") {
-        init({ domain });
-      }
-    </script>
 
     <script
       type="application/ld+json"

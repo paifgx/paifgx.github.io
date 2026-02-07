@@ -107,7 +107,10 @@ export function onStorageChange(callback: (theme: Theme) => void): () => void {
   if (typeof window === "undefined") return () => {};
 
   const handler = (e: StorageEvent) => {
-    if (e.key === THEME_STORAGE_KEY && (e.newValue === "light" || e.newValue === "dark")) {
+    if (
+      e.key === THEME_STORAGE_KEY &&
+      (e.newValue === "light" || e.newValue === "dark")
+    ) {
       callback(e.newValue);
     }
   };
@@ -118,4 +121,3 @@ export function onStorageChange(callback: (theme: Theme) => void): () => void {
     window.removeEventListener("storage", handler);
   };
 }
-

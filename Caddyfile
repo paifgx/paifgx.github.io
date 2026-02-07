@@ -9,9 +9,10 @@
     header {
         X-Frame-Options "SAMEORIGIN"
         X-Content-Type-Options "nosniff"
-        X-XSS-Protection "1; mode=block"
         Referrer-Policy "strict-origin-when-cross-origin"
         Permissions-Policy "geolocation=(), microphone=(), camera=()"
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';"
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
         -Server
     }
 
@@ -23,8 +24,8 @@
     @static path *.jpg *.jpeg *.png *.gif *.ico *.svg *.woff *.woff2 *.css *.js
     header @static Cache-Control "public, max-age=604800"
 
-    # SPA fallback - try file, then directory, then index.html
-    try_files {path} {path}/ {path}.html /index.html
+    # SPA fallback - try file, then directory, then 404.html
+    try_files {path} {path}/ {path}.html /404.html
 
     # Block hidden files (but allow /.well-known/* for MTA-STS etc.)
     @hidden {

@@ -161,13 +161,13 @@ onBeforeUnmount(() => {
   >
     <div
       v-for="(slide, slideIndex) in slides"
+      v-show="slideIndex === currentSlide"
       :key="slideIndex"
       class="case-study-slide grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12"
       role="group"
       aria-roledescription="Folie"
       :aria-label="`Seite ${slideIndex + 1} von ${totalSlides}`"
       :data-slide-index="slideIndex"
-      v-show="slideIndex === currentSlide"
     >
       <article
         v-for="caseStudy in slide"
@@ -203,7 +203,9 @@ onBeforeUnmount(() => {
               >
                 Ausgangssituation
               </p>
-              <p class="leading-relaxed">{{ caseStudy.situation }}</p>
+              <p class="leading-relaxed">
+                {{ caseStudy.situation }}
+              </p>
             </div>
             <div>
               <p
@@ -211,7 +213,9 @@ onBeforeUnmount(() => {
               >
                 Ansatz
               </p>
-              <p class="leading-relaxed">{{ caseStudy.approach }}</p>
+              <p class="leading-relaxed">
+                {{ caseStudy.approach }}
+              </p>
             </div>
             <div>
               <p
@@ -254,8 +258,8 @@ onBeforeUnmount(() => {
     aria-label="Karussell-Navigation"
   >
     <div
-      class="space-x-2"
       id="carousel-dots"
+      class="space-x-2"
       role="tablist"
       aria-label="Folien auswählen"
     >

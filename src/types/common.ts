@@ -8,7 +8,8 @@ export interface BaseItem {
 }
 
 export interface PainPoint extends BaseItem {
-  // Shared interface for pain points across different pages
+  // PainPoint currently has no additional fields beyond BaseItem
+  // This interface exists for semantic clarity and future extensibility
 }
 
 export interface Benefit extends BaseItem {
