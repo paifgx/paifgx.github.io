@@ -22,6 +22,12 @@
     }
   },
   "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
   "remoteUser": "node",
   "postCreateCommand": "sudo corepack enable && pnpm install"
 }
