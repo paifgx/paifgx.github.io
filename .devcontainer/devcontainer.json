@@ -1,8 +1,7 @@
 {
   "name": "garten.dev",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:22",
+  "updateRemoteUserUID": false,
   "mounts": [
     "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
   ],
@@ -24,5 +23,5 @@
   },
   "forwardPorts": [4321],
   "remoteUser": "node",
-  "postCreateCommand": "pnpm install"
+  "postCreateCommand": "sudo corepack enable && pnpm install"
 }
