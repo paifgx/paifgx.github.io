@@ -1,7 +1,13 @@
 ---
+description: Concrete naming conventions for variables, functions, and classes.
 alwaysApply: true
 ---
 
-- Choose names for variables, functions, and classes that reflect their purpose and behavior.
-- A name should tell you why it exists, what it does, and how it is used. If a name requires a comment, then the name does not reveal its intent.
-- Use specific names that provide a clearer understanding of what the variables represent and how they are used.
+- **Booleans:** Use prefixes `is_`, `has_`, `can_` (e.g., `is_active`, `has_permission`, `can_edit`).
+- **Functions:** Verb + object pattern (e.g., `create_user`, `calculate_total`, `validate_email`).
+- **Classes/Types:** Nouns (e.g., `UserService`, `PaymentAttempt`, `OrderItem`).
+- **Collections:** Plural nouns (e.g., `users`, `order_items`, `payment_methods`).
+- **Avoid abbreviations** except domain standards (`id`, `url`, `http`, `api`).
+- **Be specific:** `user_count` not `count`, `payment_amount` not `amount` (unless context is clear).
+
+Names should reveal intent without requiring comments. If a name needs explanation, choose a clearer name.

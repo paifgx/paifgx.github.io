@@ -1,10 +1,11 @@
 ---
+description: Core code quality principles: readability, maintainability, and following existing patterns.
 alwaysApply: true
 ---
 
-- Write code that is readable, understandable, and maintainable for future readers.
-- Aim to create software that is not only functional but also readable, maintainable, and efficient throughout its lifecycle.
-- Prioritize clarity to make reading, understanding, and modifying code easier.
-- Adhere to established coding standards and write well-structured code to reduce errors.
-- Regularly review and refactor code to improve structure, readability, and maintainability. Always leave the codebase cleaner than you found it.
-- Code should not need comments at his best. If you add comments then only to describe the "WHY" of the code, never the "WHAT" or "HOW".
+- **Prefer existing project patterns** over introducing new styles or abstractions.
+- **Keep functions small and single-purpose** (typically ≤30 lines).
+- **Avoid clever tricks**; prioritize readability and obvious control flow.
+- **Refactor opportunistically** when touching code; leave it cleaner than you found it.
+
+See [engineering-principles.mdc](mdc:.cursor/rules/engineering-principles.mdc) for KISS and SOLID guidelines.

@@ -1,0 +1,14 @@
+---
+description: Reference to Conventional Commits specification. See git-commit.mdc for practical guidelines.
+alwaysApply: false
+---
+
+This rule references the Conventional Commits specification. For practical commit message guidelines, see [git-commit.mdc](mdc:.cursor/rules/git-commit.mdc).
+
+**Commit format:** `<type>[optional scope]: <description>`
+
+**Common types:** `feat`, `fix`, `refactor`, `docs`, `test`, `style`, `chore`, `perf`, `revert`
+
+**Breaking changes:** Use `!` after type/scope or `BREAKING CHANGE:` footer.
+
+Full specification: https://www.conventionalcommits.org/

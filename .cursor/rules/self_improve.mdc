@@ -1,13 +1,14 @@
 ---
-alwaysApply: true
+description: Guidelines for continuously improving Cursor rules based on emerging code patterns and best practices.
+globs: .cursor/rules/**/*
+alwaysApply: false
 ---
 
-- **Rule Improvement Triggers:**
-  - New code patterns not covered by existing rules
-  - Repeated similar implementations across files
+- **When to suggest rule improvements** (not during normal coding):
+  - New code patterns appear in 3+ files without coverage
+  - Repeated similar implementations suggest a pattern
   - Common error patterns that could be prevented
-  - New libraries or tools being used consistently
-  - Emerging best practices in the codebase
+  - New libraries or tools used consistently across the project
 
 - **Analysis Process:**
   - Compare new code with existing rules
@@ -30,18 +31,13 @@ alwaysApply: true
     - Implementation details have changed
 
 - **Example Pattern Recognition:**
+  ```python
+  # If you see repeated patterns like:
+  async def get_user_by_id(user_id: int, db: AsyncSession) -> User | None:
+      return await db.get(User, user_id)
 
-  ```typescript
-  // If you see repeated patterns like:
-  const data = await prisma.user.findMany({
-    select: { id: true, email: true },
-    where: { status: "ACTIVE" },
-  });
-
-  // Consider adding to [prisma.mdc](mdc:.cursor/rules/prisma.mdc):
-  // - Standard select fields
-  // - Common where conditions
-  // - Performance optimization patterns
+  # Consider suggesting a rule update if this pattern appears
+  # in 3+ files and should be standardized.
   ```
 
 - **Rule Quality Checks:**
@@ -68,4 +64,4 @@ alwaysApply: true
   - Update references to external docs
   - Maintain links between related rules
   - Document breaking changes
-    Follow [cursor_rules.mdc](mdc:.cursor/rules/cursor_rules.mdc) for proper rule formatting and structure.
+Follow [cursor_rules.mdc](mdc:.cursor/rules/cursor_rules.mdc) for proper rule formatting and structure.

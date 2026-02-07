@@ -1,0 +1,198 @@
+---
+description: Apply KISS-first engineering; apply SOLID pragmatically to improve maintainability without overengineering.
+alwaysApply: true
+---
+
+# Engineering Principles: KISS + SOLID
+
+Apply KISS (Keep It Simple, Stupid) as the primary principle. Use SOLID pragmatically only when it genuinely improves maintainability. Avoid overengineering and premature abstraction.
+
+## A) KISS (Priority #1)
+
+- **Prefer the simplest working solution** that fits existing patterns in the codebase.
+- **No premature abstraction**: Don't create interfaces, factories, or strategies "just in case."
+- **No speculative generalization**: Don't build frameworks within the project.
+- **Keep functions small and single-purpose**: One clear responsibility per function.
+- **Keep control flow obvious**: Prefer readability over cleverness.
+- **YAGNI (You Aren't Gonna Need It)**: Don't add optional features or configuration "just in case."
+
+```python
+# ✅ KISS: Simple, direct function
+async def get_user_by_id(user_id: int, db: AsyncSession) -> User | None:
+    result = await db.get(User, user_id)
+    return result
+
+# ❌ Overengineered: Unnecessary abstraction layer
+class UserRepository:
+    def __init__(self, db: AsyncSession):
+        self.db = db
+
+    async def find_by_id(self, user_id: int) -> User | None:
+        return await self.db.get(User, user_id)
+```
+
+## B) SOLID (Apply Only When It Helps)
+
+Apply SOLID principles pragmatically, not as dogma. Use them when they solve real problems, not to satisfy theoretical purity.
+
+### SRP (Single Responsibility Principle)
+
+- Each module/function/class has **one clear reason to change**.
+- Avoid "Manager/Helper/Util dumping grounds" that accumulate unrelated responsibilities.
+- Split when a function/class handles multiple concerns that change independently.
+
+```python
+# ✅ SRP: One responsibility - user validation
+def validate_user_email(email: str) -> bool:
+    return "@" in email and "." in email.split("@")[1]
+
+# ❌ SRP violation: Multiple responsibilities
+def process_user(user_data: dict) -> User:
+    # Validates, creates DB record, sends email, logs audit trail
+    ...
+```
+
+### OCP (Open/Closed Principle)
+
+- When extension is needed, introduce **small seams** (composition, dependency injection) rather than piling up conditionals.
+- Prefer dependency injection over hard-coded dependencies.
+- Use composition and small interfaces to enable extension without modification.
+
+```python
+# ✅ OCP: Extensible via dependency injection
+async def send_notification(
+    user: User,
+    notifier: NotificationService  # Can swap implementations
+) -> None:
+    await notifier.send(user.email, "Welcome!")
+
+# ❌ OCP violation: Hard to extend without modifying
+async def send_notification(user: User) -> None:
+    if settings.USE_EMAIL:
+        send_email(user.email)
+    elif settings.USE_SMS:
+        send_sms(user.phone)
+    # Adding new channel requires modifying this function
+```
+
+### LSP (Liskov Substitution Principle)
+
+- If using inheritance, derived types must be **substitutable** for their base types.
+- **Prefer composition over inheritance** in Python/FastAPI code.
+- If inheritance is used, ensure derived classes don't violate base class contracts.
+
+```python
+# ✅ LSP: Composition over inheritance
+class PaymentProcessor:
+    def __init__(self, gateway: PaymentGateway):
+        self.gateway = gateway
+
+    def process(self, amount: float) -> PaymentResult:
+        return self.gateway.charge(amount)
+
+# ❌ LSP violation: Inheritance that breaks substitution
+class RefundablePayment(Payment):
+    def process(self, amount: float) -> PaymentResult:
+        # Changes behavior in unexpected way
+        ...
+```
+
+### ISP (Interface Segregation Principle)
+
+- Prefer **small, role-based interfaces** over large, monolithic ones.
+- Don't force consumers to depend on methods they don't use.
+- In Python, use Protocol or ABC for small, focused interfaces.
+
+```python
+# ✅ ISP: Small, focused interface
+class Readable(Protocol):
+    def read(self) -> str: ...
+
+class Writable(Protocol):
+    def write(self, data: str) -> None: ...
+
+# ❌ ISP violation: Large interface forcing unused methods
+class FileHandler(Protocol):
+    def read(self) -> str: ...
+    def write(self, data: str) -> None: ...
+    def delete(self) -> None: ...
+    def compress(self) -> None: ...
+    # Reader only needs read(), but forced to implement all
+```
+
+### DIP (Dependency Inversion Principle)
+
+- Keep **infrastructure/framework details at the edges**.
+- **Depend on abstractions** at boundaries when multiple implementations exist or are needed soon.
+- **Repository/Service layers are optional, not default.** For trivial CRUD endpoints, direct Session+Query is fine.
+- Introduce abstractions (repositories, service interfaces) only when:
+  - Business logic grows beyond simple CRUD
+  - Testing becomes difficult with direct DB access
+  - Multiple data sources or implementations are needed
+- Use FastAPI's `Depends` for dependency injection.
+
+```python
+# ✅ KISS: Direct DB access for simple CRUD (no abstraction needed)
+async def create_user(user_data: UserCreate, db: AsyncSession) -> User:
+    user = User(**user_data.dict())
+    db.add(user)
+    await db.commit()
+    return user
+
+# ✅ DIP: Abstraction when business logic or testing needs it
+async def create_user_with_validation(
+    user_data: UserCreate,
+    user_repo: UserRepository = Depends(get_user_repository)  # Needed for testing/multiple sources
+) -> User:
+    # Complex validation, email sending, audit logging, etc.
+    return await user_repo.create(user_data)
+```
+
+## C) Guardrails to Prevent Overengineering
+
+- **Introduce interfaces/strategies only when**:
+  - There are ≥2 real implementations, OR
+  - There is a concrete near-term need (next sprint/PR)
+- **Avoid deep class hierarchies** and generic abstractions without proven reuse.
+- **Prefer explicit, local code** over meta-programming and indirection.
+- **When in doubt, choose the simpler approach** and refactor later if needed.
+
+```python
+# ✅ Guardrail: Simple, explicit code
+async def calculate_total(items: list[Item]) -> float:
+    return sum(item.price * item.quantity for item in items)
+
+# ❌ Overengineered: Unnecessary abstraction
+class CalculatorStrategy(ABC):
+    @abstractmethod
+    def calculate(self, items: list[Item]) -> float: ...
+
+class SumCalculator(CalculatorStrategy):
+    def calculate(self, items: list[Item]) -> float:
+        return sum(item.price * item.quantity for item in items)
+
+# Only one implementation - abstraction adds no value
+```
+
+## D) Operational Behavior
+
+When proposing or implementing code changes:
+
+1. **Keep the implementation minimal** - start with the simplest solution that works.
+2. **Include a brief self-check** in your response:
+   - **KISS:** One sentence explaining why this is the simplest adequate approach.
+   - **SOLID:** One sentence where SOLID was applied OR explicitly why it wasn't needed.
+3. **If SOLID and KISS conflict**: Choose the simpler working approach and state the trade-off in one sentence.
+
+### Example Self-Check Format
+
+```
+KISS: Direct function call without abstraction since we only have one implementation path.
+SOLID: Applied SRP by separating validation from business logic; skipped DIP since no need for multiple implementations yet.
+```
+
+## Integration with Existing Rules
+
+- See [code-style.mdc](mdc:.cursor/rules/code-style.mdc) for general maintainability guidelines.
+- See [python-fastapi-basics.mdc](mdc:.cursor/rules/python-fastapi-basics.mdc) for language-specific patterns.
+- See [naming-conventions.mdc](mdc:.cursor/rules/naming-conventions.mdc) for naming standards.
