@@ -5,6 +5,11 @@
   "mounts": [
     "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
   ],
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    }
+  },
   "customizations": {
     "vscode": {
       "settings": {
@@ -22,6 +27,12 @@
     }
   },
   "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
   "remoteUser": "node",
   "postCreateCommand": "sudo corepack enable && pnpm install"
 }

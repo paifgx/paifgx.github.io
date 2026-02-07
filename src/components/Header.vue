@@ -75,11 +75,11 @@ const isActive = (href) => {
 
 <template>
   <Disclosure
+    v-slot="{ open }"
     as="header"
     class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10 dark:bg-brand-dark/80 transition-colors duration-200"
-    v-slot="{ open }"
   >
-    <div class="h-1 w-full bg-linear-to-r from-brand-blue to-brand-gold"></div>
+    <div class="h-1 w-full bg-linear-to-r from-brand-blue to-brand-gold" />
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
         <div class="flex shrink-0 items-center">

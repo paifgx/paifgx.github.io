@@ -1,12 +1,15 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
-  imageUrl: string;
+  image: ImageMetadata;
   imageAlt: string;
   clipPathId: string;
   shapeId: string;
 }
 
-const { imageUrl, imageAlt, clipPathId, shapeId } = Astro.props;
+const { image, imageAlt, clipPathId, shapeId } = Astro.props;
 
 const clipPath = `url(#${clipPathId})`;
 const shapeHref = `#${shapeId}`;
@@ -26,12 +29,14 @@ const shapeHref = `#${shapeId}`;
         class="origin-center scale-100 transition-all duration-700 ease-out group-hover:scale-105"
       >
         <foreignObject class="h-full w-full">
-          <img
-            src={imageUrl}
+          <Image
+            src={image}
             alt={imageAlt}
             loading="lazy"
             decoding="async"
             class="h-full w-full rounded-[3rem] bg-neutral-100 object-cover dark:bg-gray-800"
+            widths={[400, 800, 1200]}
+            format="webp"
           />
         </foreignObject>
       </g>

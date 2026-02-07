@@ -1,9 +1,14 @@
 import type { IconName } from "../utils/icons";
+import architectureImage from "../assets/images/service/architecture.jpg";
+import automationImage from "../assets/images/service/automation.jpg";
+import enablementImage from "../assets/images/service/enablement.jpg";
 
 export interface ServicePillarCard {
   title: string;
   description: string;
 }
+
+import type { ImageMetadata } from "astro";
 
 export interface ServicePillar {
   title: string;
@@ -11,7 +16,7 @@ export interface ServicePillar {
   description: string;
   cards: ServicePillarCard[];
   icon: IconName;
-  image: string;
+  image: ImageMetadata;
 }
 
 export interface EngagementMode {
@@ -52,8 +57,7 @@ export const servicePillars: ServicePillar[] = [
       },
     ],
     icon: "ClipboardDocumentCheckIcon",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+    image: architectureImage,
   },
   {
     title: "Assistenzsysteme & Automatisierung",
@@ -78,8 +82,7 @@ export const servicePillars: ServicePillar[] = [
       },
     ],
     icon: "CpuChipIcon",
-    image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop",
+    image: automationImage,
   },
   {
     title: "Enablement & Sparring",
@@ -104,8 +107,7 @@ export const servicePillars: ServicePillar[] = [
       },
     ],
     icon: "UserGroupIcon",
-    image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+    image: enablementImage,
   },
 ];
 

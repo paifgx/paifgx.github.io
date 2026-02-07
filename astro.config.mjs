@@ -11,6 +11,9 @@ export default defineConfig({
   site: "https://garten.ai",
   base: undefined,
   integrations: [vue(), sitemap()],
+  server: {
+    host: true,
+  },
   vite: {
     plugins: [tailwindcss()],
   },

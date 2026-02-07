@@ -194,5 +194,4 @@ SOLID: Applied SRP by separating validation from business logic; skipped DIP sin
 ## Integration with Existing Rules
 
 - See [code-style.mdc](mdc:.cursor/rules/code-style.mdc) for general maintainability guidelines.
-- See [python-fastapi-basics.mdc](mdc:.cursor/rules/python-fastapi-basics.mdc) for language-specific patterns.
 - See [naming-conventions.mdc](mdc:.cursor/rules/naming-conventions.mdc) for naming standards.

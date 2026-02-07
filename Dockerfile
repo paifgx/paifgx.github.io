@@ -1,7 +1,7 @@
 # Stage 1: Build
 FROM node:22-alpine AS builder
 
-RUN corepack enable && corepack prepare pnpm@10.23.0 --activate
+RUN corepack enable && corepack prepare pnpm@10.25.0 --activate
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ ENV ASTRO_TELEMETRY_DISABLED=1
 RUN pnpm run build
 
 # Stage 2: Production
-FROM caddy:alpine
+FROM caddy:2.9-alpine
 
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY --from=builder /app/dist /srv
